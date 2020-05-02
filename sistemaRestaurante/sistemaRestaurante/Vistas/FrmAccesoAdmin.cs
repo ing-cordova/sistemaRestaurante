@@ -59,5 +59,30 @@ namespace sistemaRestaurante.Vistas
             btnRestoreWindow.Visible = false;
             btnMaximizar.Visible = true;
         }
+
+        private void btnMasOpciones_Click(object sender, EventArgs e)
+        {
+            if (Submenu.Visible == false)
+            {
+                Submenu.Visible = true;
+            }
+            else
+            {
+                Submenu.Visible = false;
+            }
+        }
+
+        private void btnCerrarS_Click(object sender, EventArgs e)
+        {
+            DialogResult entrada = MessageBox.Show("¿Estás seguro que desea cerrar sesión?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+            if (entrada == DialogResult.OK)
+            {
+                FrmLoguin loguin = new FrmLoguin();
+                loguin.Show();
+                this.Close();
+                Submenu.Visible = false;
+            }
+        }
     }
 }

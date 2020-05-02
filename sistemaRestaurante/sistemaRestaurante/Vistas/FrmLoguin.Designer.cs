@@ -56,7 +56,7 @@
             this.txtUsuario.Location = new System.Drawing.Point(58, 182);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(228, 24);
-            this.txtUsuario.TabIndex = 0;
+            this.txtUsuario.TabIndex = 1;
             // 
             // panel1
             // 
@@ -64,7 +64,7 @@
             this.panel1.Location = new System.Drawing.Point(13, 218);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(280, 1);
-            this.panel1.TabIndex = 1;
+            this.panel1.TabIndex = 2;
             // 
             // panel2
             // 
@@ -72,7 +72,7 @@
             this.panel2.Location = new System.Drawing.Point(13, 278);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(280, 1);
-            this.panel2.TabIndex = 3;
+            this.panel2.TabIndex = 4;
             // 
             // txtPassword
             // 
@@ -84,7 +84,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '•';
             this.txtPassword.Size = new System.Drawing.Size(228, 24);
-            this.txtPassword.TabIndex = 2;
+            this.txtPassword.TabIndex = 3;
             // 
             // checkBoxPass
             // 
@@ -148,7 +148,7 @@
             this.btnSalir.Location = new System.Drawing.Point(278, 4);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(33, 32);
-            this.btnSalir.TabIndex = 9;
+            this.btnSalir.TabIndex = 0;
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 

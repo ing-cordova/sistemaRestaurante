@@ -212,6 +212,17 @@
       <DependentUpon>Restaurante.edmx</DependentUpon>
       <LastGenOutput>Restaurante.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\more.png" />
+    <None Include="Resources\warehouse.png" />
+    <None Include="Resources\manager.png" />
+    <None Include="Resources\man-avatar1.png" />
+    <None Include="Resources\man-avatar.png" />
+    <None Include="Resources\gestures.png" />
+    <None Include="Resources\barcode.png" />
+    <None Include="Resources\commerce-and-shopping %281%29.png" />
+    <None Include="Resources\commerce-and-shopping.png" />
+    <None Include="Resources\Prod.png" />
+    <None Include="Resources\Producto_48px.png" />
     <None Include="Resources\ojo.png" />
     <None Include="Resources\usert.png" />
     <None Include="Resources\social.png" />
