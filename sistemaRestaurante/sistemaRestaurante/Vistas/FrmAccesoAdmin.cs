@@ -84,5 +84,16 @@ namespace sistemaRestaurante.Vistas
                 Submenu.Visible = false;
             }
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tmDatosFechaHora_Tick(object sender, EventArgs e)
+        {
+            lblHora.Text = DateTime.Now.ToLongTimeString();
+            lblFecha.Text = DateTime.Now.ToLongDateString();
+        }
     }
 }

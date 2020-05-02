@@ -212,6 +212,9 @@
       <DependentUpon>Restaurante.edmx</DependentUpon>
       <LastGenOutput>Restaurante.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\finances.png" />
+    <None Include="Resources\Venta.png" />
+    <None Include="Resources\arrows.png" />
     <None Include="Resources\more.png" />
     <None Include="Resources\warehouse.png" />
     <None Include="Resources\manager.png" />
