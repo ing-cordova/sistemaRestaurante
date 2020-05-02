@@ -33,7 +33,12 @@ namespace sistemaRestaurante.Vistas
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult entrada = MessageBox.Show("¿Estás seguro que desea salir?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+            if (entrada == DialogResult.OK)
+            {
+                Application.Exit();
+            }
         }
 
         private void btnMaximizar_Click(object sender, EventArgs e)

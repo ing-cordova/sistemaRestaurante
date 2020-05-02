@@ -154,7 +154,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::sistemaRestaurante.Properties.Resources.Passs;
+            this.pictureBox3.Image = global::sistemaRestaurante.Properties.Resources.ojo;
             this.pictureBox3.Location = new System.Drawing.Point(12, 235);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(40, 37);
@@ -164,7 +164,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::sistemaRestaurante.Properties.Resources.User;
+            this.pictureBox2.Image = global::sistemaRestaurante.Properties.Resources.usert;
             this.pictureBox2.Location = new System.Drawing.Point(12, 175);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(40, 37);
@@ -174,7 +174,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::sistemaRestaurante.Properties.Resources.Loguin;
+            this.pictureBox1.Image = global::sistemaRestaurante.Properties.Resources.social;
             this.pictureBox1.Location = new System.Drawing.Point(99, 35);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(114, 107);

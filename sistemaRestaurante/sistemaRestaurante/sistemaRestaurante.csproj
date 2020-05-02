@@ -212,6 +212,9 @@
       <DependentUpon>Restaurante.edmx</DependentUpon>
       <LastGenOutput>Restaurante.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\ojo.png" />
+    <None Include="Resources\usert.png" />
+    <None Include="Resources\social.png" />
     <None Include="Resources\Restore Window.png" />
     <None Include="Resources\Maximize Window.png" />
     <None Include="Resources\Minimize Window.png" />
