@@ -41,16 +41,30 @@ namespace sistemaRestaurante.Vistas
             }
         }
 
+        int ly, lx;
+        int sw, sh;
+
         private void btnMaximizar_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            lx = this.Location.X;
+            ly = this.Location.Y;
+            sw = this.Size.Width;
+            sh = this.Size.Height;
+
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
+
+            //this.WindowState = FormWindowState.Maximized;
             btnMaximizar.Visible = false;
             btnRestoreWindow.Visible = true;
         }
 
         private void btnRestoreWindow_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Normal;
+            this.Size = new Size(sw, sh);
+            this.Location = new Point(lx, ly);
+
+            //this.WindowState = FormWindowState.Normal;
             btnRestoreWindow.Visible = false;
             btnMaximizar.Visible = true;
         }
@@ -58,7 +72,6 @@ namespace sistemaRestaurante.Vistas
         private void button2_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
-
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

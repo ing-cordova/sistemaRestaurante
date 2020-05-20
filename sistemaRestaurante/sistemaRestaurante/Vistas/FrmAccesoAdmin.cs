@@ -19,6 +19,7 @@ namespace sistemaRestaurante.Vistas
             InitializeComponent();
         }
 
+        #region FuncionesFormulario
         //Este codigo se utiliza para arrastrar la ventana.
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -29,6 +30,22 @@ namespace sistemaRestaurante.Vistas
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        #endregion
+
+        private void AbrirFormulario(object FormHijo)
+        {
+            if (this.panelContenedor.Controls.Count > 0)
+            {
+                this.panelContenedor.Controls.RemoveAt(0);
+            }
+
+            Form fh = FormHijo as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.panelContenedor.Controls.Add(fh);
+            this.panelContenedor.Tag = fh;
+            fh.Show();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -41,9 +58,20 @@ namespace sistemaRestaurante.Vistas
             }
         }
 
+        int ly, lx;
+        int sw, sh;
+
         private void btnMaximizar_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            lx = this.Location.X;
+            ly = this.Location.Y;
+            sw = this.Size.Width;
+            sh = this.Size.Height;
+
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
+
+            //this.WindowState = FormWindowState.Maximized;
             btnMaximizar.Visible = false;
             btnRestoreWindow.Visible = true;
         }
@@ -55,7 +83,10 @@ namespace sistemaRestaurante.Vistas
 
         private void btnRestoreWindow_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Normal;
+            this.Size = new Size(sw, sh);
+            this.Location = new Point(lx, ly);
+
+            //this.WindowState = FormWindowState.Normal;
             btnRestoreWindow.Visible = false;
             btnMaximizar.Visible = true;
         }
