@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 //Libreria para arrastrar ventana.
 using System.Runtime.InteropServices;
+using sistemaRestaurante.Vistas.Administrador.Productos;
 
 namespace sistemaRestaurante.Vistas
 {
@@ -114,6 +115,11 @@ namespace sistemaRestaurante.Vistas
                 this.Close();
                 Submenu.Visible = false;
             }
+        }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmListadoProductos());
         }
 
         private void label2_Click(object sender, EventArgs e)

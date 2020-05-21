@@ -31,18 +31,21 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAccesoAdmin));
             this.barraTitulos = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblHora = new System.Windows.Forms.Label();
+            this.lblFecha = new System.Windows.Forms.Label();
             this.MenuVertical = new System.Windows.Forms.Panel();
-            this.panelContenedor = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.Submenu = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelContenedor = new System.Windows.Forms.Panel();
+            this.tmDatosFechaHora = new System.Windows.Forms.Timer(this.components);
             this.btnVentas = new System.Windows.Forms.Button();
             this.btnMasOpciones = new System.Windows.Forms.Button();
             this.btnCerrarS = new System.Windows.Forms.Button();
@@ -56,13 +59,8 @@
             this.btnRestoreWindow = new System.Windows.Forms.Button();
             this.btnMaximizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.tmDatosFechaHora = new System.Windows.Forms.Timer(this.components);
-            this.lblHora = new System.Windows.Forms.Label();
-            this.lblFecha = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.barraTitulos.SuspendLayout();
             this.MenuVertical.SuspendLayout();
-            this.panelContenedor.SuspendLayout();
             this.Submenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -83,6 +81,45 @@
             this.barraTitulos.Size = new System.Drawing.Size(1070, 42);
             this.barraTitulos.TabIndex = 1;
             this.barraTitulos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.barraTitulos_MouseDown);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(31)))), ((int)(((byte)(70)))));
+            this.label1.Location = new System.Drawing.Point(361, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(26, 28);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "|";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblHora
+            // 
+            this.lblHora.AutoSize = true;
+            this.lblHora.BackColor = System.Drawing.Color.Transparent;
+            this.lblHora.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(31)))), ((int)(((byte)(70)))));
+            this.lblHora.Location = new System.Drawing.Point(381, 9);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(60, 25);
+            this.lblHora.TabIndex = 3;
+            this.lblHora.Text = "Hora";
+            this.lblHora.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.BackColor = System.Drawing.Color.Transparent;
+            this.lblFecha.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(31)))), ((int)(((byte)(70)))));
+            this.lblFecha.Location = new System.Drawing.Point(12, 9);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(75, 25);
+            this.lblFecha.TabIndex = 4;
+            this.lblFecha.Text = "Fecha";
+            this.lblFecha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MenuVertical
             // 
@@ -109,68 +146,21 @@
             this.MenuVertical.Size = new System.Drawing.Size(218, 595);
             this.MenuVertical.TabIndex = 2;
             // 
-            // panelContenedor
+            // panel6
             // 
-            this.panelContenedor.Controls.Add(this.label2);
-            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenedor.Location = new System.Drawing.Point(218, 42);
-            this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(852, 595);
-            this.panelContenedor.TabIndex = 3;
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.panel6.Location = new System.Drawing.Point(-2, 358);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(6, 40);
+            this.panel6.TabIndex = 13;
             // 
-            // label2
+            // panel8
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.label2.Location = new System.Drawing.Point(226, 220);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(403, 76);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "ACCESO EXCLUSIVO \r\nPARA ADMINISTRADORES";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            this.panel1.Location = new System.Drawing.Point(0, 128);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(6, 40);
-            this.panel1.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            this.panel2.Location = new System.Drawing.Point(0, 174);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(6, 40);
-            this.panel2.TabIndex = 3;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            this.panel3.Location = new System.Drawing.Point(0, 220);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(6, 40);
-            this.panel3.TabIndex = 5;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            this.panel4.Location = new System.Drawing.Point(0, 266);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(6, 40);
-            this.panel4.TabIndex = 7;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            this.panel5.Location = new System.Drawing.Point(0, 312);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(6, 40);
-            this.panel5.TabIndex = 9;
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.panel8.Location = new System.Drawing.Point(0, 404);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(6, 40);
+            this.panel8.TabIndex = 11;
             // 
             // Submenu
             // 
@@ -190,21 +180,58 @@
             this.panel7.Size = new System.Drawing.Size(10, 40);
             this.panel7.TabIndex = 11;
             // 
-            // panel8
+            // panel5
             // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            this.panel8.Location = new System.Drawing.Point(0, 404);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(6, 40);
-            this.panel8.TabIndex = 11;
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.panel5.Location = new System.Drawing.Point(0, 312);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(6, 40);
+            this.panel5.TabIndex = 9;
             // 
-            // panel6
+            // panel4
             // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            this.panel6.Location = new System.Drawing.Point(-2, 358);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(6, 40);
-            this.panel6.TabIndex = 13;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.panel4.Location = new System.Drawing.Point(0, 266);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(6, 40);
+            this.panel4.TabIndex = 7;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.panel3.Location = new System.Drawing.Point(0, 220);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(6, 40);
+            this.panel3.TabIndex = 5;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.panel2.Location = new System.Drawing.Point(0, 174);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(6, 40);
+            this.panel2.TabIndex = 3;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.panel1.Location = new System.Drawing.Point(0, 128);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(6, 40);
+            this.panel1.TabIndex = 1;
+            // 
+            // panelContenedor
+            // 
+            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContenedor.Location = new System.Drawing.Point(218, 42);
+            this.panelContenedor.Name = "panelContenedor";
+            this.panelContenedor.Size = new System.Drawing.Size(852, 595);
+            this.panelContenedor.TabIndex = 3;
+            // 
+            // tmDatosFechaHora
+            // 
+            this.tmDatosFechaHora.Enabled = true;
+            this.tmDatosFechaHora.Tick += new System.EventHandler(this.tmDatosFechaHora_Tick);
             // 
             // btnVentas
             // 
@@ -368,6 +395,7 @@
             this.btnProductos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnProductos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProductos.UseVisualStyleBackColor = true;
+            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
             // button2
             // 
@@ -436,50 +464,6 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // tmDatosFechaHora
-            // 
-            this.tmDatosFechaHora.Enabled = true;
-            this.tmDatosFechaHora.Tick += new System.EventHandler(this.tmDatosFechaHora_Tick);
-            // 
-            // lblHora
-            // 
-            this.lblHora.AutoSize = true;
-            this.lblHora.BackColor = System.Drawing.Color.Transparent;
-            this.lblHora.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(31)))), ((int)(((byte)(70)))));
-            this.lblHora.Location = new System.Drawing.Point(327, 9);
-            this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(60, 25);
-            this.lblHora.TabIndex = 3;
-            this.lblHora.Text = "Hora";
-            this.lblHora.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblFecha
-            // 
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.BackColor = System.Drawing.Color.Transparent;
-            this.lblFecha.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(31)))), ((int)(((byte)(70)))));
-            this.lblFecha.Location = new System.Drawing.Point(12, 9);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(75, 25);
-            this.lblFecha.TabIndex = 4;
-            this.lblFecha.Text = "Fecha";
-            this.lblFecha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(31)))), ((int)(((byte)(70)))));
-            this.label1.Location = new System.Drawing.Point(307, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 28);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "|";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // FrmAccesoAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -497,8 +481,6 @@
             this.barraTitulos.ResumeLayout(false);
             this.barraTitulos.PerformLayout();
             this.MenuVertical.ResumeLayout(false);
-            this.panelContenedor.ResumeLayout(false);
-            this.panelContenedor.PerformLayout();
             this.Submenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -514,7 +496,6 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Panel MenuVertical;
         private System.Windows.Forms.Panel panelContenedor;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnAlmacen;

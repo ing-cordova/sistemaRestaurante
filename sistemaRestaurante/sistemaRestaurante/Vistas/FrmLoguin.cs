@@ -50,7 +50,7 @@ namespace sistemaRestaurante.Vistas
             }
             else
             {
-                using(RestauranteEntities bd = new RestauranteEntities())
+                using(RestauranteEntities1 bd = new RestauranteEntities1())
                 {
                     var lista = from usuario in bd.Usuarios
                                 where usuario.nombredeUsuario == txtUsuario.Text
@@ -68,13 +68,13 @@ namespace sistemaRestaurante.Vistas
                                   };
                         foreach(var iterar in rol)
                         {
-                            if(iterar.IdRol == 1)
+                            if(iterar.IdRol == 2)
                             {
                                 FrmAccesoUsuario accessU = new FrmAccesoUsuario();
                                 accessU.Show();
                                 this.Hide();
                             }
-                            else if (iterar.IdRol == 2)
+                            else if (iterar.IdRol == 1)
                             {
                                 FrmAccesoAdmin accessAd = new FrmAccesoAdmin();
                                 accessAd.Show();

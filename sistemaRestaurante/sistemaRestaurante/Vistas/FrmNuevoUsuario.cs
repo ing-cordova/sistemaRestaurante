@@ -37,7 +37,7 @@ namespace sistemaRestaurante.Vistas
 
         void CargarCombo()
         {
-            using(RestauranteEntities bd = new RestauranteEntities())
+            using(RestauranteEntities1 bd = new RestauranteEntities1())
             {
                 var Rol = bd.Roles.ToList();
                 if (Rol.Count > 0)
@@ -76,7 +76,7 @@ namespace sistemaRestaurante.Vistas
             {
                 if (txtPassword.Text == txtVerifyPass.Text)
                 {
-                    using (RestauranteEntities bd = new RestauranteEntities())
+                    using (RestauranteEntities1 bd = new RestauranteEntities1())
                     {
                         var usuario = from rol in bd.Roles
                                       where rol.idRol == 1
@@ -90,7 +90,7 @@ namespace sistemaRestaurante.Vistas
                         {
                             if (cmbUsuario.Text == iterar.Rol)
                             {
-                                using (RestauranteEntities db = new RestauranteEntities())
+                                using (RestauranteEntities1 db = new RestauranteEntities1())
                                 {
                                     user.nombres = txtNombres.Text;
                                     user.apellidos = txtApellidos.Text;
@@ -117,7 +117,7 @@ namespace sistemaRestaurante.Vistas
                                 String PIN = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el PIN de seguridad:", "Registro de Administrador", "", 500, 300);
                                 if (PIN == PIN_ADMIN)
                                 {
-                                    using (RestauranteEntities db = new RestauranteEntities())
+                                    using (RestauranteEntities1 db = new RestauranteEntities1())
                                     {
                                         user.nombres = txtNombres.Text;
                                         user.apellidos = txtApellidos.Text;

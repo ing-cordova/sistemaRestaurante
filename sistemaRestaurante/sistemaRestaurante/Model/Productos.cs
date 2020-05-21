@@ -24,8 +24,9 @@ namespace sistemaRestaurante.Model
         public int idProducto { get; set; }
         public string Nombre { get; set; }
         public Nullable<decimal> Precio { get; set; }
-        public string Categoria { get; set; }
+        public int idCategoria { get; set; }
     
+        public virtual Categorias Categorias { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<IngredientesparaProductos> IngredientesparaProductos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
