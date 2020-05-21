@@ -68,13 +68,13 @@ namespace sistemaRestaurante.Vistas
                                   };
                         foreach(var iterar in rol)
                         {
-                            if(iterar.IdRol == 2)
+                            if(iterar.IdRol == 1)
                             {
                                 FrmAccesoUsuario accessU = new FrmAccesoUsuario();
                                 accessU.Show();
                                 this.Hide();
                             }
-                            else if (iterar.IdRol == 1)
+                            else if (iterar.IdRol == 2)
                             {
                                 FrmAccesoAdmin accessAd = new FrmAccesoAdmin();
                                 accessAd.Show();

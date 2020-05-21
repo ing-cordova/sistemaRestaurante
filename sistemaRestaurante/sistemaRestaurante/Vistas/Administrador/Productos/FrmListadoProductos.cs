@@ -22,11 +22,21 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
         {
             using(RestauranteEntities1 bd = new RestauranteEntities1())
             {
-                var Productos = bd.Productos;
+                var JoinProd = from producto in bd.Productos
+                               from categoria in bd.Categorias
+                               where producto.idCategoria == categoria.idCategoria
 
-                foreach(var iterar in Productos)
+                               select new
+                               {
+                                   ID = producto.idProducto,
+                                   NOMBRE = producto.Nombre,
+                                   PRECIO = producto.Precio,
+                                   CATEGORIA = categoria.nombreCategoria
+                               };
+
+                foreach(var iterar in JoinProd)
                 {
-                    dtvProductos.Rows.Add(iterar.idProducto, iterar.Nombre, iterar.Precio, iterar.idCategoria);
+                    dtvProductos.Rows.Add(iterar.ID, iterar.NOMBRE, iterar.PRECIO, iterar.CATEGORIA);
                 }
             }
         }
