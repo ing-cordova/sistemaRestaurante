@@ -28,17 +28,21 @@ namespace sistemaRestaurante.Vistas
         //Acá se valida el estado del txtPassword, para poder ver o no los carácteres.
         private void checkBoxPass_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBoxPass.Checked == true)
+            if (txtPassword.Text != "Ingrese su Contraseña")
             {
-                if (txtPassword.PasswordChar == '•')
+                if (checkBoxPass.Checked == true)
                 {
-                    txtPassword.PasswordChar = '\0';
+                    if (txtPassword.PasswordChar == '•')
+                    {
+                        txtPassword.PasswordChar = '\0';
+                    }
+                }
+                else
+                {
+                    txtPassword.PasswordChar = '•';
                 }
             }
-            else
-            {
-                txtPassword.PasswordChar = '•';
-            }
+            
         }
 
         //En este botón estará la validación a la base de datos.
@@ -107,6 +111,49 @@ namespace sistemaRestaurante.Vistas
             FrmNuevoUsuario newUser = new FrmNuevoUsuario();
             newUser.Show();
             this.Hide();
+        }
+
+        private void txtPassword_Enter(object sender, EventArgs e)
+        {
+            if (txtPassword.Text == "Ingrese su Contraseña")
+            {
+                txtPassword.Text = "";
+                if (checkBoxPass.Checked == false)
+                {
+
+                    txtPassword.PasswordChar = '•';
+                }
+                else
+                {
+                    txtPassword.PasswordChar = '\0';
+                }
+                
+            }
+        }
+
+        private void txtPassword_Leave(object sender, EventArgs e)
+        {
+            if (txtPassword.Text == "")
+            {
+                txtPassword.PasswordChar = '\0';
+                txtPassword.Text = "Ingrese su Contraseña";
+            }
+        }
+
+        private void txtUsuario_Enter(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text == "Ingrese el Usuario")
+            {
+                txtUsuario.Text = "";
+            }
+        }
+
+        private void txtUsuario_Leave(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text == "")
+            {
+                txtUsuario.Text = "Ingrese el Usuario";
+            }
         }
     }
 }

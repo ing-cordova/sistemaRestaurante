@@ -57,6 +57,9 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(228, 24);
             this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.Text = "Ingrese el Usuario";
+            this.txtUsuario.Enter += new System.EventHandler(this.txtUsuario_Enter);
+            this.txtUsuario.Leave += new System.EventHandler(this.txtUsuario_Leave);
             // 
             // panel1
             // 
@@ -82,9 +85,11 @@
             this.txtPassword.ForeColor = System.Drawing.SystemColors.Window;
             this.txtPassword.Location = new System.Drawing.Point(58, 242);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '•';
             this.txtPassword.Size = new System.Drawing.Size(228, 24);
             this.txtPassword.TabIndex = 3;
+            this.txtPassword.Text = "Ingrese su Contraseña";
+            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
+            this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
             // checkBoxPass
             // 

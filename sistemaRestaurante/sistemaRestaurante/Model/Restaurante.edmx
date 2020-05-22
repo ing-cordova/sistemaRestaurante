@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="RestauranteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="RestauranteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Almacen">
           <Key>
             <PropertyRef Name="idAlmacen" />
@@ -117,7 +117,31 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Comprasde__idAlm__60A75C0F">
+          <End Role="Almacen" Type="Self.Almacen" Multiplicity="0..1" />
+          <End Role="ComprasdeProductos" Type="Self.ComprasdeProductos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Almacen">
+              <PropertyRef Name="idAlmacen" />
+            </Principal>
+            <Dependent Role="ComprasdeProductos">
+              <PropertyRef Name="idAlmacen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Comprasde__idPro__4F7CD00D">
+          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="0..1" />
+          <End Role="ComprasdeProductos" Type="Self.ComprasdeProductos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proveedores">
+              <PropertyRef Name="idProveedor" />
+            </Principal>
+            <Dependent Role="ComprasdeProductos">
+              <PropertyRef Name="idProveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Comprasde__idPro__5FB337D6">
           <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="0..1" />
           <End Role="ComprasdeProductos" Type="Self.ComprasdeProductos" Multiplicity="*" />
           <ReferentialConstraint>
@@ -153,6 +177,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Comprasde__idUsu__5BE2A6F2">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+          <End Role="ComprasdeProductos" Type="Self.ComprasdeProductos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="ComprasdeProductos">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Comprasde__idUsu__5EBF139D">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+          <End Role="ComprasdeProductos" Type="Self.ComprasdeProductos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="ComprasdeProductos">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Ingredien__idAlm__5165187F">
           <End Role="Almacen" Type="Self.Almacen" Multiplicity="0..1" />
           <End Role="IngredientesparaProductos" Type="Self.IngredientesparaProductos" Multiplicity="*" />
@@ -165,7 +213,31 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Ingredien__idAlm__619B8048">
+          <End Role="Almacen" Type="Self.Almacen" Multiplicity="0..1" />
+          <End Role="IngredientesparaProductos" Type="Self.IngredientesparaProductos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Almacen">
+              <PropertyRef Name="idAlmacen" />
+            </Principal>
+            <Dependent Role="IngredientesparaProductos">
+              <PropertyRef Name="idAlmacen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Ingredien__idPro__52593CB8">
+          <End Role="Productos" Type="Self.Productos" Multiplicity="0..1" />
+          <End Role="IngredientesparaProductos" Type="Self.IngredientesparaProductos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Productos">
+              <PropertyRef Name="idProducto" />
+            </Principal>
+            <Dependent Role="IngredientesparaProductos">
+              <PropertyRef Name="idProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Ingredien__idPro__628FA481">
           <End Role="Productos" Type="Self.Productos" Multiplicity="0..1" />
           <End Role="IngredientesparaProductos" Type="Self.IngredientesparaProductos" Multiplicity="*" />
           <ReferentialConstraint>
@@ -213,7 +285,31 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Productos__idOrd__5CD6CB2B">
+          <End Role="Ordenes" Type="Self.Ordenes" Multiplicity="0..1" />
+          <End Role="ProductosOrden" Type="Self.ProductosOrden" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ordenes">
+              <PropertyRef Name="idOrden" />
+            </Principal>
+            <Dependent Role="ProductosOrden">
+              <PropertyRef Name="idOrden" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Productos__idPro__4D94879B">
+          <End Role="Productos" Type="Self.Productos" Multiplicity="0..1" />
+          <End Role="ProductosOrden" Type="Self.ProductosOrden" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Productos">
+              <PropertyRef Name="idProducto" />
+            </Principal>
+            <Dependent Role="ProductosOrden">
+              <PropertyRef Name="idProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Productos__idPro__5DCAEF64">
           <End Role="Productos" Type="Self.Productos" Multiplicity="0..1" />
           <End Role="ProductosOrden" Type="Self.ProductosOrden" Multiplicity="*" />
           <ReferentialConstraint>
@@ -252,7 +348,15 @@
             <End Role="Almacen" EntitySet="Almacen" />
             <End Role="ComprasdeProductos" EntitySet="ComprasdeProductos" />
           </AssociationSet>
+          <AssociationSet Name="FK__Comprasde__idAlm__60A75C0F" Association="Self.FK__Comprasde__idAlm__60A75C0F">
+            <End Role="Almacen" EntitySet="Almacen" />
+            <End Role="ComprasdeProductos" EntitySet="ComprasdeProductos" />
+          </AssociationSet>
           <AssociationSet Name="FK__Comprasde__idPro__4F7CD00D" Association="Self.FK__Comprasde__idPro__4F7CD00D">
+            <End Role="Proveedores" EntitySet="Proveedores" />
+            <End Role="ComprasdeProductos" EntitySet="ComprasdeProductos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Comprasde__idPro__5FB337D6" Association="Self.FK__Comprasde__idPro__5FB337D6">
             <End Role="Proveedores" EntitySet="Proveedores" />
             <End Role="ComprasdeProductos" EntitySet="ComprasdeProductos" />
           </AssociationSet>
@@ -264,11 +368,27 @@
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="ComprasdeProductos" EntitySet="ComprasdeProductos" />
           </AssociationSet>
+          <AssociationSet Name="FK__Comprasde__idUsu__5BE2A6F2" Association="Self.FK__Comprasde__idUsu__5BE2A6F2">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="ComprasdeProductos" EntitySet="ComprasdeProductos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Comprasde__idUsu__5EBF139D" Association="Self.FK__Comprasde__idUsu__5EBF139D">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="ComprasdeProductos" EntitySet="ComprasdeProductos" />
+          </AssociationSet>
           <AssociationSet Name="FK__Ingredien__idAlm__5165187F" Association="Self.FK__Ingredien__idAlm__5165187F">
             <End Role="Almacen" EntitySet="Almacen" />
             <End Role="IngredientesparaProductos" EntitySet="IngredientesparaProductos" />
           </AssociationSet>
+          <AssociationSet Name="FK__Ingredien__idAlm__619B8048" Association="Self.FK__Ingredien__idAlm__619B8048">
+            <End Role="Almacen" EntitySet="Almacen" />
+            <End Role="IngredientesparaProductos" EntitySet="IngredientesparaProductos" />
+          </AssociationSet>
           <AssociationSet Name="FK__Ingredien__idPro__52593CB8" Association="Self.FK__Ingredien__idPro__52593CB8">
+            <End Role="Productos" EntitySet="Productos" />
+            <End Role="IngredientesparaProductos" EntitySet="IngredientesparaProductos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Ingredien__idPro__628FA481" Association="Self.FK__Ingredien__idPro__628FA481">
             <End Role="Productos" EntitySet="Productos" />
             <End Role="IngredientesparaProductos" EntitySet="IngredientesparaProductos" />
           </AssociationSet>
@@ -284,7 +404,15 @@
             <End Role="Ordenes" EntitySet="Ordenes" />
             <End Role="ProductosOrden" EntitySet="ProductosOrden" />
           </AssociationSet>
+          <AssociationSet Name="FK__Productos__idOrd__5CD6CB2B" Association="Self.FK__Productos__idOrd__5CD6CB2B">
+            <End Role="Ordenes" EntitySet="Ordenes" />
+            <End Role="ProductosOrden" EntitySet="ProductosOrden" />
+          </AssociationSet>
           <AssociationSet Name="FK__Productos__idPro__4D94879B" Association="Self.FK__Productos__idPro__4D94879B">
+            <End Role="Productos" EntitySet="Productos" />
+            <End Role="ProductosOrden" EntitySet="ProductosOrden" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Productos__idPro__5DCAEF64" Association="Self.FK__Productos__idPro__5DCAEF64">
             <End Role="Productos" EntitySet="Productos" />
             <End Role="ProductosOrden" EntitySet="ProductosOrden" />
           </AssociationSet>
@@ -293,8 +421,7 @@
             <End Role="Usuarios" EntitySet="Usuarios" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="RestauranteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
