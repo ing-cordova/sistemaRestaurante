@@ -19,7 +19,6 @@ namespace sistemaRestaurante.Vistas
             InitializeComponent();
         }
 
-        String RolUsu = "";
         Usuarios user = new Usuarios();
 
         void LimpiarDatos()
@@ -35,29 +34,11 @@ namespace sistemaRestaurante.Vistas
             txtVerifyPass.Text = "";
         }
 
-        void CargarCombo()
-        {
-            using(RestauranteEntities1 bd = new RestauranteEntities1())
-            {
-                var Rol = bd.Roles.ToList();
-                if (Rol.Count > 0)
-                {
-                    cmbUsuario.DataSource = Rol;
-                    cmbUsuario.DisplayMember = "tipoRol";
-                    cmbUsuario.ValueMember = "idRol";
-                }
-            }
-        }
 
         private void FrmNuevoUsuario_Load(object sender, EventArgs e)
         {
-            CargarCombo();
         }
 
-        private void cmbUsuario_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            RolUsu = cmbUsuario.SelectedValue.ToString();
-        }
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
@@ -78,27 +59,18 @@ namespace sistemaRestaurante.Vistas
                 {
                     using (RestauranteEntities1 bd = new RestauranteEntities1())
                     {
-                        var usuario = from rol in bd.Roles
-                                      where rol.idRol == 1
 
-                                      select new
-                                      {
-                                          Rol = rol.tipoRol
-                                      };
-
-                        foreach (var iterar in usuario)
-                        {
-                            if (cmbUsuario.Text == iterar.Rol)
+                            if (cmbUsuario.Text == "Usuario")
                             {
                                 using (RestauranteEntities1 db = new RestauranteEntities1())
                                 {
-                                    user.nombres = txtNombres.Text;
+                                    user.nombre = txtNombres.Text;
                                     user.apellidos = txtApellidos.Text;
                                     user.telefono = txtTelefono.Text;
                                     user.edad = int.Parse(txtEdad.Text);
                                     user.email = txtEmail.Text;
                                     user.nombredeUsuario = txtUsuario.Text;
-                                    user.idRol = int.Parse(RolUsu);
+                                    user.rol = cmbUsuario.Text;
                                     user.contraseña = txtPassword.Text;
 
                                     db.Usuarios.Add(user);
@@ -111,7 +83,7 @@ namespace sistemaRestaurante.Vistas
                                 this.Hide();
                                 LimpiarDatos();
                             }
-                            else if (cmbUsuario.Text != iterar.Rol)
+                            else if (cmbUsuario.Text == "Administrador")
                             {
                                 String PIN_ADMIN = "99999";
                                 String PIN = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el PIN de seguridad:", "Registro de Administrador", "", 500, 300);
@@ -119,13 +91,13 @@ namespace sistemaRestaurante.Vistas
                                 {
                                     using (RestauranteEntities1 db = new RestauranteEntities1())
                                     {
-                                        user.nombres = txtNombres.Text;
+                                        user.nombre = txtNombres.Text;
                                         user.apellidos = txtApellidos.Text;
                                         user.telefono = txtTelefono.Text;
                                         user.edad = int.Parse(txtEdad.Text);
                                         user.email = txtEmail.Text;
                                         user.nombredeUsuario = txtUsuario.Text;
-                                        user.idRol = int.Parse(RolUsu);
+                                        user.rol = cmbUsuario.Text;
                                         user.contraseña = txtPassword.Text;
 
                                         db.Usuarios.Add(user);
@@ -143,7 +115,7 @@ namespace sistemaRestaurante.Vistas
                                     MessageBox.Show("Clave de seguridad incorrecta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
                             }
-                        }
+                        
                     }
                 }
                 else

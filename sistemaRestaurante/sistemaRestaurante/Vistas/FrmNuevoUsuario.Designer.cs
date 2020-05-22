@@ -421,11 +421,13 @@
             this.cmbUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbUsuario.ForeColor = System.Drawing.SystemColors.Window;
             this.cmbUsuario.FormattingEnabled = true;
+            this.cmbUsuario.Items.AddRange(new object[] {
+            "Usuario",
+            "Administrador"});
             this.cmbUsuario.Location = new System.Drawing.Point(432, 275);
             this.cmbUsuario.Name = "cmbUsuario";
             this.cmbUsuario.Size = new System.Drawing.Size(168, 29);
             this.cmbUsuario.TabIndex = 20;
-            this.cmbUsuario.SelectedIndexChanged += new System.EventHandler(this.cmbUsuario_SelectedIndexChanged);
             // 
             // FrmNuevoUsuario
             // 

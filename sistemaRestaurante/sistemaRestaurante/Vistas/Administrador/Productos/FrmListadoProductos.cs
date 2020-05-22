@@ -22,16 +22,14 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
         {
             using(RestauranteEntities1 bd = new RestauranteEntities1())
             {
-                var JoinProd = from producto in bd.Productos
-                               from categoria in bd.Categorias
-                               where producto.idCategoria == categoria.idCategoria
+                var JoinProd = from producto in bd.ProductosVenta
 
                                select new
                                {
-                                   ID = producto.idProducto,
-                                   NOMBRE = producto.Nombre,
-                                   PRECIO = producto.Precio,
-                                   CATEGORIA = categoria.nombreCategoria
+                                   ID = producto.idProductoV,
+                                   NOMBRE = producto.nombre,
+                                   PRECIO = producto.precio,
+                                   CATEGORIA = producto.categoria
                                };
 
                 foreach(var iterar in JoinProd)

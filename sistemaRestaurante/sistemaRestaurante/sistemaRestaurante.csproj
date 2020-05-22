@@ -66,22 +66,19 @@
     <Compile Include="Model\Almacen.cs">
       <DependentUpon>Restaurante.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Categorias.cs">
+    <Compile Include="Model\Compras.cs">
       <DependentUpon>Restaurante.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\ComprasdeProductos.cs">
+    <Compile Include="Model\DetallesCompra.cs">
       <DependentUpon>Restaurante.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\IngredientesparaProductos.cs">
+    <Compile Include="Model\DetallesVenta.cs">
       <DependentUpon>Restaurante.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Ordenes.cs">
+    <Compile Include="Model\ProductosCompra.cs">
       <DependentUpon>Restaurante.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Productos.cs">
-      <DependentUpon>Restaurante.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\ProductosOrden.cs">
+    <Compile Include="Model\ProductosVenta.cs">
       <DependentUpon>Restaurante.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Proveedores.cs">
@@ -102,10 +99,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Restaurante.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Model\Roles.cs">
+    <Compile Include="Model\Usuarios.cs">
       <DependentUpon>Restaurante.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Usuarios.cs">
+    <Compile Include="Model\Ventas.cs">
       <DependentUpon>Restaurante.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />

@@ -25,15 +25,14 @@ namespace sistemaRestaurante.Model
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Almacen> Almacen { get; set; }
-        public virtual DbSet<Categorias> Categorias { get; set; }
-        public virtual DbSet<ComprasdeProductos> ComprasdeProductos { get; set; }
-        public virtual DbSet<IngredientesparaProductos> IngredientesparaProductos { get; set; }
-        public virtual DbSet<Ordenes> Ordenes { get; set; }
-        public virtual DbSet<Productos> Productos { get; set; }
-        public virtual DbSet<ProductosOrden> ProductosOrden { get; set; }
+        public virtual DbSet<Compras> Compras { get; set; }
+        public virtual DbSet<DetallesCompra> DetallesCompra { get; set; }
+        public virtual DbSet<DetallesVenta> DetallesVenta { get; set; }
+        public virtual DbSet<ProductosCompra> ProductosCompra { get; set; }
+        public virtual DbSet<ProductosVenta> ProductosVenta { get; set; }
         public virtual DbSet<Proveedores> Proveedores { get; set; }
-        public virtual DbSet<Roles> Roles { get; set; }
         public virtual DbSet<Usuarios> Usuarios { get; set; }
+        public virtual DbSet<Ventas> Ventas { get; set; }
+        public virtual DbSet<Almacen> Almacen { get; set; }
     }
 }

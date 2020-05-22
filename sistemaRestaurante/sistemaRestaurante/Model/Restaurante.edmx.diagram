@@ -5,27 +5,24 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="5c4b2e7d49144d77b18a967d7f867540" Name="Diagram1">
-        <EntityTypeShape EntityType="RestauranteModel.Almacen" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="RestauranteModel.Categorias" Width="1.5" PointX="3" PointY="13.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="RestauranteModel.ComprasdeProductos" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="RestauranteModel.IngredientesparaProductos" Width="1.5" PointX="7.5" PointY="6.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="RestauranteModel.Ordenes" Width="1.5" PointX="5.25" PointY="9.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="RestauranteModel.Productos" Width="1.5" PointX="5.25" PointY="13.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="RestauranteModel.ProductosOrden" Width="1.5" PointX="7.5" PointY="9.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="RestauranteModel.Proveedores" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="RestauranteModel.Roles" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="RestauranteModel.Usuarios" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
-        <AssociationConnector Association="RestauranteModel.FK__Comprasde__idAlm__5070F446" ManuallyRouted="false" />
-        <AssociationConnector Association="RestauranteModel.FK__Ingredien__idAlm__5165187F" ManuallyRouted="false" />
-        <AssociationConnector Association="RestauranteModel.FK__Productos__idCat__4222D4EF" ManuallyRouted="false" />
-        <AssociationConnector Association="RestauranteModel.FK__Comprasde__idPro__4F7CD00D" ManuallyRouted="false" />
-        <AssociationConnector Association="RestauranteModel.FK__Comprasde__idUsu__4BAC3F29" ManuallyRouted="false" />
-        <AssociationConnector Association="RestauranteModel.FK__Comprasde__idUsu__4E88ABD4" ManuallyRouted="false" />
-        <AssociationConnector Association="RestauranteModel.FK__Ingredien__idPro__52593CB8" ManuallyRouted="false" />
-        <AssociationConnector Association="RestauranteModel.FK__Ordenes__idUsuar__4AB81AF0" ManuallyRouted="false" />
-        <AssociationConnector Association="RestauranteModel.FK__Productos__idOrd__4CA06362" ManuallyRouted="false" />
-        <AssociationConnector Association="RestauranteModel.FK__Productos__idPro__4D94879B" ManuallyRouted="false" />
-        <AssociationConnector Association="RestauranteModel.FK__Usuarios__idRol__398D8EEE" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="RestauranteModel.Compras" Width="1.5" PointX="3" PointY="2.625" />
+        <EntityTypeShape EntityType="RestauranteModel.DetallesCompra" Width="1.5" PointX="5.25" PointY="4.25" />
+        <EntityTypeShape EntityType="RestauranteModel.DetallesVenta" Width="1.5" PointX="5.25" PointY="9.625" />
+        <EntityTypeShape EntityType="RestauranteModel.ProductosCompra" Width="1.5" PointX="3" PointY="6.125" />
+        <EntityTypeShape EntityType="RestauranteModel.ProductosVenta" Width="1.5" PointX="3" PointY="13" />
+        <EntityTypeShape EntityType="RestauranteModel.Proveedores" Width="1.5" PointX="0.75" PointY="2.75" />
+        <EntityTypeShape EntityType="RestauranteModel.Usuarios" Width="1.5" PointX="0.75" PointY="7.625" />
+        <EntityTypeShape EntityType="RestauranteModel.Ventas" Width="1.5" PointX="3" PointY="9.75" />
+        <AssociationConnector Association="RestauranteModel.FK__Compras__idProve__74AE54BC" />
+        <AssociationConnector Association="RestauranteModel.FK__Compras__nombred__75A278F5" />
+        <AssociationConnector Association="RestauranteModel.FK__DetallesC__idCom__797309D9" />
+        <AssociationConnector Association="RestauranteModel.FK__DetallesC__idPro__787EE5A0" />
+        <AssociationConnector Association="RestauranteModel.FK__DetallesV__idPro__70DDC3D8" />
+        <AssociationConnector Association="RestauranteModel.FK__DetallesV__idVen__71D1E811" />
+        <AssociationConnector Association="RestauranteModel.FK__Productos__idPro__6B24EA82" />
+        <AssociationConnector Association="RestauranteModel.FK__Ventas__nombrede__6E01572D" />
+        <EntityTypeShape EntityType="RestauranteModel.Almacen" Width="1.5" PointX="5.25" PointY="1.375" />
+        <AssociationConnector Association="RestauranteModel.FK__Almacen__idProdu__7E37BEF6" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

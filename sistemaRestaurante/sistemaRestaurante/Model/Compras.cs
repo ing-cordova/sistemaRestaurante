@@ -12,21 +12,23 @@ namespace sistemaRestaurante.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class ComprasdeProductos
+    public partial class Compras
     {
-        public int idCompradeProductos { get; set; }
-        public string Nombre { get; set; }
-        public Nullable<decimal> PrecioUnidad { get; set; }
-        public Nullable<int> CantidadCompra { get; set; }
-        public Nullable<System.DateTime> FechadeCompra { get; set; }
-        public Nullable<decimal> TotalaPagar { get; set; }
-        public Nullable<int> idProveedor { get; set; }
-        public Nullable<int> idUsuario { get; set; }
-        public Nullable<int> idAlmacen { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Compras()
+        {
+            this.DetallesCompra = new HashSet<DetallesCompra>();
+        }
     
-        public virtual Almacen Almacen { get; set; }
+        public int idCompra { get; set; }
+        public Nullable<System.DateTime> fechadeCompra { get; set; }
+        public Nullable<decimal> totalaPagar { get; set; }
+        public Nullable<int> idProveedor { get; set; }
+        public string nombredeUsuario { get; set; }
+    
         public virtual Proveedores Proveedores { get; set; }
         public virtual Usuarios Usuarios { get; set; }
-        public virtual Usuarios Usuarios1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DetallesCompra> DetallesCompra { get; set; }
     }
 }

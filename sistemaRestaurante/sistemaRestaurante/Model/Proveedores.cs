@@ -17,16 +17,19 @@ namespace sistemaRestaurante.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Proveedores()
         {
-            this.ComprasdeProductos = new HashSet<ComprasdeProductos>();
+            this.Compras = new HashSet<Compras>();
+            this.ProductosCompra = new HashSet<ProductosCompra>();
         }
     
         public int idProveedor { get; set; }
-        public string Nombre { get; set; }
-        public string Ubicacion { get; set; }
-        public string Telefono { get; set; }
-        public string Email { get; set; }
+        public string nombre { get; set; }
+        public string ubicacion { get; set; }
+        public string telefono { get; set; }
+        public string email { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ComprasdeProductos> ComprasdeProductos { get; set; }
+        public virtual ICollection<Compras> Compras { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ProductosCompra> ProductosCompra { get; set; }
     }
 }

@@ -12,15 +12,16 @@ namespace sistemaRestaurante.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class ProductosOrden
+    public partial class DetallesVenta
     {
-        public int idProductoOrden { get; set; }
-        public Nullable<int> idProducto { get; set; }
-        public Nullable<int> Cantidad { get; set; }
-        public Nullable<decimal> TotalProducto { get; set; }
-        public Nullable<int> idOrden { get; set; }
+        public int idDetallesV { get; set; }
+        public Nullable<int> idProductoV { get; set; }
+        public Nullable<double> precioCompra { get; set; }
+        public Nullable<int> cantidad { get; set; }
+        public Nullable<decimal> totalProducto { get; set; }
+        public Nullable<int> idVenta { get; set; }
     
-        public virtual Ordenes Ordenes { get; set; }
-        public virtual Productos Productos { get; set; }
+        public virtual ProductosVenta ProductosVenta { get; set; }
+        public virtual Ventas Ventas { get; set; }
     }
 }

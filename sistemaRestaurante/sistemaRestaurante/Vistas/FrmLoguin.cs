@@ -68,17 +68,17 @@ namespace sistemaRestaurante.Vistas
 
                                   select new
                                   {
-                                      IdRol = user.idRol
+                                      Rol = user.rol
                                   };
                         foreach(var iterar in rol)
                         {
-                            if(iterar.IdRol == 1)
+                            if(iterar.Rol == "Usuario")
                             {
                                 FrmAccesoUsuario accessU = new FrmAccesoUsuario();
                                 accessU.Show();
                                 this.Hide();
                             }
-                            else if (iterar.IdRol == 2)
+                            else if (iterar.Rol == "Administrador")
                             {
                                 FrmAccesoAdmin accessAd = new FrmAccesoAdmin();
                                 accessAd.Show();

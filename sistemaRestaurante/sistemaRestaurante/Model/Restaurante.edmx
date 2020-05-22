@@ -10,844 +10,624 @@
             <PropertyRef Name="idAlmacen" />
           </Key>
           <Property Name="idAlmacen" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nombre" Type="varchar" MaxLength="50" />
-          <Property Name="CantidadDisponible" Type="int" />
-          <Property Name="Categoria" Type="varchar" MaxLength="20" />
-          <Property Name="tipodeunidad" Type="varchar" MaxLength="20" />
+          <Property Name="idProductoC" Type="int" />
+          <Property Name="cantidadDisponible" Type="float" />
+          <Property Name="unidad" Type="varchar" MaxLength="20" />
         </EntityType>
-        <EntityType Name="Categorias">
+        <EntityType Name="Compras">
           <Key>
-            <PropertyRef Name="idCategoria" />
+            <PropertyRef Name="idCompra" />
           </Key>
-          <Property Name="idCategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nombreCategoria" Type="varchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="ComprasdeProductos">
-          <Key>
-            <PropertyRef Name="idCompradeProductos" />
-          </Key>
-          <Property Name="idCompradeProductos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nombre" Type="varchar" MaxLength="50" />
-          <Property Name="PrecioUnidad" Type="money" />
-          <Property Name="CantidadCompra" Type="int" />
-          <Property Name="FechadeCompra" Type="date" />
-          <Property Name="TotalaPagar" Type="money" />
+          <Property Name="idCompra" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fechadeCompra" Type="date" />
+          <Property Name="totalaPagar" Type="money" />
           <Property Name="idProveedor" Type="int" />
-          <Property Name="idUsuario" Type="int" />
-          <Property Name="idAlmacen" Type="int" />
+          <Property Name="nombredeUsuario" Type="varchar" MaxLength="30" />
         </EntityType>
-        <EntityType Name="IngredientesparaProductos">
+        <EntityType Name="DetallesCompra">
           <Key>
-            <PropertyRef Name="idIngrediente" />
+            <PropertyRef Name="idDetallesC" />
           </Key>
-          <Property Name="idIngrediente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="idProducto" Type="int" />
-          <Property Name="idAlmacen" Type="int" />
-          <Property Name="CantidadNecesaria" Type="int" />
-          <Property Name="tipodeunidad" Type="varchar" MaxLength="20" />
+          <Property Name="idDetallesC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idProductoC" Type="int" />
+          <Property Name="precioCompra" Type="float" />
+          <Property Name="cantidad" Type="int" />
+          <Property Name="totalProducto" Type="money" />
+          <Property Name="idCompra" Type="int" />
         </EntityType>
-        <EntityType Name="Ordenes">
+        <EntityType Name="DetallesVenta">
           <Key>
-            <PropertyRef Name="idOrden" />
+            <PropertyRef Name="idDetallesV" />
           </Key>
-          <Property Name="idOrden" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Fecha" Type="date" />
-          <Property Name="TotalPagar" Type="money" />
-          <Property Name="idUsuario" Type="int" />
+          <Property Name="idDetallesV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idProductoV" Type="int" />
+          <Property Name="precioCompra" Type="float" />
+          <Property Name="cantidad" Type="int" />
+          <Property Name="totalProducto" Type="money" />
+          <Property Name="idVenta" Type="int" />
         </EntityType>
-        <EntityType Name="Productos">
+        <EntityType Name="ProductosCompra">
           <Key>
-            <PropertyRef Name="idProducto" />
+            <PropertyRef Name="idProductoC" />
           </Key>
-          <Property Name="idProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nombre" Type="varchar" MaxLength="25" />
-          <Property Name="Precio" Type="money" />
-          <Property Name="idCategoria" Type="int" Nullable="false" />
+          <Property Name="idProductoC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="25" />
+          <Property Name="precio" Type="money" />
+          <Property Name="categoria" Type="varchar" MaxLength="20" />
+          <Property Name="idProveedor" Type="int" />
         </EntityType>
-        <EntityType Name="ProductosOrden">
+        <EntityType Name="ProductosVenta">
           <Key>
-            <PropertyRef Name="idProductoOrden" />
+            <PropertyRef Name="idProductoV" />
           </Key>
-          <Property Name="idProductoOrden" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="idProducto" Type="int" />
-          <Property Name="Cantidad" Type="int" />
-          <Property Name="TotalProducto" Type="money" />
-          <Property Name="idOrden" Type="int" />
+          <Property Name="idProductoV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="25" />
+          <Property Name="precio" Type="money" />
+          <Property Name="categoria" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="Proveedores">
           <Key>
             <PropertyRef Name="idProveedor" />
           </Key>
           <Property Name="idProveedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nombre" Type="varchar" MaxLength="50" />
-          <Property Name="Ubicacion" Type="varchar" MaxLength="60" />
-          <Property Name="Telefono" Type="varchar" MaxLength="15" />
-          <Property Name="Email" Type="varchar" MaxLength="30" />
-        </EntityType>
-        <EntityType Name="Roles">
-          <Key>
-            <PropertyRef Name="idRol" />
-          </Key>
-          <Property Name="idRol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="tipoRol" Type="varchar" MaxLength="20" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="ubicacion" Type="varchar" MaxLength="60" />
+          <Property Name="telefono" Type="varchar" MaxLength="15" />
+          <Property Name="email" Type="varchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="Usuarios">
           <Key>
-            <PropertyRef Name="idUsuario" />
+            <PropertyRef Name="nombredeUsuario" />
           </Key>
-          <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nombres" Type="varchar" MaxLength="50" />
-          <Property Name="apellidos" Type="varchar" MaxLength="50" />
-          <Property Name="telefono" Type="varchar" MaxLength="15" />
+          <Property Name="nombredeUsuario" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
           <Property Name="edad" Type="int" />
-          <Property Name="email" Type="varchar" MaxLength="60" />
-          <Property Name="nombredeUsuario" Type="varchar" MaxLength="30" />
-          <Property Name="idRol" Type="int" Nullable="false" />
+          <Property Name="telefono" Type="varchar" MaxLength="15" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
           <Property Name="contraseña" Type="varchar" MaxLength="64" />
+          <Property Name="rol" Type="varchar" MaxLength="20" />
+          <Property Name="apellidos" Type="varchar" MaxLength="30" />
         </EntityType>
-        <Association Name="FK__Comprasde__idAlm__5070F446">
-          <End Role="Almacen" Type="Self.Almacen" Multiplicity="0..1" />
-          <End Role="ComprasdeProductos" Type="Self.ComprasdeProductos" Multiplicity="*" />
+        <EntityType Name="Ventas">
+          <Key>
+            <PropertyRef Name="idVenta" />
+          </Key>
+          <Property Name="idVenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fechadeVenta" Type="date" />
+          <Property Name="totalPagar" Type="money" />
+          <Property Name="estado" Type="varchar" MaxLength="15" />
+          <Property Name="nombredeUsuario" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <Association Name="FK__Almacen__idProdu__7E37BEF6">
+          <End Role="ProductosCompra" Type="Self.ProductosCompra" Multiplicity="0..1" />
+          <End Role="Almacen" Type="Self.Almacen" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Almacen">
-              <PropertyRef Name="idAlmacen" />
+            <Principal Role="ProductosCompra">
+              <PropertyRef Name="idProductoC" />
             </Principal>
-            <Dependent Role="ComprasdeProductos">
-              <PropertyRef Name="idAlmacen" />
+            <Dependent Role="Almacen">
+              <PropertyRef Name="idProductoC" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Comprasde__idAlm__60A75C0F">
-          <End Role="Almacen" Type="Self.Almacen" Multiplicity="0..1" />
-          <End Role="ComprasdeProductos" Type="Self.ComprasdeProductos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Almacen">
-              <PropertyRef Name="idAlmacen" />
-            </Principal>
-            <Dependent Role="ComprasdeProductos">
-              <PropertyRef Name="idAlmacen" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Comprasde__idPro__4F7CD00D">
+        <Association Name="FK__Compras__idProve__74AE54BC">
           <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="0..1" />
-          <End Role="ComprasdeProductos" Type="Self.ComprasdeProductos" Multiplicity="*" />
+          <End Role="Compras" Type="Self.Compras" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Proveedores">
               <PropertyRef Name="idProveedor" />
             </Principal>
-            <Dependent Role="ComprasdeProductos">
+            <Dependent Role="Compras">
               <PropertyRef Name="idProveedor" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Comprasde__idPro__5FB337D6">
+        <Association Name="FK__Compras__nombred__75A278F5">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+          <End Role="Compras" Type="Self.Compras" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="nombredeUsuario" />
+            </Principal>
+            <Dependent Role="Compras">
+              <PropertyRef Name="nombredeUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DetallesC__idCom__797309D9">
+          <End Role="Compras" Type="Self.Compras" Multiplicity="0..1" />
+          <End Role="DetallesCompra" Type="Self.DetallesCompra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Compras">
+              <PropertyRef Name="idCompra" />
+            </Principal>
+            <Dependent Role="DetallesCompra">
+              <PropertyRef Name="idCompra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DetallesC__idPro__787EE5A0">
+          <End Role="ProductosCompra" Type="Self.ProductosCompra" Multiplicity="0..1" />
+          <End Role="DetallesCompra" Type="Self.DetallesCompra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductosCompra">
+              <PropertyRef Name="idProductoC" />
+            </Principal>
+            <Dependent Role="DetallesCompra">
+              <PropertyRef Name="idProductoC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DetallesV__idPro__70DDC3D8">
+          <End Role="ProductosVenta" Type="Self.ProductosVenta" Multiplicity="0..1" />
+          <End Role="DetallesVenta" Type="Self.DetallesVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductosVenta">
+              <PropertyRef Name="idProductoV" />
+            </Principal>
+            <Dependent Role="DetallesVenta">
+              <PropertyRef Name="idProductoV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DetallesV__idVen__71D1E811">
+          <End Role="Ventas" Type="Self.Ventas" Multiplicity="0..1" />
+          <End Role="DetallesVenta" Type="Self.DetallesVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ventas">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="DetallesVenta">
+              <PropertyRef Name="idVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Productos__idPro__6B24EA82">
           <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="0..1" />
-          <End Role="ComprasdeProductos" Type="Self.ComprasdeProductos" Multiplicity="*" />
+          <End Role="ProductosCompra" Type="Self.ProductosCompra" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Proveedores">
               <PropertyRef Name="idProveedor" />
             </Principal>
-            <Dependent Role="ComprasdeProductos">
+            <Dependent Role="ProductosCompra">
               <PropertyRef Name="idProveedor" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Comprasde__idUsu__4BAC3F29">
+        <Association Name="FK__Ventas__nombrede__6E01572D">
           <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
-          <End Role="ComprasdeProductos" Type="Self.ComprasdeProductos" Multiplicity="*" />
+          <End Role="Ventas" Type="Self.Ventas" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuarios">
-              <PropertyRef Name="idUsuario" />
+              <PropertyRef Name="nombredeUsuario" />
             </Principal>
-            <Dependent Role="ComprasdeProductos">
-              <PropertyRef Name="idUsuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Comprasde__idUsu__4E88ABD4">
-          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
-          <End Role="ComprasdeProductos" Type="Self.ComprasdeProductos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Usuarios">
-              <PropertyRef Name="idUsuario" />
-            </Principal>
-            <Dependent Role="ComprasdeProductos">
-              <PropertyRef Name="idUsuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Comprasde__idUsu__5BE2A6F2">
-          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
-          <End Role="ComprasdeProductos" Type="Self.ComprasdeProductos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Usuarios">
-              <PropertyRef Name="idUsuario" />
-            </Principal>
-            <Dependent Role="ComprasdeProductos">
-              <PropertyRef Name="idUsuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Comprasde__idUsu__5EBF139D">
-          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
-          <End Role="ComprasdeProductos" Type="Self.ComprasdeProductos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Usuarios">
-              <PropertyRef Name="idUsuario" />
-            </Principal>
-            <Dependent Role="ComprasdeProductos">
-              <PropertyRef Name="idUsuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Ingredien__idAlm__5165187F">
-          <End Role="Almacen" Type="Self.Almacen" Multiplicity="0..1" />
-          <End Role="IngredientesparaProductos" Type="Self.IngredientesparaProductos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Almacen">
-              <PropertyRef Name="idAlmacen" />
-            </Principal>
-            <Dependent Role="IngredientesparaProductos">
-              <PropertyRef Name="idAlmacen" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Ingredien__idAlm__619B8048">
-          <End Role="Almacen" Type="Self.Almacen" Multiplicity="0..1" />
-          <End Role="IngredientesparaProductos" Type="Self.IngredientesparaProductos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Almacen">
-              <PropertyRef Name="idAlmacen" />
-            </Principal>
-            <Dependent Role="IngredientesparaProductos">
-              <PropertyRef Name="idAlmacen" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Ingredien__idPro__52593CB8">
-          <End Role="Productos" Type="Self.Productos" Multiplicity="0..1" />
-          <End Role="IngredientesparaProductos" Type="Self.IngredientesparaProductos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Productos">
-              <PropertyRef Name="idProducto" />
-            </Principal>
-            <Dependent Role="IngredientesparaProductos">
-              <PropertyRef Name="idProducto" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Ingredien__idPro__628FA481">
-          <End Role="Productos" Type="Self.Productos" Multiplicity="0..1" />
-          <End Role="IngredientesparaProductos" Type="Self.IngredientesparaProductos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Productos">
-              <PropertyRef Name="idProducto" />
-            </Principal>
-            <Dependent Role="IngredientesparaProductos">
-              <PropertyRef Name="idProducto" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Ordenes__idUsuar__4AB81AF0">
-          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
-          <End Role="Ordenes" Type="Self.Ordenes" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Usuarios">
-              <PropertyRef Name="idUsuario" />
-            </Principal>
-            <Dependent Role="Ordenes">
-              <PropertyRef Name="idUsuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Productos__idCat__4222D4EF">
-          <End Role="Categorias" Type="Self.Categorias" Multiplicity="1" />
-          <End Role="Productos" Type="Self.Productos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Categorias">
-              <PropertyRef Name="idCategoria" />
-            </Principal>
-            <Dependent Role="Productos">
-              <PropertyRef Name="idCategoria" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Productos__idOrd__4CA06362">
-          <End Role="Ordenes" Type="Self.Ordenes" Multiplicity="0..1" />
-          <End Role="ProductosOrden" Type="Self.ProductosOrden" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Ordenes">
-              <PropertyRef Name="idOrden" />
-            </Principal>
-            <Dependent Role="ProductosOrden">
-              <PropertyRef Name="idOrden" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Productos__idOrd__5CD6CB2B">
-          <End Role="Ordenes" Type="Self.Ordenes" Multiplicity="0..1" />
-          <End Role="ProductosOrden" Type="Self.ProductosOrden" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Ordenes">
-              <PropertyRef Name="idOrden" />
-            </Principal>
-            <Dependent Role="ProductosOrden">
-              <PropertyRef Name="idOrden" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Productos__idPro__4D94879B">
-          <End Role="Productos" Type="Self.Productos" Multiplicity="0..1" />
-          <End Role="ProductosOrden" Type="Self.ProductosOrden" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Productos">
-              <PropertyRef Name="idProducto" />
-            </Principal>
-            <Dependent Role="ProductosOrden">
-              <PropertyRef Name="idProducto" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Productos__idPro__5DCAEF64">
-          <End Role="Productos" Type="Self.Productos" Multiplicity="0..1" />
-          <End Role="ProductosOrden" Type="Self.ProductosOrden" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Productos">
-              <PropertyRef Name="idProducto" />
-            </Principal>
-            <Dependent Role="ProductosOrden">
-              <PropertyRef Name="idProducto" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Usuarios__idRol__398D8EEE">
-          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
-          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Roles">
-              <PropertyRef Name="idRol" />
-            </Principal>
-            <Dependent Role="Usuarios">
-              <PropertyRef Name="idRol" />
+            <Dependent Role="Ventas">
+              <PropertyRef Name="nombredeUsuario" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="RestauranteModelStoreContainer">
           <EntitySet Name="Almacen" EntityType="Self.Almacen" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Categorias" EntityType="Self.Categorias" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ComprasdeProductos" EntityType="Self.ComprasdeProductos" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="IngredientesparaProductos" EntityType="Self.IngredientesparaProductos" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Ordenes" EntityType="Self.Ordenes" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Productos" EntityType="Self.Productos" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ProductosOrden" EntityType="Self.ProductosOrden" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Compras" EntityType="Self.Compras" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DetallesCompra" EntityType="Self.DetallesCompra" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DetallesVenta" EntityType="Self.DetallesVenta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductosCompra" EntityType="Self.ProductosCompra" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductosVenta" EntityType="Self.ProductosVenta" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Proveedores" EntityType="Self.Proveedores" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Comprasde__idAlm__5070F446" Association="Self.FK__Comprasde__idAlm__5070F446">
+          <EntitySet Name="Ventas" EntityType="Self.Ventas" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Almacen__idProdu__7E37BEF6" Association="Self.FK__Almacen__idProdu__7E37BEF6">
+            <End Role="ProductosCompra" EntitySet="ProductosCompra" />
             <End Role="Almacen" EntitySet="Almacen" />
-            <End Role="ComprasdeProductos" EntitySet="ComprasdeProductos" />
           </AssociationSet>
-          <AssociationSet Name="FK__Comprasde__idAlm__60A75C0F" Association="Self.FK__Comprasde__idAlm__60A75C0F">
-            <End Role="Almacen" EntitySet="Almacen" />
-            <End Role="ComprasdeProductos" EntitySet="ComprasdeProductos" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Comprasde__idPro__4F7CD00D" Association="Self.FK__Comprasde__idPro__4F7CD00D">
+          <AssociationSet Name="FK__Compras__idProve__74AE54BC" Association="Self.FK__Compras__idProve__74AE54BC">
             <End Role="Proveedores" EntitySet="Proveedores" />
-            <End Role="ComprasdeProductos" EntitySet="ComprasdeProductos" />
+            <End Role="Compras" EntitySet="Compras" />
           </AssociationSet>
-          <AssociationSet Name="FK__Comprasde__idPro__5FB337D6" Association="Self.FK__Comprasde__idPro__5FB337D6">
+          <AssociationSet Name="FK__Compras__nombred__75A278F5" Association="Self.FK__Compras__nombred__75A278F5">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Compras" EntitySet="Compras" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DetallesC__idCom__797309D9" Association="Self.FK__DetallesC__idCom__797309D9">
+            <End Role="Compras" EntitySet="Compras" />
+            <End Role="DetallesCompra" EntitySet="DetallesCompra" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DetallesC__idPro__787EE5A0" Association="Self.FK__DetallesC__idPro__787EE5A0">
+            <End Role="ProductosCompra" EntitySet="ProductosCompra" />
+            <End Role="DetallesCompra" EntitySet="DetallesCompra" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DetallesV__idPro__70DDC3D8" Association="Self.FK__DetallesV__idPro__70DDC3D8">
+            <End Role="ProductosVenta" EntitySet="ProductosVenta" />
+            <End Role="DetallesVenta" EntitySet="DetallesVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DetallesV__idVen__71D1E811" Association="Self.FK__DetallesV__idVen__71D1E811">
+            <End Role="Ventas" EntitySet="Ventas" />
+            <End Role="DetallesVenta" EntitySet="DetallesVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Productos__idPro__6B24EA82" Association="Self.FK__Productos__idPro__6B24EA82">
             <End Role="Proveedores" EntitySet="Proveedores" />
-            <End Role="ComprasdeProductos" EntitySet="ComprasdeProductos" />
+            <End Role="ProductosCompra" EntitySet="ProductosCompra" />
           </AssociationSet>
-          <AssociationSet Name="FK__Comprasde__idUsu__4BAC3F29" Association="Self.FK__Comprasde__idUsu__4BAC3F29">
+          <AssociationSet Name="FK__Ventas__nombrede__6E01572D" Association="Self.FK__Ventas__nombrede__6E01572D">
             <End Role="Usuarios" EntitySet="Usuarios" />
-            <End Role="ComprasdeProductos" EntitySet="ComprasdeProductos" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Comprasde__idUsu__4E88ABD4" Association="Self.FK__Comprasde__idUsu__4E88ABD4">
-            <End Role="Usuarios" EntitySet="Usuarios" />
-            <End Role="ComprasdeProductos" EntitySet="ComprasdeProductos" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Comprasde__idUsu__5BE2A6F2" Association="Self.FK__Comprasde__idUsu__5BE2A6F2">
-            <End Role="Usuarios" EntitySet="Usuarios" />
-            <End Role="ComprasdeProductos" EntitySet="ComprasdeProductos" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Comprasde__idUsu__5EBF139D" Association="Self.FK__Comprasde__idUsu__5EBF139D">
-            <End Role="Usuarios" EntitySet="Usuarios" />
-            <End Role="ComprasdeProductos" EntitySet="ComprasdeProductos" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Ingredien__idAlm__5165187F" Association="Self.FK__Ingredien__idAlm__5165187F">
-            <End Role="Almacen" EntitySet="Almacen" />
-            <End Role="IngredientesparaProductos" EntitySet="IngredientesparaProductos" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Ingredien__idAlm__619B8048" Association="Self.FK__Ingredien__idAlm__619B8048">
-            <End Role="Almacen" EntitySet="Almacen" />
-            <End Role="IngredientesparaProductos" EntitySet="IngredientesparaProductos" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Ingredien__idPro__52593CB8" Association="Self.FK__Ingredien__idPro__52593CB8">
-            <End Role="Productos" EntitySet="Productos" />
-            <End Role="IngredientesparaProductos" EntitySet="IngredientesparaProductos" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Ingredien__idPro__628FA481" Association="Self.FK__Ingredien__idPro__628FA481">
-            <End Role="Productos" EntitySet="Productos" />
-            <End Role="IngredientesparaProductos" EntitySet="IngredientesparaProductos" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Ordenes__idUsuar__4AB81AF0" Association="Self.FK__Ordenes__idUsuar__4AB81AF0">
-            <End Role="Usuarios" EntitySet="Usuarios" />
-            <End Role="Ordenes" EntitySet="Ordenes" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Productos__idCat__4222D4EF" Association="Self.FK__Productos__idCat__4222D4EF">
-            <End Role="Categorias" EntitySet="Categorias" />
-            <End Role="Productos" EntitySet="Productos" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Productos__idOrd__4CA06362" Association="Self.FK__Productos__idOrd__4CA06362">
-            <End Role="Ordenes" EntitySet="Ordenes" />
-            <End Role="ProductosOrden" EntitySet="ProductosOrden" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Productos__idOrd__5CD6CB2B" Association="Self.FK__Productos__idOrd__5CD6CB2B">
-            <End Role="Ordenes" EntitySet="Ordenes" />
-            <End Role="ProductosOrden" EntitySet="ProductosOrden" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Productos__idPro__4D94879B" Association="Self.FK__Productos__idPro__4D94879B">
-            <End Role="Productos" EntitySet="Productos" />
-            <End Role="ProductosOrden" EntitySet="ProductosOrden" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Productos__idPro__5DCAEF64" Association="Self.FK__Productos__idPro__5DCAEF64">
-            <End Role="Productos" EntitySet="Productos" />
-            <End Role="ProductosOrden" EntitySet="ProductosOrden" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Usuarios__idRol__398D8EEE" Association="Self.FK__Usuarios__idRol__398D8EEE">
-            <End Role="Roles" EntitySet="Roles" />
-            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Ventas" EntitySet="Ventas" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="RestauranteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Almacen">
+        <EntityContainer Name="RestauranteEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Compras" EntityType="RestauranteModel.Compras" />
+          <EntitySet Name="DetallesCompra" EntityType="RestauranteModel.DetallesCompra" />
+          <EntitySet Name="DetallesVenta" EntityType="RestauranteModel.DetallesVenta" />
+          <EntitySet Name="ProductosCompra" EntityType="RestauranteModel.ProductosCompra" />
+          <EntitySet Name="ProductosVenta" EntityType="RestauranteModel.ProductosVenta" />
+          <EntitySet Name="Proveedores" EntityType="RestauranteModel.Proveedores" />
+          <EntitySet Name="Usuarios" EntityType="RestauranteModel.Usuarios" />
+          <EntitySet Name="Ventas" EntityType="RestauranteModel.Ventas" />
+          <AssociationSet Name="FK__Compras__idProve__74AE54BC" Association="RestauranteModel.FK__Compras__idProve__74AE54BC">
+            <End Role="Proveedores" EntitySet="Proveedores" />
+            <End Role="Compras" EntitySet="Compras" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Compras__nombred__75A278F5" Association="RestauranteModel.FK__Compras__nombred__75A278F5">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Compras" EntitySet="Compras" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DetallesC__idCom__797309D9" Association="RestauranteModel.FK__DetallesC__idCom__797309D9">
+            <End Role="Compras" EntitySet="Compras" />
+            <End Role="DetallesCompra" EntitySet="DetallesCompra" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DetallesC__idPro__787EE5A0" Association="RestauranteModel.FK__DetallesC__idPro__787EE5A0">
+            <End Role="ProductosCompra" EntitySet="ProductosCompra" />
+            <End Role="DetallesCompra" EntitySet="DetallesCompra" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DetallesV__idPro__70DDC3D8" Association="RestauranteModel.FK__DetallesV__idPro__70DDC3D8">
+            <End Role="ProductosVenta" EntitySet="ProductosVenta" />
+            <End Role="DetallesVenta" EntitySet="DetallesVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DetallesV__idVen__71D1E811" Association="RestauranteModel.FK__DetallesV__idVen__71D1E811">
+            <End Role="Ventas" EntitySet="Ventas" />
+            <End Role="DetallesVenta" EntitySet="DetallesVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Productos__idPro__6B24EA82" Association="RestauranteModel.FK__Productos__idPro__6B24EA82">
+            <End Role="Proveedores" EntitySet="Proveedores" />
+            <End Role="ProductosCompra" EntitySet="ProductosCompra" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Ventas__nombrede__6E01572D" Association="RestauranteModel.FK__Ventas__nombrede__6E01572D">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Ventas" EntitySet="Ventas" />
+          </AssociationSet>
+          <EntitySet Name="Almacen" EntityType="RestauranteModel.Almacen" />
+          <AssociationSet Name="FK__Almacen__idProdu__7E37BEF6" Association="RestauranteModel.FK__Almacen__idProdu__7E37BEF6">
+            <End Role="ProductosCompra" EntitySet="ProductosCompra" />
+            <End Role="Almacen" EntitySet="Almacen" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Compras">
           <Key>
-            <PropertyRef Name="idAlmacen" />
+            <PropertyRef Name="idCompra" />
           </Key>
-          <Property Name="idAlmacen" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CantidadDisponible" Type="Int32" />
-          <Property Name="Categoria" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="tipodeunidad" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="ComprasdeProductos" Relationship="Self.FK__Comprasde__idAlm__5070F446" FromRole="Almacen" ToRole="ComprasdeProductos" />
-          <NavigationProperty Name="IngredientesparaProductos" Relationship="Self.FK__Ingredien__idAlm__5165187F" FromRole="Almacen" ToRole="IngredientesparaProductos" />
-        </EntityType>
-        <EntityType Name="Categorias">
-          <Key>
-            <PropertyRef Name="idCategoria" />
-          </Key>
-          <Property Name="idCategoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nombreCategoria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Productos" Relationship="Self.FK__Productos__idCat__4222D4EF" FromRole="Categorias" ToRole="Productos" />
-        </EntityType>
-        <EntityType Name="ComprasdeProductos">
-          <Key>
-            <PropertyRef Name="idCompradeProductos" />
-          </Key>
-          <Property Name="idCompradeProductos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="PrecioUnidad" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="CantidadCompra" Type="Int32" />
-          <Property Name="FechadeCompra" Type="DateTime" Precision="0" />
-          <Property Name="TotalaPagar" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="idCompra" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fechadeCompra" Type="DateTime" Precision="0" />
+          <Property Name="totalaPagar" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="idProveedor" Type="Int32" />
-          <Property Name="idUsuario" Type="Int32" />
-          <Property Name="idAlmacen" Type="Int32" />
-          <NavigationProperty Name="Almacen" Relationship="Self.FK__Comprasde__idAlm__5070F446" FromRole="ComprasdeProductos" ToRole="Almacen" />
-          <NavigationProperty Name="Proveedores" Relationship="Self.FK__Comprasde__idPro__4F7CD00D" FromRole="ComprasdeProductos" ToRole="Proveedores" />
-          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Comprasde__idUsu__4BAC3F29" FromRole="ComprasdeProductos" ToRole="Usuarios" />
-          <NavigationProperty Name="Usuarios1" Relationship="Self.FK__Comprasde__idUsu__4E88ABD4" FromRole="ComprasdeProductos" ToRole="Usuarios" />
+          <Property Name="nombredeUsuario" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Proveedores" Relationship="RestauranteModel.FK__Compras__idProve__74AE54BC" FromRole="Compras" ToRole="Proveedores" />
+          <NavigationProperty Name="Usuarios" Relationship="RestauranteModel.FK__Compras__nombred__75A278F5" FromRole="Compras" ToRole="Usuarios" />
+          <NavigationProperty Name="DetallesCompra" Relationship="RestauranteModel.FK__DetallesC__idCom__797309D9" FromRole="Compras" ToRole="DetallesCompra" />
         </EntityType>
-        <EntityType Name="IngredientesparaProductos">
+        <EntityType Name="DetallesCompra">
           <Key>
-            <PropertyRef Name="idIngrediente" />
+            <PropertyRef Name="idDetallesC" />
           </Key>
-          <Property Name="idIngrediente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="idProducto" Type="Int32" />
-          <Property Name="idAlmacen" Type="Int32" />
-          <Property Name="CantidadNecesaria" Type="Int32" />
-          <Property Name="tipodeunidad" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Almacen" Relationship="Self.FK__Ingredien__idAlm__5165187F" FromRole="IngredientesparaProductos" ToRole="Almacen" />
-          <NavigationProperty Name="Productos" Relationship="Self.FK__Ingredien__idPro__52593CB8" FromRole="IngredientesparaProductos" ToRole="Productos" />
+          <Property Name="idDetallesC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idProductoC" Type="Int32" />
+          <Property Name="precioCompra" Type="Double" />
+          <Property Name="cantidad" Type="Int32" />
+          <Property Name="totalProducto" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="idCompra" Type="Int32" />
+          <NavigationProperty Name="Compras" Relationship="RestauranteModel.FK__DetallesC__idCom__797309D9" FromRole="DetallesCompra" ToRole="Compras" />
+          <NavigationProperty Name="ProductosCompra" Relationship="RestauranteModel.FK__DetallesC__idPro__787EE5A0" FromRole="DetallesCompra" ToRole="ProductosCompra" />
         </EntityType>
-        <EntityType Name="Ordenes">
+        <EntityType Name="DetallesVenta">
           <Key>
-            <PropertyRef Name="idOrden" />
+            <PropertyRef Name="idDetallesV" />
           </Key>
-          <Property Name="idOrden" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Fecha" Type="DateTime" Precision="0" />
-          <Property Name="TotalPagar" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="idUsuario" Type="Int32" />
-          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Ordenes__idUsuar__4AB81AF0" FromRole="Ordenes" ToRole="Usuarios" />
-          <NavigationProperty Name="ProductosOrden" Relationship="Self.FK__Productos__idOrd__4CA06362" FromRole="Ordenes" ToRole="ProductosOrden" />
+          <Property Name="idDetallesV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idProductoV" Type="Int32" />
+          <Property Name="precioCompra" Type="Double" />
+          <Property Name="cantidad" Type="Int32" />
+          <Property Name="totalProducto" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="idVenta" Type="Int32" />
+          <NavigationProperty Name="ProductosVenta" Relationship="RestauranteModel.FK__DetallesV__idPro__70DDC3D8" FromRole="DetallesVenta" ToRole="ProductosVenta" />
+          <NavigationProperty Name="Ventas" Relationship="RestauranteModel.FK__DetallesV__idVen__71D1E811" FromRole="DetallesVenta" ToRole="Ventas" />
         </EntityType>
-        <EntityType Name="Productos">
+        <EntityType Name="ProductosCompra">
           <Key>
-            <PropertyRef Name="idProducto" />
+            <PropertyRef Name="idProductoC" />
           </Key>
-          <Property Name="idProducto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-          <Property Name="Precio" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="idCategoria" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Categorias" Relationship="Self.FK__Productos__idCat__4222D4EF" FromRole="Productos" ToRole="Categorias" />
-          <NavigationProperty Name="IngredientesparaProductos" Relationship="Self.FK__Ingredien__idPro__52593CB8" FromRole="Productos" ToRole="IngredientesparaProductos" />
-          <NavigationProperty Name="ProductosOrden" Relationship="Self.FK__Productos__idPro__4D94879B" FromRole="Productos" ToRole="ProductosOrden" />
+          <Property Name="idProductoC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="precio" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="categoria" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="idProveedor" Type="Int32" />
+          <NavigationProperty Name="DetallesCompra" Relationship="RestauranteModel.FK__DetallesC__idPro__787EE5A0" FromRole="ProductosCompra" ToRole="DetallesCompra" />
+          <NavigationProperty Name="Proveedores" Relationship="RestauranteModel.FK__Productos__idPro__6B24EA82" FromRole="ProductosCompra" ToRole="Proveedores" />
+          <NavigationProperty Name="Almacen" Relationship="RestauranteModel.FK__Almacen__idProdu__7E37BEF6" FromRole="ProductosCompra" ToRole="Almacen" />
         </EntityType>
-        <EntityType Name="ProductosOrden">
+        <EntityType Name="ProductosVenta">
           <Key>
-            <PropertyRef Name="idProductoOrden" />
+            <PropertyRef Name="idProductoV" />
           </Key>
-          <Property Name="idProductoOrden" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="idProducto" Type="Int32" />
-          <Property Name="Cantidad" Type="Int32" />
-          <Property Name="TotalProducto" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="idOrden" Type="Int32" />
-          <NavigationProperty Name="Ordenes" Relationship="Self.FK__Productos__idOrd__4CA06362" FromRole="ProductosOrden" ToRole="Ordenes" />
-          <NavigationProperty Name="Productos" Relationship="Self.FK__Productos__idPro__4D94879B" FromRole="ProductosOrden" ToRole="Productos" />
+          <Property Name="idProductoV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="precio" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="categoria" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DetallesVenta" Relationship="RestauranteModel.FK__DetallesV__idPro__70DDC3D8" FromRole="ProductosVenta" ToRole="DetallesVenta" />
         </EntityType>
         <EntityType Name="Proveedores">
           <Key>
             <PropertyRef Name="idProveedor" />
           </Key>
           <Property Name="idProveedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Ubicacion" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-          <Property Name="Telefono" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="ComprasdeProductos" Relationship="Self.FK__Comprasde__idPro__4F7CD00D" FromRole="Proveedores" ToRole="ComprasdeProductos" />
-        </EntityType>
-        <EntityType Name="Roles">
-          <Key>
-            <PropertyRef Name="idRol" />
-          </Key>
-          <Property Name="idRol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="tipoRol" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Usuarios__idRol__398D8EEE" FromRole="Roles" ToRole="Usuarios" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ubicacion" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Compras" Relationship="RestauranteModel.FK__Compras__idProve__74AE54BC" FromRole="Proveedores" ToRole="Compras" />
+          <NavigationProperty Name="ProductosCompra" Relationship="RestauranteModel.FK__Productos__idPro__6B24EA82" FromRole="Proveedores" ToRole="ProductosCompra" />
         </EntityType>
         <EntityType Name="Usuarios">
           <Key>
-            <PropertyRef Name="idUsuario" />
+            <PropertyRef Name="nombredeUsuario" />
           </Key>
-          <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="telefono" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="nombredeUsuario" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="edad" Type="Int32" />
-          <Property Name="email" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-          <Property Name="nombredeUsuario" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="idRol" Type="Int32" Nullable="false" />
+          <Property Name="telefono" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="contraseña" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="ComprasdeProductos" Relationship="Self.FK__Comprasde__idUsu__4BAC3F29" FromRole="Usuarios" ToRole="ComprasdeProductos" />
-          <NavigationProperty Name="ComprasdeProductos1" Relationship="Self.FK__Comprasde__idUsu__4E88ABD4" FromRole="Usuarios" ToRole="ComprasdeProductos" />
-          <NavigationProperty Name="Ordenes" Relationship="Self.FK__Ordenes__idUsuar__4AB81AF0" FromRole="Usuarios" ToRole="Ordenes" />
-          <NavigationProperty Name="Roles" Relationship="Self.FK__Usuarios__idRol__398D8EEE" FromRole="Usuarios" ToRole="Roles" />
+          <Property Name="rol" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Compras" Relationship="RestauranteModel.FK__Compras__nombred__75A278F5" FromRole="Usuarios" ToRole="Compras" />
+          <NavigationProperty Name="Ventas" Relationship="RestauranteModel.FK__Ventas__nombrede__6E01572D" FromRole="Usuarios" ToRole="Ventas" />
+          <Property Name="apellidos" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
         </EntityType>
-        <Association Name="FK__Comprasde__idAlm__5070F446">
-          <End Role="Almacen" Type="Self.Almacen" Multiplicity="0..1" />
-          <End Role="ComprasdeProductos" Type="Self.ComprasdeProductos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Almacen">
-              <PropertyRef Name="idAlmacen" />
-            </Principal>
-            <Dependent Role="ComprasdeProductos">
-              <PropertyRef Name="idAlmacen" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Ingredien__idAlm__5165187F">
-          <End Role="Almacen" Type="Self.Almacen" Multiplicity="0..1" />
-          <End Role="IngredientesparaProductos" Type="Self.IngredientesparaProductos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Almacen">
-              <PropertyRef Name="idAlmacen" />
-            </Principal>
-            <Dependent Role="IngredientesparaProductos">
-              <PropertyRef Name="idAlmacen" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Productos__idCat__4222D4EF">
-          <End Role="Categorias" Type="Self.Categorias" Multiplicity="1" />
-          <End Role="Productos" Type="Self.Productos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Categorias">
-              <PropertyRef Name="idCategoria" />
-            </Principal>
-            <Dependent Role="Productos">
-              <PropertyRef Name="idCategoria" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Comprasde__idPro__4F7CD00D">
-          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="0..1" />
-          <End Role="ComprasdeProductos" Type="Self.ComprasdeProductos" Multiplicity="*" />
+        <EntityType Name="Ventas">
+          <Key>
+            <PropertyRef Name="idVenta" />
+          </Key>
+          <Property Name="idVenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fechadeVenta" Type="DateTime" Precision="0" />
+          <Property Name="totalPagar" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="estado" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="nombredeUsuario" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DetallesVenta" Relationship="RestauranteModel.FK__DetallesV__idVen__71D1E811" FromRole="Ventas" ToRole="DetallesVenta" />
+          <NavigationProperty Name="Usuarios" Relationship="RestauranteModel.FK__Ventas__nombrede__6E01572D" FromRole="Ventas" ToRole="Usuarios" />
+        </EntityType>
+        <Association Name="FK__Compras__idProve__74AE54BC">
+          <End Type="RestauranteModel.Proveedores" Role="Proveedores" Multiplicity="0..1" />
+          <End Type="RestauranteModel.Compras" Role="Compras" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Proveedores">
               <PropertyRef Name="idProveedor" />
             </Principal>
-            <Dependent Role="ComprasdeProductos">
+            <Dependent Role="Compras">
               <PropertyRef Name="idProveedor" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Comprasde__idUsu__4BAC3F29">
-          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
-          <End Role="ComprasdeProductos" Type="Self.ComprasdeProductos" Multiplicity="*" />
+        <Association Name="FK__Compras__nombred__75A278F5">
+          <End Type="RestauranteModel.Usuarios" Role="Usuarios" Multiplicity="0..1" />
+          <End Type="RestauranteModel.Compras" Role="Compras" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuarios">
-              <PropertyRef Name="idUsuario" />
+              <PropertyRef Name="nombredeUsuario" />
             </Principal>
-            <Dependent Role="ComprasdeProductos">
-              <PropertyRef Name="idUsuario" />
+            <Dependent Role="Compras">
+              <PropertyRef Name="nombredeUsuario" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Comprasde__idUsu__4E88ABD4">
-          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
-          <End Role="ComprasdeProductos" Type="Self.ComprasdeProductos" Multiplicity="*" />
+        <Association Name="FK__DetallesC__idCom__797309D9">
+          <End Type="RestauranteModel.Compras" Role="Compras" Multiplicity="0..1" />
+          <End Type="RestauranteModel.DetallesCompra" Role="DetallesCompra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Compras">
+              <PropertyRef Name="idCompra" />
+            </Principal>
+            <Dependent Role="DetallesCompra">
+              <PropertyRef Name="idCompra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DetallesC__idPro__787EE5A0">
+          <End Type="RestauranteModel.ProductosCompra" Role="ProductosCompra" Multiplicity="0..1" />
+          <End Type="RestauranteModel.DetallesCompra" Role="DetallesCompra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductosCompra">
+              <PropertyRef Name="idProductoC" />
+            </Principal>
+            <Dependent Role="DetallesCompra">
+              <PropertyRef Name="idProductoC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DetallesV__idPro__70DDC3D8">
+          <End Type="RestauranteModel.ProductosVenta" Role="ProductosVenta" Multiplicity="0..1" />
+          <End Type="RestauranteModel.DetallesVenta" Role="DetallesVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductosVenta">
+              <PropertyRef Name="idProductoV" />
+            </Principal>
+            <Dependent Role="DetallesVenta">
+              <PropertyRef Name="idProductoV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DetallesV__idVen__71D1E811">
+          <End Type="RestauranteModel.Ventas" Role="Ventas" Multiplicity="0..1" />
+          <End Type="RestauranteModel.DetallesVenta" Role="DetallesVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ventas">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="DetallesVenta">
+              <PropertyRef Name="idVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Productos__idPro__6B24EA82">
+          <End Type="RestauranteModel.Proveedores" Role="Proveedores" Multiplicity="0..1" />
+          <End Type="RestauranteModel.ProductosCompra" Role="ProductosCompra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proveedores">
+              <PropertyRef Name="idProveedor" />
+            </Principal>
+            <Dependent Role="ProductosCompra">
+              <PropertyRef Name="idProveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Ventas__nombrede__6E01572D">
+          <End Type="RestauranteModel.Usuarios" Role="Usuarios" Multiplicity="0..1" />
+          <End Type="RestauranteModel.Ventas" Role="Ventas" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuarios">
-              <PropertyRef Name="idUsuario" />
+              <PropertyRef Name="nombredeUsuario" />
             </Principal>
-            <Dependent Role="ComprasdeProductos">
-              <PropertyRef Name="idUsuario" />
+            <Dependent Role="Ventas">
+              <PropertyRef Name="nombredeUsuario" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Ingredien__idPro__52593CB8">
-          <End Role="Productos" Type="Self.Productos" Multiplicity="0..1" />
-          <End Role="IngredientesparaProductos" Type="Self.IngredientesparaProductos" Multiplicity="*" />
+        <EntityType Name="Almacen">
+          <Key>
+            <PropertyRef Name="idAlmacen" />
+          </Key>
+          <Property Name="idAlmacen" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idProductoC" Type="Int32" />
+          <Property Name="cantidadDisponible" Type="Double" />
+          <Property Name="unidad" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ProductosCompra" Relationship="RestauranteModel.FK__Almacen__idProdu__7E37BEF6" FromRole="Almacen" ToRole="ProductosCompra" />
+        </EntityType>
+        <Association Name="FK__Almacen__idProdu__7E37BEF6">
+          <End Type="RestauranteModel.ProductosCompra" Role="ProductosCompra" Multiplicity="0..1" />
+          <End Type="RestauranteModel.Almacen" Role="Almacen" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Productos">
-              <PropertyRef Name="idProducto" />
+            <Principal Role="ProductosCompra">
+              <PropertyRef Name="idProductoC" />
             </Principal>
-            <Dependent Role="IngredientesparaProductos">
-              <PropertyRef Name="idProducto" />
+            <Dependent Role="Almacen">
+              <PropertyRef Name="idProductoC" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Ordenes__idUsuar__4AB81AF0">
-          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
-          <End Role="Ordenes" Type="Self.Ordenes" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Usuarios">
-              <PropertyRef Name="idUsuario" />
-            </Principal>
-            <Dependent Role="Ordenes">
-              <PropertyRef Name="idUsuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Productos__idOrd__4CA06362">
-          <End Role="Ordenes" Type="Self.Ordenes" Multiplicity="0..1" />
-          <End Role="ProductosOrden" Type="Self.ProductosOrden" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Ordenes">
-              <PropertyRef Name="idOrden" />
-            </Principal>
-            <Dependent Role="ProductosOrden">
-              <PropertyRef Name="idOrden" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Productos__idPro__4D94879B">
-          <End Role="Productos" Type="Self.Productos" Multiplicity="0..1" />
-          <End Role="ProductosOrden" Type="Self.ProductosOrden" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Productos">
-              <PropertyRef Name="idProducto" />
-            </Principal>
-            <Dependent Role="ProductosOrden">
-              <PropertyRef Name="idProducto" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Usuarios__idRol__398D8EEE">
-          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
-          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Roles">
-              <PropertyRef Name="idRol" />
-            </Principal>
-            <Dependent Role="Usuarios">
-              <PropertyRef Name="idRol" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="RestauranteEntities1" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Almacen" EntityType="Self.Almacen" />
-          <EntitySet Name="Categorias" EntityType="Self.Categorias" />
-          <EntitySet Name="ComprasdeProductos" EntityType="Self.ComprasdeProductos" />
-          <EntitySet Name="IngredientesparaProductos" EntityType="Self.IngredientesparaProductos" />
-          <EntitySet Name="Ordenes" EntityType="Self.Ordenes" />
-          <EntitySet Name="Productos" EntityType="Self.Productos" />
-          <EntitySet Name="ProductosOrden" EntityType="Self.ProductosOrden" />
-          <EntitySet Name="Proveedores" EntityType="Self.Proveedores" />
-          <EntitySet Name="Roles" EntityType="Self.Roles" />
-          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
-          <AssociationSet Name="FK__Comprasde__idAlm__5070F446" Association="Self.FK__Comprasde__idAlm__5070F446">
-            <End Role="Almacen" EntitySet="Almacen" />
-            <End Role="ComprasdeProductos" EntitySet="ComprasdeProductos" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Ingredien__idAlm__5165187F" Association="Self.FK__Ingredien__idAlm__5165187F">
-            <End Role="Almacen" EntitySet="Almacen" />
-            <End Role="IngredientesparaProductos" EntitySet="IngredientesparaProductos" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Productos__idCat__4222D4EF" Association="Self.FK__Productos__idCat__4222D4EF">
-            <End Role="Categorias" EntitySet="Categorias" />
-            <End Role="Productos" EntitySet="Productos" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Comprasde__idPro__4F7CD00D" Association="Self.FK__Comprasde__idPro__4F7CD00D">
-            <End Role="Proveedores" EntitySet="Proveedores" />
-            <End Role="ComprasdeProductos" EntitySet="ComprasdeProductos" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Comprasde__idUsu__4BAC3F29" Association="Self.FK__Comprasde__idUsu__4BAC3F29">
-            <End Role="Usuarios" EntitySet="Usuarios" />
-            <End Role="ComprasdeProductos" EntitySet="ComprasdeProductos" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Comprasde__idUsu__4E88ABD4" Association="Self.FK__Comprasde__idUsu__4E88ABD4">
-            <End Role="Usuarios" EntitySet="Usuarios" />
-            <End Role="ComprasdeProductos" EntitySet="ComprasdeProductos" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Ingredien__idPro__52593CB8" Association="Self.FK__Ingredien__idPro__52593CB8">
-            <End Role="Productos" EntitySet="Productos" />
-            <End Role="IngredientesparaProductos" EntitySet="IngredientesparaProductos" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Ordenes__idUsuar__4AB81AF0" Association="Self.FK__Ordenes__idUsuar__4AB81AF0">
-            <End Role="Usuarios" EntitySet="Usuarios" />
-            <End Role="Ordenes" EntitySet="Ordenes" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Productos__idOrd__4CA06362" Association="Self.FK__Productos__idOrd__4CA06362">
-            <End Role="Ordenes" EntitySet="Ordenes" />
-            <End Role="ProductosOrden" EntitySet="ProductosOrden" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Productos__idPro__4D94879B" Association="Self.FK__Productos__idPro__4D94879B">
-            <End Role="Productos" EntitySet="Productos" />
-            <End Role="ProductosOrden" EntitySet="ProductosOrden" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Usuarios__idRol__398D8EEE" Association="Self.FK__Usuarios__idRol__398D8EEE">
-            <End Role="Roles" EntitySet="Roles" />
-            <End Role="Usuarios" EntitySet="Usuarios" />
-          </AssociationSet>
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="RestauranteModelStoreContainer" CdmEntityContainer="RestauranteEntities1">
-          <EntitySetMapping Name="Almacen">
-            <EntityTypeMapping TypeName="RestauranteModel.Almacen">
-              <MappingFragment StoreEntitySet="Almacen">
-                <ScalarProperty Name="idAlmacen" ColumnName="idAlmacen" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="CantidadDisponible" ColumnName="CantidadDisponible" />
-                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
-                <ScalarProperty Name="tipodeunidad" ColumnName="tipodeunidad" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Categorias">
-            <EntityTypeMapping TypeName="RestauranteModel.Categorias">
-              <MappingFragment StoreEntitySet="Categorias">
-                <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
-                <ScalarProperty Name="nombreCategoria" ColumnName="nombreCategoria" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ComprasdeProductos">
-            <EntityTypeMapping TypeName="RestauranteModel.ComprasdeProductos">
-              <MappingFragment StoreEntitySet="ComprasdeProductos">
-                <ScalarProperty Name="idCompradeProductos" ColumnName="idCompradeProductos" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="PrecioUnidad" ColumnName="PrecioUnidad" />
-                <ScalarProperty Name="CantidadCompra" ColumnName="CantidadCompra" />
-                <ScalarProperty Name="FechadeCompra" ColumnName="FechadeCompra" />
-                <ScalarProperty Name="TotalaPagar" ColumnName="TotalaPagar" />
+          <EntitySetMapping Name="Compras">
+            <EntityTypeMapping TypeName="RestauranteModel.Compras">
+              <MappingFragment StoreEntitySet="Compras">
+                <ScalarProperty Name="nombredeUsuario" ColumnName="nombredeUsuario" />
                 <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
-                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
-                <ScalarProperty Name="idAlmacen" ColumnName="idAlmacen" />
+                <ScalarProperty Name="totalaPagar" ColumnName="totalaPagar" />
+                <ScalarProperty Name="fechadeCompra" ColumnName="fechadeCompra" />
+                <ScalarProperty Name="idCompra" ColumnName="idCompra" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="IngredientesparaProductos">
-            <EntityTypeMapping TypeName="RestauranteModel.IngredientesparaProductos">
-              <MappingFragment StoreEntitySet="IngredientesparaProductos">
-                <ScalarProperty Name="idIngrediente" ColumnName="idIngrediente" />
-                <ScalarProperty Name="idProducto" ColumnName="idProducto" />
-                <ScalarProperty Name="idAlmacen" ColumnName="idAlmacen" />
-                <ScalarProperty Name="CantidadNecesaria" ColumnName="CantidadNecesaria" />
-                <ScalarProperty Name="tipodeunidad" ColumnName="tipodeunidad" />
+          <EntitySetMapping Name="DetallesCompra">
+            <EntityTypeMapping TypeName="RestauranteModel.DetallesCompra">
+              <MappingFragment StoreEntitySet="DetallesCompra">
+                <ScalarProperty Name="idCompra" ColumnName="idCompra" />
+                <ScalarProperty Name="totalProducto" ColumnName="totalProducto" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="precioCompra" ColumnName="precioCompra" />
+                <ScalarProperty Name="idProductoC" ColumnName="idProductoC" />
+                <ScalarProperty Name="idDetallesC" ColumnName="idDetallesC" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Ordenes">
-            <EntityTypeMapping TypeName="RestauranteModel.Ordenes">
-              <MappingFragment StoreEntitySet="Ordenes">
-                <ScalarProperty Name="idOrden" ColumnName="idOrden" />
-                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
-                <ScalarProperty Name="TotalPagar" ColumnName="TotalPagar" />
-                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <EntitySetMapping Name="DetallesVenta">
+            <EntityTypeMapping TypeName="RestauranteModel.DetallesVenta">
+              <MappingFragment StoreEntitySet="DetallesVenta">
+                <ScalarProperty Name="idVenta" ColumnName="idVenta" />
+                <ScalarProperty Name="totalProducto" ColumnName="totalProducto" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="precioCompra" ColumnName="precioCompra" />
+                <ScalarProperty Name="idProductoV" ColumnName="idProductoV" />
+                <ScalarProperty Name="idDetallesV" ColumnName="idDetallesV" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Productos">
-            <EntityTypeMapping TypeName="RestauranteModel.Productos">
-              <MappingFragment StoreEntitySet="Productos">
-                <ScalarProperty Name="idProducto" ColumnName="idProducto" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Precio" ColumnName="Precio" />
-                <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+          <EntitySetMapping Name="ProductosCompra">
+            <EntityTypeMapping TypeName="RestauranteModel.ProductosCompra">
+              <MappingFragment StoreEntitySet="ProductosCompra">
+                <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
+                <ScalarProperty Name="categoria" ColumnName="categoria" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="idProductoC" ColumnName="idProductoC" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ProductosOrden">
-            <EntityTypeMapping TypeName="RestauranteModel.ProductosOrden">
-              <MappingFragment StoreEntitySet="ProductosOrden">
-                <ScalarProperty Name="idProductoOrden" ColumnName="idProductoOrden" />
-                <ScalarProperty Name="idProducto" ColumnName="idProducto" />
-                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
-                <ScalarProperty Name="TotalProducto" ColumnName="TotalProducto" />
-                <ScalarProperty Name="idOrden" ColumnName="idOrden" />
+          <EntitySetMapping Name="ProductosVenta">
+            <EntityTypeMapping TypeName="RestauranteModel.ProductosVenta">
+              <MappingFragment StoreEntitySet="ProductosVenta">
+                <ScalarProperty Name="categoria" ColumnName="categoria" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="idProductoV" ColumnName="idProductoV" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Proveedores">
             <EntityTypeMapping TypeName="RestauranteModel.Proveedores">
               <MappingFragment StoreEntitySet="Proveedores">
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="ubicacion" ColumnName="ubicacion" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
-                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Roles">
-            <EntityTypeMapping TypeName="RestauranteModel.Roles">
-              <MappingFragment StoreEntitySet="Roles">
-                <ScalarProperty Name="idRol" ColumnName="idRol" />
-                <ScalarProperty Name="tipoRol" ColumnName="tipoRol" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Usuarios">
             <EntityTypeMapping TypeName="RestauranteModel.Usuarios">
               <MappingFragment StoreEntitySet="Usuarios">
-                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
-                <ScalarProperty Name="nombres" ColumnName="nombres" />
                 <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+                <ScalarProperty Name="rol" ColumnName="rol" />
+                <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+                <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="telefono" ColumnName="telefono" />
                 <ScalarProperty Name="edad" ColumnName="edad" />
-                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="nombredeUsuario" ColumnName="nombredeUsuario" />
-                <ScalarProperty Name="idRol" ColumnName="idRol" />
-                <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ventas">
+            <EntityTypeMapping TypeName="RestauranteModel.Ventas">
+              <MappingFragment StoreEntitySet="Ventas">
+                <ScalarProperty Name="nombredeUsuario" ColumnName="nombredeUsuario" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="totalPagar" ColumnName="totalPagar" />
+                <ScalarProperty Name="fechadeVenta" ColumnName="fechadeVenta" />
+                <ScalarProperty Name="idVenta" ColumnName="idVenta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Almacen">
+            <EntityTypeMapping TypeName="RestauranteModel.Almacen">
+              <MappingFragment StoreEntitySet="Almacen">
+                <ScalarProperty Name="unidad" ColumnName="unidad" />
+                <ScalarProperty Name="cantidadDisponible" ColumnName="cantidadDisponible" />
+                <ScalarProperty Name="idProductoC" ColumnName="idProductoC" />
+                <ScalarProperty Name="idAlmacen" ColumnName="idAlmacen" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

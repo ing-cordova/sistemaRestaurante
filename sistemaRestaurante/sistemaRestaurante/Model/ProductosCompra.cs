@@ -12,24 +12,25 @@ namespace sistemaRestaurante.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Productos
+    public partial class ProductosCompra
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Productos()
+        public ProductosCompra()
         {
-            this.IngredientesparaProductos = new HashSet<IngredientesparaProductos>();
-            this.ProductosOrden = new HashSet<ProductosOrden>();
+            this.DetallesCompra = new HashSet<DetallesCompra>();
+            this.Almacen = new HashSet<Almacen>();
         }
     
-        public int idProducto { get; set; }
-        public string Nombre { get; set; }
-        public Nullable<decimal> Precio { get; set; }
-        public int idCategoria { get; set; }
+        public int idProductoC { get; set; }
+        public string nombre { get; set; }
+        public Nullable<decimal> precio { get; set; }
+        public string categoria { get; set; }
+        public Nullable<int> idProveedor { get; set; }
     
-        public virtual Categorias Categorias { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<IngredientesparaProductos> IngredientesparaProductos { get; set; }
+        public virtual ICollection<DetallesCompra> DetallesCompra { get; set; }
+        public virtual Proveedores Proveedores { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductosOrden> ProductosOrden { get; set; }
+        public virtual ICollection<Almacen> Almacen { get; set; }
     }
 }
