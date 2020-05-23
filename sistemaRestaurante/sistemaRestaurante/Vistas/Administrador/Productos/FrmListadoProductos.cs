@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,16 +21,17 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
 
         public void CargarDatos()
         {
-            using(RestauranteEntities1 bd = new RestauranteEntities1())
+            using(RestauranteBDEntities bd = new RestauranteBDEntities())
             {
                 var JoinProd = from producto in bd.ProductosVenta
-
+                               from categoria in bd.Categorias
+                               where producto.idCategoria == categoria.idCategoria
                                select new
                                {
                                    ID = producto.idProductoV,
                                    NOMBRE = producto.nombre,
                                    PRECIO = producto.precio,
-                                   CATEGORIA = producto.categoria
+                                   CATEGORIA = categoria.nombreCategoria
                                };
 
                 foreach(var iterar in JoinProd)
@@ -42,6 +44,51 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
         private void FrmListadoProductos_Load(object sender, EventArgs e)
         {
             CargarDatos();
+        }
+
+        private void btnAgregarNuevo_Click(object sender, EventArgs e)
+        {
+            FrmCRUDProductos crud = new FrmCRUDProductos();
+            crud.Show();
+            crud.lblCodigo.Visible = false;
+            crud.btnEliminar.Visible = false;
+            crud.btnEditar.Visible = false;
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            dtvProductos.Rows.Clear();
+            CargarDatos();
+        }
+
+        private void btnEditarSelected_Click(object sender, EventArgs e)
+        {
+            FrmCRUDProductos crud = new FrmCRUDProductos();
+            crud.Show();
+            crud.lblCodigo.Visible = true;
+            crud.btnEliminar.Visible = false;
+            crud.btnEditar.Visible = true;
+            crud.btnAgregar.Visible = false;
+            crud.btnHabilitar.Visible = false;
+            /***************************************/
+            crud.txtNombreProd.Enabled = true;
+            crud.txtPrecioProd.Enabled = true;
+            crud.cmbCategoria.Enabled = true;
+        }
+
+        private void btnEliminarSelected_Click(object sender, EventArgs e)
+        {
+            FrmCRUDProductos crud = new FrmCRUDProductos();
+            crud.Show();
+            crud.lblCodigo.Visible = true;
+            crud.btnEliminar.Visible = true;
+            crud.btnEditar.Visible = false;
+            crud.btnAgregar.Visible = false;
+            crud.btnHabilitar.Visible = false;
+            /***************************************/
+            crud.txtNombreProd.Enabled = true;
+            crud.txtPrecioProd.Enabled = true;
+            crud.cmbCategoria.Enabled = true;
         }
     }
 }

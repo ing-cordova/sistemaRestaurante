@@ -66,6 +66,9 @@
     <Compile Include="Model\Almacen.cs">
       <DependentUpon>Restaurante.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\Categorias.cs">
+      <DependentUpon>Restaurante.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\Compras.cs">
       <DependentUpon>Restaurante.tt</DependentUpon>
     </Compile>
@@ -113,6 +116,12 @@
     <Compile Include="Vistas\Administrador\FrmAccesoAdmin.Designer.cs">
       <DependentUpon>FrmAccesoAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Administrador\Productos\FrmCRUDProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Administrador\Productos\FrmCRUDProductos.Designer.cs">
+      <DependentUpon>FrmCRUDProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Administrador\Productos\FrmListadoProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +161,9 @@
     </Compile>
     <EmbeddedResource Include="Vistas\Administrador\FrmAccesoAdmin.resx">
       <DependentUpon>FrmAccesoAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Administrador\Productos\FrmCRUDProductos.resx">
+      <DependentUpon>FrmCRUDProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Administrador\Productos\FrmListadoProductos.resx">
       <DependentUpon>FrmListadoProductos.cs</DependentUpon>
@@ -204,7 +216,19 @@
   <ItemGroup>
     <None Include="Resources\CloseWindow.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Model\Restaurante.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Restaurante.edmx</DependentUpon>
+      <LastGenOutput>Restaurante.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\Restaurante.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Restaurante.edmx</DependentUpon>
+      <LastGenOutput>Restaurante.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\newUser.png" />
   </ItemGroup>
@@ -235,18 +259,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Model\Restaurante.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Restaurante.edmx</DependentUpon>
-      <LastGenOutput>Restaurante.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model\Restaurante.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Restaurante.edmx</DependentUpon>
-      <LastGenOutput>Restaurante.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

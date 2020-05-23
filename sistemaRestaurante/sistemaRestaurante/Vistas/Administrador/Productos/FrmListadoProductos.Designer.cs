@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblEtiqueta = new System.Windows.Forms.Label();
             this.dtvProductos = new System.Windows.Forms.DataGridView();
             this.idproducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.btnEliminarSelected = new System.Windows.Forms.Button();
             this.btnEditarSelected = new System.Windows.Forms.Button();
             this.btnAgregarNuevo = new System.Windows.Forms.Button();
@@ -64,14 +65,14 @@
             this.dtvProductos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
             this.dtvProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtvProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dtvProductos.ColumnHeadersHeight = 25;
             this.dtvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idproducto,
@@ -85,12 +86,12 @@
             this.dtvProductos.ReadOnly = true;
             this.dtvProductos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dtvProductos.RowHeadersVisible = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(162)))), ((int)(((byte)(188)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.dtvProductos.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(162)))), ((int)(((byte)(188)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.dtvProductos.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dtvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtvProductos.Size = new System.Drawing.Size(828, 432);
             this.dtvProductos.TabIndex = 3;
@@ -121,6 +122,19 @@
             this.categoria.Name = "categoria";
             this.categoria.ReadOnly = true;
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnActualizar.FlatAppearance.BorderSize = 0;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Image = global::sistemaRestaurante.Properties.Resources.refresh;
+            this.btnActualizar.Location = new System.Drawing.Point(790, 89);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(50, 44);
+            this.btnActualizar.TabIndex = 7;
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
             // btnEliminarSelected
             // 
             this.btnEliminarSelected.FlatAppearance.BorderSize = 0;
@@ -136,6 +150,7 @@
             this.btnEliminarSelected.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminarSelected.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminarSelected.UseVisualStyleBackColor = true;
+            this.btnEliminarSelected.Click += new System.EventHandler(this.btnEliminarSelected_Click);
             // 
             // btnEditarSelected
             // 
@@ -152,6 +167,7 @@
             this.btnEditarSelected.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditarSelected.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditarSelected.UseVisualStyleBackColor = true;
+            this.btnEditarSelected.Click += new System.EventHandler(this.btnEditarSelected_Click);
             // 
             // btnAgregarNuevo
             // 
@@ -168,6 +184,7 @@
             this.btnAgregarNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAgregarNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAgregarNuevo.UseVisualStyleBackColor = true;
+            this.btnAgregarNuevo.Click += new System.EventHandler(this.btnAgregarNuevo_Click);
             // 
             // FrmListadoProductos
             // 
@@ -175,6 +192,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
             this.ClientSize = new System.Drawing.Size(852, 595);
+            this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnEliminarSelected);
             this.Controls.Add(this.btnEditarSelected);
             this.Controls.Add(this.btnAgregarNuevo);
@@ -195,7 +213,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblEtiqueta;
-        private System.Windows.Forms.DataGridView dtvProductos;
         private System.Windows.Forms.DataGridViewTextBoxColumn idproducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreProd;
         private System.Windows.Forms.DataGridViewTextBoxColumn precio;
@@ -203,5 +220,7 @@
         private System.Windows.Forms.Button btnAgregarNuevo;
         private System.Windows.Forms.Button btnEditarSelected;
         private System.Windows.Forms.Button btnEliminarSelected;
+        public System.Windows.Forms.DataGridView dtvProductos;
+        private System.Windows.Forms.Button btnActualizar;
     }
 }

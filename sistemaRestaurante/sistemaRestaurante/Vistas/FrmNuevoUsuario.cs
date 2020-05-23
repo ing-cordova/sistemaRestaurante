@@ -57,12 +57,21 @@ namespace sistemaRestaurante.Vistas
             {
                 if (txtPassword.Text == txtVerifyPass.Text)
                 {
-                    using (RestauranteEntities1 bd = new RestauranteEntities1())
+                    using (RestauranteBDEntities bd = new RestauranteBDEntities())
                     {
+                        var lista = from usuario in bd.Usuarios
+                                    where usuario.nombredeUsuario == txtUsuario.Text
+                                    select usuario;
 
+                        if (lista.Count() > 0)
+                        {
+                            MessageBox.Show("¡El usuario ya existe, intente con otro!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else
+                        {
                             if (cmbUsuario.Text == "Usuario")
                             {
-                                using (RestauranteEntities1 db = new RestauranteEntities1())
+                                using (RestauranteBDEntities db = new RestauranteBDEntities())
                                 {
                                     user.nombre = txtNombres.Text;
                                     user.apellidos = txtApellidos.Text;
@@ -89,7 +98,7 @@ namespace sistemaRestaurante.Vistas
                                 String PIN = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el PIN de seguridad:", "Registro de Administrador", "", 500, 300);
                                 if (PIN == PIN_ADMIN)
                                 {
-                                    using (RestauranteEntities1 db = new RestauranteEntities1())
+                                    using (RestauranteBDEntities db = new RestauranteBDEntities())
                                     {
                                         user.nombre = txtNombres.Text;
                                         user.apellidos = txtApellidos.Text;
@@ -115,6 +124,7 @@ namespace sistemaRestaurante.Vistas
                                     MessageBox.Show("Clave de seguridad incorrecta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
                             }
+                        }
                         
                     }
                 }

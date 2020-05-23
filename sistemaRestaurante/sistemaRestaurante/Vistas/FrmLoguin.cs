@@ -54,7 +54,7 @@ namespace sistemaRestaurante.Vistas
             }
             else
             {
-                using(RestauranteEntities1 bd = new RestauranteEntities1())
+                using(RestauranteBDEntities bd = new RestauranteBDEntities())
                 {
                     var lista = from usuario in bd.Usuarios
                                 where usuario.nombredeUsuario == txtUsuario.Text
