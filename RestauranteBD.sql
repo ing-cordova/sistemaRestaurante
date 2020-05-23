@@ -79,3 +79,18 @@ cantidadDisponible float,
 unidad varchar(20)
 );
 Go
+
+--------Actualización 23/05/2020--------------------
+Alter table ProductosVenta drop column categoria
+Alter table ProductosCompra drop column categoria
+
+Create table Categorias(
+idCategoria int identity(1,1) primary key not null,
+nombreCategoria varchar(50)
+);
+Go
+
+Alter table ProductosVenta add idCategoria int not null;
+Alter table ProductosVenta add foreign key(idCategoria) references Categorias(idCategoria);
+Alter table ProductosCompra add idCategoria int not null;
+Alter table ProductosCompra add foreign key(idCategoria) references Categorias(idCategoria);
