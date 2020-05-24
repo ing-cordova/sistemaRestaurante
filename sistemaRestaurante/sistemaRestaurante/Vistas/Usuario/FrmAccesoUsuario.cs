@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 //Libreria para arrastrar ventana.
 using System.Runtime.InteropServices;
+using sistemaRestaurante.Vistas.Usuario.ProductosLista;
 
 namespace sistemaRestaurante.Vistas
 {
@@ -17,6 +18,21 @@ namespace sistemaRestaurante.Vistas
         public FrmAccesoUsuario()
         {
             InitializeComponent();
+        }
+
+        private void AbrirFormulario(object FormHijo)
+        {
+            if (this.panelContenedor.Controls.Count > 0)
+            {
+                this.panelContenedor.Controls.RemoveAt(0);
+            }
+
+            Form fh = FormHijo as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.panelContenedor.Controls.Add(fh);
+            this.panelContenedor.Tag = fh;
+            fh.Show();
         }
 
         //Este codigo se utiliza para arrastrar la ventana.
@@ -89,6 +105,11 @@ namespace sistemaRestaurante.Vistas
             {
                 Submenu.Visible = false;
             }
+        }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmListadoProductos());
         }
 
         private void btnCerrarS_Click(object sender, EventArgs e)
