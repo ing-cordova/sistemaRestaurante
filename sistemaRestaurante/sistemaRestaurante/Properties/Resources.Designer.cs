@@ -93,6 +93,16 @@ namespace sistemaRestaurante.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap category {
+            get {
+                object obj = ResourceManager.GetObject("category", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CloseWindow {
             get {
                 object obj = ResourceManager.GetObject("CloseWindow", resourceCulture);
@@ -316,6 +326,16 @@ namespace sistemaRestaurante.Properties {
         internal static System.Drawing.Bitmap Restore_Window {
             get {
                 object obj = ResourceManager.GetObject("Restore Window", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sell {
+            get {
+                object obj = ResourceManager.GetObject("sell", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

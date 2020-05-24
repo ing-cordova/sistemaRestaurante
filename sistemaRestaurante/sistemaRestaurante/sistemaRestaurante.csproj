@@ -110,6 +110,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vistas\Administrador\CategoriasLista\FrmListadoCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Administrador\CategoriasLista\FrmListadoCategorias.Designer.cs">
+      <DependentUpon>FrmListadoCategorias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Administrador\FrmAccesoAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,18 @@
     </Compile>
     <Compile Include="Vistas\Administrador\Productos\FrmListadoProductos.Designer.cs">
       <DependentUpon>FrmListadoProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Administrador\ProveedoresLista\FrmListadoProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Administrador\ProveedoresLista\FrmListadoProveedores.Designer.cs">
+      <DependentUpon>FrmListadoProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Administrador\UsuariosLista\FrmListadoUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Administrador\UsuariosLista\FrmListadoUsuarios.Designer.cs">
+      <DependentUpon>FrmListadoUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Usuario\FrmAccesoUsuario.cs">
       <SubType>Form</SubType>
@@ -159,6 +177,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Vistas\Administrador\CategoriasLista\FrmListadoCategorias.resx">
+      <DependentUpon>FrmListadoCategorias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Administrador\FrmAccesoAdmin.resx">
       <DependentUpon>FrmAccesoAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,6 +188,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Administrador\Productos\FrmListadoProductos.resx">
       <DependentUpon>FrmListadoProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Administrador\ProveedoresLista\FrmListadoProveedores.resx">
+      <DependentUpon>FrmListadoProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Administrador\UsuariosLista\FrmListadoUsuarios.resx">
+      <DependentUpon>FrmListadoUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Usuario\FrmAccesoUsuario.resx">
       <DependentUpon>FrmAccesoUsuario.cs</DependentUpon>
@@ -227,6 +254,8 @@
       <DependentUpon>Restaurante.edmx</DependentUpon>
       <LastGenOutput>Restaurante.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\sell.png" />
+    <None Include="Resources\category.png" />
     <None Include="Resources\refresh.png" />
   </ItemGroup>
   <ItemGroup>
