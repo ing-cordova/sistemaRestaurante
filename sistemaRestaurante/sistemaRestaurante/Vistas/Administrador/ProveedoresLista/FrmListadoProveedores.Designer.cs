@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblEtiqueta = new System.Windows.Forms.Label();
             this.dtvProveedores = new System.Windows.Forms.DataGridView();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnEliminarSelected = new System.Windows.Forms.Button();
+            this.btnEditarSelected = new System.Windows.Forms.Button();
+            this.btnAgregarNuevo = new System.Windows.Forms.Button();
             this.idproducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreProve = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ubicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Emailprove = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.btnEliminarSelected = new System.Windows.Forms.Button();
-            this.btnEditarSelected = new System.Windows.Forms.Button();
-            this.btnAgregarNuevo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtvProveedores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,14 +66,14 @@
             this.dtvProveedores.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
             this.dtvProveedores.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtvProveedores.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtvProveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtvProveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtvProveedores.ColumnHeadersHeight = 25;
             this.dtvProveedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idproducto,
@@ -88,47 +88,15 @@
             this.dtvProveedores.ReadOnly = true;
             this.dtvProveedores.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dtvProveedores.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(162)))), ((int)(((byte)(188)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.dtvProveedores.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(162)))), ((int)(((byte)(188)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.dtvProveedores.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dtvProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtvProveedores.Size = new System.Drawing.Size(828, 359);
             this.dtvProveedores.TabIndex = 4;
-            // 
-            // idproducto
-            // 
-            this.idproducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.idproducto.HeaderText = "ID";
-            this.idproducto.Name = "idproducto";
-            this.idproducto.ReadOnly = true;
-            this.idproducto.Width = 51;
-            // 
-            // nombreProve
-            // 
-            this.nombreProve.HeaderText = "NOMBRE PROVEEDOR";
-            this.nombreProve.Name = "nombreProve";
-            this.nombreProve.ReadOnly = true;
-            // 
-            // ubicacion
-            // 
-            this.ubicacion.HeaderText = "UBICACION";
-            this.ubicacion.Name = "ubicacion";
-            this.ubicacion.ReadOnly = true;
-            // 
-            // telefono
-            // 
-            this.telefono.HeaderText = "TELEFONO";
-            this.telefono.Name = "telefono";
-            this.telefono.ReadOnly = true;
-            // 
-            // Emailprove
-            // 
-            this.Emailprove.HeaderText = "EMAIL";
-            this.Emailprove.Name = "Emailprove";
-            this.Emailprove.ReadOnly = true;
             // 
             // btnActualizar
             // 
@@ -194,6 +162,42 @@
             this.btnAgregarNuevo.UseVisualStyleBackColor = true;
             this.btnAgregarNuevo.Click += new System.EventHandler(this.btnAgregarNuevo_Click);
             // 
+            // idproducto
+            // 
+            this.idproducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.idproducto.HeaderText = "ID";
+            this.idproducto.Name = "idproducto";
+            this.idproducto.ReadOnly = true;
+            this.idproducto.Width = 51;
+            // 
+            // nombreProve
+            // 
+            this.nombreProve.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.nombreProve.HeaderText = "NOMBRE PROVEEDOR";
+            this.nombreProve.Name = "nombreProve";
+            this.nombreProve.ReadOnly = true;
+            this.nombreProve.Width = 205;
+            // 
+            // ubicacion
+            // 
+            this.ubicacion.HeaderText = "UBICACION";
+            this.ubicacion.Name = "ubicacion";
+            this.ubicacion.ReadOnly = true;
+            // 
+            // telefono
+            // 
+            this.telefono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.telefono.HeaderText = "TELEFONO";
+            this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
+            this.telefono.Width = 115;
+            // 
+            // Emailprove
+            // 
+            this.Emailprove.HeaderText = "EMAIL";
+            this.Emailprove.Name = "Emailprove";
+            this.Emailprove.ReadOnly = true;
+            // 
             // FrmListadoProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -220,14 +224,14 @@
 
         private System.Windows.Forms.Label lblEtiqueta;
         public System.Windows.Forms.DataGridView dtvProveedores;
+        public System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Button btnEliminarSelected;
+        private System.Windows.Forms.Button btnEditarSelected;
+        private System.Windows.Forms.Button btnAgregarNuevo;
         private System.Windows.Forms.DataGridViewTextBoxColumn idproducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreProve;
         private System.Windows.Forms.DataGridViewTextBoxColumn ubicacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn Emailprove;
-        public System.Windows.Forms.Button btnActualizar;
-        private System.Windows.Forms.Button btnEliminarSelected;
-        private System.Windows.Forms.Button btnEditarSelected;
-        private System.Windows.Forms.Button btnAgregarNuevo;
     }
 }

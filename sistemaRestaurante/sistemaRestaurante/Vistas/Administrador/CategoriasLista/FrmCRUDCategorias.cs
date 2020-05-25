@@ -68,37 +68,45 @@ namespace sistemaRestaurante.Vistas.Administrador.CategoriasLista
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            using (RestauranteBDEntities bd = new RestauranteBDEntities())
+            DialogResult result = MessageBox.Show("¿Estás seguro que quieres editar?, \n¡la acción no se podrá deshacer!", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if(result == DialogResult.OK)
             {
-                String idca = lblCodigo.Text;
-                int idC = int.Parse(idca);
+                using (RestauranteBDEntities bd = new RestauranteBDEntities())
+                {
+                    String idca = lblCodigo.Text;
+                    int idC = int.Parse(idca);
 
-                Cate = bd.Categorias.Where(VerificarID => VerificarID.idCategoria == idC).First();
-                Cate.nombreCategoria = txtCategoria.Text;
+                    Cate = bd.Categorias.Where(VerificarID => VerificarID.idCategoria == idC).First();
+                    Cate.nombreCategoria = txtCategoria.Text;
 
 
 
-                bd.Entry(Cate).State = System.Data.Entity.EntityState.Modified;
-                bd.SaveChanges();
-            }
+                    bd.Entry(Cate).State = System.Data.Entity.EntityState.Modified;
+                    bd.SaveChanges();
+                }
 
-            MessageBox.Show("¡Categoria editada con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
-            this.Close();
+                MessageBox.Show("¡Categoria editada con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
+                this.Close();
+            }   
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            using (RestauranteBDEntities bd = new RestauranteBDEntities())
+            DialogResult result = MessageBox.Show("¿Estás seguro que quieres eliminar?, \n¡la acción no se podrá deshacer!", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (result == DialogResult.OK)
             {
-                String id = lblCodigo.Text;
+                using (RestauranteBDEntities bd = new RestauranteBDEntities())
+                {
+                    String id = lblCodigo.Text;
 
-                Cate = bd.Categorias.Find(int.Parse(id));
-                bd.Categorias.Remove(Cate);
-                bd.SaveChanges();
+                    Cate = bd.Categorias.Find(int.Parse(id));
+                    bd.Categorias.Remove(Cate);
+                    bd.SaveChanges();
+                }
+
+                MessageBox.Show("¡La Categoria ha sido eliminada con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
+                this.Close();
             }
-
-            MessageBox.Show("¡La Categoria ha sido eliminada con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
-            this.Close();
         }
 
         private void FrmCRUDCategorias_Load(object sender, EventArgs e)

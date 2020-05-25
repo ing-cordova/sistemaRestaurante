@@ -34,35 +34,35 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
-            this.MenuVertical = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.Submenu = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panelContenedor = new System.Windows.Forms.Panel();
-            this.tmDatosFechaHora = new System.Windows.Forms.Timer(this.components);
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.btnCompras = new System.Windows.Forms.Button();
-            this.btnCategorias = new System.Windows.Forms.Button();
-            this.btnVentas = new System.Windows.Forms.Button();
-            this.btnMasOpciones = new System.Windows.Forms.Button();
-            this.btnCerrarS = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnAlmacen = new System.Windows.Forms.Button();
-            this.btnRoles = new System.Windows.Forms.Button();
-            this.btnUsuarios = new System.Windows.Forms.Button();
-            this.btnProveedor = new System.Windows.Forms.Button();
-            this.btnProductos = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnRestoreWindow = new System.Windows.Forms.Button();
             this.btnMaximizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.MenuVertical = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.btnCompras = new System.Windows.Forms.Button();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.btnCategorias = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.btnVentas = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.btnMasOpciones = new System.Windows.Forms.Button();
+            this.Submenu = new System.Windows.Forms.Panel();
+            this.btnCerrarS = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnAlmacen = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnRoles = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnUsuarios = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnProveedor = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnProductos = new System.Windows.Forms.Button();
+            this.panelContenedor = new System.Windows.Forms.Panel();
+            this.tmDatosFechaHora = new System.Windows.Forms.Timer(this.components);
             this.barraTitulos.SuspendLayout();
             this.MenuVertical.SuspendLayout();
             this.Submenu.SuspendLayout();
@@ -82,7 +82,7 @@
             this.barraTitulos.Dock = System.Windows.Forms.DockStyle.Top;
             this.barraTitulos.Location = new System.Drawing.Point(0, 0);
             this.barraTitulos.Name = "barraTitulos";
-            this.barraTitulos.Size = new System.Drawing.Size(1070, 42);
+            this.barraTitulos.Size = new System.Drawing.Size(1113, 42);
             this.barraTitulos.TabIndex = 1;
             this.barraTitulos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.barraTitulos_MouseDown);
             // 
@@ -125,6 +125,73 @@
             this.lblFecha.Text = "Fecha";
             this.lblFecha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.button2.BackgroundImage = global::sistemaRestaurante.Properties.Resources.Minimize_Window;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(999, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(33, 32);
+            this.button2.TabIndex = 13;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnRestoreWindow
+            // 
+            this.btnRestoreWindow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRestoreWindow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.btnRestoreWindow.BackgroundImage = global::sistemaRestaurante.Properties.Resources.Restore_Window;
+            this.btnRestoreWindow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRestoreWindow.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnRestoreWindow.FlatAppearance.BorderSize = 0;
+            this.btnRestoreWindow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRestoreWindow.Location = new System.Drawing.Point(1038, 4);
+            this.btnRestoreWindow.Name = "btnRestoreWindow";
+            this.btnRestoreWindow.Size = new System.Drawing.Size(33, 32);
+            this.btnRestoreWindow.TabIndex = 12;
+            this.btnRestoreWindow.UseVisualStyleBackColor = false;
+            this.btnRestoreWindow.Visible = false;
+            this.btnRestoreWindow.Click += new System.EventHandler(this.btnRestoreWindow_Click);
+            // 
+            // btnMaximizar
+            // 
+            this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.btnMaximizar.BackgroundImage = global::sistemaRestaurante.Properties.Resources.Maximize_Window;
+            this.btnMaximizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnMaximizar.FlatAppearance.BorderSize = 0;
+            this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximizar.Location = new System.Drawing.Point(1038, 3);
+            this.btnMaximizar.Name = "btnMaximizar";
+            this.btnMaximizar.Size = new System.Drawing.Size(33, 32);
+            this.btnMaximizar.TabIndex = 11;
+            this.btnMaximizar.UseVisualStyleBackColor = false;
+            this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.btnSalir.BackgroundImage = global::sistemaRestaurante.Properties.Resources.CloseWindow;
+            this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnSalir.FlatAppearance.BorderSize = 0;
+            this.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Location = new System.Drawing.Point(1077, 3);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(33, 32);
+            this.btnSalir.TabIndex = 10;
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(31)))), ((int)(((byte)(70)))));
@@ -154,101 +221,6 @@
             this.MenuVertical.Size = new System.Drawing.Size(218, 637);
             this.MenuVertical.TabIndex = 2;
             // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            this.panel6.Location = new System.Drawing.Point(-2, 404);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(6, 40);
-            this.panel6.TabIndex = 13;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            this.panel8.Location = new System.Drawing.Point(-1, 496);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(6, 40);
-            this.panel8.TabIndex = 11;
-            // 
-            // Submenu
-            // 
-            this.Submenu.Controls.Add(this.btnCerrarS);
-            this.Submenu.Controls.Add(this.panel7);
-            this.Submenu.Location = new System.Drawing.Point(48, 542);
-            this.Submenu.Name = "Submenu";
-            this.Submenu.Size = new System.Drawing.Size(169, 54);
-            this.Submenu.TabIndex = 2;
-            this.Submenu.Visible = false;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            this.panel7.Location = new System.Drawing.Point(-2, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(10, 40);
-            this.panel7.TabIndex = 11;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            this.panel5.Location = new System.Drawing.Point(0, 358);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(6, 40);
-            this.panel5.TabIndex = 9;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            this.panel4.Location = new System.Drawing.Point(0, 312);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(6, 40);
-            this.panel4.TabIndex = 7;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            this.panel3.Location = new System.Drawing.Point(0, 266);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(6, 40);
-            this.panel3.TabIndex = 5;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            this.panel2.Location = new System.Drawing.Point(0, 220);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(6, 40);
-            this.panel2.TabIndex = 3;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            this.panel1.Location = new System.Drawing.Point(0, 128);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(6, 40);
-            this.panel1.TabIndex = 1;
-            // 
-            // panelContenedor
-            // 
-            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenedor.Location = new System.Drawing.Point(218, 42);
-            this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(852, 637);
-            this.panelContenedor.TabIndex = 3;
-            // 
-            // tmDatosFechaHora
-            // 
-            this.tmDatosFechaHora.Enabled = true;
-            this.tmDatosFechaHora.Tick += new System.EventHandler(this.tmDatosFechaHora_Tick);
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            this.panel9.Location = new System.Drawing.Point(0, 174);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(6, 40);
-            this.panel9.TabIndex = 15;
-            // 
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
@@ -276,6 +248,14 @@
             this.btnCompras.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCompras.UseVisualStyleBackColor = true;
             // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.panel9.Location = new System.Drawing.Point(0, 174);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(6, 40);
+            this.panel9.TabIndex = 15;
+            // 
             // btnCategorias
             // 
             this.btnCategorias.FlatAppearance.BorderSize = 0;
@@ -296,6 +276,14 @@
             this.btnCategorias.UseVisualStyleBackColor = true;
             this.btnCategorias.Click += new System.EventHandler(this.btnCategorias_Click);
             // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.panel6.Location = new System.Drawing.Point(-2, 404);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(6, 40);
+            this.panel6.TabIndex = 13;
+            // 
             // btnVentas
             // 
             this.btnVentas.FlatAppearance.BorderSize = 0;
@@ -314,6 +302,14 @@
             this.btnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVentas.UseVisualStyleBackColor = true;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.panel8.Location = new System.Drawing.Point(-1, 496);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(6, 40);
+            this.panel8.TabIndex = 11;
             // 
             // btnMasOpciones
             // 
@@ -335,6 +331,16 @@
             this.btnMasOpciones.UseVisualStyleBackColor = true;
             this.btnMasOpciones.Click += new System.EventHandler(this.btnMasOpciones_Click);
             // 
+            // Submenu
+            // 
+            this.Submenu.Controls.Add(this.btnCerrarS);
+            this.Submenu.Controls.Add(this.panel7);
+            this.Submenu.Location = new System.Drawing.Point(48, 542);
+            this.Submenu.Name = "Submenu";
+            this.Submenu.Size = new System.Drawing.Size(169, 54);
+            this.Submenu.TabIndex = 2;
+            this.Submenu.Visible = false;
+            // 
             // btnCerrarS
             // 
             this.btnCerrarS.FlatAppearance.BorderSize = 0;
@@ -354,6 +360,14 @@
             this.btnCerrarS.UseVisualStyleBackColor = true;
             this.btnCerrarS.Click += new System.EventHandler(this.btnCerrarS_Click);
             // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.panel7.Location = new System.Drawing.Point(-2, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(10, 40);
+            this.panel7.TabIndex = 11;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::sistemaRestaurante.Properties.Resources.Inicio;
@@ -363,6 +377,14 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.panel5.Location = new System.Drawing.Point(0, 358);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(6, 40);
+            this.panel5.TabIndex = 9;
             // 
             // btnAlmacen
             // 
@@ -383,6 +405,14 @@
             this.btnAlmacen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAlmacen.UseVisualStyleBackColor = true;
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.panel4.Location = new System.Drawing.Point(0, 312);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(6, 40);
+            this.panel4.TabIndex = 7;
+            // 
             // btnRoles
             // 
             this.btnRoles.FlatAppearance.BorderSize = 0;
@@ -401,6 +431,14 @@
             this.btnRoles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRoles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRoles.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.panel3.Location = new System.Drawing.Point(0, 266);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(6, 40);
+            this.panel3.TabIndex = 5;
             // 
             // btnUsuarios
             // 
@@ -422,6 +460,14 @@
             this.btnUsuarios.UseVisualStyleBackColor = true;
             this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.panel2.Location = new System.Drawing.Point(0, 220);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(6, 40);
+            this.panel2.TabIndex = 3;
+            // 
             // btnProveedor
             // 
             this.btnProveedor.FlatAppearance.BorderSize = 0;
@@ -441,6 +487,14 @@
             this.btnProveedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProveedor.UseVisualStyleBackColor = true;
             this.btnProveedor.Click += new System.EventHandler(this.btnProveedor_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.panel1.Location = new System.Drawing.Point(0, 128);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(6, 40);
+            this.panel1.TabIndex = 1;
             // 
             // btnProductos
             // 
@@ -462,79 +516,25 @@
             this.btnProductos.UseVisualStyleBackColor = true;
             this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
-            // button2
+            // panelContenedor
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            this.button2.BackgroundImage = global::sistemaRestaurante.Properties.Resources.Minimize_Window;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(956, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(33, 32);
-            this.button2.TabIndex = 13;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContenedor.Location = new System.Drawing.Point(218, 42);
+            this.panelContenedor.Name = "panelContenedor";
+            this.panelContenedor.Size = new System.Drawing.Size(895, 637);
+            this.panelContenedor.TabIndex = 3;
             // 
-            // btnRestoreWindow
+            // tmDatosFechaHora
             // 
-            this.btnRestoreWindow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRestoreWindow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            this.btnRestoreWindow.BackgroundImage = global::sistemaRestaurante.Properties.Resources.Restore_Window;
-            this.btnRestoreWindow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRestoreWindow.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnRestoreWindow.FlatAppearance.BorderSize = 0;
-            this.btnRestoreWindow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRestoreWindow.Location = new System.Drawing.Point(995, 4);
-            this.btnRestoreWindow.Name = "btnRestoreWindow";
-            this.btnRestoreWindow.Size = new System.Drawing.Size(33, 32);
-            this.btnRestoreWindow.TabIndex = 12;
-            this.btnRestoreWindow.UseVisualStyleBackColor = false;
-            this.btnRestoreWindow.Visible = false;
-            this.btnRestoreWindow.Click += new System.EventHandler(this.btnRestoreWindow_Click);
-            // 
-            // btnMaximizar
-            // 
-            this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            this.btnMaximizar.BackgroundImage = global::sistemaRestaurante.Properties.Resources.Maximize_Window;
-            this.btnMaximizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnMaximizar.FlatAppearance.BorderSize = 0;
-            this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximizar.Location = new System.Drawing.Point(995, 3);
-            this.btnMaximizar.Name = "btnMaximizar";
-            this.btnMaximizar.Size = new System.Drawing.Size(33, 32);
-            this.btnMaximizar.TabIndex = 11;
-            this.btnMaximizar.UseVisualStyleBackColor = false;
-            this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            this.btnSalir.BackgroundImage = global::sistemaRestaurante.Properties.Resources.CloseWindow;
-            this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnSalir.FlatAppearance.BorderSize = 0;
-            this.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Location = new System.Drawing.Point(1034, 3);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(33, 32);
-            this.btnSalir.TabIndex = 10;
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.tmDatosFechaHora.Enabled = true;
+            this.tmDatosFechaHora.Tick += new System.EventHandler(this.tmDatosFechaHora_Tick);
             // 
             // FrmAccesoAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
-            this.ClientSize = new System.Drawing.Size(1070, 679);
+            this.ClientSize = new System.Drawing.Size(1113, 679);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.MenuVertical);
             this.Controls.Add(this.barraTitulos);

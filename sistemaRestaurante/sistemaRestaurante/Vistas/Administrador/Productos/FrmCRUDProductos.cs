@@ -105,37 +105,45 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            using(RestauranteBDEntities bd = new RestauranteBDEntities())
+            DialogResult result = MessageBox.Show("¿Estás seguro que quieres editar?, \n¡la acción no se podrá deshacer!", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (result == DialogResult.OK)
             {
-                String id2 = lblCodigo.Text;
-                int idC = int.Parse(id2);
+                using (RestauranteBDEntities bd = new RestauranteBDEntities())
+                {
+                    String id2 = lblCodigo.Text;
+                    int idC = int.Parse(id2);
 
-                prod = bd.ProductosVenta.Where(VerificarID => VerificarID.idProductoV == idC).First();
-                prod.nombre = txtNombreProd.Text;
-                prod.precio = decimal.Parse(txtPrecioProd.Text);
-                prod.idCategoria = int.Parse(categ);
+                    prod = bd.ProductosVenta.Where(VerificarID => VerificarID.idProductoV == idC).First();
+                    prod.nombre = txtNombreProd.Text;
+                    prod.precio = decimal.Parse(txtPrecioProd.Text);
+                    prod.idCategoria = int.Parse(categ);
 
-                bd.Entry(prod).State = System.Data.Entity.EntityState.Modified;
-                bd.SaveChanges();
+                    bd.Entry(prod).State = System.Data.Entity.EntityState.Modified;
+                    bd.SaveChanges();
+                }
+
+                MessageBox.Show("¡Producto editado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
+                this.Close();
             }
-
-            MessageBox.Show("¡Producto editado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
-            this.Close();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            using(RestauranteBDEntities bd = new RestauranteBDEntities())
+            DialogResult result = MessageBox.Show("¿Estás seguro que quieres eliminar?, \n¡la acción no se podrá deshacer!", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (result == DialogResult.OK)
             {
-                String id = lblCodigo.Text;
+                using (RestauranteBDEntities bd = new RestauranteBDEntities())
+                {
+                    String id = lblCodigo.Text;
 
-                prod = bd.ProductosVenta.Find(int.Parse(id));
-                bd.ProductosVenta.Remove(prod);
-                bd.SaveChanges();
+                    prod = bd.ProductosVenta.Find(int.Parse(id));
+                    bd.ProductosVenta.Remove(prod);
+                    bd.SaveChanges();
+                }
+
+                MessageBox.Show("¡Producto eliminado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
+                this.Close();
             }
-
-            MessageBox.Show("¡Producto eliminado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
-            this.Close();
         }
     }
 }

@@ -152,6 +152,12 @@
     <Compile Include="Vistas\Administrador\ProveedoresLista\FrmListadoProveedores.Designer.cs">
       <DependentUpon>FrmListadoProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Administrador\UsuariosLista\FrmCRUDUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Administrador\UsuariosLista\FrmCRUDUsuarios.Designer.cs">
+      <DependentUpon>FrmCRUDUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Administrador\UsuariosLista\FrmListadoUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Administrador\ProveedoresLista\FrmListadoProveedores.resx">
       <DependentUpon>FrmListadoProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Administrador\UsuariosLista\FrmCRUDUsuarios.resx">
+      <DependentUpon>FrmCRUDUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Administrador\UsuariosLista\FrmListadoUsuarios.resx">
       <DependentUpon>FrmListadoUsuarios.cs</DependentUpon>
