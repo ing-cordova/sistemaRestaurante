@@ -94,3 +94,11 @@ Alter table ProductosVenta add idCategoria int not null;
 Alter table ProductosVenta add foreign key(idCategoria) references Categorias(idCategoria);
 Alter table ProductosCompra add idCategoria int not null;
 Alter table ProductosCompra add foreign key(idCategoria) references Categorias(idCategoria);
+
+-----------Actualizacion 26/05/2020-------------------
+Create table Recetas(
+idReceta int identity(1,1) primary key not null,
+idProductoV int foreign key references ProductosVenta(idProductoV),
+idProductoC int foreign key references ProductosCompra(idProductoC),
+cantidadProdIngrediente int
+);
