@@ -26,6 +26,9 @@
         <AssociationConnector Association="RestauranteBDModel.FK__DetallesV__idVen__440B1D61" ManuallyRouted="false" />
         <AssociationConnector Association="RestauranteBDModel.FK__Productos__idPro__3D5E1FD2" ManuallyRouted="false" />
         <AssociationConnector Association="RestauranteBDModel.FK__Ventas__nombrede__403A8C7D" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="RestauranteBDModel.Recetas" Width="1.5" PointX="8.25" PointY="6.125" />
+        <AssociationConnector Association="RestauranteBDModel.FK__Recetas__idProdu__5DCAEF64" />
+        <AssociationConnector Association="RestauranteBDModel.FK__Recetas__idProdu__5CD6CB2B" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

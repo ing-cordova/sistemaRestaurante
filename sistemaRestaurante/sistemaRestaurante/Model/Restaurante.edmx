@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="RestauranteBDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="RestauranteBDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Almacen">
           <Key>
             <PropertyRef Name="idAlmacen" />
@@ -81,6 +81,15 @@
           <Property Name="ubicacion" Type="varchar" MaxLength="60" />
           <Property Name="telefono" Type="varchar" MaxLength="15" />
           <Property Name="email" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Recetas">
+          <Key>
+            <PropertyRef Name="idReceta" />
+          </Key>
+          <Property Name="idReceta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idProductoV" Type="int" />
+          <Property Name="idProductoC" Type="int" />
+          <Property Name="cantidadProdIngrediente" Type="int" />
         </EntityType>
         <EntityType Name="Usuarios">
           <Key>
@@ -225,6 +234,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Recetas__idProdu__5CD6CB2B">
+          <End Role="ProductosVenta" Type="Self.ProductosVenta" Multiplicity="0..1" />
+          <End Role="Recetas" Type="Self.Recetas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductosVenta">
+              <PropertyRef Name="idProductoV" />
+            </Principal>
+            <Dependent Role="Recetas">
+              <PropertyRef Name="idProductoV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Recetas__idProdu__5DCAEF64">
+          <End Role="ProductosCompra" Type="Self.ProductosCompra" Multiplicity="0..1" />
+          <End Role="Recetas" Type="Self.Recetas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductosCompra">
+              <PropertyRef Name="idProductoC" />
+            </Principal>
+            <Dependent Role="Recetas">
+              <PropertyRef Name="idProductoC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Ventas__nombrede__403A8C7D">
           <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
           <End Role="Ventas" Type="Self.Ventas" Multiplicity="*" />
@@ -246,6 +279,7 @@
           <EntitySet Name="ProductosCompra" EntityType="Self.ProductosCompra" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProductosVenta" EntityType="Self.ProductosVenta" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Proveedores" EntityType="Self.Proveedores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Recetas" EntityType="Self.Recetas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ventas" EntityType="Self.Ventas" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__Almacen__idProdu__4E88ABD4" Association="Self.FK__Almacen__idProdu__4E88ABD4">
@@ -288,13 +322,20 @@
             <End Role="Proveedores" EntitySet="Proveedores" />
             <End Role="ProductosCompra" EntitySet="ProductosCompra" />
           </AssociationSet>
+          <AssociationSet Name="FK__Recetas__idProdu__5CD6CB2B" Association="Self.FK__Recetas__idProdu__5CD6CB2B">
+            <End Role="ProductosVenta" EntitySet="ProductosVenta" />
+            <End Role="Recetas" EntitySet="Recetas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Recetas__idProdu__5DCAEF64" Association="Self.FK__Recetas__idProdu__5DCAEF64">
+            <End Role="ProductosCompra" EntitySet="ProductosCompra" />
+            <End Role="Recetas" EntitySet="Recetas" />
+          </AssociationSet>
           <AssociationSet Name="FK__Ventas__nombrede__403A8C7D" Association="Self.FK__Ventas__nombrede__403A8C7D">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Ventas" EntitySet="Ventas" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="RestauranteBDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -369,6 +410,7 @@
           <NavigationProperty Name="Categorias" Relationship="Self.FK__Productos__idCat__52593CB8" FromRole="ProductosCompra" ToRole="Categorias" />
           <NavigationProperty Name="DetallesCompra" Relationship="Self.FK__DetallesC__idPro__4AB81AF0" FromRole="ProductosCompra" ToRole="DetallesCompra" />
           <NavigationProperty Name="Proveedores" Relationship="Self.FK__Productos__idPro__3D5E1FD2" FromRole="ProductosCompra" ToRole="Proveedores" />
+          <NavigationProperty Name="Recetas" Relationship="RestauranteBDModel.FK__Recetas__idProdu__5DCAEF64" FromRole="ProductosCompra" ToRole="Recetas" />
         </EntityType>
         <EntityType Name="ProductosVenta">
           <Key>
@@ -380,6 +422,7 @@
           <Property Name="idCategoria" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Categorias" Relationship="Self.FK__Productos__idCat__5165187F" FromRole="ProductosVenta" ToRole="Categorias" />
           <NavigationProperty Name="DetallesVenta" Relationship="Self.FK__DetallesV__idPro__4316F928" FromRole="ProductosVenta" ToRole="DetallesVenta" />
+          <NavigationProperty Name="Recetas" Relationship="RestauranteBDModel.FK__Recetas__idProdu__5CD6CB2B" FromRole="ProductosVenta" ToRole="Recetas" />
         </EntityType>
         <EntityType Name="Proveedores">
           <Key>
@@ -607,7 +650,51 @@
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Ventas" EntitySet="Ventas" />
           </AssociationSet>
+          <EntitySet Name="Recetas" EntityType="RestauranteBDModel.Recetas" />
+          <AssociationSet Name="FK__Recetas__idProdu__5DCAEF64" Association="RestauranteBDModel.FK__Recetas__idProdu__5DCAEF64">
+            <End Role="ProductosCompra" EntitySet="ProductosCompra" />
+            <End Role="Recetas" EntitySet="Recetas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Recetas__idProdu__5CD6CB2B" Association="RestauranteBDModel.FK__Recetas__idProdu__5CD6CB2B">
+            <End Role="ProductosVenta" EntitySet="ProductosVenta" />
+            <End Role="Recetas" EntitySet="Recetas" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Recetas">
+          <Key>
+            <PropertyRef Name="idReceta" />
+          </Key>
+          <Property Name="idReceta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idProductoV" Type="Int32" />
+          <Property Name="idProductoC" Type="Int32" />
+          <Property Name="cantidadProdIngrediente" Type="Int32" />
+          <NavigationProperty Name="ProductosCompra" Relationship="RestauranteBDModel.FK__Recetas__idProdu__5DCAEF64" FromRole="Recetas" ToRole="ProductosCompra" />
+          <NavigationProperty Name="ProductosVenta" Relationship="RestauranteBDModel.FK__Recetas__idProdu__5CD6CB2B" FromRole="Recetas" ToRole="ProductosVenta" />
+        </EntityType>
+        <Association Name="FK__Recetas__idProdu__5DCAEF64">
+          <End Type="RestauranteBDModel.ProductosCompra" Role="ProductosCompra" Multiplicity="0..1" />
+          <End Type="RestauranteBDModel.Recetas" Role="Recetas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductosCompra">
+              <PropertyRef Name="idProductoC" />
+            </Principal>
+            <Dependent Role="Recetas">
+              <PropertyRef Name="idProductoC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Recetas__idProdu__5CD6CB2B">
+          <End Type="RestauranteBDModel.ProductosVenta" Role="ProductosVenta" Multiplicity="0..1" />
+          <End Type="RestauranteBDModel.Recetas" Role="Recetas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductosVenta">
+              <PropertyRef Name="idProductoV" />
+            </Principal>
+            <Dependent Role="Recetas">
+              <PropertyRef Name="idProductoV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -721,6 +808,16 @@
                 <ScalarProperty Name="totalPagar" ColumnName="totalPagar" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="nombredeUsuario" ColumnName="nombredeUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Recetas">
+            <EntityTypeMapping TypeName="RestauranteBDModel.Recetas">
+              <MappingFragment StoreEntitySet="Recetas">
+                <ScalarProperty Name="cantidadProdIngrediente" ColumnName="cantidadProdIngrediente" />
+                <ScalarProperty Name="idProductoC" ColumnName="idProductoC" />
+                <ScalarProperty Name="idProductoV" ColumnName="idProductoV" />
+                <ScalarProperty Name="idReceta" ColumnName="idReceta" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

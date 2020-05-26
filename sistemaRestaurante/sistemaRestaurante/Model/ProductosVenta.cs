@@ -18,6 +18,7 @@ namespace sistemaRestaurante.Model
         public ProductosVenta()
         {
             this.DetallesVenta = new HashSet<DetallesVenta>();
+            this.Recetas = new HashSet<Recetas>();
         }
     
         public int idProductoV { get; set; }
@@ -28,5 +29,7 @@ namespace sistemaRestaurante.Model
         public virtual Categorias Categorias { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetallesVenta> DetallesVenta { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Recetas> Recetas { get; set; }
     }
 }

@@ -19,6 +19,7 @@ namespace sistemaRestaurante.Model
         {
             this.Almacen = new HashSet<Almacen>();
             this.DetallesCompra = new HashSet<DetallesCompra>();
+            this.Recetas = new HashSet<Recetas>();
         }
     
         public int idProductoC { get; set; }
@@ -33,5 +34,7 @@ namespace sistemaRestaurante.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetallesCompra> DetallesCompra { get; set; }
         public virtual Proveedores Proveedores { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Recetas> Recetas { get; set; }
     }
 }

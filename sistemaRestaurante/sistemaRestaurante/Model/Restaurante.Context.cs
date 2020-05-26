@@ -35,5 +35,6 @@ namespace sistemaRestaurante.Model
         public virtual DbSet<Proveedores> Proveedores { get; set; }
         public virtual DbSet<Usuarios> Usuarios { get; set; }
         public virtual DbSet<Ventas> Ventas { get; set; }
+        public virtual DbSet<Recetas> Recetas { get; set; }
     }
 }
