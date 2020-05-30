@@ -34,7 +34,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
                                    CATEGORIA = categoria.nombreCategoria
                                };
 
-                foreach(var iterar in JoinProd)
+                foreach (var iterar in JoinProd)
                 {
                     dtvProductos.Rows.Add(iterar.ID, iterar.NOMBRE, iterar.PRECIO, iterar.CATEGORIA);
                 }

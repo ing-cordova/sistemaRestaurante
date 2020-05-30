@@ -224,7 +224,7 @@
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            this.panel10.Location = new System.Drawing.Point(-2, 450);
+            this.panel10.Location = new System.Drawing.Point(1, 450);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(6, 40);
             this.panel10.TabIndex = 17;
@@ -239,9 +239,9 @@
             this.btnCompras.ForeColor = System.Drawing.Color.White;
             this.btnCompras.Image = global::sistemaRestaurante.Properties.Resources.sell;
             this.btnCompras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCompras.Location = new System.Drawing.Point(5, 450);
+            this.btnCompras.Location = new System.Drawing.Point(4, 450);
             this.btnCompras.Name = "btnCompras";
-            this.btnCompras.Size = new System.Drawing.Size(212, 40);
+            this.btnCompras.Size = new System.Drawing.Size(215, 40);
             this.btnCompras.TabIndex = 16;
             this.btnCompras.Text = "  Compras";
             this.btnCompras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -279,9 +279,9 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            this.panel6.Location = new System.Drawing.Point(-2, 404);
+            this.panel6.Location = new System.Drawing.Point(1, 404);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(6, 40);
+            this.panel6.Size = new System.Drawing.Size(5, 40);
             this.panel6.TabIndex = 13;
             // 
             // btnVentas
@@ -296,7 +296,7 @@
             this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVentas.Location = new System.Drawing.Point(5, 404);
             this.btnVentas.Name = "btnVentas";
-            this.btnVentas.Size = new System.Drawing.Size(212, 40);
+            this.btnVentas.Size = new System.Drawing.Size(210, 40);
             this.btnVentas.TabIndex = 12;
             this.btnVentas.Text = "  Ventas";
             this.btnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -306,7 +306,7 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            this.panel8.Location = new System.Drawing.Point(-1, 496);
+            this.panel8.Location = new System.Drawing.Point(1, 496);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(6, 40);
             this.panel8.TabIndex = 11;
@@ -321,9 +321,9 @@
             this.btnMasOpciones.ForeColor = System.Drawing.Color.White;
             this.btnMasOpciones.Image = global::sistemaRestaurante.Properties.Resources.more;
             this.btnMasOpciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMasOpciones.Location = new System.Drawing.Point(4, 496);
+            this.btnMasOpciones.Location = new System.Drawing.Point(5, 496);
             this.btnMasOpciones.Name = "btnMasOpciones";
-            this.btnMasOpciones.Size = new System.Drawing.Size(213, 40);
+            this.btnMasOpciones.Size = new System.Drawing.Size(212, 40);
             this.btnMasOpciones.TabIndex = 10;
             this.btnMasOpciones.Text = "  Más Opciones";
             this.btnMasOpciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -419,7 +419,7 @@
             this.btnRoles.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
             this.btnRoles.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
             this.btnRoles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRoles.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRoles.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRoles.ForeColor = System.Drawing.Color.White;
             this.btnRoles.Image = global::sistemaRestaurante.Properties.Resources.manager;
             this.btnRoles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -427,10 +427,11 @@
             this.btnRoles.Name = "btnRoles";
             this.btnRoles.Size = new System.Drawing.Size(213, 40);
             this.btnRoles.TabIndex = 6;
-            this.btnRoles.Text = "  Comprar Prods.";
+            this.btnRoles.Text = "  Prods Comprados";
             this.btnRoles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRoles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRoles.UseVisualStyleBackColor = true;
+            this.btnRoles.Click += new System.EventHandler(this.btnRoles_Click);
             // 
             // panel3
             // 

@@ -112,6 +112,11 @@ namespace sistemaRestaurante.Vistas
             AbrirFormulario(new FrmListadoProductos());
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmComprar());
+        }
+
         private void btnCerrarS_Click(object sender, EventArgs e)
         {
             DialogResult entrada = MessageBox.Show("¿Estás seguro que desea cerrar sesión?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
