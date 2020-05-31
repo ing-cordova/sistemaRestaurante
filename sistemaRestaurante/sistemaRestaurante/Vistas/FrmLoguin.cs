@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using sistemaRestaurante.Model;
 using sistemaRestaurante.Vistas;
+using sistemaRestaurante.Vistas.Administrador.Compras;
 
 namespace sistemaRestaurante.Vistas
 {
@@ -28,7 +29,7 @@ namespace sistemaRestaurante.Vistas
         //Acá se valida el estado del txtPassword, para poder ver o no los carácteres.
         private void checkBoxPass_CheckedChanged(object sender, EventArgs e)
         {
-            if (txtPassword.Text != "Ingrese su Contraseña")
+            if (txtPassword.Text != "Password")
             {
                 if (checkBoxPass.Checked == true)
                 {
@@ -82,6 +83,7 @@ namespace sistemaRestaurante.Vistas
                             {
                                 FrmAccesoAdmin accessAd = new FrmAccesoAdmin();
                                 accessAd.Show();
+                                accessAd.lblUsuarioAct.Text = txtUsuario.Text;
                                 this.Hide();
                             }
                         }
@@ -115,7 +117,7 @@ namespace sistemaRestaurante.Vistas
 
         private void txtPassword_Enter(object sender, EventArgs e)
         {
-            if (txtPassword.Text == "Ingrese su Contraseña")
+            if (txtPassword.Text == "Password")
             {
                 txtPassword.Text = "";
                 if (checkBoxPass.Checked == false)
@@ -136,13 +138,13 @@ namespace sistemaRestaurante.Vistas
             if (txtPassword.Text == "")
             {
                 txtPassword.PasswordChar = '\0';
-                txtPassword.Text = "Ingrese su Contraseña";
+                txtPassword.Text = "Password";
             }
         }
 
         private void txtUsuario_Enter(object sender, EventArgs e)
         {
-            if (txtUsuario.Text == "Ingrese el Usuario")
+            if (txtUsuario.Text == "Username")
             {
                 txtUsuario.Text = "";
             }
@@ -152,7 +154,7 @@ namespace sistemaRestaurante.Vistas
         {
             if (txtUsuario.Text == "")
             {
-                txtUsuario.Text = "Ingrese el Usuario";
+                txtUsuario.Text = "Username";
             }
         }
     }

@@ -57,7 +57,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(228, 24);
             this.txtUsuario.TabIndex = 1;
-            this.txtUsuario.Text = "Ingrese el Usuario";
+            this.txtUsuario.Text = "Username";
             this.txtUsuario.Enter += new System.EventHandler(this.txtUsuario_Enter);
             this.txtUsuario.Leave += new System.EventHandler(this.txtUsuario_Leave);
             // 
@@ -87,7 +87,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(228, 24);
             this.txtPassword.TabIndex = 3;
-            this.txtPassword.Text = "Ingrese su Contraseña";
+            this.txtPassword.Text = "Password";
             this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
             this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 

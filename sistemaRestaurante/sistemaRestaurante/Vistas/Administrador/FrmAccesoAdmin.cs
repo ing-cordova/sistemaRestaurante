@@ -14,6 +14,7 @@ using sistemaRestaurante.Vistas.Administrador.ProveedoresLista;
 using sistemaRestaurante.Vistas.Administrador.CategoriasLista;
 using sistemaRestaurante.Vistas.Administrador.UsuariosLista;
 using sistemaRestaurante.Vistas.Administrador.CompraProductos;
+using sistemaRestaurante.Vistas.Administrador.Compras;
 
 namespace sistemaRestaurante.Vistas
 {
@@ -144,6 +145,21 @@ namespace sistemaRestaurante.Vistas
         private void btnRoles_Click(object sender, EventArgs e)
         {
             AbrirFormulario(new FrmListadoProductosCompra());
+        }
+
+        private void btnCompras_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmCompras());
+        }
+
+        private void panelContenedor_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void FrmAccesoAdmin_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void label2_Click(object sender, EventArgs e)
