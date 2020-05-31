@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.lblEtiqueta = new System.Windows.Forms.Label();
-            this.dtvProductos = new System.Windows.Forms.DataGridView();
+            this.dtvDetallesCompra = new System.Windows.Forms.DataGridView();
             this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,7 +61,7 @@
             this.lblTotalAPagar = new System.Windows.Forms.Label();
             this.btnComprar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nupCantidad)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtvProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtvDetallesCompra)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -110,6 +110,8 @@
             // 
             // dtpFecha
             // 
+            this.dtpFecha.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dtpFecha.CustomFormat = "yyyy-MM-dd";
             this.dtpFecha.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFecha.Location = new System.Drawing.Point(571, 12);
             this.dtpFecha.Name = "dtpFecha";
@@ -134,8 +136,9 @@
             this.cmbProveedores.FormattingEnabled = true;
             this.cmbProveedores.Location = new System.Drawing.Point(203, 80);
             this.cmbProveedores.Name = "cmbProveedores";
-            this.cmbProveedores.Size = new System.Drawing.Size(160, 29);
+            this.cmbProveedores.Size = new System.Drawing.Size(214, 29);
             this.cmbProveedores.TabIndex = 6;
+            this.cmbProveedores.SelectedIndexChanged += new System.EventHandler(this.cmbProveedores_SelectedIndexChanged);
             // 
             // lblBuscar
             // 
@@ -169,6 +172,7 @@
             // 
             // txtCodigoProd
             // 
+            this.txtCodigoProd.Enabled = false;
             this.txtCodigoProd.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigoProd.Location = new System.Drawing.Point(16, 152);
             this.txtCodigoProd.Name = "txtCodigoProd";
@@ -177,6 +181,7 @@
             // 
             // txtNombreProd
             // 
+            this.txtNombreProd.Enabled = false;
             this.txtNombreProd.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreProd.Location = new System.Drawing.Point(101, 152);
             this.txtNombreProd.Name = "txtNombreProd";
@@ -196,6 +201,7 @@
             // 
             // txtPrecio
             // 
+            this.txtPrecio.Enabled = false;
             this.txtPrecio.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrecio.Location = new System.Drawing.Point(376, 152);
             this.txtPrecio.Name = "txtPrecio";
@@ -228,12 +234,19 @@
             // 
             this.nupCantidad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nupCantidad.Location = new System.Drawing.Point(486, 153);
+            this.nupCantidad.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nupCantidad.Name = "nupCantidad";
             this.nupCantidad.Size = new System.Drawing.Size(98, 27);
             this.nupCantidad.TabIndex = 17;
+            this.nupCantidad.ValueChanged += new System.EventHandler(this.nupCantidad_ValueChanged);
             // 
             // txtTotal
             // 
+            this.txtTotal.Enabled = false;
             this.txtTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.Location = new System.Drawing.Point(590, 153);
             this.txtTotal.Name = "txtTotal";
@@ -262,6 +275,7 @@
             this.btnAgregar.TabIndex = 20;
             this.btnAgregar.Text = "AGREGAR AL CARRITO";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // lblEtiqueta
             // 
@@ -276,46 +290,46 @@
             this.lblEtiqueta.Text = "Productos agregados al carrito de compras:";
             this.lblEtiqueta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dtvProductos
+            // dtvDetallesCompra
             // 
-            this.dtvProductos.AllowUserToAddRows = false;
-            this.dtvProductos.AllowUserToDeleteRows = false;
-            this.dtvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtvProductos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dtvProductos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
-            this.dtvProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dtvProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dtvProductos.ColumnHeadersHeight = 25;
-            this.dtvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtvDetallesCompra.AllowUserToAddRows = false;
+            this.dtvDetallesCompra.AllowUserToDeleteRows = false;
+            this.dtvDetallesCompra.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtvDetallesCompra.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtvDetallesCompra.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
+            this.dtvDetallesCompra.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtvDetallesCompra.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtvDetallesCompra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dtvDetallesCompra.ColumnHeadersHeight = 25;
+            this.dtvDetallesCompra.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProducto,
             this.producto,
             this.precio,
             this.cantidad,
             this.total});
-            this.dtvProductos.EnableHeadersVisualStyles = false;
-            this.dtvProductos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
-            this.dtvProductos.Location = new System.Drawing.Point(17, 223);
-            this.dtvProductos.Name = "dtvProductos";
-            this.dtvProductos.ReadOnly = true;
-            this.dtvProductos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dtvProductos.RowHeadersVisible = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(162)))), ((int)(((byte)(188)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.dtvProductos.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dtvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtvProductos.Size = new System.Drawing.Size(858, 315);
-            this.dtvProductos.TabIndex = 22;
+            this.dtvDetallesCompra.EnableHeadersVisualStyles = false;
+            this.dtvDetallesCompra.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
+            this.dtvDetallesCompra.Location = new System.Drawing.Point(17, 223);
+            this.dtvDetallesCompra.Name = "dtvDetallesCompra";
+            this.dtvDetallesCompra.ReadOnly = true;
+            this.dtvDetallesCompra.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dtvDetallesCompra.RowHeadersVisible = false;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(162)))), ((int)(((byte)(188)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.dtvDetallesCompra.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dtvDetallesCompra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtvDetallesCompra.Size = new System.Drawing.Size(858, 315);
+            this.dtvDetallesCompra.TabIndex = 22;
             // 
             // idProducto
             // 
@@ -386,6 +400,7 @@
             this.btnComprar.TabIndex = 25;
             this.btnComprar.Text = "COMPRAR";
             this.btnComprar.UseVisualStyleBackColor = true;
+            this.btnComprar.Click += new System.EventHandler(this.btnComprar_Click);
             // 
             // FrmCompras
             // 
@@ -396,7 +411,7 @@
             this.Controls.Add(this.btnComprar);
             this.Controls.Add(this.lblTotalAPagar);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.dtvProductos);
+            this.Controls.Add(this.dtvDetallesCompra);
             this.Controls.Add(this.lblEtiqueta);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.txtTotal);
@@ -424,7 +439,7 @@
             this.Text = "FrmCompras";
             this.Load += new System.EventHandler(this.FrmCompras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nupCantidad)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtvProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtvDetallesCompra)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -453,7 +468,7 @@
         private System.Windows.Forms.Button btnAgregar;
         public System.Windows.Forms.Label lblEtiqueta;
         public System.Windows.Forms.Label lblUsuario;
-        public System.Windows.Forms.DataGridView dtvProductos;
+        public System.Windows.Forms.DataGridView dtvDetallesCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn precio;
