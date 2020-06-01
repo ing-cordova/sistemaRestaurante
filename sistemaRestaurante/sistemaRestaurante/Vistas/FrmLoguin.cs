@@ -84,6 +84,7 @@ namespace sistemaRestaurante.Vistas
                                 FrmAccesoAdmin accessAd = new FrmAccesoAdmin();
                                 accessAd.Show();
                                 accessAd.lblUsuarioAct.Text = txtUsuario.Text;
+                                FrmAccesoAdmin.compras.lblUsuario.Text = txtUsuario.Text;
                                 this.Hide();
                             }
                         }

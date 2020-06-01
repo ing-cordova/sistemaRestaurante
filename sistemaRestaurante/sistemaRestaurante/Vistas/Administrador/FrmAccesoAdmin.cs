@@ -151,8 +151,7 @@ namespace sistemaRestaurante.Vistas
         public static FrmCompras compras = new FrmCompras();
         private void btnCompras_Click(object sender, EventArgs e)
         {
-            //AbrirFormulario(new FrmCompras());
-            
+
             if (this.panelContenedor.Controls.Count > 0)
             {
                 this.panelContenedor.Controls.RemoveAt(0);

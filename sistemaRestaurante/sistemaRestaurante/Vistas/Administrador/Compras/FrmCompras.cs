@@ -100,7 +100,54 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
             }
             else
             {
+                DialogResult result = MessageBox.Show("¿Desea agregar algo más antes de comprar?", "Validación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if(result == DialogResult.No)
+                {
+                    using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
+                    {
+                        Compraas compra = new Compraas();
 
+                        String nombre = lblUsuario.Text;
+
+                        compra.fechadeCompra = Convert.ToDateTime(dtpFecha.Text);
+                        compra.totalaPagar = Convert.ToDecimal(lblTotalAPagar.Text);
+                        compra.idProveedor = Convert.ToInt32(provee);
+                        compra.nombredeUsuario = nombre.ToString();
+
+                        bd.Compraas.Add(compra);
+                        bd.SaveChanges();
+
+                        DetallesCompra detalleC = new DetallesCompra();
+                        for (int i = 0; i < dtvDetallesCompra.RowCount; i++)
+                        {
+                            String idProdC = dtvDetallesCompra.Rows[i].Cells[0].Value.ToString();
+                            int idProdConv = Convert.ToInt32(idProdC);
+
+                            String cantidad = dtvDetallesCompra.Rows[i].Cells[3].Value.ToString();
+                            int cantiConver = Convert.ToInt32(cantidad);
+
+                            String precio = dtvDetallesCompra.Rows[i].Cells[2].Value.ToString();
+                            Double precioConv = Convert.ToDouble(precio);
+
+                            String total = dtvDetallesCompra.Rows[i].Cells[4].Value.ToString();
+                            Decimal totalConv = Convert.ToDecimal(total);
+
+                            detalleC.idCompra = Convert.ToInt32(lblCodigo.Text);
+                            detalleC.idProductoC = idProdConv;
+                            detalleC.cantidad = cantiConver;
+                            detalleC.precioCompra = precioConv;
+                            detalleC.totalProducto = totalConv;
+
+                            bd.DetallesCompra.Add(detalleC);
+                            bd.SaveChanges();
+                        }
+
+                        MessageBox.Show("¡Venta Realizada con éxito! \n\nCON UN TOTAL DE: $" + lblTotalAPagar.Text, "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        dtvDetallesCompra.Rows.Clear();
+                    }
+
+                    RetornoId();
+                }
             }
         }
 
