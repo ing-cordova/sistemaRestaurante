@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAccesoAdmin));
             this.barraTitulos = new System.Windows.Forms.Panel();
+            this.lblUsuarioAct = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
@@ -63,9 +66,6 @@
             this.btnProductos = new System.Windows.Forms.Button();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.tmDatosFechaHora = new System.Windows.Forms.Timer(this.components);
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblUsuarioAct = new System.Windows.Forms.Label();
             this.barraTitulos.SuspendLayout();
             this.MenuVertical.SuspendLayout();
             this.Submenu.SuspendLayout();
@@ -91,6 +91,45 @@
             this.barraTitulos.Size = new System.Drawing.Size(1113, 42);
             this.barraTitulos.TabIndex = 1;
             this.barraTitulos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.barraTitulos_MouseDown);
+            // 
+            // lblUsuarioAct
+            // 
+            this.lblUsuarioAct.AutoSize = true;
+            this.lblUsuarioAct.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsuarioAct.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuarioAct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(31)))), ((int)(((byte)(70)))));
+            this.lblUsuarioAct.Location = new System.Drawing.Point(576, 9);
+            this.lblUsuarioAct.Name = "lblUsuarioAct";
+            this.lblUsuarioAct.Size = new System.Drawing.Size(87, 25);
+            this.lblUsuarioAct.TabIndex = 17;
+            this.lblUsuarioAct.Text = "Usuario";
+            this.lblUsuarioAct.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(31)))), ((int)(((byte)(70)))));
+            this.label2.Location = new System.Drawing.Point(498, 4);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(26, 28);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "|";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(31)))), ((int)(((byte)(70)))));
+            this.label3.Location = new System.Drawing.Point(518, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 25);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "User:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -538,45 +577,6 @@
             this.tmDatosFechaHora.Enabled = true;
             this.tmDatosFechaHora.Tick += new System.EventHandler(this.tmDatosFechaHora_Tick);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(31)))), ((int)(((byte)(70)))));
-            this.label2.Location = new System.Drawing.Point(498, 4);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 28);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "|";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(31)))), ((int)(((byte)(70)))));
-            this.label3.Location = new System.Drawing.Point(518, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 25);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "User:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblUsuarioAct
-            // 
-            this.lblUsuarioAct.AutoSize = true;
-            this.lblUsuarioAct.BackColor = System.Drawing.Color.Transparent;
-            this.lblUsuarioAct.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuarioAct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(31)))), ((int)(((byte)(70)))));
-            this.lblUsuarioAct.Location = new System.Drawing.Point(576, 9);
-            this.lblUsuarioAct.Name = "lblUsuarioAct";
-            this.lblUsuarioAct.Size = new System.Drawing.Size(87, 25);
-            this.lblUsuarioAct.TabIndex = 17;
-            this.lblUsuarioAct.Text = "Usuario";
-            this.lblUsuarioAct.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // FrmAccesoAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -635,9 +635,9 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Button btnCategorias;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Button btnCompras;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label lblUsuarioAct;
+        public System.Windows.Forms.Button btnCompras;
     }
 }

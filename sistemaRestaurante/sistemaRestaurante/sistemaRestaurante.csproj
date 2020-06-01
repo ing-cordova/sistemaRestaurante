@@ -143,6 +143,12 @@
     <Compile Include="Vistas\Administrador\Compras\FrmCompras.Designer.cs">
       <DependentUpon>FrmCompras.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Administrador\Compras\FrmProdsAComprar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Administrador\Compras\FrmProdsAComprar.Designer.cs">
+      <DependentUpon>FrmProdsAComprar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Administrador\FrmAccesoAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Administrador\Compras\FrmCompras.resx">
       <DependentUpon>FrmCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Administrador\Compras\FrmProdsAComprar.resx">
+      <DependentUpon>FrmProdsAComprar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Administrador\FrmAccesoAdmin.resx">
       <DependentUpon>FrmAccesoAdmin.cs</DependentUpon>

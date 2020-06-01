@@ -156,7 +156,7 @@ namespace sistemaRestaurante.Vistas.Administrador.CompraProductos
             {
                 decimal precioCon;
 
-                if(decimal.TryParse(txtPrecioProd.Text, out precioCon) == false)
+                if (decimal.TryParse(txtPrecioProd.Text, out precioCon) == false)
                 {
                     MessageBox.Show("¡Ingrese correctamente el precio!");
                 }

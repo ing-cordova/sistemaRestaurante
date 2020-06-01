@@ -15,6 +15,7 @@ using sistemaRestaurante.Vistas.Administrador.CategoriasLista;
 using sistemaRestaurante.Vistas.Administrador.UsuariosLista;
 using sistemaRestaurante.Vistas.Administrador.CompraProductos;
 using sistemaRestaurante.Vistas.Administrador.Compras;
+using sistemaRestaurante.Model;
 
 namespace sistemaRestaurante.Vistas
 {
@@ -147,9 +148,21 @@ namespace sistemaRestaurante.Vistas
             AbrirFormulario(new FrmListadoProductosCompra());
         }
 
+        public static FrmCompras compras = new FrmCompras();
         private void btnCompras_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(new FrmCompras());
+            //AbrirFormulario(new FrmCompras());
+            
+            if (this.panelContenedor.Controls.Count > 0)
+            {
+                this.panelContenedor.Controls.RemoveAt(0);
+            }
+
+            compras.TopLevel = false;
+            compras.Dock = DockStyle.Fill;
+            this.panelContenedor.Controls.Add(compras);
+            this.panelContenedor.Tag = compras;
+            compras.Show();
         }
 
         private void panelContenedor_Paint(object sender, PaintEventArgs e)
