@@ -20,7 +20,7 @@ namespace sistemaRestaurante.Vistas.Usuario.ProductosLista
 
         public void Filtro()
         {
-            using (RestauranteBDEntities bd = new RestauranteBDEntities())
+            using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
             {
                 String nombre = txtBusqueda.Text;
 

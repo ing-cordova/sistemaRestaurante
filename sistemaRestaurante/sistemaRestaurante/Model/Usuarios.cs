@@ -17,7 +17,7 @@ namespace sistemaRestaurante.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Usuarios()
         {
-            this.Compras = new HashSet<Compras>();
+            this.Compraas = new HashSet<Compraas>();
             this.Ventas = new HashSet<Ventas>();
         }
     
@@ -31,7 +31,7 @@ namespace sistemaRestaurante.Model
         public string rol { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Compras> Compras { get; set; }
+        public virtual ICollection<Compraas> Compraas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Ventas> Ventas { get; set; }
     }

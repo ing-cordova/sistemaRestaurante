@@ -55,7 +55,7 @@ Create table DetallesVenta(
 	idVenta int foreign key references Ventas(idVenta)
 );
 Go
-Create table Compras(
+Create table Compraas(
 	idCompra int identity(1,1) primary key not null,
 	fechadeCompra date,
 	totalaPagar money,
@@ -69,7 +69,7 @@ Create table DetallesCompra(
 	precioCompra float,
 	cantidad int,
 	totalProducto money,
-	idCompra int foreign key references Compras(idCompra)
+	idCompra int foreign key references Compraas(idCompra)
 );
 Go
 Create table Almacen(
@@ -102,3 +102,7 @@ idProductoV int foreign key references ProductosVenta(idProductoV),
 idProductoC int foreign key references ProductosCompra(idProductoC),
 cantidadProdIngrediente int
 );
+
+-----------Actualizacion 01/06/2020-------------------
+/*Solo le cambie el nombre a la tabla Compras a 'Compraas', borren esta base, 
+y ejecuten este script*/

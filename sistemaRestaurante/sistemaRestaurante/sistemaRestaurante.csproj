@@ -64,52 +64,52 @@
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Almacen.cs">
-      <DependentUpon>Restaurante.tt</DependentUpon>
+      <DependentUpon>RestauranteBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Categorias.cs">
-      <DependentUpon>Restaurante.tt</DependentUpon>
+      <DependentUpon>RestauranteBD.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Compras.cs">
-      <DependentUpon>Restaurante.tt</DependentUpon>
+    <Compile Include="Model\Compraas.cs">
+      <DependentUpon>RestauranteBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\DetallesCompra.cs">
-      <DependentUpon>Restaurante.tt</DependentUpon>
+      <DependentUpon>RestauranteBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\DetallesVenta.cs">
-      <DependentUpon>Restaurante.tt</DependentUpon>
+      <DependentUpon>RestauranteBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\ProductosCompra.cs">
-      <DependentUpon>Restaurante.tt</DependentUpon>
+      <DependentUpon>RestauranteBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\ProductosVenta.cs">
-      <DependentUpon>Restaurante.tt</DependentUpon>
+      <DependentUpon>RestauranteBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Proveedores.cs">
-      <DependentUpon>Restaurante.tt</DependentUpon>
+      <DependentUpon>RestauranteBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Recetas.cs">
-      <DependentUpon>Restaurante.tt</DependentUpon>
+      <DependentUpon>RestauranteBD.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Restaurante.Context.cs">
+    <Compile Include="Model\RestauranteBD.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Restaurante.Context.tt</DependentUpon>
+      <DependentUpon>RestauranteBD.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Restaurante.cs">
+    <Compile Include="Model\RestauranteBD.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Restaurante.tt</DependentUpon>
+      <DependentUpon>RestauranteBD.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Restaurante.Designer.cs">
+    <Compile Include="Model\RestauranteBD.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Restaurante.edmx</DependentUpon>
+      <DependentUpon>RestauranteBD.edmx</DependentUpon>
     </Compile>
     <Compile Include="Model\Usuarios.cs">
-      <DependentUpon>Restaurante.tt</DependentUpon>
+      <DependentUpon>RestauranteBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Ventas.cs">
-      <DependentUpon>Restaurante.tt</DependentUpon>
+      <DependentUpon>RestauranteBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -288,12 +288,12 @@
     <EmbeddedResource Include="Vistas\Usuario\ProductosLista\FrmListadoProductos.resx">
       <DependentUpon>FrmListadoProductos.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="Model\Restaurante.edmx">
+    <EntityDeploy Include="Model\RestauranteBD.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Restaurante.Designer.cs</LastGenOutput>
+      <LastGenOutput>RestauranteBD.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model\Restaurante.edmx.diagram">
-      <DependentUpon>Restaurante.edmx</DependentUpon>
+    <None Include="Model\RestauranteBD.edmx.diagram">
+      <DependentUpon>RestauranteBD.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -328,16 +328,6 @@
     <None Include="Resources\CloseWindow.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model\Restaurante.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Restaurante.edmx</DependentUpon>
-      <LastGenOutput>Restaurante.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model\Restaurante.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Restaurante.edmx</DependentUpon>
-      <LastGenOutput>Restaurante.cs</LastGenOutput>
-    </Content>
     <None Include="Resources\sell.png" />
     <None Include="Resources\category.png" />
     <None Include="Resources\refresh.png" />
@@ -372,6 +362,19 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Model\RestauranteBD.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RestauranteBD.edmx</DependentUpon>
+      <LastGenOutput>RestauranteBD.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\RestauranteBD.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RestauranteBD.edmx</DependentUpon>
+      <LastGenOutput>RestauranteBD.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

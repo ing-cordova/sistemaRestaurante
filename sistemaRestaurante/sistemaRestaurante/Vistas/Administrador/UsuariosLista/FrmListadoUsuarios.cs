@@ -20,7 +20,7 @@ namespace sistemaRestaurante.Vistas.Administrador.UsuariosLista
 
         public void CargarDatos()
         {
-            using (RestauranteBDEntities bd = new RestauranteBDEntities())
+            using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
             {
                 var Usuario = from usuario in bd.Usuarios
 
@@ -46,7 +46,7 @@ namespace sistemaRestaurante.Vistas.Administrador.UsuariosLista
 
         void Filtro()
         {
-            using (RestauranteBDEntities bd = new RestauranteBDEntities())
+            using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
             {
                 String usuarios = txtBusqueda.Text;
 

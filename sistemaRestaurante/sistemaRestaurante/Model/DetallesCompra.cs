@@ -21,7 +21,7 @@ namespace sistemaRestaurante.Model
         public Nullable<decimal> totalProducto { get; set; }
         public Nullable<int> idCompra { get; set; }
     
-        public virtual Compras Compras { get; set; }
+        public virtual Compraas Compraas { get; set; }
         public virtual ProductosCompra ProductosCompra { get; set; }
     }
 }

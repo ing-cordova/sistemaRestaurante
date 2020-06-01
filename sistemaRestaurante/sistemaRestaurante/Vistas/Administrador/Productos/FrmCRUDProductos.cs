@@ -38,7 +38,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
 
         public void CargarCombo()
         {
-            using (RestauranteBDEntities bd = new RestauranteBDEntities())
+            using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
             {
                 var Categorias = bd.Categorias.ToList();
                 if (Categorias.Count > 0)
@@ -81,7 +81,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
             }
             else
             {
-                using (RestauranteBDEntities bd = new RestauranteBDEntities())
+                using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
                 {
                     prod.nombre = txtNombreProd.Text;
                     prod.precio = decimal.Parse(txtPrecioProd.Text);
@@ -108,7 +108,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
             DialogResult result = MessageBox.Show("¿Estás seguro que quieres editar?, \n¡la acción no se podrá deshacer!", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (result == DialogResult.OK)
             {
-                using (RestauranteBDEntities bd = new RestauranteBDEntities())
+                using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
                 {
                     String id2 = lblCodigo.Text;
                     int idC = int.Parse(id2);
@@ -132,7 +132,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
             DialogResult result = MessageBox.Show("¿Estás seguro que quieres eliminar?, \n¡la acción no se podrá deshacer!", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (result == DialogResult.OK)
             {
-                using (RestauranteBDEntities bd = new RestauranteBDEntities())
+                using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
                 {
                     String id = lblCodigo.Text;
 

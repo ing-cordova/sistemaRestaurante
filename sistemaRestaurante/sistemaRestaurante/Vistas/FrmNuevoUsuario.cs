@@ -57,7 +57,7 @@ namespace sistemaRestaurante.Vistas
             {
                 if (txtPassword.Text == txtVerifyPass.Text)
                 {
-                    using (RestauranteBDEntities bd = new RestauranteBDEntities())
+                    using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
                     {
                         var lista = from usuario in bd.Usuarios
                                     where usuario.nombredeUsuario == txtUsuario.Text
@@ -71,7 +71,7 @@ namespace sistemaRestaurante.Vistas
                         {
                             if (cmbUsuario.Text == "Usuario")
                             {
-                                using (RestauranteBDEntities db = new RestauranteBDEntities())
+                                using (RestauranteBDEntities1 db = new RestauranteBDEntities1())
                                 {
                                     user.nombre = txtNombres.Text;
                                     user.apellidos = txtApellidos.Text;
@@ -98,7 +98,7 @@ namespace sistemaRestaurante.Vistas
                                 String PIN = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el PIN de seguridad:", "Registro de Administrador", "", 500, 300);
                                 if (PIN == PIN_ADMIN)
                                 {
-                                    using (RestauranteBDEntities db = new RestauranteBDEntities())
+                                    using (RestauranteBDEntities1 db = new RestauranteBDEntities1())
                                     {
                                         user.nombre = txtNombres.Text;
                                         user.apellidos = txtApellidos.Text;

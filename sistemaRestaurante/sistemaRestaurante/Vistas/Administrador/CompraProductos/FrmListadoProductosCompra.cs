@@ -20,7 +20,7 @@ namespace sistemaRestaurante.Vistas.Administrador.CompraProductos
 
         public void CargarDatos()
         {
-            using (RestauranteBDEntities bd = new RestauranteBDEntities())
+            using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
             {
                 var JoinProd = from prod in bd.ProductosCompra
                                from provee in bd.Proveedores

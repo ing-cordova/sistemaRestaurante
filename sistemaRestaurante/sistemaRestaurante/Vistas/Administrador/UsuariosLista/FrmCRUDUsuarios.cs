@@ -50,7 +50,7 @@ namespace sistemaRestaurante.Vistas.Administrador.UsuariosLista
             DialogResult result = MessageBox.Show("¿Estás seguro que quieres editar?, \n¡la acción no se podrá deshacer!", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if(result == DialogResult.OK)
             {
-                using (RestauranteBDEntities bd = new RestauranteBDEntities())
+                using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
                 {
                     String usuario = lblUsuario.Text;
 
@@ -77,7 +77,7 @@ namespace sistemaRestaurante.Vistas.Administrador.UsuariosLista
             DialogResult result = MessageBox.Show("¿Estás seguro que quieres eliminarlo?, \n¡la acción no se podrá deshacer!", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if(result == DialogResult.OK)
             {
-                using (RestauranteBDEntities bd = new RestauranteBDEntities())
+                using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
                 {
                     String usuario = lblUsuario.Text;
 

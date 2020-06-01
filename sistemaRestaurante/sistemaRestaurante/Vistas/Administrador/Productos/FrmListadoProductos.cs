@@ -21,7 +21,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
 
         public void CargarDatos()
         {
-            using(RestauranteBDEntities bd = new RestauranteBDEntities())
+            using(RestauranteBDEntities1 bd = new RestauranteBDEntities1())
             {
                 var JoinProd = from producto in bd.ProductosVenta
                                from categoria in bd.Categorias

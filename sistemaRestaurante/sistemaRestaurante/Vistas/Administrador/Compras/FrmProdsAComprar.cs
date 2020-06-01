@@ -21,7 +21,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
 
         public void CargarTabla()
         {
-            using (RestauranteBDEntities bd = new RestauranteBDEntities())
+            using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
             {
                 var JoinProd = from prod in bd.ProductosCompra
                                from provee in bd.Proveedores
@@ -47,7 +47,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
 
         public void Filtro()
         {
-            using(RestauranteBDEntities bd = new RestauranteBDEntities())
+            using(RestauranteBDEntities1 bd = new RestauranteBDEntities1())
             {
                 var JoinProd = from prod in bd.ProductosCompra
                                from provee in bd.Proveedores

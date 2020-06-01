@@ -22,7 +22,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
         String provee = "";
         public void CargarCombo()
         {
-            using(RestauranteBDEntities bd = new RestauranteBDEntities())
+            using(RestauranteBDEntities1 bd = new RestauranteBDEntities1())
             {
                 var proveedor = bd.Proveedores.ToList();
 
@@ -37,9 +37,9 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
 
         public void RetornoId()
         {
-            using(RestauranteBDEntities bd = new RestauranteBDEntities())
+            using(RestauranteBDEntities1 bd = new RestauranteBDEntities1())
             {
-                var tbCompras = bd.Compras;
+                var tbCompras = bd.Compraas;
 
                 lblCodigo.Text = "1";
                 foreach(var iterarCompras in tbCompras)
@@ -147,7 +147,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
             }
             else if(e.KeyCode == Keys.Enter)
             {
-                using(RestauranteBDEntities bd = new RestauranteBDEntities())
+                using(RestauranteBDEntities1 bd = new RestauranteBDEntities1())
                 {
                     ProductosCompra prod = new ProductosCompra();
 

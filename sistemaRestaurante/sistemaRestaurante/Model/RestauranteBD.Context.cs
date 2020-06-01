@@ -13,10 +13,10 @@ namespace sistemaRestaurante.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class RestauranteBDEntities : DbContext
+    public partial class RestauranteBDEntities1 : DbContext
     {
-        public RestauranteBDEntities()
-            : base("name=RestauranteBDEntities")
+        public RestauranteBDEntities1()
+            : base("name=RestauranteBDEntities1")
         {
         }
     
@@ -27,14 +27,14 @@ namespace sistemaRestaurante.Model
     
         public virtual DbSet<Almacen> Almacen { get; set; }
         public virtual DbSet<Categorias> Categorias { get; set; }
-        public virtual DbSet<Compras> Compras { get; set; }
+        public virtual DbSet<Compraas> Compraas { get; set; }
         public virtual DbSet<DetallesCompra> DetallesCompra { get; set; }
         public virtual DbSet<DetallesVenta> DetallesVenta { get; set; }
         public virtual DbSet<ProductosCompra> ProductosCompra { get; set; }
         public virtual DbSet<ProductosVenta> ProductosVenta { get; set; }
         public virtual DbSet<Proveedores> Proveedores { get; set; }
+        public virtual DbSet<Recetas> Recetas { get; set; }
         public virtual DbSet<Usuarios> Usuarios { get; set; }
         public virtual DbSet<Ventas> Ventas { get; set; }
-        public virtual DbSet<Recetas> Recetas { get; set; }
     }
 }

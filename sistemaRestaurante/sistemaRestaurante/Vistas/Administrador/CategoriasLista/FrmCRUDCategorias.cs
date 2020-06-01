@@ -37,7 +37,7 @@ namespace sistemaRestaurante.Vistas.Administrador.CategoriasLista
             }
             else
             {
-                using (RestauranteBDEntities bd = new RestauranteBDEntities())
+                using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
                 {
                     Cate.nombreCategoria = txtCategoria.Text;
 
@@ -71,7 +71,7 @@ namespace sistemaRestaurante.Vistas.Administrador.CategoriasLista
             DialogResult result = MessageBox.Show("¿Estás seguro que quieres editar?, \n¡la acción no se podrá deshacer!", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if(result == DialogResult.OK)
             {
-                using (RestauranteBDEntities bd = new RestauranteBDEntities())
+                using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
                 {
                     String idca = lblCodigo.Text;
                     int idC = int.Parse(idca);
@@ -95,7 +95,7 @@ namespace sistemaRestaurante.Vistas.Administrador.CategoriasLista
             DialogResult result = MessageBox.Show("¿Estás seguro que quieres eliminar?, \n¡la acción no se podrá deshacer!", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (result == DialogResult.OK)
             {
-                using (RestauranteBDEntities bd = new RestauranteBDEntities())
+                using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
                 {
                     String id = lblCodigo.Text;
 

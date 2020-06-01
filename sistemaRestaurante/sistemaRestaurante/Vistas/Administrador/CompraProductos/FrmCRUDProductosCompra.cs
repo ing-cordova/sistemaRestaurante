@@ -33,7 +33,7 @@ namespace sistemaRestaurante.Vistas.Administrador.CompraProductos
 
         public void CargarCombos()
         {
-            using(RestauranteBDEntities bd = new RestauranteBDEntities())
+            using(RestauranteBDEntities1 bd = new RestauranteBDEntities1())
             {
                 var Categorias = bd.Categorias.ToList();
                 var Proveedor = bd.Proveedores.ToList();
@@ -86,7 +86,7 @@ namespace sistemaRestaurante.Vistas.Administrador.CompraProductos
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            using (RestauranteBDEntities bd = new RestauranteBDEntities())
+            using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
             {
                 String id2 = lblCodigo.Text;
                 int idC = int.Parse(id2);
@@ -119,7 +119,7 @@ namespace sistemaRestaurante.Vistas.Administrador.CompraProductos
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            using (RestauranteBDEntities bd = new RestauranteBDEntities())
+            using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
             {
                 decimal precioCon;
 
@@ -152,7 +152,7 @@ namespace sistemaRestaurante.Vistas.Administrador.CompraProductos
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            using(RestauranteBDEntities bd = new RestauranteBDEntities())
+            using(RestauranteBDEntities1 bd = new RestauranteBDEntities1())
             {
                 decimal precioCon;
 

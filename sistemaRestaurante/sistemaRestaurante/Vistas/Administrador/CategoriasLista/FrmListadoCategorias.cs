@@ -19,7 +19,7 @@ namespace sistemaRestaurante.Vistas.Administrador.CategoriasLista
         }
         private void cargardatos()
         {
-            using (RestauranteBDEntities bd = new RestauranteBDEntities())
+            using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
             {
                 var tablacategorias = bd.Categorias;
 

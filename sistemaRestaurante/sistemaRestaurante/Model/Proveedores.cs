@@ -17,7 +17,7 @@ namespace sistemaRestaurante.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Proveedores()
         {
-            this.Compras = new HashSet<Compras>();
+            this.Compraas = new HashSet<Compraas>();
             this.ProductosCompra = new HashSet<ProductosCompra>();
         }
     
@@ -28,7 +28,7 @@ namespace sistemaRestaurante.Model
         public string email { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Compras> Compras { get; set; }
+        public virtual ICollection<Compraas> Compraas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductosCompra> ProductosCompra { get; set; }
     }

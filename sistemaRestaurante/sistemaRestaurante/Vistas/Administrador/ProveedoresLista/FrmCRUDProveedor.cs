@@ -59,7 +59,7 @@ namespace sistemaRestaurante.Vistas.Administrador.ProveedoresLista
             }
             else
             {
-                using (RestauranteBDEntities bd = new RestauranteBDEntities())
+                using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
                 {
                     prov.nombre = txtNombreProV.Text;
                     prov.ubicacion = txtUbicacion.Text;
@@ -81,7 +81,7 @@ namespace sistemaRestaurante.Vistas.Administrador.ProveedoresLista
             DialogResult result = MessageBox.Show("¿Estás seguro que quieres editar?, \n¡la acción no se podrá deshacer!", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (result == DialogResult.OK)
             {
-                using (RestauranteBDEntities bd = new RestauranteBDEntities())
+                using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
                 {
                     String idpv = lblCodigo.Text;
                     int idC = int.Parse(idpv);
@@ -107,7 +107,7 @@ namespace sistemaRestaurante.Vistas.Administrador.ProveedoresLista
             DialogResult result = MessageBox.Show("¿Estás seguro que quieres eliminar?, \n¡la acción no se podrá deshacer!", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (result == DialogResult.OK)
             {
-                using (RestauranteBDEntities bd = new RestauranteBDEntities())
+                using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
                 {
                     String id = lblCodigo.Text;
 
