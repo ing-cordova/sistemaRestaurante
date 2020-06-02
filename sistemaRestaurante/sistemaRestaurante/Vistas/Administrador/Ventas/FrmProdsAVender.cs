@@ -8,72 +8,59 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using sistemaRestaurante.Model;
-using sistemaRestaurante.Vistas.Administrador;
 
-namespace sistemaRestaurante.Vistas.Administrador.Compras
+namespace sistemaRestaurante.Vistas.Administrador.Ventas
 {
-    public partial class FrmProdsAComprar : Form
+    public partial class FrmProdsAVender : Form
     {
-        public FrmProdsAComprar(String provee)
+        public FrmProdsAVender()
         {
             InitializeComponent();
-            this.idprovee = provee;
         }
 
-        private String idprovee = "";
         public void CargarTabla()
         {
-            int idProveedor = Int32.Parse(idprovee);
             using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
             {
-                var JoinProd = from prod in bd.ProductosCompra
-                               from provee in bd.Proveedores
+                var JoinProd = from prod in bd.ProductosVenta
                                from categoria in bd.Categorias
-                               where prod.idProveedor == idProveedor
-                               where prod.idProveedor == provee.idProveedor
                                where prod.idCategoria == categoria.idCategoria
 
                                select new
                                {
-                                   ID = prod.idProductoC,
+                                   ID = prod.idProductoV,
                                    NOMBRE = prod.nombre,
                                    PRECIO = prod.precio,
-                                   PROVEEDOR = provee.nombre,
                                    CATEGORIA = categoria.nombreCategoria
                                };
 
                 foreach (var iterar in JoinProd)
                 {
-                    dtvDetallesCompra.Rows.Add(iterar.ID, iterar.NOMBRE, iterar.PRECIO, iterar.PROVEEDOR, iterar.CATEGORIA);
+                    dtvDetallesCompra.Rows.Add(iterar.ID, iterar.NOMBRE, iterar.PRECIO, iterar.CATEGORIA);
                 }
             }
         }
 
         public void Filtro()
         {
-            int idProveedor = Int32.Parse(idprovee);
             using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
             {
-                var JoinProd = from prod in bd.ProductosCompra
-                               from provee in bd.Proveedores
+                var JoinProd = from prod in bd.ProductosVenta
                                from categoria in bd.Categorias
-                               where prod.idProveedor == idProveedor
-                               where prod.idProveedor == provee.idProveedor
                                where prod.idCategoria == categoria.idCategoria
                                where prod.nombre.Contains(txtBusqueda.Text)
 
                                select new
                                {
-                                   ID = prod.idProductoC,
+                                   ID = prod.idProductoV,
                                    NOMBRE = prod.nombre,
                                    PRECIO = prod.precio,
-                                   PROVEEDOR = provee.nombre,
                                    CATEGORIA = categoria.nombreCategoria
                                };
 
                 foreach (var iterar in JoinProd)
                 {
-                    dtvDetallesCompra.Rows.Add(iterar.ID, iterar.NOMBRE, iterar.PRECIO, iterar.PROVEEDOR, iterar.CATEGORIA);
+                    dtvDetallesCompra.Rows.Add(iterar.ID, iterar.NOMBRE, iterar.PRECIO, iterar.CATEGORIA);
                 }
             }
         }
@@ -91,7 +78,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
             FrmAccesoAdmin.compras.nupCantidad.Focus();
         }
 
-        private void FrmProdsAComprar_Load(object sender, EventArgs e)
+        private void FrmProdsAVender_Load(object sender, EventArgs e)
         {
             Filtro();
         }
@@ -102,7 +89,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
             Filtro();
         }
 
-        
+
         private void dtvDetallesCompra_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             Envio();
@@ -112,7 +99,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
 
         private void dtvDetallesCompra_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 Envio();
                 this.Close();

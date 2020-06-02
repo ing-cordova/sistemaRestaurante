@@ -16,6 +16,7 @@ using sistemaRestaurante.Vistas.Administrador.UsuariosLista;
 using sistemaRestaurante.Vistas.Administrador.CompraProductos;
 using sistemaRestaurante.Vistas.Administrador.Compras;
 using sistemaRestaurante.Model;
+using sistemaRestaurante.Vistas.Administrador.Ventas;
 
 namespace sistemaRestaurante.Vistas
 {
@@ -172,6 +173,11 @@ namespace sistemaRestaurante.Vistas
         private void FrmAccesoAdmin_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmVentas());
         }
 
         private void label2_Click(object sender, EventArgs e)

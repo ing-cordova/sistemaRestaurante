@@ -191,6 +191,18 @@
     <Compile Include="Vistas\Administrador\UsuariosLista\FrmListadoUsuarios.Designer.cs">
       <DependentUpon>FrmListadoUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Administrador\Ventas\FrmProdsAVender.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Administrador\Ventas\FrmProdsAVender.Designer.cs">
+      <DependentUpon>FrmProdsAVender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Administrador\Ventas\FrmVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Administrador\Ventas\FrmVentas.Designer.cs">
+      <DependentUpon>FrmVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Usuario\FrmAccesoUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,6 +284,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Administrador\UsuariosLista\FrmListadoUsuarios.resx">
       <DependentUpon>FrmListadoUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Administrador\Ventas\FrmProdsAVender.resx">
+      <DependentUpon>FrmProdsAVender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Administrador\Ventas\FrmVentas.resx">
+      <DependentUpon>FrmVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Usuario\FrmAccesoUsuario.resx">
       <DependentUpon>FrmAccesoUsuario.cs</DependentUpon>

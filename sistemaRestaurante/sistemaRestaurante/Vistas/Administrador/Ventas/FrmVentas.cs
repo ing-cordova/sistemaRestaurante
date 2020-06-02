@@ -1,5 +1,4 @@
-﻿using sistemaRestaurante.Vistas.Usuario.ProductosLista;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,43 +8,29 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using sistemaRestaurante.Model;
+using sistemaRestaurante.Vistas.Administrador.Compras;
 
-namespace sistemaRestaurante.Vistas.Administrador.Compras
+namespace sistemaRestaurante.Vistas.Administrador.Ventas
 {
-    public partial class FrmCompras : Form
+    public partial class FrmVentas : Form
     {
-        public FrmCompras()
+        public FrmVentas()
         {
             InitializeComponent();
         }
 
-        public String provee = "";
         
-        public void CargarCombo()
-        {
-            using(RestauranteBDEntities1 bd = new RestauranteBDEntities1())
-            {
-                var proveedor = bd.Proveedores.ToList();
-
-                if (proveedor.Count() > 0)
-                {
-                    cmbProveedores.DataSource = proveedor;
-                    cmbProveedores.DisplayMember = "nombre";
-                    cmbProveedores.ValueMember = "idProveedor";
-                }
-            }
-        }
 
         public void RetornoId()
         {
-            using(RestauranteBDEntities1 bd = new RestauranteBDEntities1())
+            using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
             {
-                var tbCompras = bd.Compraas;
+                var tbVentas = bd.Ventas;
 
                 lblCodigo.Text = "1";
-                foreach(var iterarCompras in tbCompras)
+                foreach (var iterarCompras in tbVentas)
                 {
-                    int idCompra = iterarCompras.idCompra;
+                    int idCompra = iterarCompras.idVenta;
                     int suma = idCompra + 1;
                     lblCodigo.Text = suma.ToString();
                 }
@@ -73,9 +58,9 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
         public void CalcularTotalGeneral()
         {
             Double Suma = 0;
-            for (int i = 0; i < dtvDetallesCompra.RowCount; i++)
+            for (int i = 0; i < dtvDetallesVenta.RowCount; i++)
             {
-                String DatosAOperar = dtvDetallesCompra.Rows[i].Cells[4].Value.ToString();
+                String DatosAOperar = dtvDetallesVenta.Rows[i].Cells[4].Value.ToString();
                 Double DatosCovertidos = Convert.ToDouble(DatosAOperar);
 
                 Suma += DatosCovertidos;
@@ -84,69 +69,63 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
         }
         private void FrmCompras_Load(object sender, EventArgs e)
         {
-            CargarCombo();
             RetornoId();
-            provee = cmbProveedores.SelectedValue.ToString();
         }
 
-        private void cmbProveedores_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            provee = cmbProveedores.SelectedValue.ToString();
-        }
+        
 
         private void btnComprar_Click(object sender, EventArgs e)
         {
-            if (dtvDetallesCompra.Rows.Count == 0)
+            if (dtvDetallesVenta.Rows.Count == 0)
             {
                 MessageBox.Show("¡Aún no hay nada en el carrito!", "Carrito Vacío", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
                 DialogResult result = MessageBox.Show("¿Desea agregar algo más antes de comprar?", "Validación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if(result == DialogResult.No)
+                if (result == DialogResult.No)
                 {
                     using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
                     {
-                        Compraas compra = new Compraas();
+                        Model.Ventas venta = new Model.Ventas();
 
                         String nombre = lblUsuario.Text;
 
-                        compra.fechadeCompra = Convert.ToDateTime(dtpFecha.Text);
-                        compra.totalaPagar = Convert.ToDecimal(lblTotalAPagar.Text);
-                        compra.idProveedor = Convert.ToInt32(provee);
-                        compra.nombredeUsuario = nombre.ToString();
+                        venta.fechadeVenta = Convert.ToDateTime(dtpFecha.Text);
+                        venta.totalPagar = Convert.ToDecimal(lblTotalAPagar.Text);
+                        venta.nombredeUsuario = nombre.ToString();
+                        venta.estado = "Enviada";
 
-                        bd.Compraas.Add(compra);
+                        bd.Ventas.Add(venta);
                         bd.SaveChanges();
 
-                        DetallesCompra detalleC = new DetallesCompra();
-                        for (int i = 0; i < dtvDetallesCompra.RowCount; i++)
+                        DetallesVenta detallesV = new DetallesVenta();
+                        for (int i = 0; i < dtvDetallesVenta.RowCount; i++)
                         {
-                            String idProdC = dtvDetallesCompra.Rows[i].Cells[0].Value.ToString();
-                            int idProdConv = Convert.ToInt32(idProdC);
+                            String idProdV = dtvDetallesVenta.Rows[i].Cells[0].Value.ToString();
+                            int idProdConv = Convert.ToInt32(idProdV);
 
-                            String cantidad = dtvDetallesCompra.Rows[i].Cells[3].Value.ToString();
+                            String cantidad = dtvDetallesVenta.Rows[i].Cells[3].Value.ToString();
                             int cantiConver = Convert.ToInt32(cantidad);
 
-                            String precio = dtvDetallesCompra.Rows[i].Cells[2].Value.ToString();
+                            String precio = dtvDetallesVenta.Rows[i].Cells[2].Value.ToString();
                             Double precioConv = Convert.ToDouble(precio);
 
-                            String total = dtvDetallesCompra.Rows[i].Cells[4].Value.ToString();
+                            String total = dtvDetallesVenta.Rows[i].Cells[4].Value.ToString();
                             Decimal totalConv = Convert.ToDecimal(total);
 
-                            detalleC.idCompra = Convert.ToInt32(lblCodigo.Text);
-                            detalleC.idProductoC = idProdConv;
-                            detalleC.cantidad = cantiConver;
-                            detalleC.precioCompra = precioConv;
-                            detalleC.totalProducto = totalConv;
+                            detallesV.idVenta = Convert.ToInt32(lblCodigo.Text);
+                            detallesV.idProductoV = idProdConv;
+                            detallesV.cantidad = cantiConver;
+                            detallesV.precioCompra = precioConv;
+                            detallesV.totalProducto = totalConv;
 
-                            bd.DetallesCompra.Add(detalleC);
+                            bd.DetallesVenta.Add(detallesV);
                             bd.SaveChanges();
                         }
 
                         MessageBox.Show("¡Venta Realizada con éxito! \n\nCON UN TOTAL DE: $" + lblTotalAPagar.Text, "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        cmbProveedores.Enabled = true;
-                        dtvDetallesCompra.Rows.Clear();
+                        dtvDetallesVenta.Rows.Clear();
                     }
 
                     RetornoId();
@@ -156,7 +135,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if(txtCodigoProd.Text.Equals("") || txtNombreProd.Text.Equals("") || txtPrecio.Text.Equals("") || nupCantidad.Value==0 || txtTotal.Text.Equals("") || txtTotal.Text.Equals("0"))
+            if (txtCodigoProd.Text.Equals("") || txtNombreProd.Text.Equals("") || txtPrecio.Text.Equals("") || nupCantidad.Value == 0 || txtTotal.Text.Equals("") || txtTotal.Text.Equals("0"))
             {
                 MessageBox.Show("¡Todos los campos son obligatorios!", "Rellenar campos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -171,13 +150,13 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
 
                 }
 
-                dtvDetallesCompra.Rows.Add(txtCodigoProd.Text, txtNombreProd.Text, txtPrecio.Text, nupCantidad.Value, txtTotal.Text);
-                cmbProveedores.Enabled = false;
+                dtvDetallesVenta.Rows.Add(txtCodigoProd.Text, txtNombreProd.Text, txtPrecio.Text, nupCantidad.Value, txtTotal.Text);
+
                 CalcularTotalGeneral();
-                dtvDetallesCompra.ClearSelection();
-                int lastRow = dtvDetallesCompra.Rows.Count - 1;
-                dtvDetallesCompra.FirstDisplayedScrollingRowIndex = lastRow;
-                dtvDetallesCompra.Rows[lastRow].Selected = true;
+                dtvDetallesVenta.ClearSelection();
+                int lastRow = dtvDetallesVenta.Rows.Count - 1;
+                dtvDetallesVenta.FirstDisplayedScrollingRowIndex = lastRow;
+                dtvDetallesVenta.Rows[lastRow].Selected = true;
             }
         }
 
@@ -190,21 +169,21 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
         {
             if (txtBusqueda.Text == "")
             {
-                if(e.KeyCode == Keys.Enter)
+                if (e.KeyCode == Keys.Enter)
                 {
                     btnBuscar.PerformClick();
                 }
             }
-            else if(e.KeyCode == Keys.Enter)
+            else if (e.KeyCode == Keys.Enter)
             {
-                using(RestauranteBDEntities1 bd = new RestauranteBDEntities1())
+                using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
                 {
-                    ProductosCompra prod = new ProductosCompra();
-                    int idProveedor = Int32.Parse(provee);
-                    int Buscar = int.Parse(txtBusqueda.Text);
-                    prod = bd.ProductosCompra.Where(idProducto => idProducto.idProductoC == Buscar && idProducto.idProveedor == idProveedor).First();
+                    ProductosVenta prod = new ProductosVenta();
 
-                    txtCodigoProd.Text = Convert.ToString(prod.idProductoC);
+                    int Buscar = int.Parse(txtBusqueda.Text);
+                    prod = bd.ProductosVenta.Where(idProducto => idProducto.idProductoV == Buscar).First();
+
+                    txtCodigoProd.Text = Convert.ToString(prod.idProductoV);
                     txtNombreProd.Text = Convert.ToString(prod.nombre);
                     txtPrecio.Text = Convert.ToString(prod.precio);
                     nupCantidad.Focus();
@@ -216,14 +195,14 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            FrmProdsAComprar browse = new FrmProdsAComprar(provee);
+            FrmProdsAVender browse = new FrmProdsAVender();
             browse.Show();
         }
 
         int intentos = 1;
         private void nupCantidad_KeyUp(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 if (intentos == 2)
                 {
@@ -244,7 +223,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
 
         private void dtvDetallesCompra_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
-            if(dtvDetallesCompra.Rows.Count == 0)
+            if (dtvDetallesVenta.Rows.Count == 0)
             {
                 lblTotalAPagar.Text = "0.00";
             }
