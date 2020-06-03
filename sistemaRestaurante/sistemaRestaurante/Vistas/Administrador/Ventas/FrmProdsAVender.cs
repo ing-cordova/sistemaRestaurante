@@ -36,7 +36,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
 
                 foreach (var iterar in JoinProd)
                 {
-                    dtvDetallesCompra.Rows.Add(iterar.ID, iterar.NOMBRE, iterar.PRECIO, iterar.CATEGORIA);
+                    dtvDetallesVenta.Rows.Add(iterar.ID, iterar.NOMBRE, iterar.PRECIO, iterar.CATEGORIA);
                 }
             }
         }
@@ -60,22 +60,27 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
 
                 foreach (var iterar in JoinProd)
                 {
-                    dtvDetallesCompra.Rows.Add(iterar.ID, iterar.NOMBRE, iterar.PRECIO, iterar.CATEGORIA);
+                    dtvDetallesVenta.Rows.Add(iterar.ID, iterar.NOMBRE, iterar.PRECIO, iterar.CATEGORIA);
                 }
             }
         }
 
         public void Envio()
         {
-            String id = dtvDetallesCompra.CurrentRow.Cells[0].Value.ToString();
-            String nombreProd = dtvDetallesCompra.CurrentRow.Cells[1].Value.ToString();
-            String precio = dtvDetallesCompra.CurrentRow.Cells[2].Value.ToString();
+            String id = dtvDetallesVenta.CurrentRow.Cells[0].Value.ToString();
+            String nombreProd = dtvDetallesVenta.CurrentRow.Cells[1].Value.ToString();
+            String precio = dtvDetallesVenta.CurrentRow.Cells[2].Value.ToString();
 
-            FrmAccesoAdmin.compras.txtCodigoProd.Text = id;
-            FrmAccesoAdmin.compras.txtNombreProd.Text = nombreProd;
-            FrmAccesoAdmin.compras.txtPrecio.Text = precio;
+            FrmAccesoAdmin.venta.txtCodigoProd.Text = id;
+            FrmAccesoAdmin.venta.txtNombreProd.Text = nombreProd;
+            FrmAccesoAdmin.venta.txtPrecio.Text = precio;
 
-            FrmAccesoAdmin.compras.nupCantidad.Focus();
+            FrmAccesoUsuario.venta.txtCodigoProd.Text = id;
+            FrmAccesoUsuario.venta.txtNombreProd.Text = nombreProd;
+            FrmAccesoUsuario.venta.txtPrecio.Text = precio;
+
+            FrmAccesoUsuario.venta.nupCantidad.Focus();
+            FrmAccesoAdmin.venta.nupCantidad.Focus();
         }
 
         private void FrmProdsAVender_Load(object sender, EventArgs e)
@@ -85,7 +90,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
 
         private void txtBusqueda_TextChanged(object sender, EventArgs e)
         {
-            dtvDetallesCompra.Rows.Clear();
+            dtvDetallesVenta.Rows.Clear();
             Filtro();
         }
 

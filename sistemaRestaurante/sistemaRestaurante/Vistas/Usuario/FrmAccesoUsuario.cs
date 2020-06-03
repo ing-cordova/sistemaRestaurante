@@ -10,6 +10,7 @@ using System.Windows.Forms;
 //Libreria para arrastrar ventana.
 using System.Runtime.InteropServices;
 using sistemaRestaurante.Vistas.Usuario.ProductosLista;
+using sistemaRestaurante.Vistas.Administrador.Ventas;
 
 namespace sistemaRestaurante.Vistas
 {
@@ -112,9 +113,19 @@ namespace sistemaRestaurante.Vistas
             AbrirFormulario(new FrmListadoProductos());
         }
 
+        public static FrmVentas venta = new FrmVentas();
         private void button1_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(new FrmComprar());
+            if (this.panelContenedor.Controls.Count > 0)
+            {
+                this.panelContenedor.Controls.RemoveAt(0);
+            }
+
+            venta.TopLevel = false;
+            venta.Dock = DockStyle.Fill;
+            this.panelContenedor.Controls.Add(venta);
+            this.panelContenedor.Tag = venta;
+            venta.Show();
         }
 
         private void btnCerrarS_Click(object sender, EventArgs e)

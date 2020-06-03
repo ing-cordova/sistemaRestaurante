@@ -51,6 +51,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.tmHoraFecha = new System.Windows.Forms.Timer(this.components);
+            this.lblUsuarioAct = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.barraTitulos.SuspendLayout();
             this.MenuVertical.SuspendLayout();
             this.Submenu.SuspendLayout();
@@ -60,6 +63,9 @@
             // barraTitulos
             // 
             this.barraTitulos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.barraTitulos.Controls.Add(this.lblUsuarioAct);
+            this.barraTitulos.Controls.Add(this.label2);
+            this.barraTitulos.Controls.Add(this.label3);
             this.barraTitulos.Controls.Add(this.label1);
             this.barraTitulos.Controls.Add(this.lblHora);
             this.barraTitulos.Controls.Add(this.lblFecha);
@@ -70,7 +76,7 @@
             this.barraTitulos.Dock = System.Windows.Forms.DockStyle.Top;
             this.barraTitulos.Location = new System.Drawing.Point(0, 0);
             this.barraTitulos.Name = "barraTitulos";
-            this.barraTitulos.Size = new System.Drawing.Size(1069, 42);
+            this.barraTitulos.Size = new System.Drawing.Size(1113, 42);
             this.barraTitulos.TabIndex = 0;
             this.barraTitulos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.barraTitulos_MouseDown);
             // 
@@ -122,7 +128,7 @@
             this.button2.Cursor = System.Windows.Forms.Cursors.Default;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(955, 3);
+            this.button2.Location = new System.Drawing.Point(999, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(33, 32);
             this.button2.TabIndex = 13;
@@ -138,7 +144,7 @@
             this.btnRestoreWindow.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnRestoreWindow.FlatAppearance.BorderSize = 0;
             this.btnRestoreWindow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRestoreWindow.Location = new System.Drawing.Point(994, 3);
+            this.btnRestoreWindow.Location = new System.Drawing.Point(1038, 3);
             this.btnRestoreWindow.Name = "btnRestoreWindow";
             this.btnRestoreWindow.Size = new System.Drawing.Size(33, 32);
             this.btnRestoreWindow.TabIndex = 12;
@@ -155,7 +161,7 @@
             this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnMaximizar.FlatAppearance.BorderSize = 0;
             this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximizar.Location = new System.Drawing.Point(994, 3);
+            this.btnMaximizar.Location = new System.Drawing.Point(1038, 3);
             this.btnMaximizar.Name = "btnMaximizar";
             this.btnMaximizar.Size = new System.Drawing.Size(33, 32);
             this.btnMaximizar.TabIndex = 11;
@@ -173,7 +179,7 @@
             this.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Location = new System.Drawing.Point(1033, 3);
+            this.btnSalir.Location = new System.Drawing.Point(1077, 3);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(33, 32);
             this.btnSalir.TabIndex = 10;
@@ -194,7 +200,7 @@
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuVertical.Location = new System.Drawing.Point(0, 42);
             this.MenuVertical.Name = "MenuVertical";
-            this.MenuVertical.Size = new System.Drawing.Size(220, 611);
+            this.MenuVertical.Size = new System.Drawing.Size(220, 637);
             this.MenuVertical.TabIndex = 1;
             // 
             // panel8
@@ -333,7 +339,7 @@
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(220, 42);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(849, 611);
+            this.panelContenedor.Size = new System.Drawing.Size(893, 637);
             this.panelContenedor.TabIndex = 2;
             this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -342,12 +348,51 @@
             this.tmHoraFecha.Enabled = true;
             this.tmHoraFecha.Tick += new System.EventHandler(this.tmHoraFecha_Tick);
             // 
+            // lblUsuarioAct
+            // 
+            this.lblUsuarioAct.AutoSize = true;
+            this.lblUsuarioAct.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsuarioAct.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuarioAct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(31)))), ((int)(((byte)(70)))));
+            this.lblUsuarioAct.Location = new System.Drawing.Point(583, 8);
+            this.lblUsuarioAct.Name = "lblUsuarioAct";
+            this.lblUsuarioAct.Size = new System.Drawing.Size(87, 25);
+            this.lblUsuarioAct.TabIndex = 20;
+            this.lblUsuarioAct.Text = "Usuario";
+            this.lblUsuarioAct.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(31)))), ((int)(((byte)(70)))));
+            this.label2.Location = new System.Drawing.Point(505, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(26, 28);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "|";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(31)))), ((int)(((byte)(70)))));
+            this.label3.Location = new System.Drawing.Point(525, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 25);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "User:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FrmAccesoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
-            this.ClientSize = new System.Drawing.Size(1069, 653);
+            this.ClientSize = new System.Drawing.Size(1113, 679);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.MenuVertical);
             this.Controls.Add(this.barraTitulos);
@@ -388,5 +433,8 @@
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Timer tmHoraFecha;
+        public System.Windows.Forms.Label lblUsuarioAct;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

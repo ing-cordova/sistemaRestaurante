@@ -77,6 +77,8 @@ namespace sistemaRestaurante.Vistas
                             {
                                 FrmAccesoUsuario accessU = new FrmAccesoUsuario();
                                 accessU.Show();
+                                accessU.lblUsuarioAct.Text = txtUsuario.Text;
+                                FrmAccesoUsuario.venta.lblUsuario.Text = txtUsuario.Text;
                                 this.Hide();
                             }
                             else if (iterar.Rol == "Administrador")
@@ -85,6 +87,7 @@ namespace sistemaRestaurante.Vistas
                                 accessAd.Show();
                                 accessAd.lblUsuarioAct.Text = txtUsuario.Text;
                                 FrmAccesoAdmin.compras.lblUsuario.Text = txtUsuario.Text;
+                                FrmAccesoAdmin.venta.lblUsuario.Text = txtUsuario.Text;
                                 this.Hide();
                             }
                         }

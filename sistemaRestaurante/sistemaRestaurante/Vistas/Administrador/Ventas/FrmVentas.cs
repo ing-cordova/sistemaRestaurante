@@ -19,8 +19,6 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
             InitializeComponent();
         }
 
-        
-
         public void RetornoId()
         {
             using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
@@ -70,6 +68,10 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
         private void FrmCompras_Load(object sender, EventArgs e)
         {
             RetornoId();
+            txtCodigoProd.Text = "";
+            txtNombreProd.Text = "";
+            txtPrecio.Text = "";
+            txtTotal.Text = "";
         }
 
         

@@ -155,6 +155,12 @@
     <Compile Include="Vistas\Administrador\FrmAccesoAdmin.Designer.cs">
       <DependentUpon>FrmAccesoAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Administrador\FrmAlmacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Administrador\FrmAlmacen.Designer.cs">
+      <DependentUpon>FrmAlmacen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Administrador\Productos\FrmCRUDProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,12 +227,6 @@
     <Compile Include="Vistas\FrmNuevoUsuario.Designer.cs">
       <DependentUpon>FrmNuevoUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\Usuario\ProductosLista\FrmComprar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vistas\Usuario\ProductosLista\FrmComprar.Designer.cs">
-      <DependentUpon>FrmComprar.cs</DependentUpon>
-    </Compile>
     <Compile Include="Vistas\Usuario\ProductosLista\FrmListadoProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,6 +267,9 @@
     <EmbeddedResource Include="Vistas\Administrador\FrmAccesoAdmin.resx">
       <DependentUpon>FrmAccesoAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Administrador\FrmAlmacen.resx">
+      <DependentUpon>FrmAlmacen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Administrador\Productos\FrmCRUDProductos.resx">
       <DependentUpon>FrmCRUDProductos.cs</DependentUpon>
     </EmbeddedResource>
@@ -299,9 +302,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\FrmNuevoUsuario.resx">
       <DependentUpon>FrmNuevoUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\Usuario\ProductosLista\FrmComprar.resx">
-      <DependentUpon>FrmComprar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Usuario\ProductosLista\FrmListadoProductos.resx">
       <DependentUpon>FrmListadoProductos.cs</DependentUpon>

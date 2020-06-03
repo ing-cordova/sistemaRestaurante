@@ -32,12 +32,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.lblBuscar = new System.Windows.Forms.Label();
-            this.dtvDetallesCompra = new System.Windows.Forms.DataGridView();
+            this.dtvDetallesVenta = new System.Windows.Forms.DataGridView();
             this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dtvDetallesCompra)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtvDetallesVenta)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBusqueda
@@ -60,15 +60,15 @@
             this.lblBuscar.TabIndex = 9;
             this.lblBuscar.Text = "Buscar:";
             // 
-            // dtvDetallesCompra
+            // dtvDetallesVenta
             // 
-            this.dtvDetallesCompra.AllowUserToAddRows = false;
-            this.dtvDetallesCompra.AllowUserToDeleteRows = false;
-            this.dtvDetallesCompra.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtvDetallesCompra.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dtvDetallesCompra.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(108)))), ((int)(((byte)(125)))));
-            this.dtvDetallesCompra.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dtvDetallesCompra.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dtvDetallesVenta.AllowUserToAddRows = false;
+            this.dtvDetallesVenta.AllowUserToDeleteRows = false;
+            this.dtvDetallesVenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtvDetallesVenta.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtvDetallesVenta.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(108)))), ((int)(((byte)(125)))));
+            this.dtvDetallesVenta.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtvDetallesVenta.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -76,31 +76,31 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtvDetallesCompra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dtvDetallesCompra.ColumnHeadersHeight = 25;
-            this.dtvDetallesCompra.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtvDetallesVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtvDetallesVenta.ColumnHeadersHeight = 25;
+            this.dtvDetallesVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProducto,
             this.producto,
             this.precio,
             this.idCategoria});
-            this.dtvDetallesCompra.EnableHeadersVisualStyles = false;
-            this.dtvDetallesCompra.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(108)))), ((int)(((byte)(125)))));
-            this.dtvDetallesCompra.Location = new System.Drawing.Point(12, 45);
-            this.dtvDetallesCompra.Name = "dtvDetallesCompra";
-            this.dtvDetallesCompra.ReadOnly = true;
-            this.dtvDetallesCompra.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dtvDetallesCompra.RowHeadersVisible = false;
+            this.dtvDetallesVenta.EnableHeadersVisualStyles = false;
+            this.dtvDetallesVenta.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(108)))), ((int)(((byte)(125)))));
+            this.dtvDetallesVenta.Location = new System.Drawing.Point(12, 45);
+            this.dtvDetallesVenta.Name = "dtvDetallesVenta";
+            this.dtvDetallesVenta.ReadOnly = true;
+            this.dtvDetallesVenta.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dtvDetallesVenta.RowHeadersVisible = false;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(108)))), ((int)(((byte)(125)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(162)))), ((int)(((byte)(188)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.dtvDetallesCompra.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dtvDetallesCompra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtvDetallesCompra.Size = new System.Drawing.Size(613, 288);
-            this.dtvDetallesCompra.TabIndex = 23;
-            this.dtvDetallesCompra.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvDetallesCompra_CellDoubleClick);
-            this.dtvDetallesCompra.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtvDetallesCompra_KeyDown);
+            this.dtvDetallesVenta.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dtvDetallesVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtvDetallesVenta.Size = new System.Drawing.Size(613, 288);
+            this.dtvDetallesVenta.TabIndex = 23;
+            this.dtvDetallesVenta.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvDetallesCompra_CellDoubleClick);
+            this.dtvDetallesVenta.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtvDetallesCompra_KeyDown);
             // 
             // idProducto
             // 
@@ -137,12 +137,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(108)))), ((int)(((byte)(125)))));
             this.ClientSize = new System.Drawing.Size(639, 345);
-            this.Controls.Add(this.dtvDetallesCompra);
+            this.Controls.Add(this.dtvDetallesVenta);
             this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.lblBuscar);
             this.Name = "FrmProdsAVender";
             this.Load += new System.EventHandler(this.FrmProdsAVender_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtvDetallesCompra)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtvDetallesVenta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,7 +152,7 @@
 
         private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.Label lblBuscar;
-        public System.Windows.Forms.DataGridView dtvDetallesCompra;
+        public System.Windows.Forms.DataGridView dtvDetallesVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn precio;
