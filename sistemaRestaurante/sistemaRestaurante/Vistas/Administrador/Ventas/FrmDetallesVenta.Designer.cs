@@ -27,8 +27,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label4 = new System.Windows.Forms.Label();
             this.txtIdVenta = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -42,9 +42,9 @@
             this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtFecha = new System.Windows.Forms.TextBox();
-            this.btnRegresar = new System.Windows.Forms.Button();
-            this.btnRecibida = new System.Windows.Forms.Button();
             this.btnEntregada = new System.Windows.Forms.Button();
+            this.btnRecibida = new System.Windows.Forms.Button();
+            this.btnRegresar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtvDetallesVenta)).BeginInit();
             this.SuspendLayout();
             // 
@@ -141,14 +141,14 @@
             this.dtvDetallesVenta.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
             this.dtvDetallesVenta.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtvDetallesVenta.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtvDetallesVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtvDetallesVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtvDetallesVenta.ColumnHeadersHeight = 25;
             this.dtvDetallesVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProducto,
@@ -161,12 +161,12 @@
             this.dtvDetallesVenta.ReadOnly = true;
             this.dtvDetallesVenta.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dtvDetallesVenta.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(162)))), ((int)(((byte)(188)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.dtvDetallesVenta.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(162)))), ((int)(((byte)(188)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.dtvDetallesVenta.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dtvDetallesVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtvDetallesVenta.Size = new System.Drawing.Size(858, 315);
             this.dtvDetallesVenta.TabIndex = 22;
@@ -202,24 +202,22 @@
             this.txtFecha.Size = new System.Drawing.Size(353, 27);
             this.txtFecha.TabIndex = 23;
             // 
-            // btnRegresar
+            // btnEntregada
             // 
-            this.btnRegresar.FlatAppearance.BorderSize = 0;
-            this.btnRegresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            this.btnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegresar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresar.ForeColor = System.Drawing.Color.White;
-            this.btnRegresar.Image = global::sistemaRestaurante.Properties.Resources.arrows;
-            this.btnRegresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegresar.Location = new System.Drawing.Point(734, 1);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(159, 40);
-            this.btnRegresar.TabIndex = 24;
-            this.btnRegresar.Text = "  Regresar";
-            this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRegresar.UseVisualStyleBackColor = true;
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            this.btnEntregada.FlatAppearance.BorderSize = 0;
+            this.btnEntregada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEntregada.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEntregada.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnEntregada.Image = global::sistemaRestaurante.Properties.Resources.correct;
+            this.btnEntregada.Location = new System.Drawing.Point(521, 68);
+            this.btnEntregada.Name = "btnEntregada";
+            this.btnEntregada.Size = new System.Drawing.Size(341, 44);
+            this.btnEntregada.TabIndex = 26;
+            this.btnEntregada.Text = "  Marcar Orden como Entregada";
+            this.btnEntregada.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEntregada.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEntregada.UseVisualStyleBackColor = true;
+            this.btnEntregada.Click += new System.EventHandler(this.btnEntregada_Click);
             // 
             // btnRecibida
             // 
@@ -227,7 +225,7 @@
             this.btnRecibida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRecibida.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecibida.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRecibida.Image = global::sistemaRestaurante.Properties.Resources.Edit;
+            this.btnRecibida.Image = global::sistemaRestaurante.Properties.Resources.inbox__1_;
             this.btnRecibida.Location = new System.Drawing.Point(16, 68);
             this.btnRecibida.Name = "btnRecibida";
             this.btnRecibida.Size = new System.Drawing.Size(299, 44);
@@ -238,22 +236,24 @@
             this.btnRecibida.UseVisualStyleBackColor = true;
             this.btnRecibida.Click += new System.EventHandler(this.btnRecibida_Click);
             // 
-            // btnEntregada
+            // btnRegresar
             // 
-            this.btnEntregada.FlatAppearance.BorderSize = 0;
-            this.btnEntregada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEntregada.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEntregada.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEntregada.Image = global::sistemaRestaurante.Properties.Resources.Edit;
-            this.btnEntregada.Location = new System.Drawing.Point(521, 68);
-            this.btnEntregada.Name = "btnEntregada";
-            this.btnEntregada.Size = new System.Drawing.Size(341, 44);
-            this.btnEntregada.TabIndex = 26;
-            this.btnEntregada.Text = "  Marcar Orden como Entregada";
-            this.btnEntregada.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEntregada.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEntregada.UseVisualStyleBackColor = true;
-            this.btnEntregada.Click += new System.EventHandler(this.btnEntregada_Click);
+            this.btnRegresar.FlatAppearance.BorderSize = 0;
+            this.btnRegresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.btnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegresar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.ForeColor = System.Drawing.Color.White;
+            this.btnRegresar.Image = global::sistemaRestaurante.Properties.Resources.back;
+            this.btnRegresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegresar.Location = new System.Drawing.Point(753, 7);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(127, 40);
+            this.btnRegresar.TabIndex = 24;
+            this.btnRegresar.Text = "  Regresar";
+            this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRegresar.UseVisualStyleBackColor = true;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // FrmDetallesVenta
             // 

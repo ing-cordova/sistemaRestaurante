@@ -411,6 +411,13 @@
       <DependentUpon>RestauranteBD.edmx</DependentUpon>
       <LastGenOutput>RestauranteBD.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\eye.png" />
+    <None Include="Resources\hourglass.png" />
+    <None Include="Resources\add %281%29.png" />
+    <None Include="Resources\back.png" />
+    <None Include="Resources\correct.png" />
+    <None Include="Resources\inbox %281%29.png" />
+    <None Include="Resources\inbox.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

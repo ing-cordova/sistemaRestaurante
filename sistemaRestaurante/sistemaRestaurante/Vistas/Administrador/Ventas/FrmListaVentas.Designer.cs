@@ -83,7 +83,7 @@
             this.estado});
             this.dtvVentas.EnableHeadersVisualStyles = false;
             this.dtvVentas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
-            this.dtvVentas.Location = new System.Drawing.Point(12, 165);
+            this.dtvVentas.Location = new System.Drawing.Point(12, 128);
             this.dtvVentas.Name = "dtvVentas";
             this.dtvVentas.ReadOnly = true;
             this.dtvVentas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -95,7 +95,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             this.dtvVentas.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dtvVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtvVentas.Size = new System.Drawing.Size(896, 460);
+            this.dtvVentas.Size = new System.Drawing.Size(879, 487);
             this.dtvVentas.TabIndex = 5;
             // 
             // idVenta
@@ -131,7 +131,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(12, 134);
+            this.label2.Location = new System.Drawing.Point(12, 97);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 22);
             this.label2.TabIndex = 17;
@@ -142,7 +142,7 @@
             this.rbotEnviada.AutoSize = true;
             this.rbotEnviada.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbotEnviada.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.rbotEnviada.Location = new System.Drawing.Point(180, 131);
+            this.rbotEnviada.Location = new System.Drawing.Point(180, 94);
             this.rbotEnviada.Name = "rbotEnviada";
             this.rbotEnviada.Size = new System.Drawing.Size(99, 25);
             this.rbotEnviada.TabIndex = 16;
@@ -155,7 +155,7 @@
             this.rbotTodos.Checked = true;
             this.rbotTodos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbotTodos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.rbotTodos.Location = new System.Drawing.Point(101, 131);
+            this.rbotTodos.Location = new System.Drawing.Point(101, 94);
             this.rbotTodos.Name = "rbotTodos";
             this.rbotTodos.Size = new System.Drawing.Size(73, 25);
             this.rbotTodos.TabIndex = 15;
@@ -168,7 +168,7 @@
             this.rbotRecibidas.AutoSize = true;
             this.rbotRecibidas.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbotRecibidas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.rbotRecibidas.Location = new System.Drawing.Point(276, 131);
+            this.rbotRecibidas.Location = new System.Drawing.Point(276, 94);
             this.rbotRecibidas.Name = "rbotRecibidas";
             this.rbotRecibidas.Size = new System.Drawing.Size(103, 25);
             this.rbotRecibidas.TabIndex = 18;
@@ -181,7 +181,7 @@
             this.btnActualizar.FlatAppearance.BorderSize = 0;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Image = global::sistemaRestaurante.Properties.Resources.refresh;
-            this.btnActualizar.Location = new System.Drawing.Point(798, 109);
+            this.btnActualizar.Location = new System.Drawing.Point(829, 75);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(50, 44);
             this.btnActualizar.TabIndex = 14;
@@ -194,10 +194,10 @@
             this.btnVerSelected.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerSelected.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerSelected.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnVerSelected.Image = global::sistemaRestaurante.Properties.Resources.Edit;
-            this.btnVerSelected.Location = new System.Drawing.Point(626, 109);
+            this.btnVerSelected.Image = global::sistemaRestaurante.Properties.Resources.eye;
+            this.btnVerSelected.Location = new System.Drawing.Point(684, 75);
             this.btnVerSelected.Name = "btnVerSelected";
-            this.btnVerSelected.Size = new System.Drawing.Size(152, 44);
+            this.btnVerSelected.Size = new System.Drawing.Size(139, 44);
             this.btnVerSelected.TabIndex = 12;
             this.btnVerSelected.Text = "  Ver Orden";
             this.btnVerSelected.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

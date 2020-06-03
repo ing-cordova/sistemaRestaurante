@@ -94,7 +94,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
 
                         String nombre = lblUsuario.Text;
 
-                        venta.fechadeVenta = Convert.ToDateTime(dtpFecha.Text);
+                        venta.fechadeVenta = DateTime.Now;
                         venta.totalPagar = Convert.ToDecimal(lblTotalAPagar.Text);
                         venta.nombredeUsuario = nombre.ToString();
                         venta.estado = "Enviada";
