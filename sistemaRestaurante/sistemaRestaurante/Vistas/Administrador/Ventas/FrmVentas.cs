@@ -17,6 +17,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
         public FrmVentas()
         {
             InitializeComponent();
+
         }
 
         public void RetornoId()
@@ -74,7 +75,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
             txtTotal.Text = "";
         }
 
-        
+
 
         private void btnComprar_Click(object sender, EventArgs e)
         {
@@ -97,6 +98,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
                         venta.totalPagar = Convert.ToDecimal(lblTotalAPagar.Text);
                         venta.nombredeUsuario = nombre.ToString();
                         venta.estado = "Enviada";
+                        venta.NumMesa = Convert.ToInt32(txtNMesa.Text);
 
                         bd.Ventas.Add(venta);
                         bd.SaveChanges();
@@ -137,7 +139,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (txtCodigoProd.Text.Equals("") || txtNombreProd.Text.Equals("") || txtPrecio.Text.Equals("") || nupCantidad.Value == 0 || txtTotal.Text.Equals("") || txtTotal.Text.Equals("0"))
+            if (txtCodigoProd.Text.Equals("") || txtNombreProd.Text.Equals("") || txtPrecio.Text.Equals("") || nupCantidad.Value == 0 || txtTotal.Text.Equals("") || txtTotal.Text.Equals("0") || txtNMesa.Text.Equals(""))
             {
                 MessageBox.Show("¡Todos los campos son obligatorios!", "Rellenar campos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -153,7 +155,10 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
                 }
 
                 dtvDetallesVenta.Rows.Add(txtCodigoProd.Text, txtNombreProd.Text, txtPrecio.Text, nupCantidad.Value, txtTotal.Text);
-
+                if (dtvDetallesVenta.Rows.Count > 0)
+                {
+                    txtNMesa.Enabled = false;
+                }
                 CalcularTotalGeneral();
                 dtvDetallesVenta.ClearSelection();
                 int lastRow = dtvDetallesVenta.Rows.Count - 1;
@@ -234,5 +239,6 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
                 CalcularTotalGeneral();
             }
         }
+
     }
 }

@@ -42,7 +42,7 @@ namespace sistemaRestaurante.Vistas
         }
         #endregion
 
-        private void AbrirFormulario(object FormHijo)
+        public void AbrirFormulario(object FormHijo)
         {
             if (this.panelContenedor.Controls.Count > 0)
             {
@@ -166,18 +166,46 @@ namespace sistemaRestaurante.Vistas
             compras.Show();
         }
 
-        private void panelContenedor_Paint(object sender, PaintEventArgs e)
+        private void OrdenarMenu()
         {
-
+            btnMasOpciones.Location = new Point(9,496);
+            panel8.Location = new Point(1,496);
+            Submenu.Location = new Point(48,542);
         }
-
         private void FrmAccesoAdmin_Load(object sender, EventArgs e)
         {
-
+            OrdenarMenu();
         }
 
         public static FrmVentas venta = new FrmVentas();
         private void btnVentas_Click(object sender, EventArgs e)
+        {
+            if (SubMenuVentas.Visible == false)
+            {
+                SubMenuVentas.Visible = true;
+                btnMasOpciones.Location = new Point(8, 585);
+                panel8.Location = new Point(1, 585);
+                Submenu.Location = new Point(48, 631);
+            }
+            else
+            {
+                SubMenuVentas.Visible = false;
+                OrdenarMenu();
+            }
+            
+        }
+
+        private void btnAlmacen_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmAlmacen());
+        }
+
+        private void btnVentaProceso_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmListaVentas());
+        }
+
+        private void btnNuevaVenta_Click(object sender, EventArgs e)
         {
             if (this.panelContenedor.Controls.Count > 0)
             {
@@ -191,15 +219,6 @@ namespace sistemaRestaurante.Vistas
             venta.Show();
         }
 
-        private void btnAlmacen_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(new FrmAlmacen());
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void tmDatosFechaHora_Tick(object sender, EventArgs e)
         {

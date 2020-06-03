@@ -42,8 +42,13 @@
             this.btnMaximizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.MenuVertical = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
+            this.SubMenuVentas = new System.Windows.Forms.Panel();
+            this.btnVentaProceso = new System.Windows.Forms.Button();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.btnNuevaVenta = new System.Windows.Forms.Button();
+            this.panel12 = new System.Windows.Forms.Panel();
             this.btnCompras = new System.Windows.Forms.Button();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.btnCategorias = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -64,10 +69,11 @@
             this.btnProveedor = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnProductos = new System.Windows.Forms.Button();
-            this.panelContenedor = new System.Windows.Forms.Panel();
             this.tmDatosFechaHora = new System.Windows.Forms.Timer(this.components);
+            this.panelContenedor = new System.Windows.Forms.Panel();
             this.barraTitulos.SuspendLayout();
             this.MenuVertical.SuspendLayout();
+            this.SubMenuVentas.SuspendLayout();
             this.Submenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -240,8 +246,9 @@
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(31)))), ((int)(((byte)(70)))));
-            this.MenuVertical.Controls.Add(this.panel10);
+            this.MenuVertical.Controls.Add(this.SubMenuVentas);
             this.MenuVertical.Controls.Add(this.btnCompras);
+            this.MenuVertical.Controls.Add(this.panel10);
             this.MenuVertical.Controls.Add(this.panel9);
             this.MenuVertical.Controls.Add(this.btnCategorias);
             this.MenuVertical.Controls.Add(this.panel6);
@@ -263,16 +270,74 @@
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuVertical.Location = new System.Drawing.Point(0, 42);
             this.MenuVertical.Name = "MenuVertical";
-            this.MenuVertical.Size = new System.Drawing.Size(218, 637);
+            this.MenuVertical.Size = new System.Drawing.Size(218, 697);
             this.MenuVertical.TabIndex = 2;
             // 
-            // panel10
+            // SubMenuVentas
             // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            this.panel10.Location = new System.Drawing.Point(1, 450);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(6, 40);
-            this.panel10.TabIndex = 17;
+            this.SubMenuVentas.Controls.Add(this.btnVentaProceso);
+            this.SubMenuVentas.Controls.Add(this.panel13);
+            this.SubMenuVentas.Controls.Add(this.btnNuevaVenta);
+            this.SubMenuVentas.Controls.Add(this.panel12);
+            this.SubMenuVentas.Location = new System.Drawing.Point(12, 496);
+            this.SubMenuVentas.Name = "SubMenuVentas";
+            this.SubMenuVentas.Size = new System.Drawing.Size(210, 85);
+            this.SubMenuVentas.TabIndex = 3;
+            this.SubMenuVentas.Visible = false;
+            // 
+            // btnVentaProceso
+            // 
+            this.btnVentaProceso.FlatAppearance.BorderSize = 0;
+            this.btnVentaProceso.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.btnVentaProceso.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnVentaProceso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVentaProceso.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVentaProceso.ForeColor = System.Drawing.Color.White;
+            this.btnVentaProceso.Image = global::sistemaRestaurante.Properties.Resources.arrows;
+            this.btnVentaProceso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVentaProceso.Location = new System.Drawing.Point(10, 46);
+            this.btnVentaProceso.Name = "btnVentaProceso";
+            this.btnVentaProceso.Size = new System.Drawing.Size(200, 40);
+            this.btnVentaProceso.TabIndex = 12;
+            this.btnVentaProceso.Text = "  Ventas en Proceso";
+            this.btnVentaProceso.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVentaProceso.UseVisualStyleBackColor = true;
+            this.btnVentaProceso.Click += new System.EventHandler(this.btnVentaProceso_Click);
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.panel13.Location = new System.Drawing.Point(-2, 46);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(10, 40);
+            this.panel13.TabIndex = 13;
+            // 
+            // btnNuevaVenta
+            // 
+            this.btnNuevaVenta.FlatAppearance.BorderSize = 0;
+            this.btnNuevaVenta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.btnNuevaVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnNuevaVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevaVenta.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevaVenta.ForeColor = System.Drawing.Color.White;
+            this.btnNuevaVenta.Image = global::sistemaRestaurante.Properties.Resources.arrows;
+            this.btnNuevaVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevaVenta.Location = new System.Drawing.Point(10, 0);
+            this.btnNuevaVenta.Name = "btnNuevaVenta";
+            this.btnNuevaVenta.Size = new System.Drawing.Size(159, 40);
+            this.btnNuevaVenta.TabIndex = 2;
+            this.btnNuevaVenta.Text = "  Nueva Venta";
+            this.btnNuevaVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNuevaVenta.UseVisualStyleBackColor = true;
+            this.btnNuevaVenta.Click += new System.EventHandler(this.btnNuevaVenta_Click);
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.panel12.Location = new System.Drawing.Point(-2, 0);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(10, 40);
+            this.panel12.TabIndex = 11;
             // 
             // btnCompras
             // 
@@ -284,7 +349,7 @@
             this.btnCompras.ForeColor = System.Drawing.Color.White;
             this.btnCompras.Image = global::sistemaRestaurante.Properties.Resources.sell;
             this.btnCompras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCompras.Location = new System.Drawing.Point(4, 450);
+            this.btnCompras.Location = new System.Drawing.Point(8, 404);
             this.btnCompras.Name = "btnCompras";
             this.btnCompras.Size = new System.Drawing.Size(215, 40);
             this.btnCompras.TabIndex = 16;
@@ -293,6 +358,14 @@
             this.btnCompras.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCompras.UseVisualStyleBackColor = true;
             this.btnCompras.Click += new System.EventHandler(this.btnCompras_Click);
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.panel10.Location = new System.Drawing.Point(1, 450);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(6, 40);
+            this.panel10.TabIndex = 17;
             // 
             // panel9
             // 
@@ -340,7 +413,7 @@
             this.btnVentas.ForeColor = System.Drawing.Color.White;
             this.btnVentas.Image = global::sistemaRestaurante.Properties.Resources.finances;
             this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentas.Location = new System.Drawing.Point(5, 404);
+            this.btnVentas.Location = new System.Drawing.Point(8, 450);
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.Size = new System.Drawing.Size(210, 40);
             this.btnVentas.TabIndex = 12;
@@ -353,7 +426,7 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            this.panel8.Location = new System.Drawing.Point(1, 496);
+            this.panel8.Location = new System.Drawing.Point(1, 585);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(6, 40);
             this.panel8.TabIndex = 11;
@@ -368,7 +441,7 @@
             this.btnMasOpciones.ForeColor = System.Drawing.Color.White;
             this.btnMasOpciones.Image = global::sistemaRestaurante.Properties.Resources.more;
             this.btnMasOpciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMasOpciones.Location = new System.Drawing.Point(5, 496);
+            this.btnMasOpciones.Location = new System.Drawing.Point(8, 585);
             this.btnMasOpciones.Name = "btnMasOpciones";
             this.btnMasOpciones.Size = new System.Drawing.Size(212, 40);
             this.btnMasOpciones.TabIndex = 10;
@@ -382,7 +455,7 @@
             // 
             this.Submenu.Controls.Add(this.btnCerrarS);
             this.Submenu.Controls.Add(this.panel7);
-            this.Submenu.Location = new System.Drawing.Point(48, 542);
+            this.Submenu.Location = new System.Drawing.Point(48, 631);
             this.Submenu.Name = "Submenu";
             this.Submenu.Size = new System.Drawing.Size(169, 54);
             this.Submenu.TabIndex = 2;
@@ -565,26 +638,25 @@
             this.btnProductos.UseVisualStyleBackColor = true;
             this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
+            // tmDatosFechaHora
+            // 
+            this.tmDatosFechaHora.Enabled = true;
+            this.tmDatosFechaHora.Tick += new System.EventHandler(this.tmDatosFechaHora_Tick);
+            // 
             // panelContenedor
             // 
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(218, 42);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(895, 637);
+            this.panelContenedor.Size = new System.Drawing.Size(895, 697);
             this.panelContenedor.TabIndex = 3;
-            this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedor_Paint);
-            // 
-            // tmDatosFechaHora
-            // 
-            this.tmDatosFechaHora.Enabled = true;
-            this.tmDatosFechaHora.Tick += new System.EventHandler(this.tmDatosFechaHora_Tick);
             // 
             // FrmAccesoAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
-            this.ClientSize = new System.Drawing.Size(1113, 679);
+            this.ClientSize = new System.Drawing.Size(1113, 739);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.MenuVertical);
             this.Controls.Add(this.barraTitulos);
@@ -597,6 +669,7 @@
             this.barraTitulos.ResumeLayout(false);
             this.barraTitulos.PerformLayout();
             this.MenuVertical.ResumeLayout(false);
+            this.SubMenuVentas.ResumeLayout(false);
             this.Submenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -611,7 +684,6 @@
         private System.Windows.Forms.Button btnMaximizar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Panel MenuVertical;
-        private System.Windows.Forms.Panel panelContenedor;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnAlmacen;
@@ -623,7 +695,6 @@
         private System.Windows.Forms.Button btnProveedor;
         private System.Windows.Forms.Button btnProductos;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button btnMasOpciones;
         private System.Windows.Forms.Panel Submenu;
         private System.Windows.Forms.Panel panel7;
@@ -641,5 +712,12 @@
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label lblUsuarioAct;
         public System.Windows.Forms.Button btnCompras;
+        private System.Windows.Forms.Panel SubMenuVentas;
+        private System.Windows.Forms.Button btnVentaProceso;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Button btnNuevaVenta;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel panelContenedor;
+        private System.Windows.Forms.Panel panel8;
     }
 }

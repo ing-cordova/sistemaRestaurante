@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="RestauranteBDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="RestauranteBDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Almacen">
           <Key>
             <PropertyRef Name="idAlmacen" />
@@ -113,6 +113,7 @@
           <Property Name="totalPagar" Type="money" />
           <Property Name="estado" Type="varchar" MaxLength="15" />
           <Property Name="nombredeUsuario" Type="varchar" MaxLength="30" />
+          <Property Name="NumMesa" Type="int" />
         </EntityType>
         <Association Name="FK__Almacen__idProdu__4E88ABD4">
           <End Role="ProductosCompra" Type="Self.ProductosCompra" Multiplicity="0..1" />
@@ -335,8 +336,7 @@
             <End Role="Ventas" EntitySet="Ventas" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="RestauranteBDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -474,6 +474,7 @@
           <Property Name="nombredeUsuario" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="DetallesVenta" Relationship="Self.FK__DetallesV__idVen__440B1D61" FromRole="Ventas" ToRole="DetallesVenta" />
           <NavigationProperty Name="Usuarios" Relationship="Self.FK__Ventas__nombrede__403A8C7D" FromRole="Ventas" ToRole="Usuarios" />
+          <Property Name="NumMesa" Type="Int32" />
         </EntityType>
         <Association Name="FK__Almacen__idProdu__4E88ABD4">
           <End Role="ProductosCompra" Type="Self.ProductosCompra" Multiplicity="0..1" />
@@ -814,6 +815,7 @@
           <EntitySetMapping Name="Ventas">
             <EntityTypeMapping TypeName="RestauranteBDModel.Ventas">
               <MappingFragment StoreEntitySet="Ventas">
+                <ScalarProperty Name="NumMesa" ColumnName="NumMesa" />
                 <ScalarProperty Name="idVenta" ColumnName="idVenta" />
                 <ScalarProperty Name="fechadeVenta" ColumnName="fechadeVenta" />
                 <ScalarProperty Name="totalPagar" ColumnName="totalPagar" />

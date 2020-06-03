@@ -19,7 +19,8 @@ namespace sistemaRestaurante.Vistas
         {
             InitializeComponent();
         }
-
+        public static FrmAccesoAdmin accessAd = new FrmAccesoAdmin();
+        public static FrmAccesoUsuario accessU = new FrmAccesoUsuario();
         void LimpiarDatos()
         {
             txtUsuario.Text = "";
@@ -75,7 +76,6 @@ namespace sistemaRestaurante.Vistas
                         {
                             if(iterar.Rol == "Usuario")
                             {
-                                FrmAccesoUsuario accessU = new FrmAccesoUsuario();
                                 accessU.Show();
                                 accessU.lblUsuarioAct.Text = txtUsuario.Text;
                                 FrmAccesoUsuario.venta.lblUsuario.Text = txtUsuario.Text;
@@ -83,7 +83,6 @@ namespace sistemaRestaurante.Vistas
                             }
                             else if (iterar.Rol == "Administrador")
                             {
-                                FrmAccesoAdmin accessAd = new FrmAccesoAdmin();
                                 accessAd.Show();
                                 accessAd.lblUsuarioAct.Text = txtUsuario.Text;
                                 FrmAccesoAdmin.compras.lblUsuario.Text = txtUsuario.Text;

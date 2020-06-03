@@ -106,3 +106,6 @@ cantidadProdIngrediente int
 -----------Actualizacion 01/06/2020-------------------
 /*Solo le cambie el nombre a la tabla Compras a 'Compraas', borren esta base, 
 y ejecuten este script*/
+
+-----------Actualizacion 03/06/2020-------------------
+Alter table Ventas add NumMesa int
