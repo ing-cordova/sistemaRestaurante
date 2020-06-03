@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAccesoUsuario));
             this.barraTitulos = new System.Windows.Forms.Panel();
+            this.lblUsuarioAct = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
@@ -39,6 +42,11 @@
             this.btnMaximizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.MenuVertical = new System.Windows.Forms.Panel();
+            this.SubMenuVentas = new System.Windows.Forms.Panel();
+            this.btnVentaProceso = new System.Windows.Forms.Button();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.btnNuevaVenta = new System.Windows.Forms.Button();
+            this.panel12 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.btnMasOpciones = new System.Windows.Forms.Button();
             this.Submenu = new System.Windows.Forms.Panel();
@@ -49,13 +57,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnProductos = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panelContenedor = new System.Windows.Forms.Panel();
             this.tmHoraFecha = new System.Windows.Forms.Timer(this.components);
-            this.lblUsuarioAct = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.panelContenedor = new System.Windows.Forms.Panel();
             this.barraTitulos.SuspendLayout();
             this.MenuVertical.SuspendLayout();
+            this.SubMenuVentas.SuspendLayout();
             this.Submenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -79,6 +85,45 @@
             this.barraTitulos.Size = new System.Drawing.Size(1113, 42);
             this.barraTitulos.TabIndex = 0;
             this.barraTitulos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.barraTitulos_MouseDown);
+            // 
+            // lblUsuarioAct
+            // 
+            this.lblUsuarioAct.AutoSize = true;
+            this.lblUsuarioAct.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsuarioAct.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuarioAct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(31)))), ((int)(((byte)(70)))));
+            this.lblUsuarioAct.Location = new System.Drawing.Point(583, 8);
+            this.lblUsuarioAct.Name = "lblUsuarioAct";
+            this.lblUsuarioAct.Size = new System.Drawing.Size(87, 25);
+            this.lblUsuarioAct.TabIndex = 20;
+            this.lblUsuarioAct.Text = "Usuario";
+            this.lblUsuarioAct.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(31)))), ((int)(((byte)(70)))));
+            this.label2.Location = new System.Drawing.Point(505, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(26, 28);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "|";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(31)))), ((int)(((byte)(70)))));
+            this.label3.Location = new System.Drawing.Point(525, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 25);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "User:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -189,6 +234,7 @@
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(31)))), ((int)(((byte)(70)))));
+            this.MenuVertical.Controls.Add(this.SubMenuVentas);
             this.MenuVertical.Controls.Add(this.panel8);
             this.MenuVertical.Controls.Add(this.btnMasOpciones);
             this.MenuVertical.Controls.Add(this.Submenu);
@@ -203,10 +249,76 @@
             this.MenuVertical.Size = new System.Drawing.Size(220, 637);
             this.MenuVertical.TabIndex = 1;
             // 
+            // SubMenuVentas
+            // 
+            this.SubMenuVentas.Controls.Add(this.btnVentaProceso);
+            this.SubMenuVentas.Controls.Add(this.panel13);
+            this.SubMenuVentas.Controls.Add(this.btnNuevaVenta);
+            this.SubMenuVentas.Controls.Add(this.panel12);
+            this.SubMenuVentas.Location = new System.Drawing.Point(12, 231);
+            this.SubMenuVentas.Name = "SubMenuVentas";
+            this.SubMenuVentas.Size = new System.Drawing.Size(210, 85);
+            this.SubMenuVentas.TabIndex = 4;
+            this.SubMenuVentas.Visible = false;
+            // 
+            // btnVentaProceso
+            // 
+            this.btnVentaProceso.FlatAppearance.BorderSize = 0;
+            this.btnVentaProceso.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.btnVentaProceso.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.btnVentaProceso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVentaProceso.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVentaProceso.ForeColor = System.Drawing.Color.White;
+            this.btnVentaProceso.Image = global::sistemaRestaurante.Properties.Resources.hourglass;
+            this.btnVentaProceso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVentaProceso.Location = new System.Drawing.Point(8, 46);
+            this.btnVentaProceso.Name = "btnVentaProceso";
+            this.btnVentaProceso.Size = new System.Drawing.Size(200, 40);
+            this.btnVentaProceso.TabIndex = 12;
+            this.btnVentaProceso.Text = "  Ventas en Proceso";
+            this.btnVentaProceso.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVentaProceso.UseVisualStyleBackColor = true;
+            this.btnVentaProceso.Click += new System.EventHandler(this.btnVentaProceso_Click);
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.panel13.Location = new System.Drawing.Point(-2, 46);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(10, 40);
+            this.panel13.TabIndex = 13;
+            // 
+            // btnNuevaVenta
+            // 
+            this.btnNuevaVenta.FlatAppearance.BorderSize = 0;
+            this.btnNuevaVenta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.btnNuevaVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.btnNuevaVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevaVenta.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevaVenta.ForeColor = System.Drawing.Color.White;
+            this.btnNuevaVenta.Image = global::sistemaRestaurante.Properties.Resources.add__1_;
+            this.btnNuevaVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevaVenta.Location = new System.Drawing.Point(8, 0);
+            this.btnNuevaVenta.Name = "btnNuevaVenta";
+            this.btnNuevaVenta.Size = new System.Drawing.Size(159, 40);
+            this.btnNuevaVenta.TabIndex = 2;
+            this.btnNuevaVenta.Text = "  Nueva Venta";
+            this.btnNuevaVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNuevaVenta.UseVisualStyleBackColor = true;
+            this.btnNuevaVenta.Click += new System.EventHandler(this.btnNuevaVenta_Click);
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.panel12.Location = new System.Drawing.Point(-2, 0);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(10, 40);
+            this.panel12.TabIndex = 11;
+            // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            this.panel8.Location = new System.Drawing.Point(2, 231);
+            this.panel8.Location = new System.Drawing.Point(1, 322);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(6, 40);
             this.panel8.TabIndex = 14;
@@ -221,7 +333,7 @@
             this.btnMasOpciones.ForeColor = System.Drawing.Color.White;
             this.btnMasOpciones.Image = global::sistemaRestaurante.Properties.Resources.more;
             this.btnMasOpciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMasOpciones.Location = new System.Drawing.Point(7, 231);
+            this.btnMasOpciones.Location = new System.Drawing.Point(9, 322);
             this.btnMasOpciones.Name = "btnMasOpciones";
             this.btnMasOpciones.Size = new System.Drawing.Size(213, 40);
             this.btnMasOpciones.TabIndex = 13;
@@ -235,7 +347,7 @@
             // 
             this.Submenu.Controls.Add(this.btnCerrarS);
             this.Submenu.Controls.Add(this.panel7);
-            this.Submenu.Location = new System.Drawing.Point(51, 277);
+            this.Submenu.Location = new System.Drawing.Point(48, 368);
             this.Submenu.Name = "Submenu";
             this.Submenu.Size = new System.Drawing.Size(169, 54);
             this.Submenu.TabIndex = 12;
@@ -290,7 +402,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(213, 40);
             this.button1.TabIndex = 6;
-            this.button1.Text = "  Comprar";
+            this.button1.Text = "  Ventas";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
@@ -334,6 +446,11 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // tmHoraFecha
+            // 
+            this.tmHoraFecha.Enabled = true;
+            this.tmHoraFecha.Tick += new System.EventHandler(this.tmHoraFecha_Tick);
+            // 
             // panelContenedor
             // 
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -341,51 +458,6 @@
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(893, 637);
             this.panelContenedor.TabIndex = 2;
-            this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // tmHoraFecha
-            // 
-            this.tmHoraFecha.Enabled = true;
-            this.tmHoraFecha.Tick += new System.EventHandler(this.tmHoraFecha_Tick);
-            // 
-            // lblUsuarioAct
-            // 
-            this.lblUsuarioAct.AutoSize = true;
-            this.lblUsuarioAct.BackColor = System.Drawing.Color.Transparent;
-            this.lblUsuarioAct.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuarioAct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(31)))), ((int)(((byte)(70)))));
-            this.lblUsuarioAct.Location = new System.Drawing.Point(583, 8);
-            this.lblUsuarioAct.Name = "lblUsuarioAct";
-            this.lblUsuarioAct.Size = new System.Drawing.Size(87, 25);
-            this.lblUsuarioAct.TabIndex = 20;
-            this.lblUsuarioAct.Text = "Usuario";
-            this.lblUsuarioAct.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(31)))), ((int)(((byte)(70)))));
-            this.label2.Location = new System.Drawing.Point(505, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 28);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "|";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(31)))), ((int)(((byte)(70)))));
-            this.label3.Location = new System.Drawing.Point(525, 8);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 25);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "User:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmAccesoUsuario
             // 
@@ -401,9 +473,11 @@
             this.Name = "FrmAccesoUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAccesoUsuario";
+            this.Load += new System.EventHandler(this.FrmAccesoUsuario_Load);
             this.barraTitulos.ResumeLayout(false);
             this.barraTitulos.PerformLayout();
             this.MenuVertical.ResumeLayout(false);
+            this.SubMenuVentas.ResumeLayout(false);
             this.Submenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -414,7 +488,6 @@
 
         private System.Windows.Forms.Panel barraTitulos;
         private System.Windows.Forms.Panel MenuVertical;
-        private System.Windows.Forms.Panel panelContenedor;
         private System.Windows.Forms.Button btnMaximizar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button button2;
@@ -436,5 +509,11 @@
         public System.Windows.Forms.Label lblUsuarioAct;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel SubMenuVentas;
+        private System.Windows.Forms.Button btnVentaProceso;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Button btnNuevaVenta;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel panelContenedor;
     }
 }

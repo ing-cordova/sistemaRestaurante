@@ -17,7 +17,7 @@ namespace sistemaRestaurante
         {
             InitializeComponent();
         }
-
+        public static  FrmLoguin Login = new FrmLoguin();
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (progressBar1.Value < 100)
@@ -29,7 +29,6 @@ namespace sistemaRestaurante
             {
                 timer1.Enabled = false;
                 this.Hide();
-                FrmLoguin Login = new FrmLoguin();
                 Login.Show();
             }
         }

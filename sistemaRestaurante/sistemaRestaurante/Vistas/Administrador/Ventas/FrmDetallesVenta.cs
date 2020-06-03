@@ -37,11 +37,18 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
                 {
                     btnRecibida.Enabled = false;
                     btnEntregada.Enabled = true;
+                    btnPagada.Enabled = false;
                 }
-                else
+                else if(txtEstado.Text.Equals("Enviada"))
                 {
                     btnRecibida.Enabled = true;
                     btnEntregada.Enabled = false;
+                    btnPagada.Enabled = false;
+                }else if (txtEstado.Text.Equals("Entregada"))
+                {
+                    btnRecibida.Enabled = false;
+                    btnEntregada.Enabled = false;
+                    btnPagada.Enabled = true;
                 }
 
                 var JoinDetalles = from detallesVenta in bd.DetallesVenta
@@ -75,7 +82,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
 
         private void btnRecibida_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("¿Estás seguro que quieres marcar la orden como Recibida?, \n¡la acción no se podrá deshacer!", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show("¿Estás seguro que quieres marcar la orden como Recibida? \n¡La acción no se podrá deshacer!", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (result == DialogResult.OK)
             {
                 using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
@@ -99,7 +106,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
 
         private void btnEntregada_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("¿Estás seguro que quieres marcar la orden como Entregada?, \n¡la acción no se podrá deshacer!", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show("¿Estás seguro que quieres marcar la orden como Entregada? \n¡La acción no se podrá deshacer!", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (result == DialogResult.OK)
             {
                 using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
@@ -114,11 +121,43 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
 
                     bd.Entry(ventas).State = System.Data.Entity.EntityState.Modified;
                     bd.SaveChanges();
+                    
                 }
 
                 MessageBox.Show("¡Orden modificada con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
                 CargarDatos();
             }
+        }
+
+        private void btnPagada_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("¿Estás seguro que quieres marcar la orden como Entregada? \n¡La acción no se podrá deshacer!", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (result == DialogResult.OK)
+            {
+                using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
+                {
+
+                    String idVenta = txtIdVenta.Text;
+                    int idV = int.Parse(idVenta);
+
+                    ventas = bd.Ventas.Where(VerificarID => VerificarID.idVenta == idV).First();
+                    ventas.estado = "Pagada";
+
+
+                    bd.Entry(ventas).State = System.Data.Entity.EntityState.Modified;
+                    bd.SaveChanges();
+
+                }
+
+                MessageBox.Show("¡Orden modificada con éxito!", "Completado", MessageBoxButtons.OK,
+                    MessageBoxIcon.None);
+                btnRegresar.PerformClick();
+            }
+        }
+
+        private void txtBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            CargarDatos();
         }
     }
 }

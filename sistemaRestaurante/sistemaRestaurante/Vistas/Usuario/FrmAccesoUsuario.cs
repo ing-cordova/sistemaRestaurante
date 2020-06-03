@@ -21,7 +21,7 @@ namespace sistemaRestaurante.Vistas
             InitializeComponent();
         }
 
-        private void AbrirFormulario(object FormHijo)
+        public void AbrirFormulario(object FormHijo)
         {
             if (this.panelContenedor.Controls.Count > 0)
             {
@@ -36,6 +36,12 @@ namespace sistemaRestaurante.Vistas
             fh.Show();
         }
 
+        private void OrdenarMenu()
+        {
+            btnMasOpciones.Location = new Point(9, 231);
+            panel8.Location = new Point(1, 231);
+            Submenu.Location = new Point(48, 277);
+        }
         //Este codigo se utiliza para arrastrar la ventana.
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -116,6 +122,22 @@ namespace sistemaRestaurante.Vistas
         public static FrmVentas venta = new FrmVentas();
         private void button1_Click(object sender, EventArgs e)
         {
+            if (SubMenuVentas.Visible == false)
+            {
+                SubMenuVentas.Visible = true;
+                btnMasOpciones.Location = new Point(9, 322);
+                panel8.Location = new Point(1, 322);
+                Submenu.Location = new Point(48, 368);
+            }
+            else
+            {
+                SubMenuVentas.Visible = false;
+                OrdenarMenu();
+            }
+        }
+
+        private void btnNuevaVenta_Click(object sender, EventArgs e)
+        {
             if (this.panelContenedor.Controls.Count > 0)
             {
                 this.panelContenedor.Controls.RemoveAt(0);
@@ -128,6 +150,16 @@ namespace sistemaRestaurante.Vistas
             venta.Show();
         }
 
+        private void FrmAccesoUsuario_Load(object sender, EventArgs e)
+        {
+            OrdenarMenu();
+        }
+
+        private void btnVentaProceso_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmListaVentas());
+        }
+
         private void btnCerrarS_Click(object sender, EventArgs e)
         {
             DialogResult entrada = MessageBox.Show("¿Estás seguro que desea cerrar sesión?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
@@ -136,7 +168,7 @@ namespace sistemaRestaurante.Vistas
             {
                 FrmLoguin loguin = new FrmLoguin();
                 loguin.Show();
-                this.Close();
+                this.Hide();
                 Submenu.Visible = false;
             }
         }

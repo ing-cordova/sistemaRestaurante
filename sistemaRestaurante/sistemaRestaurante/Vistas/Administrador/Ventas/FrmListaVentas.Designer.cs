@@ -42,6 +42,9 @@
             this.rbotRecibidas = new System.Windows.Forms.RadioButton();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnVerSelected = new System.Windows.Forms.Button();
+            this.rbotEntregadas = new System.Windows.Forms.RadioButton();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
+            this.lblBuscar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtvVentas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,7 +86,7 @@
             this.estado});
             this.dtvVentas.EnableHeadersVisualStyles = false;
             this.dtvVentas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
-            this.dtvVentas.Location = new System.Drawing.Point(12, 128);
+            this.dtvVentas.Location = new System.Drawing.Point(12, 161);
             this.dtvVentas.Name = "dtvVentas";
             this.dtvVentas.ReadOnly = true;
             this.dtvVentas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -131,7 +134,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(12, 97);
+            this.label2.Location = new System.Drawing.Point(16, 124);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 22);
             this.label2.TabIndex = 17;
@@ -142,12 +145,13 @@
             this.rbotEnviada.AutoSize = true;
             this.rbotEnviada.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbotEnviada.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.rbotEnviada.Location = new System.Drawing.Point(180, 94);
+            this.rbotEnviada.Location = new System.Drawing.Point(184, 121);
             this.rbotEnviada.Name = "rbotEnviada";
             this.rbotEnviada.Size = new System.Drawing.Size(99, 25);
             this.rbotEnviada.TabIndex = 16;
             this.rbotEnviada.Text = "Enviadas";
             this.rbotEnviada.UseVisualStyleBackColor = true;
+            this.rbotEnviada.CheckedChanged += new System.EventHandler(this.rbotEnviada_CheckedChanged);
             // 
             // rbotTodos
             // 
@@ -155,25 +159,27 @@
             this.rbotTodos.Checked = true;
             this.rbotTodos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbotTodos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.rbotTodos.Location = new System.Drawing.Point(101, 94);
+            this.rbotTodos.Location = new System.Drawing.Point(105, 121);
             this.rbotTodos.Name = "rbotTodos";
             this.rbotTodos.Size = new System.Drawing.Size(73, 25);
             this.rbotTodos.TabIndex = 15;
             this.rbotTodos.TabStop = true;
             this.rbotTodos.Text = "Todos";
             this.rbotTodos.UseVisualStyleBackColor = true;
+            this.rbotTodos.CheckedChanged += new System.EventHandler(this.rbotTodos_CheckedChanged);
             // 
             // rbotRecibidas
             // 
             this.rbotRecibidas.AutoSize = true;
             this.rbotRecibidas.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbotRecibidas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.rbotRecibidas.Location = new System.Drawing.Point(276, 94);
+            this.rbotRecibidas.Location = new System.Drawing.Point(280, 121);
             this.rbotRecibidas.Name = "rbotRecibidas";
             this.rbotRecibidas.Size = new System.Drawing.Size(103, 25);
             this.rbotRecibidas.TabIndex = 18;
             this.rbotRecibidas.Text = "Recibidas";
             this.rbotRecibidas.UseVisualStyleBackColor = true;
+            this.rbotRecibidas.CheckedChanged += new System.EventHandler(this.rbotRecibidas_CheckedChanged);
             // 
             // btnActualizar
             // 
@@ -181,7 +187,7 @@
             this.btnActualizar.FlatAppearance.BorderSize = 0;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Image = global::sistemaRestaurante.Properties.Resources.refresh;
-            this.btnActualizar.Location = new System.Drawing.Point(829, 75);
+            this.btnActualizar.Location = new System.Drawing.Point(833, 102);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(50, 44);
             this.btnActualizar.TabIndex = 14;
@@ -195,7 +201,7 @@
             this.btnVerSelected.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerSelected.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnVerSelected.Image = global::sistemaRestaurante.Properties.Resources.eye;
-            this.btnVerSelected.Location = new System.Drawing.Point(684, 75);
+            this.btnVerSelected.Location = new System.Drawing.Point(688, 102);
             this.btnVerSelected.Name = "btnVerSelected";
             this.btnVerSelected.Size = new System.Drawing.Size(139, 44);
             this.btnVerSelected.TabIndex = 12;
@@ -205,12 +211,48 @@
             this.btnVerSelected.UseVisualStyleBackColor = true;
             this.btnVerSelected.Click += new System.EventHandler(this.btnVerSelected_Click);
             // 
+            // rbotEntregadas
+            // 
+            this.rbotEntregadas.AutoSize = true;
+            this.rbotEntregadas.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbotEntregadas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rbotEntregadas.Location = new System.Drawing.Point(389, 121);
+            this.rbotEntregadas.Name = "rbotEntregadas";
+            this.rbotEntregadas.Size = new System.Drawing.Size(119, 25);
+            this.rbotEntregadas.TabIndex = 19;
+            this.rbotEntregadas.Text = "Entregadas";
+            this.rbotEntregadas.UseVisualStyleBackColor = true;
+            this.rbotEntregadas.CheckedChanged += new System.EventHandler(this.rbotEntregadas_CheckedChanged);
+            // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusqueda.Location = new System.Drawing.Point(199, 88);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(267, 27);
+            this.txtBusqueda.TabIndex = 31;
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
+            // 
+            // lblBuscar
+            // 
+            this.lblBuscar.AutoSize = true;
+            this.lblBuscar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBuscar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblBuscar.Location = new System.Drawing.Point(18, 92);
+            this.lblBuscar.Name = "lblBuscar";
+            this.lblBuscar.Size = new System.Drawing.Size(161, 19);
+            this.lblBuscar.TabIndex = 30;
+            this.lblBuscar.Text = "Buscar por Nº Mesa:";
+            // 
             // FrmListaVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
-            this.ClientSize = new System.Drawing.Size(920, 637);
+            this.ClientSize = new System.Drawing.Size(920, 660);
+            this.Controls.Add(this.txtBusqueda);
+            this.Controls.Add(this.lblBuscar);
+            this.Controls.Add(this.rbotEntregadas);
             this.Controls.Add(this.rbotRecibidas);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.rbotEnviada);
@@ -242,5 +284,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fechadeVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn numMesa;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
+        private System.Windows.Forms.RadioButton rbotEntregadas;
+        private System.Windows.Forms.TextBox txtBusqueda;
+        private System.Windows.Forms.Label lblBuscar;
     }
 }

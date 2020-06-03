@@ -69,13 +69,16 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
         private void FrmCompras_Load(object sender, EventArgs e)
         {
             RetornoId();
+            Limpiar();
+        }
+
+        private void Limpiar()
+        {
             txtCodigoProd.Text = "";
             txtNombreProd.Text = "";
             txtPrecio.Text = "";
             txtTotal.Text = "";
         }
-
-
 
         private void btnComprar_Click(object sender, EventArgs e)
         {
@@ -130,6 +133,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
 
                         MessageBox.Show("¡Venta Realizada con éxito! \n\nCON UN TOTAL DE: $" + lblTotalAPagar.Text, "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         dtvDetallesVenta.Rows.Clear();
+                        txtNMesa.Enabled = true;
                     }
 
                     RetornoId();
@@ -139,31 +143,50 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (txtCodigoProd.Text.Equals("") || txtNombreProd.Text.Equals("") || txtPrecio.Text.Equals("") || nupCantidad.Value == 0 || txtTotal.Text.Equals("") || txtTotal.Text.Equals("0") || txtNMesa.Text.Equals(""))
+            int NumeroMesa = Int32.Parse(txtNMesa.Text);
+            using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
             {
-                MessageBox.Show("¡Todos los campos son obligatorios!", "Rellenar campos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                try
+                var lista = from ventas in bd.Ventas
+                    where ventas.NumMesa == NumeroMesa
+                    select ventas;
+
+                if (lista.Count() > 0)
                 {
-                    Calculo();
+                    MessageBox.Show("¡No se puede realizar otra Orden en ese Numero de Mesa \nhasta que haya pagado la actual orden!", "Completar",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                catch (Exception ex)
+                else
                 {
 
-                }
+                    if (txtCodigoProd.Text.Equals("") || txtNombreProd.Text.Equals("") || txtPrecio.Text.Equals("") ||
+                        nupCantidad.Value == 0 || txtTotal.Text.Equals("") || txtTotal.Text.Equals("0") ||
+                        txtNMesa.Text.Equals(""))
+                    {
+                        MessageBox.Show("¡Todos los campos son obligatorios!", "Rellenar campos", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        try
+                        {
+                            Calculo();
+                        }
+                        catch (Exception ex)
+                        {
 
-                dtvDetallesVenta.Rows.Add(txtCodigoProd.Text, txtNombreProd.Text, txtPrecio.Text, nupCantidad.Value, txtTotal.Text);
-                if (dtvDetallesVenta.Rows.Count > 0)
-                {
-                    txtNMesa.Enabled = false;
+                        }
+
+                        dtvDetallesVenta.Rows.Add(txtCodigoProd.Text, txtNombreProd.Text, txtPrecio.Text,
+                            nupCantidad.Value, txtTotal.Text);
+                            txtNMesa.Enabled = false;
+                            CalcularTotalGeneral();
+                        dtvDetallesVenta.ClearSelection();
+                        int lastRow = dtvDetallesVenta.Rows.Count - 1;
+                        dtvDetallesVenta.FirstDisplayedScrollingRowIndex = lastRow;
+                        dtvDetallesVenta.Rows[lastRow].Selected = true;
+                        Limpiar();
+                    }
                 }
-                CalcularTotalGeneral();
-                dtvDetallesVenta.ClearSelection();
-                int lastRow = dtvDetallesVenta.Rows.Count - 1;
-                dtvDetallesVenta.FirstDisplayedScrollingRowIndex = lastRow;
-                dtvDetallesVenta.Rows[lastRow].Selected = true;
             }
         }
 

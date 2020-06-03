@@ -120,7 +120,7 @@ namespace sistemaRestaurante.Vistas
             {
                 FrmLoguin loguin = new FrmLoguin();
                 loguin.Show();
-                this.Close();
+                this.Hide();
                 Submenu.Visible = false;
             }
         }
@@ -168,9 +168,9 @@ namespace sistemaRestaurante.Vistas
 
         private void OrdenarMenu()
         {
-            btnMasOpciones.Location = new Point(9,496);
-            panel8.Location = new Point(1,496);
-            Submenu.Location = new Point(48,542);
+            btnMasOpciones.Location = new Point(9, 496);
+            panel8.Location = new Point(1, 496);
+            Submenu.Location = new Point(48, 542);
         }
         private void FrmAccesoAdmin_Load(object sender, EventArgs e)
         {
@@ -183,7 +183,7 @@ namespace sistemaRestaurante.Vistas
             if (SubMenuVentas.Visible == false)
             {
                 SubMenuVentas.Visible = true;
-                btnMasOpciones.Location = new Point(8, 585);
+                btnMasOpciones.Location = new Point(9, 585);
                 panel8.Location = new Point(1, 585);
                 Submenu.Location = new Point(48, 631);
             }
