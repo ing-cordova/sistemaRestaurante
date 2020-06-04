@@ -173,6 +173,18 @@
     <Compile Include="Vistas\Administrador\Productos\FrmListadoProductos.Designer.cs">
       <DependentUpon>FrmListadoProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Administrador\Productos\FrmBuscarIngredientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Administrador\Productos\FrmBuscarIngredientes.Designer.cs">
+      <DependentUpon>FrmBuscarIngredientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Administrador\Productos\FrmRecetas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Administrador\Productos\FrmRecetas.Designer.cs">
+      <DependentUpon>FrmRecetas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Administrador\ProveedoresLista\FrmCRUDProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -287,6 +299,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Administrador\Productos\FrmListadoProductos.resx">
       <DependentUpon>FrmListadoProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Administrador\Productos\FrmBuscarIngredientes.resx">
+      <DependentUpon>FrmBuscarIngredientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Administrador\Productos\FrmRecetas.resx">
+      <DependentUpon>FrmRecetas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Administrador\ProveedoresLista\FrmCRUDProveedor.resx">
       <DependentUpon>FrmCRUDProveedor.cs</DependentUpon>

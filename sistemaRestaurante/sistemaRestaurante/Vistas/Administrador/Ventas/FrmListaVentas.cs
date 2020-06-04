@@ -220,7 +220,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
                 FrmLoguin.accessU.AbrirFormulario(FrmDetalles);
                 this.Close();
             }
-            else
+            else if(Inicio.Login.TipodeAcceso == 1)
             {
                 FrmDetalles.txtIdVenta.Text = dtvVentas.CurrentRow.Cells[0].Value.ToString();
                 FrmLoguin.accessAd.AbrirFormulario(FrmDetalles);

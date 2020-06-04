@@ -110,5 +110,14 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
             crud.txtPrecioProd.Text = Precio;
             crud.cmbCategoria.Text = Categoria;
         }
+
+        public static FrmRecetas frmRecetas = new FrmRecetas();
+        private void btnVerSelected_Click(object sender, EventArgs e)
+        {
+            frmRecetas.txtIdProd.Text = dtvProductos.CurrentRow.Cells[0].Value.ToString();
+            frmRecetas.btnActualizar.PerformClick();
+            FrmLoguin.accessAd.AbrirFormulario(frmRecetas);
+            this.Hide();
+        }
     }
 }

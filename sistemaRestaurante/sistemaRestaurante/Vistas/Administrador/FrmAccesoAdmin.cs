@@ -124,10 +124,10 @@ namespace sistemaRestaurante.Vistas
                 Submenu.Visible = false;
             }
         }
-
+        public static FrmListadoProductos frmListadoProd = new FrmListadoProductos();
         private void btnProductos_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(new FrmListadoProductos());
+            AbrirFormulario(frmListadoProd);
         }
 
         private void btnProveedor_Click(object sender, EventArgs e)
