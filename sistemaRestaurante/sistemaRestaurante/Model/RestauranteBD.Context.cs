@@ -25,7 +25,6 @@ namespace sistemaRestaurante.Model
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Almacen> Almacen { get; set; }
         public virtual DbSet<Categorias> Categorias { get; set; }
         public virtual DbSet<Compraas> Compraas { get; set; }
         public virtual DbSet<DetallesCompra> DetallesCompra { get; set; }
@@ -36,5 +35,6 @@ namespace sistemaRestaurante.Model
         public virtual DbSet<Recetas> Recetas { get; set; }
         public virtual DbSet<Usuarios> Usuarios { get; set; }
         public virtual DbSet<Ventas> Ventas { get; set; }
+        public virtual DbSet<Almacen> Almacen { get; set; }
     }
 }

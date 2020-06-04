@@ -111,3 +111,6 @@ y ejecuten este script*/
 Alter table Ventas add NumMesa int
 
 Alter table Ventas alter column fechadeVenta datetime
+
+----------Actualizacion 04/06/2020-------------------
+Alter table Almacen drop column unidad

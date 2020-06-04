@@ -142,6 +142,34 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
 
                             bd.DetallesCompra.Add(detalleC);
                             bd.SaveChanges();
+                            Almacen almaceen = new Almacen();
+                            var lista = from almacen in bd.Almacen
+                                where almacen.idProductoC == idProdConv
+                                select almacen;
+                            if (lista.Count()>0)
+                            {
+                                int idA = int.Parse(dtvDetallesCompra.Rows[i].Cells[0].Value.ToString());
+                                int CantidadProd = int.Parse(dtvDetallesCompra.Rows[i].Cells[3].Value.ToString());
+                                var listaalmacen = from almacen in bd.Almacen
+                                    where almacen.idProductoC == idProdConv
+                                    select almacen;
+                                foreach (var iterar in listaalmacen)
+                                {
+                                    almaceen.idAlmacen = iterar.idAlmacen;
+                                    almaceen.idProductoC = iterar.idProductoC;
+                                    almaceen.cantidadDisponible = iterar.cantidadDisponible;
+                                }
+                                almaceen.cantidadDisponible = almaceen.cantidadDisponible + CantidadProd;
+                                bd.Entry(almaceen).State = System.Data.Entity.EntityState.Modified;
+                                bd.SaveChanges();
+                            }
+                            else
+                            {
+                                almaceen.idProductoC = idProdConv;
+                                almaceen.cantidadDisponible = int.Parse(dtvDetallesCompra.Rows[i].Cells[3].Value.ToString());
+                                bd.Almacen.Add(almaceen);
+                                bd.SaveChanges();
+                            }
                         }
 
                         MessageBox.Show("¡Venta Realizada con éxito! \n\nCON UN TOTAL DE: $" + lblTotalAPagar.Text, "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

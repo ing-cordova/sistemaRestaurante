@@ -29,13 +29,12 @@ namespace sistemaRestaurante.Vistas.Administrador
                                   {
                                       ID = almacen.idAlmacen,
                                       NOMBREPROD = prodC.nombre,
-                                      CANTIDAD = almacen.cantidadDisponible,
-                                      UNIDAD = almacen.unidad
+                                      CANTIDAD = almacen.cantidadDisponible
                                   };
 
                 foreach (var iterar in JoinAlmacen)
                 {
-                    dtvAlmacen.Rows.Add(iterar.ID, iterar.NOMBREPROD, iterar.CANTIDAD, iterar.UNIDAD);
+                    dtvAlmacen.Rows.Add(iterar.ID, iterar.NOMBREPROD, iterar.CANTIDAD);
                 }
             }
         }

@@ -17,9 +17,9 @@ namespace sistemaRestaurante.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ProductosCompra()
         {
-            this.Almacen = new HashSet<Almacen>();
             this.DetallesCompra = new HashSet<DetallesCompra>();
             this.Recetas = new HashSet<Recetas>();
+            this.Almacen = new HashSet<Almacen>();
         }
     
         public int idProductoC { get; set; }
@@ -28,13 +28,13 @@ namespace sistemaRestaurante.Model
         public Nullable<int> idProveedor { get; set; }
         public int idCategoria { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Almacen> Almacen { get; set; }
         public virtual Categorias Categorias { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetallesCompra> DetallesCompra { get; set; }
         public virtual Proveedores Proveedores { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Recetas> Recetas { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Almacen> Almacen { get; set; }
     }
 }

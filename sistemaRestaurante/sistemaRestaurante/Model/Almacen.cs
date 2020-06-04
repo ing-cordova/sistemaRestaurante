@@ -17,7 +17,6 @@ namespace sistemaRestaurante.Model
         public int idAlmacen { get; set; }
         public Nullable<int> idProductoC { get; set; }
         public Nullable<double> cantidadDisponible { get; set; }
-        public string unidad { get; set; }
     
         public virtual ProductosCompra ProductosCompra { get; set; }
     }

@@ -12,7 +12,6 @@
           <Property Name="idAlmacen" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="idProductoC" Type="int" />
           <Property Name="cantidadDisponible" Type="float" />
-          <Property Name="unidad" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="Categorias">
           <Key>
@@ -109,13 +108,13 @@
             <PropertyRef Name="idVenta" />
           </Key>
           <Property Name="idVenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="fechadeVenta" Type="date" />
+          <Property Name="fechadeVenta" Type="datetime" />
           <Property Name="totalPagar" Type="money" />
           <Property Name="estado" Type="varchar" MaxLength="15" />
           <Property Name="nombredeUsuario" Type="varchar" MaxLength="30" />
           <Property Name="NumMesa" Type="int" />
         </EntityType>
-        <Association Name="FK__Almacen__idProdu__4E88ABD4">
+        <Association Name="FK__Almacen__idProdu__59063A47">
           <End Role="ProductosCompra" Type="Self.ProductosCompra" Multiplicity="0..1" />
           <End Role="Almacen" Type="Self.Almacen" Multiplicity="*" />
           <ReferentialConstraint>
@@ -283,7 +282,7 @@
           <EntitySet Name="Recetas" EntityType="Self.Recetas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ventas" EntityType="Self.Ventas" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Almacen__idProdu__4E88ABD4" Association="Self.FK__Almacen__idProdu__4E88ABD4">
+          <AssociationSet Name="FK__Almacen__idProdu__59063A47" Association="Self.FK__Almacen__idProdu__59063A47">
             <End Role="ProductosCompra" EntitySet="ProductosCompra" />
             <End Role="Almacen" EntitySet="Almacen" />
           </AssociationSet>
@@ -340,16 +339,6 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="RestauranteBDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Almacen">
-          <Key>
-            <PropertyRef Name="idAlmacen" />
-          </Key>
-          <Property Name="idAlmacen" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="idProductoC" Type="Int32" />
-          <Property Name="cantidadDisponible" Type="Double" />
-          <Property Name="unidad" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="ProductosCompra" Relationship="Self.FK__Almacen__idProdu__4E88ABD4" FromRole="Almacen" ToRole="ProductosCompra" />
-        </EntityType>
         <EntityType Name="Categorias">
           <Key>
             <PropertyRef Name="idCategoria" />
@@ -407,11 +396,11 @@
           <Property Name="precio" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="idProveedor" Type="Int32" />
           <Property Name="idCategoria" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Almacen" Relationship="Self.FK__Almacen__idProdu__4E88ABD4" FromRole="ProductosCompra" ToRole="Almacen" />
           <NavigationProperty Name="Categorias" Relationship="Self.FK__Productos__idCat__52593CB8" FromRole="ProductosCompra" ToRole="Categorias" />
           <NavigationProperty Name="DetallesCompra" Relationship="Self.FK__DetallesC__idPro__4AB81AF0" FromRole="ProductosCompra" ToRole="DetallesCompra" />
           <NavigationProperty Name="Proveedores" Relationship="Self.FK__Productos__idPro__3D5E1FD2" FromRole="ProductosCompra" ToRole="Proveedores" />
           <NavigationProperty Name="Recetas" Relationship="Self.FK__Recetas__idProdu__5629CD9C" FromRole="ProductosCompra" ToRole="Recetas" />
+          <NavigationProperty Name="Almacen" Relationship="RestauranteBDModel.FK__Almacen__idProdu__59063A47" FromRole="ProductosCompra" ToRole="Almacen" />
         </EntityType>
         <EntityType Name="ProductosVenta">
           <Key>
@@ -468,7 +457,7 @@
             <PropertyRef Name="idVenta" />
           </Key>
           <Property Name="idVenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="fechadeVenta" Type="DateTime" Precision="0" />
+          <Property Name="fechadeVenta" Type="DateTime" Precision="3" />
           <Property Name="totalPagar" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="estado" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="nombredeUsuario" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
@@ -476,18 +465,6 @@
           <NavigationProperty Name="Usuarios" Relationship="Self.FK__Ventas__nombrede__403A8C7D" FromRole="Ventas" ToRole="Usuarios" />
           <Property Name="NumMesa" Type="Int32" />
         </EntityType>
-        <Association Name="FK__Almacen__idProdu__4E88ABD4">
-          <End Role="ProductosCompra" Type="Self.ProductosCompra" Multiplicity="0..1" />
-          <End Role="Almacen" Type="Self.Almacen" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ProductosCompra">
-              <PropertyRef Name="idProductoC" />
-            </Principal>
-            <Dependent Role="Almacen">
-              <PropertyRef Name="idProductoC" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__Productos__idCat__5165187F">
           <End Role="Categorias" Type="Self.Categorias" Multiplicity="1" />
           <End Role="ProductosVenta" Type="Self.ProductosVenta" Multiplicity="*" />
@@ -633,7 +610,6 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="RestauranteBDEntities1" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Almacen" EntityType="Self.Almacen" />
           <EntitySet Name="Categorias" EntityType="Self.Categorias" />
           <EntitySet Name="Compraas" EntityType="Self.Compraas" />
           <EntitySet Name="DetallesCompra" EntityType="Self.DetallesCompra" />
@@ -644,10 +620,6 @@
           <EntitySet Name="Recetas" EntityType="Self.Recetas" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
           <EntitySet Name="Ventas" EntityType="Self.Ventas" />
-          <AssociationSet Name="FK__Almacen__idProdu__4E88ABD4" Association="Self.FK__Almacen__idProdu__4E88ABD4">
-            <End Role="ProductosCompra" EntitySet="ProductosCompra" />
-            <End Role="Almacen" EntitySet="Almacen" />
-          </AssociationSet>
           <AssociationSet Name="FK__Productos__idCat__5165187F" Association="Self.FK__Productos__idCat__5165187F">
             <End Role="Categorias" EntitySet="Categorias" />
             <End Role="ProductosVenta" EntitySet="ProductosVenta" />
@@ -696,23 +668,39 @@
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Ventas" EntitySet="Ventas" />
           </AssociationSet>
+          <EntitySet Name="Almacen" EntityType="RestauranteBDModel.Almacen" />
+          <AssociationSet Name="FK__Almacen__idProdu__59063A47" Association="RestauranteBDModel.FK__Almacen__idProdu__59063A47">
+            <End Role="ProductosCompra" EntitySet="ProductosCompra" />
+            <End Role="Almacen" EntitySet="Almacen" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Almacen">
+          <Key>
+            <PropertyRef Name="idAlmacen" />
+          </Key>
+          <Property Name="idAlmacen" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idProductoC" Type="Int32" />
+          <Property Name="cantidadDisponible" Type="Double" />
+          <NavigationProperty Name="ProductosCompra" Relationship="RestauranteBDModel.FK__Almacen__idProdu__59063A47" FromRole="Almacen" ToRole="ProductosCompra" />
+        </EntityType>
+        <Association Name="FK__Almacen__idProdu__59063A47">
+          <End Type="RestauranteBDModel.ProductosCompra" Role="ProductosCompra" Multiplicity="0..1" />
+          <End Type="RestauranteBDModel.Almacen" Role="Almacen" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductosCompra">
+              <PropertyRef Name="idProductoC" />
+            </Principal>
+            <Dependent Role="Almacen">
+              <PropertyRef Name="idProductoC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="RestauranteBDModelStoreContainer" CdmEntityContainer="RestauranteBDEntities1">
-          <EntitySetMapping Name="Almacen">
-            <EntityTypeMapping TypeName="RestauranteBDModel.Almacen">
-              <MappingFragment StoreEntitySet="Almacen">
-                <ScalarProperty Name="idAlmacen" ColumnName="idAlmacen" />
-                <ScalarProperty Name="idProductoC" ColumnName="idProductoC" />
-                <ScalarProperty Name="cantidadDisponible" ColumnName="cantidadDisponible" />
-                <ScalarProperty Name="unidad" ColumnName="unidad" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Categorias">
             <EntityTypeMapping TypeName="RestauranteBDModel.Categorias">
               <MappingFragment StoreEntitySet="Categorias">
@@ -821,6 +809,15 @@
                 <ScalarProperty Name="totalPagar" ColumnName="totalPagar" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="nombredeUsuario" ColumnName="nombredeUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Almacen">
+            <EntityTypeMapping TypeName="RestauranteBDModel.Almacen">
+              <MappingFragment StoreEntitySet="Almacen">
+                <ScalarProperty Name="cantidadDisponible" ColumnName="cantidadDisponible" />
+                <ScalarProperty Name="idProductoC" ColumnName="idProductoC" />
+                <ScalarProperty Name="idAlmacen" ColumnName="idAlmacen" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
