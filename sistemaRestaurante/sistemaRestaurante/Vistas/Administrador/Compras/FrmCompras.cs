@@ -159,6 +159,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
                                     almaceen.idProductoC = iterar.idProductoC;
                                     almaceen.cantidadDisponible = iterar.cantidadDisponible;
                                 }
+                                almaceen = bd.Almacen.Where(VerificarID => VerificarID.idProductoC == idA).First();
                                 almaceen.cantidadDisponible = almaceen.cantidadDisponible + CantidadProd;
                                 bd.Entry(almaceen).State = System.Data.Entity.EntityState.Modified;
                                 bd.SaveChanges();
