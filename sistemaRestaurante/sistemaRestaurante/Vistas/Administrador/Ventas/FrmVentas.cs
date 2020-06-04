@@ -147,7 +147,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
             using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
             {
                 var lista = from ventas in bd.Ventas
-                    where ventas.NumMesa == NumeroMesa
+                    where ventas.NumMesa == NumeroMesa && ventas.estado != "Pagada"
                     select ventas;
 
                 if (lista.Count() > 0)
