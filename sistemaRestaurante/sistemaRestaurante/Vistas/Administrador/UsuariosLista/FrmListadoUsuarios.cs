@@ -187,5 +187,23 @@ namespace sistemaRestaurante.Vistas.Administrador.UsuariosLista
             dtvUsuarios.Rows.Clear();
             Filtro();
         }
+
+        private void rbotTodos_CheckedChanged(object sender, EventArgs e)
+        {
+            Filtro();
+            btnActualizar.PerformClick();
+        }
+
+        private void rbotUsuarios_CheckedChanged(object sender, EventArgs e)
+        {
+            Filtro();
+            btnActualizar.PerformClick();
+        }
+
+        private void rbotAdministradores_CheckedChanged(object sender, EventArgs e)
+        {
+            Filtro();
+            btnActualizar.PerformClick();
+        }
     }
 }

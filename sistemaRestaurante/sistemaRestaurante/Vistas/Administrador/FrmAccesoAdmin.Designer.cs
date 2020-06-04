@@ -53,7 +53,6 @@
             this.btnCategorias = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnVentas = new System.Windows.Forms.Button();
-            this.panel8 = new System.Windows.Forms.Panel();
             this.btnMasOpciones = new System.Windows.Forms.Button();
             this.Submenu = new System.Windows.Forms.Panel();
             this.btnCerrarS = new System.Windows.Forms.Button();
@@ -71,6 +70,7 @@
             this.btnProductos = new System.Windows.Forms.Button();
             this.tmDatosFechaHora = new System.Windows.Forms.Timer(this.components);
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.barraTitulos.SuspendLayout();
             this.MenuVertical.SuspendLayout();
             this.SubMenuVentas.SuspendLayout();
@@ -246,6 +246,7 @@
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(31)))), ((int)(((byte)(70)))));
+            this.MenuVertical.Controls.Add(this.panel8);
             this.MenuVertical.Controls.Add(this.SubMenuVentas);
             this.MenuVertical.Controls.Add(this.btnCompras);
             this.MenuVertical.Controls.Add(this.panel10);
@@ -253,8 +254,6 @@
             this.MenuVertical.Controls.Add(this.btnCategorias);
             this.MenuVertical.Controls.Add(this.panel6);
             this.MenuVertical.Controls.Add(this.btnVentas);
-            this.MenuVertical.Controls.Add(this.panel8);
-            this.MenuVertical.Controls.Add(this.btnMasOpciones);
             this.MenuVertical.Controls.Add(this.Submenu);
             this.MenuVertical.Controls.Add(this.pictureBox1);
             this.MenuVertical.Controls.Add(this.panel5);
@@ -267,6 +266,7 @@
             this.MenuVertical.Controls.Add(this.btnProveedor);
             this.MenuVertical.Controls.Add(this.panel1);
             this.MenuVertical.Controls.Add(this.btnProductos);
+            this.MenuVertical.Controls.Add(this.btnMasOpciones);
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuVertical.Location = new System.Drawing.Point(0, 42);
             this.MenuVertical.Name = "MenuVertical";
@@ -324,7 +324,7 @@
             this.btnNuevaVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNuevaVenta.Location = new System.Drawing.Point(8, 0);
             this.btnNuevaVenta.Name = "btnNuevaVenta";
-            this.btnNuevaVenta.Size = new System.Drawing.Size(159, 40);
+            this.btnNuevaVenta.Size = new System.Drawing.Size(199, 40);
             this.btnNuevaVenta.TabIndex = 2;
             this.btnNuevaVenta.Text = "  Nueva Venta";
             this.btnNuevaVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -349,7 +349,7 @@
             this.btnCompras.ForeColor = System.Drawing.Color.White;
             this.btnCompras.Image = global::sistemaRestaurante.Properties.Resources.sell;
             this.btnCompras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCompras.Location = new System.Drawing.Point(8, 404);
+            this.btnCompras.Location = new System.Drawing.Point(6, 404);
             this.btnCompras.Name = "btnCompras";
             this.btnCompras.Size = new System.Drawing.Size(215, 40);
             this.btnCompras.TabIndex = 16;
@@ -413,7 +413,7 @@
             this.btnVentas.ForeColor = System.Drawing.Color.White;
             this.btnVentas.Image = global::sistemaRestaurante.Properties.Resources.finances;
             this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentas.Location = new System.Drawing.Point(8, 450);
+            this.btnVentas.Location = new System.Drawing.Point(7, 450);
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.Size = new System.Drawing.Size(210, 40);
             this.btnVentas.TabIndex = 12;
@@ -422,14 +422,6 @@
             this.btnVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVentas.UseVisualStyleBackColor = true;
             this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            this.panel8.Location = new System.Drawing.Point(1, 585);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(6, 40);
-            this.panel8.TabIndex = 11;
             // 
             // btnMasOpciones
             // 
@@ -441,9 +433,9 @@
             this.btnMasOpciones.ForeColor = System.Drawing.Color.White;
             this.btnMasOpciones.Image = global::sistemaRestaurante.Properties.Resources.more;
             this.btnMasOpciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMasOpciones.Location = new System.Drawing.Point(8, 585);
+            this.btnMasOpciones.Location = new System.Drawing.Point(3, 585);
             this.btnMasOpciones.Name = "btnMasOpciones";
-            this.btnMasOpciones.Size = new System.Drawing.Size(212, 40);
+            this.btnMasOpciones.Size = new System.Drawing.Size(215, 40);
             this.btnMasOpciones.TabIndex = 10;
             this.btnMasOpciones.Text = "  Más Opciones";
             this.btnMasOpciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -471,7 +463,7 @@
             this.btnCerrarS.ForeColor = System.Drawing.Color.White;
             this.btnCerrarS.Image = global::sistemaRestaurante.Properties.Resources.arrows;
             this.btnCerrarS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarS.Location = new System.Drawing.Point(10, 0);
+            this.btnCerrarS.Location = new System.Drawing.Point(8, 0);
             this.btnCerrarS.Name = "btnCerrarS";
             this.btnCerrarS.Size = new System.Drawing.Size(159, 40);
             this.btnCerrarS.TabIndex = 2;
@@ -651,6 +643,14 @@
             this.panelContenedor.Size = new System.Drawing.Size(895, 697);
             this.panelContenedor.TabIndex = 3;
             // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.panel8.Location = new System.Drawing.Point(0, 585);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(6, 40);
+            this.panel8.TabIndex = 18;
+            // 
             // FrmAccesoAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -717,7 +717,7 @@
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Button btnNuevaVenta;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panelContenedor;
+        private System.Windows.Forms.Panel panel8;
     }
 }

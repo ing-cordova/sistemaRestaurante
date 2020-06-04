@@ -88,6 +88,7 @@ namespace sistemaRestaurante.Vistas
 
                                 MessageBox.Show("¡Cuenta creada con éxito!", "Registro Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
                                 FrmAccesoUsuario usuN = new FrmAccesoUsuario();
+                                FrmAccesoUsuario.venta.lblUsuario.Text = txtUsuario.Text;
                                 usuN.Show();
                                 this.Hide();
                                 LimpiarDatos();
@@ -115,6 +116,8 @@ namespace sistemaRestaurante.Vistas
 
                                     MessageBox.Show("Nuevo Administrador Creado con éxito.", "¡Validación Correcta!", MessageBoxButtons.OK, MessageBoxIcon.None);
                                     FrmAccesoAdmin admin = new FrmAccesoAdmin();
+                                    FrmAccesoAdmin.compras.lblUsuario.Text = txtUsuario.Text;
+                                    FrmAccesoAdmin.venta.lblUsuario.Text = txtUsuario.Text;
                                     admin.Show();
                                     this.Hide();
                                     LimpiarDatos();
