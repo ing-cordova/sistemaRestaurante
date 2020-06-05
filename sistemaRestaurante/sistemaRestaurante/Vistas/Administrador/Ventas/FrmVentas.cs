@@ -93,7 +93,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
                 {
                     using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
                     {
-                        
+
                         Model.Ventas venta = new Model.Ventas();
 
                         String nombre = lblUsuario.Text;
@@ -123,7 +123,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
                             Decimal totalConv = Convert.ToDecimal(total);
 
                             var listaReceta = from recetas in bd.Recetas
-                                    where recetas.idProductoV == idProdConv
+                                              where recetas.idProductoV == idProdConv
                                               select recetas;
                             foreach (var iterar in listaReceta)
                             {
@@ -158,50 +158,85 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            int NumeroMesa = Int32.Parse(txtNMesa.Text);
             using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
             {
-                var lista = from ventas in bd.Ventas
-                    where ventas.NumMesa == NumeroMesa && ventas.estado != "Pagada"
-                    select ventas;
 
-                if (lista.Count() > 0)
+                if (txtCodigoProd.Text.Equals("") || txtNombreProd.Text.Equals("") ||
+                    txtPrecio.Text.Equals("") ||
+                    nupCantidad.Value == 0 || txtTotal.Text.Equals("") || txtTotal.Text.Equals("0") ||
+                    txtNMesa.Text.Equals(""))
                 {
-                    MessageBox.Show("¡No se puede realizar otra Orden en ese Numero de Mesa \nhasta que haya pagado la actual orden!", "Completar",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("¡Todos los campos son obligatorios!", "Rellenar campos",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
                 }
                 else
                 {
-
-                    if (txtCodigoProd.Text.Equals("") || txtNombreProd.Text.Equals("") || txtPrecio.Text.Equals("") ||
-                        nupCantidad.Value == 0 || txtTotal.Text.Equals("") || txtTotal.Text.Equals("0") ||
-                        txtNMesa.Text.Equals(""))
+                    int idProd = Int32.Parse(txtCodigoProd.Text);
+                    int cantidad = Int32.Parse(nupCantidad.Text);
+                    var listaReceta = from recetas in bd.Recetas
+                                      where recetas.idProductoV == idProd
+                                      select recetas;
+                    bool agregar = true;
+                    foreach (var iterar in listaReceta)
                     {
-                        MessageBox.Show("¡Todos los campos son obligatorios!", "Rellenar campos", MessageBoxButtons.OK,
+                        Recetas recetas = new Recetas();
+                        Almacen almaceen = new Almacen();
+                        recetas = iterar;
+                        int idR = Int32.Parse(recetas.idProductoC.ToString());
+                        almaceen = bd.Almacen.Where(VerificarID => VerificarID.idProductoC == idR).First();
+                        double verificarCantidad = (Convert.ToDouble(cantidad) / Convert.ToDouble(recetas.cantidadProdIngrediente));
+                        if (almaceen.cantidadDisponible < verificarCantidad)
+                        {
+                            agregar = false;
+                            break;
+                        }
+                    }
+                    if (agregar == false)
+                    {
+                        MessageBox.Show("¡No se puede agregar el Producto!", "Ingredientes Insuficientes", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
                     }
                     else
                     {
-                        try
+                        int NumeroMesa = Int32.Parse(txtNMesa.Text);
+                        var lista = from ventas in bd.Ventas
+                                    where ventas.NumMesa == NumeroMesa && ventas.estado != "Pagada"
+                                    select ventas;
+
+                        if (lista.Count() > 0)
                         {
-                            Calculo();
+                            MessageBox.Show(
+                                "¡No se puede realizar otra Orden en ese Numero de Mesa \nhasta que haya pagado la actual orden!",
+                                "Completar",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
-                        catch (Exception ex)
+                        else
                         {
 
-                        }
+                            try
+                            {
+                                Calculo();
+                            }
+                            catch (Exception ex)
+                            {
 
-                        dtvDetallesVenta.Rows.Add(txtCodigoProd.Text, txtNombreProd.Text, txtPrecio.Text,
-                            nupCantidad.Value, txtTotal.Text);
+                            }
+
+                            dtvDetallesVenta.Rows.Add(txtCodigoProd.Text, txtNombreProd.Text, txtPrecio.Text,
+                                nupCantidad.Value, txtTotal.Text);
                             txtNMesa.Enabled = false;
                             CalcularTotalGeneral();
-                        dtvDetallesVenta.ClearSelection();
-                        int lastRow = dtvDetallesVenta.Rows.Count - 1;
-                        dtvDetallesVenta.FirstDisplayedScrollingRowIndex = lastRow;
-                        dtvDetallesVenta.Rows[lastRow].Selected = true;
-                        Limpiar();
+                            dtvDetallesVenta.ClearSelection();
+                            int lastRow = dtvDetallesVenta.Rows.Count - 1;
+                            dtvDetallesVenta.FirstDisplayedScrollingRowIndex = lastRow;
+                            dtvDetallesVenta.Rows[lastRow].Selected = true;
+                            Limpiar();
+
+                        }
                     }
                 }
+
             }
         }
 
