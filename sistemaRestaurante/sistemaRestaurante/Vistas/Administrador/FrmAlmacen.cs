@@ -34,7 +34,7 @@ namespace sistemaRestaurante.Vistas.Administrador
 
                 foreach (var iterar in JoinAlmacen)
                 {
-                    dtvAlmacen.Rows.Add(iterar.ID, iterar.NOMBREPROD, iterar.CANTIDAD);
+                    dtvAlmacen.Rows.Add(iterar.ID, iterar.NOMBREPROD, Math.Round(Convert.ToDouble(iterar.CANTIDAD)));
                 }
             }
         }
