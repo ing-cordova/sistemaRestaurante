@@ -93,6 +93,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
                 {
                     using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
                     {
+                        
                         Model.Ventas venta = new Model.Ventas();
 
                         String nombre = lblUsuario.Text;
@@ -120,6 +121,20 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
 
                             String total = dtvDetallesVenta.Rows[i].Cells[4].Value.ToString();
                             Decimal totalConv = Convert.ToDecimal(total);
+
+                            var listaReceta = from recetas in bd.Recetas
+                                    where recetas.idProductoV == idProdConv
+                                              select recetas;
+                            foreach (var iterar in listaReceta)
+                            {
+                                Recetas recetas = new Recetas();
+                                Almacen almaceen = new Almacen();
+                                recetas = iterar;
+                                int idR = Int32.Parse(recetas.idProductoC.ToString());
+                                almaceen = bd.Almacen.Where(VerificarID => VerificarID.idProductoC == idR).First();
+                                double cantidadRestada = (Convert.ToDouble(cantiConver) / Convert.ToDouble(recetas.cantidadProdIngrediente));
+                                almaceen.cantidadDisponible = almaceen.cantidadDisponible - cantidadRestada;
+                            }
 
                             detallesV.idVenta = Convert.ToInt32(lblCodigo.Text);
                             detallesV.idProductoV = idProdConv;

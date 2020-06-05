@@ -150,15 +150,6 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
                             {
                                 int idA = int.Parse(dtvDetallesCompra.Rows[i].Cells[0].Value.ToString());
                                 int CantidadProd = int.Parse(dtvDetallesCompra.Rows[i].Cells[3].Value.ToString());
-                                var listaalmacen = from almacen in bd.Almacen
-                                    where almacen.idProductoC == idProdConv
-                                    select almacen;
-                                foreach (var iterar in listaalmacen)
-                                {
-                                    almaceen.idAlmacen = iterar.idAlmacen;
-                                    almaceen.idProductoC = iterar.idProductoC;
-                                    almaceen.cantidadDisponible = iterar.cantidadDisponible;
-                                }
                                 almaceen = bd.Almacen.Where(VerificarID => VerificarID.idProductoC == idA).First();
                                 almaceen.cantidadDisponible = almaceen.cantidadDisponible + CantidadProd;
                                 bd.Entry(almaceen).State = System.Data.Entity.EntityState.Modified;
