@@ -20,6 +20,8 @@ namespace sistemaRestaurante.Vistas.Administrador.CompraProductos
 
         String categ = "", provee = "";
         ProductosCompra prodC = new ProductosCompra();
+        Proveedores proveedor = new Proveedores();
+        Categorias categoria = new Categorias();
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -59,6 +61,7 @@ namespace sistemaRestaurante.Vistas.Administrador.CompraProductos
             txtPrecioProd.Text = "";
             cmbProveedor.Text = "";
             cmbCategoria.Text = "";
+            txtEstado.Text = "";
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
@@ -121,11 +124,9 @@ namespace sistemaRestaurante.Vistas.Administrador.CompraProductos
         {
             using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
             {
-                decimal precioCon;
-
-                if (decimal.TryParse(txtPrecioProd.Text, out precioCon) == false)
+                if (txtEstado.Text.Equals("Activo"))
                 {
-                    MessageBox.Show("¡Ingrese correctamente el precio!");
+                    MessageBox.Show("¡Actualmente este producto está activo, no se puede eliminar!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -138,7 +139,7 @@ namespace sistemaRestaurante.Vistas.Administrador.CompraProductos
                         bd.ProductosCompra.Remove(prodC);
                         bd.SaveChanges();
 
-                        MessageBox.Show("¡Producto editado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
+                        MessageBox.Show("¡Producto eliminado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
                         this.Close();
                     }
                 }
@@ -166,6 +167,19 @@ namespace sistemaRestaurante.Vistas.Administrador.CompraProductos
                     prodC.precio = decimal.Parse(txtPrecioProd.Text);
                     prodC.idProveedor = int.Parse(provee);
                     prodC.idCategoria = int.Parse(categ);
+                    prodC.estado = "Inactivo";
+
+                    int idProv = int.Parse(provee);
+                    proveedor = bd.Proveedores.Where(Id => Id.idProveedor == idProv).First();
+                    proveedor.estado = "Activo";
+                    bd.Entry(proveedor).State = System.Data.Entity.EntityState.Modified;
+                    bd.SaveChanges();
+
+                    int idCat = int.Parse(categ);
+                    categoria = bd.Categorias.Where(Id => Id.idCategoria == idCat).First();
+                    categoria.estado = "Activo";
+                    bd.Entry(categoria).State = System.Data.Entity.EntityState.Modified;
+                    bd.SaveChanges();
 
                     bd.ProductosCompra.Add(prodC);
                     bd.SaveChanges();
@@ -173,6 +187,30 @@ namespace sistemaRestaurante.Vistas.Administrador.CompraProductos
                     MessageBox.Show("¡Producto insertado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
                     this.Close();
                 }
+            }
+        }
+
+        private void txtPrecioProd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
 

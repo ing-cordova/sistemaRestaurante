@@ -34,12 +34,13 @@ namespace sistemaRestaurante.Vistas.Administrador.CompraProductos
                                    NOMBRE = prod.nombre,
                                    PRECIO = prod.precio,
                                    PROVEEDOR = provee.nombre,
-                                   CATEGORIA = categoria.nombreCategoria
+                                   CATEGORIA = categoria.nombreCategoria,
+                                   ESTADO = prod.estado
                                };
 
                 foreach (var iterar in JoinProd)
                 {
-                    dtvProductos.Rows.Add(iterar.ID, iterar.NOMBRE, iterar.PRECIO, iterar.PROVEEDOR, iterar.CATEGORIA);
+                    dtvProductos.Rows.Add(iterar.ID, iterar.NOMBRE, iterar.PRECIO, iterar.PROVEEDOR, iterar.CATEGORIA, iterar.ESTADO);
                 }
             }
         }
@@ -83,12 +84,14 @@ namespace sistemaRestaurante.Vistas.Administrador.CompraProductos
             String Precio = dtvProductos.CurrentRow.Cells[2].Value.ToString();
             String Proveedor = dtvProductos.CurrentRow.Cells[3].Value.ToString();
             String Categoria = dtvProductos.CurrentRow.Cells[4].Value.ToString();
+            String Estado = dtvProductos.CurrentRow.Cells[5].Value.ToString();
 
             prod.lblCodigo.Text = id;
             prod.txtNombreProdCompra.Text = Nombre;
             prod.txtPrecioProd.Text = Precio;
             prod.cmbCategoria.Text = Categoria;
             prod.cmbProveedor.Text = Proveedor;
+            prod.txtEstado.Text = Estado;
         }
 
         private void btnEliminarSelected_Click(object sender, EventArgs e)
@@ -101,22 +104,24 @@ namespace sistemaRestaurante.Vistas.Administrador.CompraProductos
             prod.btnAgregar.Visible = false;
             prod.btnHabilitar.Visible = false;
 
-            prod.txtNombreProdCompra.Enabled = true;
-            prod.txtPrecioProd.Enabled = true;
-            prod.cmbCategoria.Enabled = true;
-            prod.cmbProveedor.Enabled = true;
+            prod.txtNombreProdCompra.Enabled = false;
+            prod.txtPrecioProd.Enabled = false;
+            prod.cmbCategoria.Enabled = false;
+            prod.cmbProveedor.Enabled = false;
 
             String id = dtvProductos.CurrentRow.Cells[0].Value.ToString();
             String Nombre = dtvProductos.CurrentRow.Cells[1].Value.ToString();
             String Precio = dtvProductos.CurrentRow.Cells[2].Value.ToString();
             String Proveedor = dtvProductos.CurrentRow.Cells[3].Value.ToString();
             String Categoria = dtvProductos.CurrentRow.Cells[4].Value.ToString();
+            String Estado = dtvProductos.CurrentRow.Cells[5].Value.ToString();
 
             prod.lblCodigo.Text = id;
             prod.txtNombreProdCompra.Text = Nombre;
             prod.txtPrecioProd.Text = Precio;
             prod.cmbCategoria.Text = Categoria;
             prod.cmbProveedor.Text = Proveedor;
+            prod.txtEstado.Text = Estado;
         }
     }
 }

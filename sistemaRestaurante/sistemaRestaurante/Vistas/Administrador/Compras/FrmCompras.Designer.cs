@@ -114,7 +114,7 @@
             this.dtpFecha.Cursor = System.Windows.Forms.Cursors.Default;
             this.dtpFecha.CustomFormat = "yyyy-MM-dd";
             this.dtpFecha.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFecha.Location = new System.Drawing.Point(571, 12);
+            this.dtpFecha.Location = new System.Drawing.Point(692, 12);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(304, 27);
             this.dtpFecha.TabIndex = 4;
@@ -157,8 +157,9 @@
             this.txtBusqueda.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBusqueda.Location = new System.Drawing.Point(511, 80);
             this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(267, 27);
+            this.txtBusqueda.Size = new System.Drawing.Size(388, 27);
             this.txtBusqueda.TabIndex = 8;
+            this.txtBusqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBusqueda_KeyPress);
             this.txtBusqueda.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBusqueda_KeyUp);
             // 
             // label4
@@ -187,7 +188,7 @@
             this.txtNombreProd.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreProd.Location = new System.Drawing.Point(101, 152);
             this.txtNombreProd.Name = "txtNombreProd";
-            this.txtNombreProd.Size = new System.Drawing.Size(270, 27);
+            this.txtNombreProd.Size = new System.Drawing.Size(307, 27);
             this.txtNombreProd.TabIndex = 12;
             // 
             // label5
@@ -205,7 +206,7 @@
             // 
             this.txtPrecio.Enabled = false;
             this.txtPrecio.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio.Location = new System.Drawing.Point(376, 152);
+            this.txtPrecio.Location = new System.Drawing.Point(414, 152);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(104, 27);
             this.txtPrecio.TabIndex = 14;
@@ -215,7 +216,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label6.Location = new System.Drawing.Point(372, 130);
+            this.label6.Location = new System.Drawing.Point(410, 130);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 19);
             this.label6.TabIndex = 13;
@@ -226,7 +227,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(482, 131);
+            this.label7.Location = new System.Drawing.Point(520, 131);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(87, 19);
             this.label7.TabIndex = 15;
@@ -236,7 +237,7 @@
             // 
             this.nupCantidad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nupCantidad.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.nupCantidad.Location = new System.Drawing.Point(486, 153);
+            this.nupCantidad.Location = new System.Drawing.Point(524, 153);
             this.nupCantidad.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -252,7 +253,7 @@
             // 
             this.txtTotal.Enabled = false;
             this.txtTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(590, 153);
+            this.txtTotal.Location = new System.Drawing.Point(628, 153);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(104, 27);
             this.txtTotal.TabIndex = 19;
@@ -262,7 +263,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label8.Location = new System.Drawing.Point(586, 131);
+            this.label8.Location = new System.Drawing.Point(624, 131);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(49, 19);
             this.label8.TabIndex = 18;
@@ -273,9 +274,9 @@
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAgregar.Location = new System.Drawing.Point(701, 137);
+            this.btnAgregar.Location = new System.Drawing.Point(741, 137);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(174, 56);
+            this.btnAgregar.Size = new System.Drawing.Size(255, 56);
             this.btnAgregar.TabIndex = 20;
             this.btnAgregar.Text = "AGREGAR AL CARRITO";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -331,7 +332,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
             this.dtvDetallesCompra.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dtvDetallesCompra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtvDetallesCompra.Size = new System.Drawing.Size(858, 315);
+            this.dtvDetallesCompra.Size = new System.Drawing.Size(979, 355);
             this.dtvDetallesCompra.TabIndex = 22;
             this.dtvDetallesCompra.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dtvDetallesCompra_RowsRemoved);
             // 
@@ -376,7 +377,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label9.Location = new System.Drawing.Point(24, 568);
+            this.label9.Location = new System.Drawing.Point(23, 612);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(230, 36);
             this.label9.TabIndex = 23;
@@ -387,7 +388,7 @@
             this.lblTotalAPagar.AutoSize = true;
             this.lblTotalAPagar.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalAPagar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblTotalAPagar.Location = new System.Drawing.Point(250, 568);
+            this.lblTotalAPagar.Location = new System.Drawing.Point(249, 612);
             this.lblTotalAPagar.Name = "lblTotalAPagar";
             this.lblTotalAPagar.Size = new System.Drawing.Size(71, 36);
             this.lblTotalAPagar.TabIndex = 24;
@@ -398,7 +399,7 @@
             this.btnComprar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnComprar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnComprar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnComprar.Location = new System.Drawing.Point(701, 563);
+            this.btnComprar.Location = new System.Drawing.Point(832, 607);
             this.btnComprar.Name = "btnComprar";
             this.btnComprar.Size = new System.Drawing.Size(174, 56);
             this.btnComprar.TabIndex = 25;
@@ -409,7 +410,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(784, 78);
+            this.btnBuscar.Location = new System.Drawing.Point(905, 78);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(91, 29);
             this.btnBuscar.TabIndex = 26;
@@ -422,7 +423,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
-            this.ClientSize = new System.Drawing.Size(887, 637);
+            this.ClientSize = new System.Drawing.Size(1018, 697);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnComprar);
             this.Controls.Add(this.lblTotalAPagar);

@@ -25,6 +25,7 @@ namespace sistemaRestaurante.Vistas.Administrador.ProveedoresLista
             txtUbicacion.Text = "";
             txtTelefono.Text = "";
             txtEmail.Text = "";
+            txtEstado.Text = "";
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
@@ -65,6 +66,7 @@ namespace sistemaRestaurante.Vistas.Administrador.ProveedoresLista
                     prov.ubicacion = txtUbicacion.Text;
                     prov.telefono = txtTelefono.Text;
                     prov.email = txtEmail.Text;
+                    prov.estado = "Inactivo";
 
                     bd.Proveedores.Add(prov);
                     bd.SaveChanges();
@@ -104,20 +106,28 @@ namespace sistemaRestaurante.Vistas.Administrador.ProveedoresLista
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("¿Estás seguro que quieres eliminar?, \n¡la acción no se podrá deshacer!", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            if (result == DialogResult.OK)
+            if (txtEstado.Text.Equals("Activo"))
             {
-                using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
+                MessageBox.Show("¡Actualmente este proveedor está activo, no se puede eliminar!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("¿Estás seguro que quieres eliminar?, \n¡la acción no se podrá deshacer!", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (result == DialogResult.OK)
                 {
-                    String id = lblCodigo.Text;
+                    using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
+                    {
+                        String id = lblCodigo.Text;
 
-                    prov = bd.Proveedores.Find(int.Parse(id));
-                    bd.Proveedores.Remove(prov);
-                    bd.SaveChanges();
+                        prov = bd.Proveedores.Find(int.Parse(id));
+                        bd.Proveedores.Remove(prov);
+                        bd.SaveChanges();
+                    }
+
+                    MessageBox.Show("¡Proveedor ha sido eliminado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    this.Close();
                 }
-
-                MessageBox.Show("¡Proveedor ha sido eliminado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
-                this.Close();
+                    
             }
         }
 

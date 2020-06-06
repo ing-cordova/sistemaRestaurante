@@ -60,7 +60,14 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
 
                 foreach (var iterar in JoinProd)
                 {
-                    dtvDetallesVenta.Rows.Add(iterar.ID, iterar.NOMBRE, iterar.PRECIO, iterar.CATEGORIA);
+                    var listaR = from recetas in bd.Recetas
+                                 where recetas.idProductoV == iterar.ID
+                                 select recetas;
+
+                    if (listaR.Count() > 0)
+                    {
+                        dtvDetallesVenta.Rows.Add(iterar.ID, iterar.NOMBRE, iterar.PRECIO, iterar.CATEGORIA);
+                    }
                 }
             }
         }

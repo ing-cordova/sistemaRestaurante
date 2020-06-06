@@ -21,6 +21,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
         String categ = "";
         FrmListadoProductos listado = new FrmListadoProductos();
         ProductosVenta prod = new ProductosVenta();
+        Categorias categoria = new Categorias();
         private void btnSalir_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("¿Desea salir?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -93,6 +94,13 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
                         prod.nombre = txtNombreProd.Text;
                         prod.precio = decimal.Parse(txtPrecioProd.Text);
                         prod.idCategoria = int.Parse(categ);
+                        prod.estado = "Inactivo";
+
+                        int idCat = int.Parse(categ);
+                        categoria = bd.Categorias.Where(Id => Id.idCategoria == idCat).First();
+                        categoria.estado = "Activo";
+                        bd.Entry(categoria).State = System.Data.Entity.EntityState.Modified;
+                        bd.SaveChanges();
 
                         bd.ProductosVenta.Add(prod);
                         bd.SaveChanges();
@@ -151,6 +159,30 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
 
                 MessageBox.Show("¡Producto eliminado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
                 this.Close();
+            }
+        }
+
+        private void txtPrecioProd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
     }

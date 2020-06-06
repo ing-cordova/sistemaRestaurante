@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblEtiqueta = new System.Windows.Forms.Label();
             this.dtvCategorias = new System.Windows.Forms.DataGridView();
-            this.idproducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnEliminarSelected = new System.Windows.Forms.Button();
             this.btnEditarSelected = new System.Windows.Forms.Button();
             this.btnAgregarNuevo = new System.Windows.Forms.Button();
+            this.idproducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtvCategorias)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +48,7 @@
             this.lblEtiqueta.BackColor = System.Drawing.Color.Transparent;
             this.lblEtiqueta.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEtiqueta.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.lblEtiqueta.Location = new System.Drawing.Point(227, 19);
+            this.lblEtiqueta.Location = new System.Drawing.Point(285, 18);
             this.lblEtiqueta.Name = "lblEtiqueta";
             this.lblEtiqueta.Size = new System.Drawing.Size(402, 38);
             this.lblEtiqueta.TabIndex = 4;
@@ -63,48 +64,35 @@
             this.dtvCategorias.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
             this.dtvCategorias.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtvCategorias.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtvCategorias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtvCategorias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtvCategorias.ColumnHeadersHeight = 25;
             this.dtvCategorias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idproducto,
-            this.nombreCategoria});
+            this.nombreCategoria,
+            this.estado});
             this.dtvCategorias.EnableHeadersVisualStyles = false;
             this.dtvCategorias.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
-            this.dtvCategorias.Location = new System.Drawing.Point(185, 151);
+            this.dtvCategorias.Location = new System.Drawing.Point(128, 151);
             this.dtvCategorias.Name = "dtvCategorias";
             this.dtvCategorias.ReadOnly = true;
             this.dtvCategorias.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dtvCategorias.RowHeadersVisible = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(162)))), ((int)(((byte)(188)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            this.dtvCategorias.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(162)))), ((int)(((byte)(188)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.dtvCategorias.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dtvCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtvCategorias.Size = new System.Drawing.Size(467, 359);
+            this.dtvCategorias.Size = new System.Drawing.Size(653, 359);
             this.dtvCategorias.TabIndex = 5;
-            // 
-            // idproducto
-            // 
-            this.idproducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.idproducto.HeaderText = "ID";
-            this.idproducto.Name = "idproducto";
-            this.idproducto.ReadOnly = true;
-            this.idproducto.Width = 51;
-            // 
-            // nombreCategoria
-            // 
-            this.nombreCategoria.HeaderText = "NOMBRE CATEGORIA";
-            this.nombreCategoria.Name = "nombreCategoria";
-            this.nombreCategoria.ReadOnly = true;
             // 
             // btnActualizar
             // 
@@ -112,7 +100,7 @@
             this.btnActualizar.FlatAppearance.BorderSize = 0;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Image = global::sistemaRestaurante.Properties.Resources.refresh;
-            this.btnActualizar.Location = new System.Drawing.Point(759, 101);
+            this.btnActualizar.Location = new System.Drawing.Point(812, 91);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(50, 44);
             this.btnActualizar.TabIndex = 15;
@@ -126,7 +114,7 @@
             this.btnEliminarSelected.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarSelected.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnEliminarSelected.Image = global::sistemaRestaurante.Properties.Resources.delete;
-            this.btnEliminarSelected.Location = new System.Drawing.Point(490, 101);
+            this.btnEliminarSelected.Location = new System.Drawing.Point(543, 91);
             this.btnEliminarSelected.Name = "btnEliminarSelected";
             this.btnEliminarSelected.Size = new System.Drawing.Size(238, 44);
             this.btnEliminarSelected.TabIndex = 14;
@@ -143,7 +131,7 @@
             this.btnEditarSelected.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarSelected.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnEditarSelected.Image = global::sistemaRestaurante.Properties.Resources.Edit;
-            this.btnEditarSelected.Location = new System.Drawing.Point(264, 101);
+            this.btnEditarSelected.Location = new System.Drawing.Point(317, 91);
             this.btnEditarSelected.Name = "btnEditarSelected";
             this.btnEditarSelected.Size = new System.Drawing.Size(220, 44);
             this.btnEditarSelected.TabIndex = 13;
@@ -160,7 +148,7 @@
             this.btnAgregarNuevo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarNuevo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAgregarNuevo.Image = global::sistemaRestaurante.Properties.Resources.add;
-            this.btnAgregarNuevo.Location = new System.Drawing.Point(75, 101);
+            this.btnAgregarNuevo.Location = new System.Drawing.Point(128, 91);
             this.btnAgregarNuevo.Name = "btnAgregarNuevo";
             this.btnAgregarNuevo.Size = new System.Drawing.Size(183, 44);
             this.btnAgregarNuevo.TabIndex = 12;
@@ -170,12 +158,32 @@
             this.btnAgregarNuevo.UseVisualStyleBackColor = true;
             this.btnAgregarNuevo.Click += new System.EventHandler(this.btnAgregarNuevo_Click);
             // 
+            // idproducto
+            // 
+            this.idproducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.idproducto.HeaderText = "ID";
+            this.idproducto.Name = "idproducto";
+            this.idproducto.ReadOnly = true;
+            this.idproducto.Width = 51;
+            // 
+            // nombreCategoria
+            // 
+            this.nombreCategoria.HeaderText = "NOMBRE CATEGORIA";
+            this.nombreCategoria.Name = "nombreCategoria";
+            this.nombreCategoria.ReadOnly = true;
+            // 
+            // estado
+            // 
+            this.estado.HeaderText = "ESTADO";
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            // 
             // FrmListadoCategorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
-            this.ClientSize = new System.Drawing.Size(852, 637);
+            this.ClientSize = new System.Drawing.Size(1018, 697);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnEliminarSelected);
             this.Controls.Add(this.btnEditarSelected);
@@ -196,11 +204,12 @@
 
         private System.Windows.Forms.Label lblEtiqueta;
         public System.Windows.Forms.DataGridView dtvCategorias;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idproducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreCategoria;
         public System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnEliminarSelected;
         private System.Windows.Forms.Button btnEditarSelected;
         private System.Windows.Forms.Button btnAgregarNuevo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idproducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreCategoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
     }
 }

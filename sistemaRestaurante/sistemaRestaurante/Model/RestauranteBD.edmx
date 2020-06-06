@@ -19,6 +19,7 @@
           </Key>
           <Property Name="idCategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombreCategoria" Type="varchar" MaxLength="50" />
+          <Property Name="estado" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="Compraas">
           <Key>
@@ -61,6 +62,7 @@
           <Property Name="precio" Type="money" />
           <Property Name="idProveedor" Type="int" />
           <Property Name="idCategoria" Type="int" Nullable="false" />
+          <Property Name="estado" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="ProductosVenta">
           <Key>
@@ -70,6 +72,7 @@
           <Property Name="nombre" Type="varchar" MaxLength="25" />
           <Property Name="precio" Type="money" />
           <Property Name="idCategoria" Type="int" Nullable="false" />
+          <Property Name="estado" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="Proveedores">
           <Key>
@@ -80,6 +83,7 @@
           <Property Name="ubicacion" Type="varchar" MaxLength="60" />
           <Property Name="telefono" Type="varchar" MaxLength="15" />
           <Property Name="email" Type="varchar" MaxLength="30" />
+          <Property Name="estado" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="Recetas">
           <Key>
@@ -102,6 +106,7 @@
           <Property Name="email" Type="varchar" MaxLength="50" />
           <Property Name="contraseña" Type="varchar" MaxLength="64" />
           <Property Name="rol" Type="varchar" MaxLength="20" />
+          <Property Name="estado" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="Ventas">
           <Key>
@@ -114,7 +119,7 @@
           <Property Name="nombredeUsuario" Type="varchar" MaxLength="30" />
           <Property Name="NumMesa" Type="int" />
         </EntityType>
-        <Association Name="FK__Almacen__idProdu__59063A47">
+        <Association Name="FK__Almacen__idProdu__4E88ABD4">
           <End Role="ProductosCompra" Type="Self.ProductosCompra" Multiplicity="0..1" />
           <End Role="Almacen" Type="Self.Almacen" Multiplicity="*" />
           <ReferentialConstraint>
@@ -282,7 +287,7 @@
           <EntitySet Name="Recetas" EntityType="Self.Recetas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ventas" EntityType="Self.Ventas" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Almacen__idProdu__59063A47" Association="Self.FK__Almacen__idProdu__59063A47">
+          <AssociationSet Name="FK__Almacen__idProdu__4E88ABD4" Association="Self.FK__Almacen__idProdu__4E88ABD4">
             <End Role="ProductosCompra" EntitySet="ProductosCompra" />
             <End Role="Almacen" EntitySet="Almacen" />
           </AssociationSet>
@@ -347,6 +352,7 @@
           <Property Name="nombreCategoria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="ProductosVenta" Relationship="Self.FK__Productos__idCat__5165187F" FromRole="Categorias" ToRole="ProductosVenta" />
           <NavigationProperty Name="ProductosCompra" Relationship="Self.FK__Productos__idCat__52593CB8" FromRole="Categorias" ToRole="ProductosCompra" />
+          <Property Name="estado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Compraas">
           <Key>
@@ -401,6 +407,7 @@
           <NavigationProperty Name="Proveedores" Relationship="Self.FK__Productos__idPro__3D5E1FD2" FromRole="ProductosCompra" ToRole="Proveedores" />
           <NavigationProperty Name="Recetas" Relationship="Self.FK__Recetas__idProdu__5629CD9C" FromRole="ProductosCompra" ToRole="Recetas" />
           <NavigationProperty Name="Almacen" Relationship="RestauranteBDModel.FK__Almacen__idProdu__59063A47" FromRole="ProductosCompra" ToRole="Almacen" />
+          <Property Name="estado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="ProductosVenta">
           <Key>
@@ -413,6 +420,7 @@
           <NavigationProperty Name="Categorias" Relationship="Self.FK__Productos__idCat__5165187F" FromRole="ProductosVenta" ToRole="Categorias" />
           <NavigationProperty Name="DetallesVenta" Relationship="Self.FK__DetallesV__idPro__4316F928" FromRole="ProductosVenta" ToRole="DetallesVenta" />
           <NavigationProperty Name="Recetas" Relationship="Self.FK__Recetas__idProdu__5535A963" FromRole="ProductosVenta" ToRole="Recetas" />
+          <Property Name="estado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Proveedores">
           <Key>
@@ -425,6 +433,7 @@
           <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Compraas" Relationship="Self.FK__Compraas__idProv__46E78A0C" FromRole="Proveedores" ToRole="Compraas" />
           <NavigationProperty Name="ProductosCompra" Relationship="Self.FK__Productos__idPro__3D5E1FD2" FromRole="Proveedores" ToRole="ProductosCompra" />
+          <Property Name="estado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Recetas">
           <Key>
@@ -451,6 +460,7 @@
           <Property Name="rol" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Compraas" Relationship="Self.FK__Compraas__nombre__47DBAE45" FromRole="Usuarios" ToRole="Compraas" />
           <NavigationProperty Name="Ventas" Relationship="Self.FK__Ventas__nombrede__403A8C7D" FromRole="Usuarios" ToRole="Ventas" />
+          <Property Name="estado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Ventas">
           <Key>
@@ -704,6 +714,7 @@
           <EntitySetMapping Name="Categorias">
             <EntityTypeMapping TypeName="RestauranteBDModel.Categorias">
               <MappingFragment StoreEntitySet="Categorias">
+                <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
                 <ScalarProperty Name="nombreCategoria" ColumnName="nombreCategoria" />
               </MappingFragment>
@@ -747,6 +758,7 @@
           <EntitySetMapping Name="ProductosCompra">
             <EntityTypeMapping TypeName="RestauranteBDModel.ProductosCompra">
               <MappingFragment StoreEntitySet="ProductosCompra">
+                <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="idProductoC" ColumnName="idProductoC" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="precio" ColumnName="precio" />
@@ -758,6 +770,7 @@
           <EntitySetMapping Name="ProductosVenta">
             <EntityTypeMapping TypeName="RestauranteBDModel.ProductosVenta">
               <MappingFragment StoreEntitySet="ProductosVenta">
+                <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="idProductoV" ColumnName="idProductoV" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="precio" ColumnName="precio" />
@@ -768,6 +781,7 @@
           <EntitySetMapping Name="Proveedores">
             <EntityTypeMapping TypeName="RestauranteBDModel.Proveedores">
               <MappingFragment StoreEntitySet="Proveedores">
+                <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="ubicacion" ColumnName="ubicacion" />
@@ -789,6 +803,7 @@
           <EntitySetMapping Name="Usuarios">
             <EntityTypeMapping TypeName="RestauranteBDModel.Usuarios">
               <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="nombredeUsuario" ColumnName="nombredeUsuario" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="apellidos" ColumnName="apellidos" />

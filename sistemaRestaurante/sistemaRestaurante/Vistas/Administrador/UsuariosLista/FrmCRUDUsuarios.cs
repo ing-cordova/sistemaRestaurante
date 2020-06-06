@@ -33,6 +33,9 @@ namespace sistemaRestaurante.Vistas.Administrador.UsuariosLista
         {
             cmbRol.Items.Add("Administrador");
             cmbRol.Items.Add("Usuario");
+
+            cmbEstado.Items.Add("Activo");
+            cmbEstado.Items.Add("Inactivo");
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
@@ -62,6 +65,7 @@ namespace sistemaRestaurante.Vistas.Administrador.UsuariosLista
                     usua.email = txtEmail.Text;
                     usua.contraseña = txtContrasenia.Text;
                     usua.rol = cmbRol.Text;
+                    usua.estado = cmbEstado.Text;
 
                     bd.Entry(usua).State = System.Data.Entity.EntityState.Modified;
                     bd.SaveChanges();

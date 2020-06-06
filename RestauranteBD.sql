@@ -114,3 +114,10 @@ Alter table Ventas alter column fechadeVenta datetime
 
 ----------Actualizacion 04/06/2020-------------------
 Alter table Almacen drop column unidad
+
+----------Actualizacion 06/06/2020-------------------
+Alter table ProductosVenta add estado varchar(20)
+Alter table ProductosCompra add estado varchar(20)
+Alter table Proveedores add estado varchar(20)
+Alter table Categorias add estado varchar(20)
+Alter table Usuarios add estado varchar(20)

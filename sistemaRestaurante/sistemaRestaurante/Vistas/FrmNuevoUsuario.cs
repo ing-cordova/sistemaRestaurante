@@ -81,6 +81,7 @@ namespace sistemaRestaurante.Vistas
                                     user.nombredeUsuario = txtUsuario.Text;
                                     user.rol = cmbUsuario.Text;
                                     user.contraseña = txtPassword.Text;
+                                    user.estado = "Inactivo";
 
                                     db.Usuarios.Add(user);
                                     db.SaveChanges();
@@ -110,6 +111,7 @@ namespace sistemaRestaurante.Vistas
                                         user.nombredeUsuario = txtUsuario.Text;
                                         user.rol = cmbUsuario.Text;
                                         user.contraseña = txtPassword.Text;
+                                        user.estado = "Inactivo";
 
                                         db.Usuarios.Add(user);
                                         db.SaveChanges();

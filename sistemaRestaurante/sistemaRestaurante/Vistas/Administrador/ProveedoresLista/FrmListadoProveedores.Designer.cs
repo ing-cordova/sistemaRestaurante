@@ -41,6 +41,7 @@
             this.ubicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Emailprove = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtvProveedores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +51,7 @@
             this.lblEtiqueta.BackColor = System.Drawing.Color.Transparent;
             this.lblEtiqueta.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEtiqueta.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.lblEtiqueta.Location = new System.Drawing.Point(207, 20);
+            this.lblEtiqueta.Location = new System.Drawing.Point(306, 21);
             this.lblEtiqueta.Name = "lblEtiqueta";
             this.lblEtiqueta.Size = new System.Drawing.Size(422, 38);
             this.lblEtiqueta.TabIndex = 3;
@@ -80,7 +81,8 @@
             this.nombreProve,
             this.ubicacion,
             this.telefono,
-            this.Emailprove});
+            this.Emailprove,
+            this.Estado});
             this.dtvProveedores.EnableHeadersVisualStyles = false;
             this.dtvProveedores.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
             this.dtvProveedores.Location = new System.Drawing.Point(12, 129);
@@ -95,7 +97,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             this.dtvProveedores.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dtvProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtvProveedores.Size = new System.Drawing.Size(828, 359);
+            this.dtvProveedores.Size = new System.Drawing.Size(982, 548);
             this.dtvProveedores.TabIndex = 4;
             // 
             // btnActualizar
@@ -104,7 +106,7 @@
             this.btnActualizar.FlatAppearance.BorderSize = 0;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Image = global::sistemaRestaurante.Properties.Resources.refresh;
-            this.btnActualizar.Location = new System.Drawing.Point(767, 79);
+            this.btnActualizar.Location = new System.Drawing.Point(944, 81);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(50, 44);
             this.btnActualizar.TabIndex = 11;
@@ -118,7 +120,7 @@
             this.btnEliminarSelected.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarSelected.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnEliminarSelected.Image = global::sistemaRestaurante.Properties.Resources.delete;
-            this.btnEliminarSelected.Location = new System.Drawing.Point(498, 79);
+            this.btnEliminarSelected.Location = new System.Drawing.Point(590, 79);
             this.btnEliminarSelected.Name = "btnEliminarSelected";
             this.btnEliminarSelected.Size = new System.Drawing.Size(238, 44);
             this.btnEliminarSelected.TabIndex = 10;
@@ -135,7 +137,7 @@
             this.btnEditarSelected.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarSelected.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnEditarSelected.Image = global::sistemaRestaurante.Properties.Resources.Edit;
-            this.btnEditarSelected.Location = new System.Drawing.Point(272, 79);
+            this.btnEditarSelected.Location = new System.Drawing.Point(364, 79);
             this.btnEditarSelected.Name = "btnEditarSelected";
             this.btnEditarSelected.Size = new System.Drawing.Size(220, 44);
             this.btnEditarSelected.TabIndex = 9;
@@ -152,7 +154,7 @@
             this.btnAgregarNuevo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarNuevo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAgregarNuevo.Image = global::sistemaRestaurante.Properties.Resources.add;
-            this.btnAgregarNuevo.Location = new System.Drawing.Point(83, 79);
+            this.btnAgregarNuevo.Location = new System.Drawing.Point(175, 79);
             this.btnAgregarNuevo.Name = "btnAgregarNuevo";
             this.btnAgregarNuevo.Size = new System.Drawing.Size(183, 44);
             this.btnAgregarNuevo.TabIndex = 8;
@@ -198,12 +200,18 @@
             this.Emailprove.Name = "Emailprove";
             this.Emailprove.ReadOnly = true;
             // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "ESTADO";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
             // FrmListadoProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
-            this.ClientSize = new System.Drawing.Size(852, 637);
+            this.ClientSize = new System.Drawing.Size(1018, 697);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnEliminarSelected);
             this.Controls.Add(this.btnEditarSelected);
@@ -233,5 +241,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ubicacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn Emailprove;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }
 }

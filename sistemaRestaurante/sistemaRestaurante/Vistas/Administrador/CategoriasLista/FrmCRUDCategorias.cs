@@ -23,10 +23,11 @@ namespace sistemaRestaurante.Vistas.Administrador.CategoriasLista
         {
             txtCategoria.Text = "";
         }
+
         private void btnHabilitar_Click(object sender, EventArgs e)
         {
             limpiarcajas();
-            txtCategoria.Enabled = true;          
+            txtCategoria.Enabled = true;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -40,6 +41,7 @@ namespace sistemaRestaurante.Vistas.Administrador.CategoriasLista
                 using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
                 {
                     Cate.nombreCategoria = txtCategoria.Text;
+                    Cate.estado = "Inactivo";
 
                     bd.Categorias.Add(Cate);
                     bd.SaveChanges();
@@ -92,20 +94,27 @@ namespace sistemaRestaurante.Vistas.Administrador.CategoriasLista
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("¿Estás seguro que quieres eliminar?, \n¡la acción no se podrá deshacer!", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            if (result == DialogResult.OK)
+            if (txtEstado.Text.Equals("Activo"))
             {
-                using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
+                MessageBox.Show("¡Actualmente esta categoría está activa, no se puede eliminar!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("¿Estás seguro que quieres eliminar?, \n¡la acción no se podrá deshacer!", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (result == DialogResult.OK)
                 {
-                    String id = lblCodigo.Text;
+                    using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
+                    {
+                        String id = lblCodigo.Text;
 
-                    Cate = bd.Categorias.Find(int.Parse(id));
-                    bd.Categorias.Remove(Cate);
-                    bd.SaveChanges();
+                        Cate = bd.Categorias.Find(int.Parse(id));
+                        bd.Categorias.Remove(Cate);
+                        bd.SaveChanges();
+                    }
+
+                    MessageBox.Show("¡La Categoria ha sido eliminada con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    this.Close();
                 }
-
-                MessageBox.Show("¡La Categoria ha sido eliminada con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
-                this.Close();
             }
         }
 
@@ -113,6 +122,7 @@ namespace sistemaRestaurante.Vistas.Administrador.CategoriasLista
         {
             limpiarcajas();
             txtCategoria.Enabled = false;
+            txtEstado.Enabled = false;
         }
     }
 }

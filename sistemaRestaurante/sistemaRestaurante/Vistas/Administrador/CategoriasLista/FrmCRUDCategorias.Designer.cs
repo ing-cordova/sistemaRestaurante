@@ -39,6 +39,8 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtEstado = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,7 +131,7 @@
             // 
             this.btnHabilitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHabilitar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHabilitar.Location = new System.Drawing.Point(66, 172);
+            this.btnHabilitar.Location = new System.Drawing.Point(69, 200);
             this.btnHabilitar.Name = "btnHabilitar";
             this.btnHabilitar.Size = new System.Drawing.Size(129, 40);
             this.btnHabilitar.TabIndex = 35;
@@ -141,7 +143,7 @@
             // 
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(201, 172);
+            this.btnAgregar.Location = new System.Drawing.Point(204, 200);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(129, 40);
             this.btnAgregar.TabIndex = 34;
@@ -153,7 +155,7 @@
             // 
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(135, 172);
+            this.btnEditar.Location = new System.Drawing.Point(138, 200);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(129, 40);
             this.btnEditar.TabIndex = 36;
@@ -165,13 +167,31 @@
             // 
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(135, 172);
+            this.btnEliminar.Location = new System.Drawing.Point(138, 200);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(129, 40);
             this.btnEliminar.TabIndex = 37;
             this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(45, 147);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 21);
+            this.label1.TabIndex = 39;
+            this.label1.Text = "ESTADO:";
+            // 
+            // txtEstado
+            // 
+            this.txtEstado.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEstado.Location = new System.Drawing.Point(134, 144);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(241, 27);
+            this.txtEstado.TabIndex = 38;
             // 
             // FrmCRUDCategorias
             // 
@@ -180,6 +200,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(162)))), ((int)(((byte)(188)))));
             this.ClientSize = new System.Drawing.Size(413, 287);
             this.ControlBox = false;
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtEstado);
             this.Controls.Add(this.btnHabilitar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnEditar);
@@ -213,5 +235,7 @@
         public System.Windows.Forms.Button btnAgregar;
         public System.Windows.Forms.Button btnEditar;
         public System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TextBox txtEstado;
     }
 }

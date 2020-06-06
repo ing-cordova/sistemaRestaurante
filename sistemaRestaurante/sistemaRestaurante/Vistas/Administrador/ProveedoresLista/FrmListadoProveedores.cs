@@ -25,7 +25,7 @@ namespace sistemaRestaurante.Vistas.Administrador.ProveedoresLista
 
                 foreach (var iterar in tablaProvee)
                 {
-                    dtvProveedores.Rows.Add(iterar.idProveedor, iterar.nombre, iterar.ubicacion, iterar.telefono, iterar.email);
+                    dtvProveedores.Rows.Add(iterar.idProveedor, iterar.nombre, iterar.ubicacion, iterar.telefono, iterar.email, iterar.estado);
                 }
             }
         }
@@ -70,13 +70,14 @@ namespace sistemaRestaurante.Vistas.Administrador.ProveedoresLista
             String ubicacion = dtvProveedores.CurrentRow.Cells[2].Value.ToString();
             String telefono = dtvProveedores.CurrentRow.Cells[3].Value.ToString();
             String email = dtvProveedores.CurrentRow.Cells[4].Value.ToString();
+            String estado = dtvProveedores.CurrentRow.Cells[5].Value.ToString();
 
             crudp.lblCodigo.Text = id;
             crudp.txtNombreProV.Text = Nombre;
             crudp.txtUbicacion.Text = ubicacion;
             crudp.txtTelefono.Text = telefono;
             crudp.txtEmail.Text = email;
-
+            crudp.txtEstado.Text = estado;
         }
 
         private void btnEliminarSelected_Click(object sender, EventArgs e)
@@ -99,12 +100,14 @@ namespace sistemaRestaurante.Vistas.Administrador.ProveedoresLista
             String ubicacion = dtvProveedores.CurrentRow.Cells[2].Value.ToString();
             String telefono = dtvProveedores.CurrentRow.Cells[3].Value.ToString();
             String email = dtvProveedores.CurrentRow.Cells[4].Value.ToString();
+            String estado = dtvProveedores.CurrentRow.Cells[5].Value.ToString();
 
             crudp.lblCodigo.Text = id;
             crudp.txtNombreProV.Text = Nombre;
             crudp.txtUbicacion.Text = ubicacion;
             crudp.txtTelefono.Text = telefono;
             crudp.txtEmail.Text = email;
+            crudp.txtEstado.Text = estado;
         }
     }
 }

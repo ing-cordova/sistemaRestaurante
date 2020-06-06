@@ -25,7 +25,7 @@ namespace sistemaRestaurante.Vistas.Administrador.CategoriasLista
 
                 foreach (var iterar in tablacategorias)
                 {
-                    dtvCategorias.Rows.Add(iterar.idCategoria, iterar.nombreCategoria);
+                    dtvCategorias.Rows.Add(iterar.idCategoria, iterar.nombreCategoria, iterar.estado);
                 }
             }
         }
@@ -65,11 +65,11 @@ namespace sistemaRestaurante.Vistas.Administrador.CategoriasLista
             /************************************************************************/
             String id = dtvCategorias.CurrentRow.Cells[0].Value.ToString();
             String Nombre = dtvCategorias.CurrentRow.Cells[1].Value.ToString();
-
+            String Estado = dtvCategorias.CurrentRow.Cells[2].Value.ToString();
 
             crudC.lblCodigo.Text = id;
             crudC.txtCategoria.Text = Nombre;
-
+            crudC.txtEstado.Text = Estado;
         }
 
         private void btnEliminarSelected_Click(object sender, EventArgs e)
@@ -87,11 +87,11 @@ namespace sistemaRestaurante.Vistas.Administrador.CategoriasLista
             /**********************************************************************/
             String id = dtvCategorias.CurrentRow.Cells[0].Value.ToString();
             String Nombre = dtvCategorias.CurrentRow.Cells[1].Value.ToString();
-
+            String Estado = dtvCategorias.CurrentRow.Cells[2].Value.ToString();
 
             crudC.lblCodigo.Text = id;
             crudC.txtCategoria.Text = Nombre;
-
+            crudC.txtEstado.Text = Estado;
         }
     }
 }

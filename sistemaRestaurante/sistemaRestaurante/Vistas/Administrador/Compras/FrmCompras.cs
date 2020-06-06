@@ -20,7 +20,8 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
         }
 
         public String provee = "";
-        
+        Proveedores proveedor = new Proveedores();
+        ProductosCompra prodCompra = new ProductosCompra();
         public void CargarCombo()
         {
             using(RestauranteBDEntities1 bd = new RestauranteBDEntities1())
@@ -116,6 +117,12 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
                         compra.idProveedor = Convert.ToInt32(provee);
                         compra.nombredeUsuario = nombre.ToString();
 
+                        int idProv = int.Parse(provee);
+                        proveedor = bd.Proveedores.Where(Id => Id.idProveedor == idProv).First();
+                        proveedor.estado = "Activo";
+                        bd.Entry(proveedor).State = System.Data.Entity.EntityState.Modified;
+                        bd.SaveChanges();
+
                         bd.Compraas.Add(compra);
                         bd.SaveChanges();
 
@@ -139,6 +146,12 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
                             detalleC.cantidad = cantiConver;
                             detalleC.precioCompra = precioConv;
                             detalleC.totalProducto = totalConv;
+
+                            int idProd = idProdConv;
+                            prodCompra = bd.ProductosCompra.Where(Id => Id.idProductoC == idProd).First();
+                            prodCompra.estado = "Activo";
+                            bd.Entry(prodCompra).State = System.Data.Entity.EntityState.Modified;
+                            bd.SaveChanges();
 
                             bd.DetallesCompra.Add(detalleC);
                             bd.SaveChanges();
@@ -271,6 +284,26 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
             else
             {
                 CalcularTotalGeneral();
+            }
+        }
+
+        private void txtBusqueda_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
     }

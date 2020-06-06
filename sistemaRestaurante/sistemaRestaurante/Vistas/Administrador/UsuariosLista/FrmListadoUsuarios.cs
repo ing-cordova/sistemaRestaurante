@@ -33,12 +33,13 @@ namespace sistemaRestaurante.Vistas.Administrador.UsuariosLista
                                     TELEFONO = usuario.telefono,
                                     EMAIL = usuario.email,
                                     CONTRASENIA = usuario.contraseña,
-                                    ROL = usuario.rol
+                                    ROL = usuario.rol,
+                                    ESTADO = usuario.estado
                                 };
 
                 foreach (var iterar in Usuario)
                 {
-                    dtvUsuarios.Rows.Add(iterar.USUARIO, iterar.NOMBRES, iterar.APELLIDOS, iterar.EDAD, iterar.TELEFONO, iterar.EMAIL, iterar.CONTRASENIA, iterar.ROL);
+                    dtvUsuarios.Rows.Add(iterar.USUARIO, iterar.NOMBRES, iterar.APELLIDOS, iterar.EDAD, iterar.TELEFONO, iterar.EMAIL, iterar.CONTRASENIA, iterar.ROL, iterar.ESTADO);
                 }
 
             }
@@ -64,12 +65,13 @@ namespace sistemaRestaurante.Vistas.Administrador.UsuariosLista
                                       TELEFONO = usuario.telefono,
                                       EMAIL = usuario.email,
                                       CONTRASENIA = usuario.contraseña,
-                                      ROL = usuario.rol
+                                      ROL = usuario.rol,
+                                      ESTADO = usuario.estado
                                   };
 
                     foreach (var iterar in Usuario)
                     {
-                        dtvUsuarios.Rows.Add(iterar.USUARIO, iterar.NOMBRES, iterar.APELLIDOS, iterar.EDAD, iterar.TELEFONO, iterar.EMAIL, iterar.CONTRASENIA, iterar.ROL);
+                        dtvUsuarios.Rows.Add(iterar.USUARIO, iterar.NOMBRES, iterar.APELLIDOS, iterar.EDAD, iterar.TELEFONO, iterar.EMAIL, iterar.CONTRASENIA, iterar.ROL, iterar.ESTADO);
                     }
                 }
                 else if (rbotUsuarios.Checked == true)
@@ -86,12 +88,13 @@ namespace sistemaRestaurante.Vistas.Administrador.UsuariosLista
                                       TELEFONO = usuario.telefono,
                                       EMAIL = usuario.email,
                                       CONTRASENIA = usuario.contraseña,
-                                      ROL = usuario.rol
+                                      ROL = usuario.rol,
+                                      ESTADO = usuario.estado
                                   };
 
                     foreach (var iterar in Usuario)
                     {
-                        dtvUsuarios.Rows.Add(iterar.USUARIO, iterar.NOMBRES, iterar.APELLIDOS, iterar.EDAD, iterar.TELEFONO, iterar.EMAIL, iterar.CONTRASENIA, iterar.ROL);
+                        dtvUsuarios.Rows.Add(iterar.USUARIO, iterar.NOMBRES, iterar.APELLIDOS, iterar.EDAD, iterar.TELEFONO, iterar.EMAIL, iterar.CONTRASENIA, iterar.ROL, iterar.ESTADO);
                     }
                 }
                 else if (rbotAdministradores.Checked == true)
@@ -108,12 +111,13 @@ namespace sistemaRestaurante.Vistas.Administrador.UsuariosLista
                                       TELEFONO = usuario.telefono,
                                       EMAIL = usuario.email,
                                       CONTRASENIA = usuario.contraseña,
-                                      ROL = usuario.rol
+                                      ROL = usuario.rol,
+                                      ESTADO = usuario.estado
                                   };
 
                     foreach (var iterar in Usuario)
                     {
-                        dtvUsuarios.Rows.Add(iterar.USUARIO, iterar.NOMBRES, iterar.APELLIDOS, iterar.EDAD, iterar.TELEFONO, iterar.EMAIL, iterar.CONTRASENIA, iterar.ROL);
+                        dtvUsuarios.Rows.Add(iterar.USUARIO, iterar.NOMBRES, iterar.APELLIDOS, iterar.EDAD, iterar.TELEFONO, iterar.EMAIL, iterar.CONTRASENIA, iterar.ROL, iterar.ESTADO);
                     }
                 }
             }
@@ -140,6 +144,7 @@ namespace sistemaRestaurante.Vistas.Administrador.UsuariosLista
             String email = dtvUsuarios.CurrentRow.Cells[5].Value.ToString();
             String contrasenia = dtvUsuarios.CurrentRow.Cells[6].Value.ToString();
             String rol = dtvUsuarios.CurrentRow.Cells[7].Value.ToString();
+            String estado = dtvUsuarios.CurrentRow.Cells[8].Value.ToString();
 
             usua.lblUsuario.Text = usuario;
             usua.txtNombres.Text = Nombres;
@@ -149,6 +154,7 @@ namespace sistemaRestaurante.Vistas.Administrador.UsuariosLista
             usua.txtEmail.Text = email;
             usua.txtContrasenia.Text = contrasenia;
             usua.cmbRol.Text = rol;
+            usua.cmbEstado.Text = estado;
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -171,6 +177,7 @@ namespace sistemaRestaurante.Vistas.Administrador.UsuariosLista
             String email = dtvUsuarios.CurrentRow.Cells[5].Value.ToString();
             String contrasenia = dtvUsuarios.CurrentRow.Cells[6].Value.ToString();
             String rol = dtvUsuarios.CurrentRow.Cells[7].Value.ToString();
+            String estado = dtvUsuarios.CurrentRow.Cells[8].Value.ToString();
 
             usua.lblUsuario.Text = usuario;
             usua.txtNombres.Text = Nombres;
@@ -180,6 +187,7 @@ namespace sistemaRestaurante.Vistas.Administrador.UsuariosLista
             usua.txtEmail.Text = email;
             usua.txtContrasenia.Text = contrasenia;
             usua.cmbRol.Text = rol;
+            usua.cmbEstado.Text = estado;
         }
 
         private void txtBusqueda_TextChanged(object sender, EventArgs e)

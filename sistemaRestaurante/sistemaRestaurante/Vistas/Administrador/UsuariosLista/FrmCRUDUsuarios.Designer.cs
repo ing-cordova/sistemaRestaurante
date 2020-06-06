@@ -49,6 +49,8 @@
             this.txtContrasenia = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbRol = new System.Windows.Forms.ComboBox();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -194,7 +196,7 @@
             // 
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(149, 322);
+            this.btnEditar.Location = new System.Drawing.Point(149, 366);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(129, 40);
             this.btnEditar.TabIndex = 42;
@@ -206,7 +208,7 @@
             // 
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(149, 322);
+            this.btnEliminar.Location = new System.Drawing.Point(149, 366);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(129, 40);
             this.btnEliminar.TabIndex = 43;
@@ -272,12 +274,34 @@
             this.cmbRol.Size = new System.Drawing.Size(241, 29);
             this.cmbRol.TabIndex = 50;
             // 
+            // cmbEstado
+            // 
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstado.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Location = new System.Drawing.Point(149, 310);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(241, 29);
+            this.cmbEstado.TabIndex = 52;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(65, 313);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(78, 21);
+            this.label4.TabIndex = 51;
+            this.label4.Text = "ESTADO:";
+            // 
             // FrmCRUDUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(162)))), ((int)(((byte)(188)))));
-            this.ClientSize = new System.Drawing.Size(439, 384);
+            this.ClientSize = new System.Drawing.Size(439, 435);
+            this.Controls.Add(this.cmbEstado);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.cmbRol);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -331,5 +355,7 @@
         public System.Windows.Forms.TextBox txtContrasenia;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.ComboBox cmbRol;
+        public System.Windows.Forms.ComboBox cmbEstado;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -28,19 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblEtiqueta = new System.Windows.Forms.Label();
             this.dtvUsuarios = new System.Windows.Forms.DataGridView();
-            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contrasenia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnActualizar = new System.Windows.Forms.Button();
@@ -50,6 +42,15 @@
             this.rbotUsuarios = new System.Windows.Forms.RadioButton();
             this.rbotTodos = new System.Windows.Forms.RadioButton();
             this.rbotAdministradores = new System.Windows.Forms.RadioButton();
+            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contrasenia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +60,7 @@
             this.lblEtiqueta.BackColor = System.Drawing.Color.Transparent;
             this.lblEtiqueta.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEtiqueta.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.lblEtiqueta.Location = new System.Drawing.Point(278, 19);
+            this.lblEtiqueta.Location = new System.Drawing.Point(343, 9);
             this.lblEtiqueta.Name = "lblEtiqueta";
             this.lblEtiqueta.Size = new System.Drawing.Size(353, 38);
             this.lblEtiqueta.TabIndex = 4;
@@ -75,14 +76,14 @@
             this.dtvUsuarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
             this.dtvUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtvUsuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtvUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtvUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dtvUsuarios.ColumnHeadersHeight = 25;
             this.dtvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.usuario,
@@ -92,7 +93,8 @@
             this.telefono,
             this.email,
             this.contrasenia,
-            this.rol});
+            this.rol,
+            this.estado});
             this.dtvUsuarios.EnableHeadersVisualStyles = false;
             this.dtvUsuarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
             this.dtvUsuarios.Location = new System.Drawing.Point(12, 165);
@@ -100,79 +102,15 @@
             this.dtvUsuarios.ReadOnly = true;
             this.dtvUsuarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dtvUsuarios.RowHeadersVisible = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(162)))), ((int)(((byte)(188)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            this.dtvUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(162)))), ((int)(((byte)(188)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.dtvUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dtvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtvUsuarios.Size = new System.Drawing.Size(896, 460);
+            this.dtvUsuarios.Size = new System.Drawing.Size(994, 460);
             this.dtvUsuarios.TabIndex = 5;
-            // 
-            // usuario
-            // 
-            this.usuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.usuario.HeaderText = "USUARIO";
-            this.usuario.Name = "usuario";
-            this.usuario.ReadOnly = true;
-            this.usuario.Width = 106;
-            // 
-            // nombre
-            // 
-            this.nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.nombre.HeaderText = "NOMBRES";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 111;
-            // 
-            // apellidos
-            // 
-            this.apellidos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.apellidos.HeaderText = "APELLIDOS";
-            this.apellidos.Name = "apellidos";
-            this.apellidos.ReadOnly = true;
-            this.apellidos.Width = 118;
-            // 
-            // edad
-            // 
-            this.edad.HeaderText = "EDAD";
-            this.edad.Name = "edad";
-            this.edad.ReadOnly = true;
-            this.edad.Visible = false;
-            // 
-            // telefono
-            // 
-            this.telefono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.telefono.HeaderText = "TELÉFONO";
-            this.telefono.Name = "telefono";
-            this.telefono.ReadOnly = true;
-            this.telefono.Width = 115;
-            // 
-            // email
-            // 
-            this.email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.email.DefaultCellStyle = dataGridViewCellStyle8;
-            this.email.HeaderText = "E-MAIL";
-            this.email.Name = "email";
-            this.email.ReadOnly = true;
-            this.email.Width = 88;
-            // 
-            // contrasenia
-            // 
-            this.contrasenia.HeaderText = "CONTRASEÑA";
-            this.contrasenia.Name = "contrasenia";
-            this.contrasenia.ReadOnly = true;
-            this.contrasenia.Visible = false;
-            // 
-            // rol
-            // 
-            this.rol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.rol.HeaderText = "ROL";
-            this.rol.Name = "rol";
-            this.rol.ReadOnly = true;
-            this.rol.Width = 65;
             // 
             // txtBusqueda
             // 
@@ -200,7 +138,7 @@
             this.btnActualizar.FlatAppearance.BorderSize = 0;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Image = global::sistemaRestaurante.Properties.Resources.refresh;
-            this.btnActualizar.Location = new System.Drawing.Point(798, 109);
+            this.btnActualizar.Location = new System.Drawing.Point(949, 99);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(50, 44);
             this.btnActualizar.TabIndex = 14;
@@ -214,7 +152,7 @@
             this.btnEliminarSelected.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarSelected.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnEliminarSelected.Image = global::sistemaRestaurante.Properties.Resources.delete;
-            this.btnEliminarSelected.Location = new System.Drawing.Point(669, 109);
+            this.btnEliminarSelected.Location = new System.Drawing.Point(820, 99);
             this.btnEliminarSelected.Name = "btnEliminarSelected";
             this.btnEliminarSelected.Size = new System.Drawing.Size(123, 44);
             this.btnEliminarSelected.TabIndex = 13;
@@ -231,7 +169,7 @@
             this.btnEditarSelected.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarSelected.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnEditarSelected.Image = global::sistemaRestaurante.Properties.Resources.Edit;
-            this.btnEditarSelected.Location = new System.Drawing.Point(551, 109);
+            this.btnEditarSelected.Location = new System.Drawing.Point(702, 99);
             this.btnEditarSelected.Name = "btnEditarSelected";
             this.btnEditarSelected.Size = new System.Drawing.Size(111, 44);
             this.btnEditarSelected.TabIndex = 12;
@@ -293,12 +231,82 @@
             this.rbotAdministradores.UseVisualStyleBackColor = true;
             this.rbotAdministradores.CheckedChanged += new System.EventHandler(this.rbotAdministradores_CheckedChanged);
             // 
+            // usuario
+            // 
+            this.usuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.usuario.HeaderText = "USUARIO";
+            this.usuario.Name = "usuario";
+            this.usuario.ReadOnly = true;
+            this.usuario.Width = 106;
+            // 
+            // nombre
+            // 
+            this.nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.nombre.HeaderText = "NOMBRES";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 111;
+            // 
+            // apellidos
+            // 
+            this.apellidos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.apellidos.HeaderText = "APELLIDOS";
+            this.apellidos.Name = "apellidos";
+            this.apellidos.ReadOnly = true;
+            this.apellidos.Width = 118;
+            // 
+            // edad
+            // 
+            this.edad.HeaderText = "EDAD";
+            this.edad.Name = "edad";
+            this.edad.ReadOnly = true;
+            this.edad.Visible = false;
+            // 
+            // telefono
+            // 
+            this.telefono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.telefono.HeaderText = "TELÉFONO";
+            this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
+            this.telefono.Width = 115;
+            // 
+            // email
+            // 
+            this.email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.email.DefaultCellStyle = dataGridViewCellStyle5;
+            this.email.HeaderText = "E-MAIL";
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
+            this.email.Width = 88;
+            // 
+            // contrasenia
+            // 
+            this.contrasenia.HeaderText = "CONTRASEÑA";
+            this.contrasenia.Name = "contrasenia";
+            this.contrasenia.ReadOnly = true;
+            this.contrasenia.Visible = false;
+            // 
+            // rol
+            // 
+            this.rol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.rol.HeaderText = "ROL";
+            this.rol.Name = "rol";
+            this.rol.ReadOnly = true;
+            this.rol.Width = 65;
+            // 
+            // estado
+            // 
+            this.estado.HeaderText = "ESTADO";
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            // 
             // FrmListadoUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
-            this.ClientSize = new System.Drawing.Size(920, 637);
+            this.ClientSize = new System.Drawing.Size(1018, 697);
             this.Controls.Add(this.rbotAdministradores);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.rbotUsuarios);
@@ -340,5 +348,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn contrasenia;
         private System.Windows.Forms.DataGridViewTextBoxColumn rol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
     }
 }
