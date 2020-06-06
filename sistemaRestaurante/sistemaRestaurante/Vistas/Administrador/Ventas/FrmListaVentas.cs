@@ -214,7 +214,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
         public static FrmDetallesVenta FrmDetalles = new FrmDetallesVenta();
         private void btnVerSelected_Click(object sender, EventArgs e)
         {
-            if (Inicio.Login.TipodeAcceso ==0)
+            if (Inicio.Login.TipodeAcceso == 0)
             {
                 FrmDetalles.txtIdVenta.Text = dtvVentas.CurrentRow.Cells[0].Value.ToString();
                 FrmLoguin.accessU.AbrirFormulario(FrmDetalles);

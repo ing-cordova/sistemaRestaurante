@@ -42,6 +42,7 @@
             this.btnMaximizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.MenuVertical = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.SubMenuVentas = new System.Windows.Forms.Panel();
             this.btnVentaProceso = new System.Windows.Forms.Button();
             this.panel13 = new System.Windows.Forms.Panel();
@@ -53,7 +54,6 @@
             this.btnCategorias = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnVentas = new System.Windows.Forms.Button();
-            this.btnMasOpciones = new System.Windows.Forms.Button();
             this.Submenu = new System.Windows.Forms.Panel();
             this.btnCerrarS = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -68,9 +68,9 @@
             this.btnProveedor = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnProductos = new System.Windows.Forms.Button();
+            this.btnMasOpciones = new System.Windows.Forms.Button();
             this.tmDatosFechaHora = new System.Windows.Forms.Timer(this.components);
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
             this.barraTitulos.SuspendLayout();
             this.MenuVertical.SuspendLayout();
             this.SubMenuVentas.SuspendLayout();
@@ -273,6 +273,14 @@
             this.MenuVertical.Size = new System.Drawing.Size(218, 697);
             this.MenuVertical.TabIndex = 2;
             // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.panel8.Location = new System.Drawing.Point(0, 585);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(6, 40);
+            this.panel8.TabIndex = 18;
+            // 
             // SubMenuVentas
             // 
             this.SubMenuVentas.Controls.Add(this.btnVentaProceso);
@@ -422,26 +430,6 @@
             this.btnVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVentas.UseVisualStyleBackColor = true;
             this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
-            // 
-            // btnMasOpciones
-            // 
-            this.btnMasOpciones.FlatAppearance.BorderSize = 0;
-            this.btnMasOpciones.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            this.btnMasOpciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            this.btnMasOpciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMasOpciones.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMasOpciones.ForeColor = System.Drawing.Color.White;
-            this.btnMasOpciones.Image = global::sistemaRestaurante.Properties.Resources.more;
-            this.btnMasOpciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMasOpciones.Location = new System.Drawing.Point(3, 585);
-            this.btnMasOpciones.Name = "btnMasOpciones";
-            this.btnMasOpciones.Size = new System.Drawing.Size(215, 40);
-            this.btnMasOpciones.TabIndex = 10;
-            this.btnMasOpciones.Text = "  Más Opciones";
-            this.btnMasOpciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMasOpciones.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMasOpciones.UseVisualStyleBackColor = true;
-            this.btnMasOpciones.Click += new System.EventHandler(this.btnMasOpciones_Click);
             // 
             // Submenu
             // 
@@ -630,6 +618,26 @@
             this.btnProductos.UseVisualStyleBackColor = true;
             this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
+            // btnMasOpciones
+            // 
+            this.btnMasOpciones.FlatAppearance.BorderSize = 0;
+            this.btnMasOpciones.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.btnMasOpciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.btnMasOpciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMasOpciones.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMasOpciones.ForeColor = System.Drawing.Color.White;
+            this.btnMasOpciones.Image = global::sistemaRestaurante.Properties.Resources.more;
+            this.btnMasOpciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMasOpciones.Location = new System.Drawing.Point(3, 585);
+            this.btnMasOpciones.Name = "btnMasOpciones";
+            this.btnMasOpciones.Size = new System.Drawing.Size(215, 40);
+            this.btnMasOpciones.TabIndex = 10;
+            this.btnMasOpciones.Text = "  Más Opciones";
+            this.btnMasOpciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMasOpciones.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMasOpciones.UseVisualStyleBackColor = true;
+            this.btnMasOpciones.Click += new System.EventHandler(this.btnMasOpciones_Click);
+            // 
             // tmDatosFechaHora
             // 
             this.tmDatosFechaHora.Enabled = true;
@@ -642,14 +650,6 @@
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(895, 697);
             this.panelContenedor.TabIndex = 3;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            this.panel8.Location = new System.Drawing.Point(0, 585);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(6, 40);
-            this.panel8.TabIndex = 18;
             // 
             // FrmAccesoAdmin
             // 

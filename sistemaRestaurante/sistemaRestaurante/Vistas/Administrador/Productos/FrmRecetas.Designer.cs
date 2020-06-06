@@ -27,13 +27,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label4 = new System.Windows.Forms.Label();
             this.txtIdProd = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.lblEtiqueta = new System.Windows.Forms.Label();
             this.dtvReceta = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdProdC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,10 +54,6 @@
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnEliminarSelected = new System.Windows.Forms.Button();
             this.btnEditarSelected = new System.Windows.Forms.Button();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdProdC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtvReceta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupCantidad)).BeginInit();
             this.SuspendLayout();
@@ -111,14 +111,14 @@
             this.dtvReceta.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
             this.dtvReceta.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtvReceta.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtvReceta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtvReceta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dtvReceta.ColumnHeadersHeight = 25;
             this.dtvReceta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -132,16 +132,44 @@
             this.dtvReceta.ReadOnly = true;
             this.dtvReceta.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dtvReceta.RowHeadersVisible = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(162)))), ((int)(((byte)(188)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.dtvReceta.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(162)))), ((int)(((byte)(188)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dtvReceta.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dtvReceta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtvReceta.Size = new System.Drawing.Size(577, 375);
             this.dtvReceta.TabIndex = 22;
             this.dtvReceta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvReceta_CellClick);
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "ID";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
+            // IdProdC
+            // 
+            this.IdProdC.HeaderText = "IdProductoC";
+            this.IdProdC.Name = "IdProdC";
+            this.IdProdC.ReadOnly = true;
+            this.IdProdC.Visible = false;
+            // 
+            // producto
+            // 
+            this.producto.HeaderText = "Nombre Prod";
+            this.producto.Name = "producto";
+            this.producto.ReadOnly = true;
+            // 
+            // cantidad
+            // 
+            this.cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            this.cantidad.Width = 111;
             // 
             // txtNombre
             // 
@@ -258,7 +286,7 @@
             this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnNuevo.Image = global::sistemaRestaurante.Properties.Resources.eye;
-            this.btnNuevo.Location = new System.Drawing.Point(617, 135);
+            this.btnNuevo.Location = new System.Drawing.Point(628, 93);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(219, 44);
             this.btnNuevo.TabIndex = 39;
@@ -276,7 +304,7 @@
             this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAgregar.Image = global::sistemaRestaurante.Properties.Resources.eye;
-            this.btnAgregar.Location = new System.Drawing.Point(617, 199);
+            this.btnAgregar.Location = new System.Drawing.Point(627, 143);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(219, 44);
             this.btnAgregar.TabIndex = 38;
@@ -290,7 +318,7 @@
             // 
             this.btnRegresar.FlatAppearance.BorderSize = 0;
             this.btnRegresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            this.btnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
             this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegresar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegresar.ForeColor = System.Drawing.Color.White;
@@ -311,7 +339,7 @@
             this.btnActualizar.FlatAppearance.BorderSize = 0;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Image = global::sistemaRestaurante.Properties.Resources.refresh;
-            this.btnActualizar.Location = new System.Drawing.Point(786, 76);
+            this.btnActualizar.Location = new System.Drawing.Point(539, 237);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(50, 44);
             this.btnActualizar.TabIndex = 43;
@@ -326,9 +354,9 @@
             this.btnEliminarSelected.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarSelected.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnEliminarSelected.Image = global::sistemaRestaurante.Properties.Resources.delete;
-            this.btnEliminarSelected.Location = new System.Drawing.Point(617, 349);
+            this.btnEliminarSelected.Location = new System.Drawing.Point(626, 250);
             this.btnEliminarSelected.Name = "btnEliminarSelected";
-            this.btnEliminarSelected.Size = new System.Drawing.Size(233, 44);
+            this.btnEliminarSelected.Size = new System.Drawing.Size(220, 44);
             this.btnEliminarSelected.TabIndex = 45;
             this.btnEliminarSelected.Text = "  Eliminar Ingrediente";
             this.btnEliminarSelected.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -344,43 +372,15 @@
             this.btnEditarSelected.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarSelected.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnEditarSelected.Image = global::sistemaRestaurante.Properties.Resources.Edit;
-            this.btnEditarSelected.Location = new System.Drawing.Point(617, 287);
+            this.btnEditarSelected.Location = new System.Drawing.Point(626, 193);
             this.btnEditarSelected.Name = "btnEditarSelected";
             this.btnEditarSelected.Size = new System.Drawing.Size(234, 44);
             this.btnEditarSelected.TabIndex = 44;
-            this.btnEditarSelected.Text = "  Editar Cantidad";
+            this.btnEditarSelected.Text = "     Editar Cantidad";
             this.btnEditarSelected.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditarSelected.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditarSelected.UseVisualStyleBackColor = true;
             this.btnEditarSelected.Click += new System.EventHandler(this.btnEditarSelected_Click);
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "ID";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            // 
-            // IdProdC
-            // 
-            this.IdProdC.HeaderText = "IdProductoC";
-            this.IdProdC.Name = "IdProdC";
-            this.IdProdC.ReadOnly = true;
-            this.IdProdC.Visible = false;
-            // 
-            // producto
-            // 
-            this.producto.HeaderText = "Nombre Prod";
-            this.producto.Name = "producto";
-            this.producto.ReadOnly = true;
-            // 
-            // cantidad
-            // 
-            this.cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            this.cantidad.Width = 111;
             // 
             // FrmRecetas
             // 

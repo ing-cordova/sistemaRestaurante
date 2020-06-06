@@ -103,6 +103,7 @@
             this.dtvDetallesCompra.TabIndex = 23;
             this.dtvDetallesCompra.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvDetallesCompra_CellDoubleClick);
             this.dtvDetallesCompra.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtvDetallesCompra_KeyDown);
+            this.dtvDetallesCompra.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dtvDetallesCompra_KeyUp);
             // 
             // idProducto
             // 
@@ -139,7 +140,7 @@
             this.idCategoria.ReadOnly = true;
             this.idCategoria.Visible = false;
             // 
-            // FrmProdsAComprar
+            // FrmBuscarIngredientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -148,7 +149,7 @@
             this.Controls.Add(this.dtvDetallesCompra);
             this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.lblBuscar);
-            this.Name = "FrmProdsAComprar";
+            this.Name = "FrmBuscarIngredientes";
             this.Load += new System.EventHandler(this.FrmProdsAComprar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtvDetallesCompra)).EndInit();
             this.ResumeLayout(false);

@@ -88,6 +88,7 @@ namespace sistemaRestaurante.Vistas
 
                                 MessageBox.Show("¡Cuenta creada con éxito!", "Registro Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
                                 FrmAccesoUsuario usuN = new FrmAccesoUsuario();
+                                usuN.lblUsuarioAct.Text = txtUsuario.Text;
                                 FrmAccesoUsuario.venta.lblUsuario.Text = txtUsuario.Text;
                                 usuN.Show();
                                 this.Hide();
@@ -116,6 +117,7 @@ namespace sistemaRestaurante.Vistas
 
                                     MessageBox.Show("Nuevo Administrador Creado con éxito.", "¡Validación Correcta!", MessageBoxButtons.OK, MessageBoxIcon.None);
                                     FrmAccesoAdmin admin = new FrmAccesoAdmin();
+                                    admin.lblUsuarioAct.Text = txtUsuario.Text;
                                     FrmAccesoAdmin.compras.lblUsuario.Text = txtUsuario.Text;
                                     FrmAccesoAdmin.venta.lblUsuario.Text = txtUsuario.Text;
                                     admin.Show();
@@ -150,6 +152,10 @@ namespace sistemaRestaurante.Vistas
                 e.Handled = false;
             }
             else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsPunctuation(e.KeyChar))
             {
                 e.Handled = false;
             }

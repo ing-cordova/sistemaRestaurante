@@ -75,26 +75,34 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            decimal precioCon;
             if (txtNombreProd.Text.Equals("") || txtPrecioProd.Text.Equals("") || cmbCategoria.SelectedItem.Equals(""))
             {
                 MessageBox.Show("¡Complete todos los campos para continuar!", "Completar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
+                if(decimal.TryParse(txtPrecioProd.Text, out precioCon) == false)
                 {
-                    prod.nombre = txtNombreProd.Text;
-                    prod.precio = decimal.Parse(txtPrecioProd.Text);
-                    prod.idCategoria = int.Parse(categ);
-
-                    bd.ProductosVenta.Add(prod);
-                    bd.SaveChanges();
+                    MessageBox.Show("¡Ingrese correctamente el precio!");
                 }
+                else
+                {
+                    using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
+                    {
+                        prod.nombre = txtNombreProd.Text;
+                        prod.precio = decimal.Parse(txtPrecioProd.Text);
+                        prod.idCategoria = int.Parse(categ);
 
-                MessageBox.Show("¡Producto insertado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
-                this.Close();
-                listado.dtvProductos.Rows.Clear();
-                listado.CargarDatos();
+                        bd.ProductosVenta.Add(prod);
+                        bd.SaveChanges();
+                    }
+
+                    MessageBox.Show("¡Producto insertado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    this.Close();
+                    listado.dtvProductos.Rows.Clear();
+                    listado.CargarDatos();
+                }
             }
         }
 

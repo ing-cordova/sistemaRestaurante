@@ -390,6 +390,7 @@
             this.txtNMesa.Name = "txtNMesa";
             this.txtNMesa.Size = new System.Drawing.Size(217, 27);
             this.txtNMesa.TabIndex = 27;
+            this.txtNMesa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNMesa_KeyPress);
             // 
             // label3
             // 
