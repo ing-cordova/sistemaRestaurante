@@ -49,8 +49,8 @@
             this.txtContrasenia = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbRol = new System.Windows.Forms.ComboBox();
-            this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtEstado = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -274,16 +274,6 @@
             this.cmbRol.Size = new System.Drawing.Size(241, 29);
             this.cmbRol.TabIndex = 50;
             // 
-            // cmbEstado
-            // 
-            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEstado.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(149, 310);
-            this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(241, 29);
-            this.cmbEstado.TabIndex = 52;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -294,13 +284,22 @@
             this.label4.TabIndex = 51;
             this.label4.Text = "ESTADO:";
             // 
+            // txtEstado
+            // 
+            this.txtEstado.Enabled = false;
+            this.txtEstado.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEstado.Location = new System.Drawing.Point(149, 310);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(241, 27);
+            this.txtEstado.TabIndex = 52;
+            // 
             // FrmCRUDUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(162)))), ((int)(((byte)(188)))));
             this.ClientSize = new System.Drawing.Size(439, 435);
-            this.Controls.Add(this.cmbEstado);
+            this.Controls.Add(this.txtEstado);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cmbRol);
             this.Controls.Add(this.label3);
@@ -355,7 +354,7 @@
         public System.Windows.Forms.TextBox txtContrasenia;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.ComboBox cmbRol;
-        public System.Windows.Forms.ComboBox cmbEstado;
         private System.Windows.Forms.Label label4;
+        public System.Windows.Forms.TextBox txtEstado;
     }
 }

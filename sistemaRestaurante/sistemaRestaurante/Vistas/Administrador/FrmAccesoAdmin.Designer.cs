@@ -104,7 +104,7 @@
             this.lblUsuarioAct.BackColor = System.Drawing.Color.Transparent;
             this.lblUsuarioAct.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuarioAct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(31)))), ((int)(((byte)(70)))));
-            this.lblUsuarioAct.Location = new System.Drawing.Point(576, 9);
+            this.lblUsuarioAct.Location = new System.Drawing.Point(600, 9);
             this.lblUsuarioAct.Name = "lblUsuarioAct";
             this.lblUsuarioAct.Size = new System.Drawing.Size(87, 25);
             this.lblUsuarioAct.TabIndex = 17;
@@ -117,7 +117,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(31)))), ((int)(((byte)(70)))));
-            this.label2.Location = new System.Drawing.Point(498, 4);
+            this.label2.Location = new System.Drawing.Point(522, 4);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 28);
             this.label2.TabIndex = 16;
@@ -130,7 +130,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(31)))), ((int)(((byte)(70)))));
-            this.label3.Location = new System.Drawing.Point(518, 9);
+            this.label3.Location = new System.Drawing.Point(542, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 25);
             this.label3.TabIndex = 15;

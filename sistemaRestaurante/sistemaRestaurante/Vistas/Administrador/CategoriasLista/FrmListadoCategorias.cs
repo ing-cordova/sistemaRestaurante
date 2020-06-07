@@ -44,6 +44,17 @@ namespace sistemaRestaurante.Vistas.Administrador.CategoriasLista
         private void FrmListadoCategorias_Load(object sender, EventArgs e)
         {
             cargardatos();
+            if (dtvCategorias.Rows.Count == 0)
+            {
+                btnEditarSelected.Enabled = false;
+                btnEliminarSelected.Enabled = false;
+            }
+            else
+            {
+                btnEditarSelected.Enabled = true;
+                btnEliminarSelected.Enabled = true;
+                btnActualizar.PerformClick();
+            }
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)

@@ -25,8 +25,6 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
         {
             using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
             {
-                
-
                 if (rbotTodos.Checked == true)
                 {
                     if (txtBusqueda.Text.Equals(""))
@@ -214,19 +212,25 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
         public static FrmDetallesVenta FrmDetalles = new FrmDetallesVenta();
         private void btnVerSelected_Click(object sender, EventArgs e)
         {
-            if (Inicio.Login.TipodeAcceso == 0)
+            if(dtvVentas.Rows.Count == 0)
             {
-                FrmDetalles.txtIdVenta.Text = dtvVentas.CurrentRow.Cells[0].Value.ToString();
-                FrmLoguin.accessU.AbrirFormulario(FrmDetalles);
-                this.Close();
+                MessageBox.Show("¡Aún no hay orden en proceso!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if(Inicio.Login.TipodeAcceso == 1)
+            else
             {
-                FrmDetalles.txtIdVenta.Text = dtvVentas.CurrentRow.Cells[0].Value.ToString();
-                FrmLoguin.accessAd.AbrirFormulario(FrmDetalles);
-                this.Close();
-            }
-            
+                if (Inicio.Login.TipodeAcceso == 0)
+                {
+                    FrmDetalles.txtIdVenta.Text = dtvVentas.CurrentRow.Cells[0].Value.ToString();
+                    FrmLoguin.accessU.AbrirFormulario(FrmDetalles);
+                    this.Close();
+                }
+                else if (Inicio.Login.TipodeAcceso == 1)
+                {
+                    FrmDetalles.txtIdVenta.Text = dtvVentas.CurrentRow.Cells[0].Value.ToString();
+                    FrmLoguin.accessAd.AbrirFormulario(FrmDetalles);
+                    this.Close();
+                }
+            } 
         }
 
         private void rbotTodos_CheckedChanged(object sender, EventArgs e)
@@ -251,8 +255,35 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
 
         private void txtBusqueda_TextChanged(object sender, EventArgs e)
         {
-            dtvVentas.Rows.Clear();
-            Filtro();
+            try
+            {
+                dtvVentas.Rows.Clear();
+                Filtro();
+            }
+            catch(Exception ex)
+            {
+
+            }
+        }
+
+        private void txtBusqueda_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }

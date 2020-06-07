@@ -162,65 +162,70 @@ namespace sistemaRestaurante.Vistas.Administrador.CompraProductos
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-
-            decimal precioCon;
-
-            if (decimal.TryParse(txtPrecioProd.Text, out precioCon) == false)
+            try
             {
-                MessageBox.Show("¡Ingrese correctamente el precio!");
-            }
-            else
-            {
-                string nombre = txtNombreProdCompra.Text;
-                using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
+                decimal precioCon;
+
+                if (decimal.TryParse(txtPrecioProd.Text, out precioCon) == false)
                 {
-                    var listaPV = from producto in bd.ProductosVenta
-                                  where producto.nombre.Equals(nombre) && producto.estado == "Activo"
-                                  select producto;
-
-                    if (listaPV.Count() > 0)
+                    MessageBox.Show("¡Ingrese correctamente el precio!");
+                }
+                else
+                {
+                    string nombre = txtNombreProdCompra.Text;
+                    using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
                     {
-                        MessageBox.Show("¡El Producto ya existe!", "Advertencia",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Warning);
-                    }
-                    else
-                    {
-                        var listaProveedor = from producto in bd.ProductosVenta
-                                             where producto.nombre.Equals(nombre) && producto.estado == "Inactivo"
-                                             select producto;
+                        var listaPV = from producto in bd.ProductosVenta
+                                      where producto.nombre.Equals(nombre) && producto.estado == "Activo"
+                                      select producto;
 
-                        if (listaProveedor.Count() > 0)
+                        if (listaPV.Count() > 0)
                         {
-                            prodC = bd.ProductosCompra.Where(VerificarNombre => VerificarNombre.nombre == nombre).First();
-                            prodC.precio = decimal.Parse(txtPrecioProd.Text);
-                            prodC.idProveedor = int.Parse(provee);
-                            prodC.idCategoria = int.Parse(categ);
-                            prodC.estado = "Activo";
-
-                            bd.Entry(prodC).State = System.Data.Entity.EntityState.Modified;
-                            bd.SaveChanges();
-                            MessageBox.Show("¡Proveedor insertado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
-                            this.Close();
+                            MessageBox.Show("¡El Producto ya existe!", "Advertencia",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
                         }
                         else
                         {
-                            prodC.nombre = txtNombreProdCompra.Text;
-                            prodC.precio = decimal.Parse(txtPrecioProd.Text);
-                            prodC.idProveedor = int.Parse(provee);
-                            prodC.idCategoria = int.Parse(categ);
-                            prodC.estado = "Activo";
+                            var listaProveedor = from producto in bd.ProductosVenta
+                                                 where producto.nombre.Equals(nombre) && producto.estado == "Inactivo"
+                                                 select producto;
 
-                            bd.ProductosCompra.Add(prodC);
-                            bd.SaveChanges();
+                            if (listaProveedor.Count() > 0)
+                            {
+                                prodC = bd.ProductosCompra.Where(VerificarNombre => VerificarNombre.nombre == nombre).First();
+                                prodC.precio = decimal.Parse(txtPrecioProd.Text);
+                                prodC.idProveedor = int.Parse(provee);
+                                prodC.idCategoria = int.Parse(categ);
+                                prodC.estado = "Activo";
 
-                            MessageBox.Show("¡Producto insertado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
-                            this.Close();
+                                bd.Entry(prodC).State = System.Data.Entity.EntityState.Modified;
+                                bd.SaveChanges();
+                                MessageBox.Show("¡Producto insertado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
+                                this.Close();
+                            }
+                            else
+                            {
+                                prodC.nombre = txtNombreProdCompra.Text;
+                                prodC.precio = decimal.Parse(txtPrecioProd.Text);
+                                prodC.idProveedor = int.Parse(provee);
+                                prodC.idCategoria = int.Parse(categ);
+                                prodC.estado = "Activo";
+
+                                bd.ProductosCompra.Add(prodC);
+                                bd.SaveChanges();
+
+                                MessageBox.Show("¡Producto insertado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
+                                this.Close();
+                            }
                         }
                     }
                 }
             }
-
+            catch(Exception ex)
+            {
+                MessageBox.Show("¡Verifique las listas desplegables!", "Verificación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void txtPrecioProd_KeyPress(object sender, KeyPressEventArgs e)

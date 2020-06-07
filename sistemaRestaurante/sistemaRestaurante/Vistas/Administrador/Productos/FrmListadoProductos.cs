@@ -26,6 +26,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
                 var JoinProd = from producto in bd.ProductosVenta
                                from categoria in bd.Categorias
                                where producto.idCategoria == categoria.idCategoria
+                               where producto.estado == "Activo"
                                select new
                                {
                                    ID = producto.idProductoV,
@@ -45,6 +46,17 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
         private void FrmListadoProductos_Load(object sender, EventArgs e)
         {
             CargarDatos();
+            if (dtvProductos.Rows.Count == 0)
+            {
+                btnEditarSelected.Enabled = false;
+                btnEliminarSelected.Enabled = false;
+            }
+            else
+            {
+                btnEditarSelected.Enabled = true;
+                btnEliminarSelected.Enabled = true;
+                btnActualizar.PerformClick();
+            }
         }
 
         private void btnAgregarNuevo_Click(object sender, EventArgs e)

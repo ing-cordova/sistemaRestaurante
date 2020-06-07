@@ -35,6 +35,16 @@ namespace sistemaRestaurante.Vistas.Administrador.ProveedoresLista
         private void FrmListadoProveedores_Load(object sender, EventArgs e)
         {
             cargardatos();
+            if (dtvProveedores.Rows.Count == 0)
+            {
+                btnEditarSelected.Enabled = false;
+                btnEliminarSelected.Enabled = false;
+            }
+            else
+            {
+                btnEditarSelected.Enabled = true;
+                btnEliminarSelected.Enabled = true;
+            }
         }
 
         private void btnAgregarNuevo_Click(object sender, EventArgs e)

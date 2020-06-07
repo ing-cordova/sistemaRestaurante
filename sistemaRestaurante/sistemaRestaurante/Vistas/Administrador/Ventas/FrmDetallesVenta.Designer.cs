@@ -27,8 +27,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label4 = new System.Windows.Forms.Label();
             this.txtIdVenta = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,6 +46,7 @@
             this.btnRecibida = new System.Windows.Forms.Button();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.btnPagada = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtvDetallesVenta)).BeginInit();
             this.SuspendLayout();
             // 
@@ -142,14 +143,14 @@
             this.dtvDetallesVenta.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
             this.dtvDetallesVenta.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtvDetallesVenta.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtvDetallesVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtvDetallesVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dtvDetallesVenta.ColumnHeadersHeight = 25;
             this.dtvDetallesVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProducto,
@@ -162,14 +163,14 @@
             this.dtvDetallesVenta.ReadOnly = true;
             this.dtvDetallesVenta.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dtvDetallesVenta.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(162)))), ((int)(((byte)(188)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.dtvDetallesVenta.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(162)))), ((int)(((byte)(188)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.dtvDetallesVenta.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dtvDetallesVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtvDetallesVenta.Size = new System.Drawing.Size(858, 315);
+            this.dtvDetallesVenta.Size = new System.Drawing.Size(965, 315);
             this.dtvDetallesVenta.TabIndex = 22;
             // 
             // idProducto
@@ -210,7 +211,7 @@
             this.btnEntregada.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEntregada.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnEntregada.Image = global::sistemaRestaurante.Properties.Resources.correct;
-            this.btnEntregada.Location = new System.Drawing.Point(287, 83);
+            this.btnEntregada.Location = new System.Drawing.Point(356, 83);
             this.btnEntregada.Name = "btnEntregada";
             this.btnEntregada.Size = new System.Drawing.Size(307, 44);
             this.btnEntregada.TabIndex = 26;
@@ -227,7 +228,7 @@
             this.btnRecibida.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecibida.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnRecibida.Image = global::sistemaRestaurante.Properties.Resources.inbox__1_;
-            this.btnRecibida.Location = new System.Drawing.Point(11, 83);
+            this.btnRecibida.Location = new System.Drawing.Point(80, 83);
             this.btnRecibida.Name = "btnRecibida";
             this.btnRecibida.Size = new System.Drawing.Size(260, 44);
             this.btnRecibida.TabIndex = 25;
@@ -241,13 +242,13 @@
             // 
             this.btnRegresar.FlatAppearance.BorderSize = 0;
             this.btnRegresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
-            this.btnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
             this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegresar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegresar.ForeColor = System.Drawing.Color.White;
             this.btnRegresar.Image = global::sistemaRestaurante.Properties.Resources.back;
             this.btnRegresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegresar.Location = new System.Drawing.Point(753, 7);
+            this.btnRegresar.Location = new System.Drawing.Point(879, 12);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(127, 40);
             this.btnRegresar.TabIndex = 24;
@@ -263,7 +264,7 @@
             this.btnPagada.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPagada.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnPagada.Image = global::sistemaRestaurante.Properties.Resources.correct;
-            this.btnPagada.Location = new System.Drawing.Point(600, 83);
+            this.btnPagada.Location = new System.Drawing.Point(669, 83);
             this.btnPagada.Name = "btnPagada";
             this.btnPagada.Size = new System.Drawing.Size(275, 44);
             this.btnPagada.TabIndex = 27;
@@ -273,12 +274,26 @@
             this.btnPagada.UseVisualStyleBackColor = true;
             this.btnPagada.Click += new System.EventHandler(this.btnPagada_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.label1.Location = new System.Drawing.Point(260, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(505, 38);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Estados de las Ventas Actuales:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FrmDetallesVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
-            this.ClientSize = new System.Drawing.Size(887, 637);
+            this.ClientSize = new System.Drawing.Size(1018, 697);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnPagada);
             this.Controls.Add(this.btnEntregada);
             this.Controls.Add(this.btnRecibida);
@@ -322,5 +337,6 @@
         private System.Windows.Forms.Button btnRecibida;
         private System.Windows.Forms.Button btnEntregada;
         private System.Windows.Forms.Button btnPagada;
+        public System.Windows.Forms.Label label1;
     }
 }

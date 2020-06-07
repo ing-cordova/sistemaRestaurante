@@ -47,6 +47,16 @@ namespace sistemaRestaurante.Vistas.Administrador.CompraProductos
         private void FrmListadoProductosCompra_Load(object sender, EventArgs e)
         {
             CargarDatos();
+            if (dtvProductos.Rows.Count == 0)
+            {
+                btnEditarSelected.Enabled = false;
+                btnEliminarSelected.Enabled = false;
+            }
+            else
+            {
+                btnEditarSelected.Enabled = true;
+                btnEliminarSelected.Enabled = true;
+            }
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)

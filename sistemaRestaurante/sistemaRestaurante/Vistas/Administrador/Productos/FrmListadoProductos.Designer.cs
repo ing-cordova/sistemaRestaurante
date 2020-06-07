@@ -32,15 +32,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblEtiqueta = new System.Windows.Forms.Label();
             this.dtvProductos = new System.Windows.Forms.DataGridView();
+            this.idproducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnEliminarSelected = new System.Windows.Forms.Button();
             this.btnEditarSelected = new System.Windows.Forms.Button();
             this.btnAgregarNuevo = new System.Windows.Forms.Button();
             this.btnVerSelected = new System.Windows.Forms.Button();
-            this.idproducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtvProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,6 +97,32 @@
             this.dtvProductos.Size = new System.Drawing.Size(994, 460);
             this.dtvProductos.TabIndex = 3;
             // 
+            // idproducto
+            // 
+            this.idproducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.idproducto.HeaderText = "ID";
+            this.idproducto.Name = "idproducto";
+            this.idproducto.ReadOnly = true;
+            this.idproducto.Width = 51;
+            // 
+            // nombreProd
+            // 
+            this.nombreProd.HeaderText = "NOMBRE PRODUCTO";
+            this.nombreProd.Name = "nombreProd";
+            this.nombreProd.ReadOnly = true;
+            // 
+            // precio
+            // 
+            this.precio.HeaderText = "PRECIO";
+            this.precio.Name = "precio";
+            this.precio.ReadOnly = true;
+            // 
+            // categoria
+            // 
+            this.categoria.HeaderText = "CATEGORIA";
+            this.categoria.Name = "categoria";
+            this.categoria.ReadOnly = true;
+            // 
             // btnActualizar
             // 
             this.btnActualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -151,7 +177,7 @@
             this.btnAgregarNuevo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarNuevo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAgregarNuevo.Image = global::sistemaRestaurante.Properties.Resources.add;
-            this.btnAgregarNuevo.Location = new System.Drawing.Point(418, 99);
+            this.btnAgregarNuevo.Location = new System.Drawing.Point(432, 99);
             this.btnAgregarNuevo.Name = "btnAgregarNuevo";
             this.btnAgregarNuevo.Size = new System.Drawing.Size(183, 44);
             this.btnAgregarNuevo.TabIndex = 4;
@@ -177,32 +203,6 @@
             this.btnVerSelected.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVerSelected.UseVisualStyleBackColor = true;
             this.btnVerSelected.Click += new System.EventHandler(this.btnVerSelected_Click);
-            // 
-            // idproducto
-            // 
-            this.idproducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.idproducto.HeaderText = "ID";
-            this.idproducto.Name = "idproducto";
-            this.idproducto.ReadOnly = true;
-            this.idproducto.Width = 51;
-            // 
-            // nombreProd
-            // 
-            this.nombreProd.HeaderText = "NOMBRE PRODUCTO";
-            this.nombreProd.Name = "nombreProd";
-            this.nombreProd.ReadOnly = true;
-            // 
-            // precio
-            // 
-            this.precio.HeaderText = "PRECIO";
-            this.precio.Name = "precio";
-            this.precio.ReadOnly = true;
-            // 
-            // categoria
-            // 
-            this.categoria.HeaderText = "CATEGORIA";
-            this.categoria.Name = "categoria";
-            this.categoria.ReadOnly = true;
             // 
             // FrmListadoProductos
             // 

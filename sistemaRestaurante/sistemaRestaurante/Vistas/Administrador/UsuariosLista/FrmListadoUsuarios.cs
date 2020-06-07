@@ -23,6 +23,7 @@ namespace sistemaRestaurante.Vistas.Administrador.UsuariosLista
             using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
             {
                 var Usuario = from usuario in bd.Usuarios
+                              where usuario.estado == "Activo"
 
                                 select new
                                 {
@@ -55,6 +56,7 @@ namespace sistemaRestaurante.Vistas.Administrador.UsuariosLista
                 {
                     var Usuario = from usuario in bd.Usuarios
                                   where usuario.nombredeUsuario.Contains(usuarios)
+                                  where usuario.estado == "Activo"
 
                                   select new
                                   {
@@ -79,6 +81,7 @@ namespace sistemaRestaurante.Vistas.Administrador.UsuariosLista
                     var Usuario = from usuario in bd.Usuarios
                                   where usuario.nombredeUsuario.Contains(usuarios)
                                   where usuario.rol.Contains("Usuario")
+                                  where usuario.estado == "Activo"
                                   select new
                                   {
                                       USUARIO = usuario.nombredeUsuario,
@@ -102,6 +105,7 @@ namespace sistemaRestaurante.Vistas.Administrador.UsuariosLista
                     var Usuario = from usuario in bd.Usuarios
                                   where usuario.nombredeUsuario.Contains(usuarios)
                                   where usuario.rol.Contains("Administrador")
+                                  where usuario.estado == "Activo"
                                   select new
                                   {
                                       USUARIO = usuario.nombredeUsuario,
@@ -127,7 +131,17 @@ namespace sistemaRestaurante.Vistas.Administrador.UsuariosLista
         {
             dtvUsuarios.Rows.Clear();
             Filtro();
-            //CargarDatos();
+
+            if(dtvUsuarios.Rows.Count == 0)
+            {
+                btnEditarSelected.Enabled = false;
+                btnEliminarSelected.Enabled = false;
+            }
+            else
+            {
+                btnEditarSelected.Enabled = true;
+                btnEliminarSelected.Enabled = true;
+            }
         }
 
         private void btnEditarSelected_Click(object sender, EventArgs e)
@@ -154,7 +168,7 @@ namespace sistemaRestaurante.Vistas.Administrador.UsuariosLista
             usua.txtEmail.Text = email;
             usua.txtContrasenia.Text = contrasenia;
             usua.cmbRol.Text = rol;
-            usua.cmbEstado.Text = estado;
+            usua.txtEstado.Text = estado;
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -187,7 +201,7 @@ namespace sistemaRestaurante.Vistas.Administrador.UsuariosLista
             usua.txtEmail.Text = email;
             usua.txtContrasenia.Text = contrasenia;
             usua.cmbRol.Text = rol;
-            usua.cmbEstado.Text = estado;
+            usua.txtEstado.Text = estado;
         }
 
         private void txtBusqueda_TextChanged(object sender, EventArgs e)

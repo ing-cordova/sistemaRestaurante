@@ -32,10 +32,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblEtiqueta = new System.Windows.Forms.Label();
             this.dtvAlmacen = new System.Windows.Forms.DataGridView();
-            this.btnRefrescar = new System.Windows.Forms.Button();
             this.idAlmacen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadDisponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnRefrescar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtvAlmacen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,7 +45,7 @@
             this.lblEtiqueta.BackColor = System.Drawing.Color.Transparent;
             this.lblEtiqueta.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEtiqueta.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.lblEtiqueta.Location = new System.Drawing.Point(180, 9);
+            this.lblEtiqueta.Location = new System.Drawing.Point(234, 18);
             this.lblEtiqueta.Name = "lblEtiqueta";
             this.lblEtiqueta.Size = new System.Drawing.Size(552, 38);
             this.lblEtiqueta.TabIndex = 22;
@@ -88,25 +88,8 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             this.dtvAlmacen.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dtvAlmacen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtvAlmacen.Size = new System.Drawing.Size(863, 500);
+            this.dtvAlmacen.Size = new System.Drawing.Size(983, 543);
             this.dtvAlmacen.TabIndex = 23;
-            // 
-            // btnRefrescar
-            // 
-            this.btnRefrescar.FlatAppearance.BorderSize = 0;
-            this.btnRefrescar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefrescar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefrescar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRefrescar.Image = global::sistemaRestaurante.Properties.Resources.refresh;
-            this.btnRefrescar.Location = new System.Drawing.Point(734, 75);
-            this.btnRefrescar.Name = "btnRefrescar";
-            this.btnRefrescar.Size = new System.Drawing.Size(141, 44);
-            this.btnRefrescar.TabIndex = 24;
-            this.btnRefrescar.Text = "  Refrescar";
-            this.btnRefrescar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRefrescar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRefrescar.UseVisualStyleBackColor = true;
-            this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
             // 
             // idAlmacen
             // 
@@ -128,12 +111,29 @@
             this.cantidadDisponible.Name = "cantidadDisponible";
             this.cantidadDisponible.ReadOnly = true;
             // 
+            // btnRefrescar
+            // 
+            this.btnRefrescar.FlatAppearance.BorderSize = 0;
+            this.btnRefrescar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefrescar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefrescar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnRefrescar.Image = global::sistemaRestaurante.Properties.Resources.refresh;
+            this.btnRefrescar.Location = new System.Drawing.Point(854, 75);
+            this.btnRefrescar.Name = "btnRefrescar";
+            this.btnRefrescar.Size = new System.Drawing.Size(141, 44);
+            this.btnRefrescar.TabIndex = 24;
+            this.btnRefrescar.Text = "  Refrescar";
+            this.btnRefrescar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefrescar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRefrescar.UseVisualStyleBackColor = true;
+            this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
+            // 
             // FrmAlmacen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
-            this.ClientSize = new System.Drawing.Size(887, 637);
+            this.ClientSize = new System.Drawing.Size(1018, 697);
             this.Controls.Add(this.btnRefrescar);
             this.Controls.Add(this.dtvAlmacen);
             this.Controls.Add(this.lblEtiqueta);
