@@ -175,6 +175,7 @@ namespace sistemaRestaurante.Vistas
         private void FrmAccesoAdmin_Load(object sender, EventArgs e)
         {
             OrdenarMenu();
+            AbrirFormulario(new FrmIntroduccion());
         }
 
         public static FrmVentas venta = new FrmVentas();
@@ -203,6 +204,11 @@ namespace sistemaRestaurante.Vistas
         private void btnVentaProceso_Click(object sender, EventArgs e)
         {
             AbrirFormulario(new FrmListaVentas());
+        }
+
+        private void pbLogo_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmIntroduccion());
         }
 
         private void btnNuevaVenta_Click(object sender, EventArgs e)

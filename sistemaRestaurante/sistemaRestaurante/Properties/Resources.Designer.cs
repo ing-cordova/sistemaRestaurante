@@ -173,6 +173,16 @@ namespace sistemaRestaurante.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap diagonal__1_ {
+            get {
+                object obj = ResourceManager.GetObject("diagonal (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Edit {
             get {
                 object obj = ResourceManager.GetObject("Edit", resourceCulture);
@@ -356,6 +366,16 @@ namespace sistemaRestaurante.Properties {
         internal static System.Drawing.Bitmap Passs {
             get {
                 object obj = ResourceManager.GetObject("Passs", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pointing_left {
+            get {
+                object obj = ResourceManager.GetObject("pointing-left", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -153,11 +153,17 @@ namespace sistemaRestaurante.Vistas
         private void FrmAccesoUsuario_Load(object sender, EventArgs e)
         {
             OrdenarMenu();
+            AbrirFormulario(new FrmIntroduccion());
         }
 
         private void btnVentaProceso_Click(object sender, EventArgs e)
         {
             AbrirFormulario(new FrmListaVentas());
+        }
+
+        private void pbLogo_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmIntroduccion());
         }
 
         private void btnCerrarS_Click(object sender, EventArgs e)

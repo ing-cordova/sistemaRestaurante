@@ -56,14 +56,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnProductos = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.tmHoraFecha = new System.Windows.Forms.Timer(this.components);
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.barraTitulos.SuspendLayout();
             this.MenuVertical.SuspendLayout();
             this.SubMenuVentas.SuspendLayout();
             this.Submenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // barraTitulos
@@ -242,7 +242,7 @@
             this.MenuVertical.Controls.Add(this.button1);
             this.MenuVertical.Controls.Add(this.panel1);
             this.MenuVertical.Controls.Add(this.btnProductos);
-            this.MenuVertical.Controls.Add(this.pictureBox1);
+            this.MenuVertical.Controls.Add(this.pbLogo);
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuVertical.Location = new System.Drawing.Point(0, 42);
             this.MenuVertical.Name = "MenuVertical";
@@ -436,15 +436,16 @@
             this.btnProductos.UseVisualStyleBackColor = true;
             this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
-            // pictureBox1
+            // pbLogo
             // 
-            this.pictureBox1.Image = global::sistemaRestaurante.Properties.Resources.Inicio;
-            this.pictureBox1.Location = new System.Drawing.Point(47, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(122, 99);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.pbLogo.Image = global::sistemaRestaurante.Properties.Resources.Inicio;
+            this.pbLogo.Location = new System.Drawing.Point(47, 16);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(122, 99);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLogo.TabIndex = 3;
+            this.pbLogo.TabStop = false;
+            this.pbLogo.Click += new System.EventHandler(this.pbLogo_Click);
             // 
             // tmHoraFecha
             // 
@@ -479,7 +480,7 @@
             this.MenuVertical.ResumeLayout(false);
             this.SubMenuVentas.ResumeLayout(false);
             this.Submenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -492,7 +493,7 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnRestoreWindow;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnProductos;
         private System.Windows.Forms.Panel panel2;

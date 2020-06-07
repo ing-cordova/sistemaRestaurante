@@ -233,6 +233,12 @@
     <Compile Include="Vistas\Administrador\Ventas\FrmVentas.Designer.cs">
       <DependentUpon>FrmVentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\FrmIntroduccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmIntroduccion.Designer.cs">
+      <DependentUpon>FrmIntroduccion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Usuario\FrmAccesoUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -329,6 +335,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Administrador\Ventas\FrmVentas.resx">
       <DependentUpon>FrmVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmIntroduccion.resx">
+      <DependentUpon>FrmIntroduccion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Usuario\FrmAccesoUsuario.resx">
       <DependentUpon>FrmAccesoUsuario.cs</DependentUpon>
@@ -429,6 +438,8 @@
       <DependentUpon>RestauranteBD.edmx</DependentUpon>
       <LastGenOutput>RestauranteBD.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\pointing-left.png" />
+    <None Include="Resources\diagonal %281%29.png" />
     <None Include="Resources\eye.png" />
     <None Include="Resources\hourglass.png" />
     <None Include="Resources\add %281%29.png" />
