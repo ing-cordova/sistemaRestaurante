@@ -184,14 +184,26 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
                     Almacen almaceen = new Almacen();
                     recetas = iterar;
                     int idR = Int32.Parse(recetas.idProductoC.ToString());
-                    almaceen = bd.Almacen.Where(VerificarID => VerificarID.idProductoC == idR).First();
-                    double verificarCantidad =
-                        (Convert.ToDouble(cantidad) / Convert.ToDouble(recetas.cantidadProdIngrediente));
-                    if (almaceen.cantidadDisponible < verificarCantidad)
+                    var listaR = from table_almacen in bd.Almacen
+                                  where table_almacen.idProductoC == idR
+                                  select table_almacen;
+                    if (listaR.Count() > 0)
+                    {
+                        almaceen = bd.Almacen.Where(VerificarID => VerificarID.idProductoC == idR).First();
+                        double verificarCantidad =
+                            (Convert.ToDouble(cantidad) / Convert.ToDouble(recetas.cantidadProdIngrediente));
+                        if (almaceen.cantidadDisponible < verificarCantidad)
+                        {
+                            agregar = false;
+                            break;
+                        }
+                    }
+                    else
                     {
                         agregar = false;
                         break;
                     }
+                    
                 }
 
                 if (agregar == false)
@@ -325,7 +337,6 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
                     else if (dtvDetallesVenta.Rows.Count == 0)
                     {
                         AgregarCarrito();
-                        MessageBox.Show(idProdtxt.ToString());
                     }
 
                 }

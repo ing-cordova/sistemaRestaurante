@@ -81,9 +81,9 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
             txtBusqueda.Enabled = true;
             nupCantidad.Enabled = true;
             btnAgregar.Enabled = true;
-            btnNuevo.Enabled = false;
             btnEditarSelected.Enabled = false;
             btnEliminarSelected.Enabled = false;
+            Limpiar();
         }
 
         int intentos = 1;
@@ -143,21 +143,33 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            btnNuevo.Enabled = true;
-            using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
+            if (txtIdProdC.Text.Equals("") || txtNombreProdC.Text.Equals("") ||
+                  nupCantidad.Value == 0)
             {
-
-                recetas.idProductoV = Int32.Parse(txtIdProd.Text);
-                recetas.idProductoC = Int32.Parse(txtIdProdC.Text);
-                recetas.cantidadProdIngrediente = Int32.Parse(nupCantidad.Text);
-
-                bd.Recetas.Add(recetas);
-                bd.SaveChanges();
+                MessageBox.Show("¡Todos los campos son obligatorios!", "Rellenar campos",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
+            else
+            {
+                btnNuevo.Enabled = true;
+                using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
+                {
 
-            btnAgregar.Enabled = false;
-            CargarDatos();
-            Limpiar();
+                    recetas.idProductoV = Int32.Parse(txtIdProd.Text);
+                    recetas.idProductoC = Int32.Parse(txtIdProdC.Text);
+                    recetas.cantidadProdIngrediente = Int32.Parse(nupCantidad.Text);
+
+                    bd.Recetas.Add(recetas);
+                    bd.SaveChanges();
+                }
+
+                CargarDatos();
+                Limpiar();
+                btnActualizar.Enabled = false;
+                btnEditarSelected.Enabled = false;
+                btnEliminarSelected.Enabled = false;
+            }
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
