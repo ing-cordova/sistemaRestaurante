@@ -82,7 +82,7 @@
             this.barraTitulos.Dock = System.Windows.Forms.DockStyle.Top;
             this.barraTitulos.Location = new System.Drawing.Point(0, 0);
             this.barraTitulos.Name = "barraTitulos";
-            this.barraTitulos.Size = new System.Drawing.Size(1113, 42);
+            this.barraTitulos.Size = new System.Drawing.Size(1236, 42);
             this.barraTitulos.TabIndex = 0;
             this.barraTitulos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.barraTitulos_MouseDown);
             // 
@@ -173,7 +173,7 @@
             this.button2.Cursor = System.Windows.Forms.Cursors.Default;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(999, 3);
+            this.button2.Location = new System.Drawing.Point(1122, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(33, 32);
             this.button2.TabIndex = 13;
@@ -189,7 +189,7 @@
             this.btnRestoreWindow.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnRestoreWindow.FlatAppearance.BorderSize = 0;
             this.btnRestoreWindow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRestoreWindow.Location = new System.Drawing.Point(1038, 3);
+            this.btnRestoreWindow.Location = new System.Drawing.Point(1161, 3);
             this.btnRestoreWindow.Name = "btnRestoreWindow";
             this.btnRestoreWindow.Size = new System.Drawing.Size(33, 32);
             this.btnRestoreWindow.TabIndex = 12;
@@ -206,7 +206,7 @@
             this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnMaximizar.FlatAppearance.BorderSize = 0;
             this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximizar.Location = new System.Drawing.Point(1038, 3);
+            this.btnMaximizar.Location = new System.Drawing.Point(1161, 3);
             this.btnMaximizar.Name = "btnMaximizar";
             this.btnMaximizar.Size = new System.Drawing.Size(33, 32);
             this.btnMaximizar.TabIndex = 11;
@@ -224,7 +224,7 @@
             this.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Location = new System.Drawing.Point(1077, 3);
+            this.btnSalir.Location = new System.Drawing.Point(1200, 3);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(33, 32);
             this.btnSalir.TabIndex = 10;
@@ -246,7 +246,7 @@
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuVertical.Location = new System.Drawing.Point(0, 42);
             this.MenuVertical.Name = "MenuVertical";
-            this.MenuVertical.Size = new System.Drawing.Size(220, 637);
+            this.MenuVertical.Size = new System.Drawing.Size(220, 697);
             this.MenuVertical.TabIndex = 1;
             // 
             // SubMenuVentas
@@ -456,7 +456,7 @@
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(220, 42);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(893, 637);
+            this.panelContenedor.Size = new System.Drawing.Size(1016, 697);
             this.panelContenedor.TabIndex = 2;
             // 
             // FrmAccesoUsuario
@@ -464,7 +464,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
-            this.ClientSize = new System.Drawing.Size(1113, 679);
+            this.ClientSize = new System.Drawing.Size(1236, 739);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.MenuVertical);
             this.Controls.Add(this.barraTitulos);
