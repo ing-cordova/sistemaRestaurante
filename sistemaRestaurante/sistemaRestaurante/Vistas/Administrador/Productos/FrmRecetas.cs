@@ -30,7 +30,6 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
 
         private void CargarDatos()
         {
-            lblEtiqueta.Text = "Receta de " + txtNombre.Text + ":";
             dtvReceta.Rows.Clear();
             int id;
             id = Int32.Parse(txtIdProd.Text);
@@ -235,6 +234,11 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
 
                 MessageBox.Show("¡Ingrediente eliminado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
             }
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            lblEtiqueta.Text = "Receta de " + txtNombre.Text + ":";
         }
     }
 }
