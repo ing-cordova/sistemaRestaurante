@@ -41,7 +41,6 @@
             this.ubicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Emailprove = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtvProveedores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,8 +80,7 @@
             this.nombreProve,
             this.ubicacion,
             this.telefono,
-            this.Emailprove,
-            this.Estado});
+            this.Emailprove});
             this.dtvProveedores.EnableHeadersVisualStyles = false;
             this.dtvProveedores.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
             this.dtvProveedores.Location = new System.Drawing.Point(12, 129);
@@ -200,12 +198,6 @@
             this.Emailprove.Name = "Emailprove";
             this.Emailprove.ReadOnly = true;
             // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "ESTADO";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            // 
             // FrmListadoProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -241,6 +233,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ubicacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn Emailprove;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }
 }

@@ -41,7 +41,6 @@
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCaregoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtvProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,8 +80,7 @@
             this.nombreProd,
             this.precio,
             this.idProveedor,
-            this.idCaregoria,
-            this.estado});
+            this.idCaregoria});
             this.dtvProductos.EnableHeadersVisualStyles = false;
             this.dtvProductos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
             this.dtvProductos.Location = new System.Drawing.Point(12, 120);
@@ -196,12 +194,6 @@
             this.idCaregoria.Name = "idCaregoria";
             this.idCaregoria.ReadOnly = true;
             // 
-            // estado
-            // 
-            this.estado.HeaderText = "ESTADO";
-            this.estado.Name = "estado";
-            this.estado.ReadOnly = true;
-            // 
             // FrmListadoProductosCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -237,6 +229,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProveedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCaregoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
     }
 }

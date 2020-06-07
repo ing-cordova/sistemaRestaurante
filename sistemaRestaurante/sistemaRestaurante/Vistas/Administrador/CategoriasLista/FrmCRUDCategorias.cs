@@ -32,24 +32,55 @@ namespace sistemaRestaurante.Vistas.Administrador.CategoriasLista
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (txtCategoria.Text.Equals("") )
+            if (txtCategoria.Text.Equals(""))
             {
                 MessageBox.Show("¡Complete todos los campos para continuar!", "Completar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
+                string nombre = txtCategoria.Text;
                 using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
                 {
-                    Cate.nombreCategoria = txtCategoria.Text;
-                    Cate.estado = "Inactivo";
+                    var listaC = from categoria in bd.Categorias
+                        where categoria.nombreCategoria.Equals(nombre) && categoria.estado == "Activo"
+                                 select categoria;
 
-                    bd.Categorias.Add(Cate);
-                    bd.SaveChanges();
+                    if (listaC.Count() > 0)
+                    {
+                        MessageBox.Show("¡La Categoria ya existe!", "Advertencia",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        var listaCate = from categoria in bd.Categorias
+                            where categoria.nombreCategoria.Equals(nombre) && categoria.estado == "Inactivo"
+                            select categoria;
+
+                        if (listaCate.Count() > 0)
+                        {
+                            Cate = bd.Categorias.Where(VerificarNombre => VerificarNombre.nombreCategoria == nombre).First();
+                            Cate.estado = "Activo";
+
+                            bd.Entry(Cate).State = System.Data.Entity.EntityState.Modified;
+                            bd.SaveChanges();
+                            MessageBox.Show("¡Categoria insertada con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
+                            this.Close();
+                            listadoC.dtvCategorias.Rows.Clear();
+                        }
+                        else
+                        {
+                            Cate.nombreCategoria = txtCategoria.Text;
+                            Cate.estado = "Activo";
+
+                            bd.Categorias.Add(Cate);
+                            bd.SaveChanges();
+                            MessageBox.Show("¡Categoria insertada con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
+                            this.Close();
+                            listadoC.dtvCategorias.Rows.Clear();
+                        }
+                    }
                 }
-
-                MessageBox.Show("¡Categoria insertada con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
-                this.Close();
-                listadoC.dtvCategorias.Rows.Clear();
             }
         }
 
@@ -71,7 +102,7 @@ namespace sistemaRestaurante.Vistas.Administrador.CategoriasLista
         private void btnEditar_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("¿Estás seguro que quieres editar?, \n¡la acción no se podrá deshacer!", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            if(result == DialogResult.OK)
+            if (result == DialogResult.OK)
             {
                 using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
                 {
@@ -81,40 +112,33 @@ namespace sistemaRestaurante.Vistas.Administrador.CategoriasLista
                     Cate = bd.Categorias.Where(VerificarID => VerificarID.idCategoria == idC).First();
                     Cate.nombreCategoria = txtCategoria.Text;
 
-
-
                     bd.Entry(Cate).State = System.Data.Entity.EntityState.Modified;
                     bd.SaveChanges();
                 }
 
                 MessageBox.Show("¡Categoria editada con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
                 this.Close();
-            }   
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (txtEstado.Text.Equals("Activo"))
+
+            DialogResult result = MessageBox.Show("¿Estás seguro que quieres eliminar?, \n¡la acción no se podrá deshacer!", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (result == DialogResult.OK)
             {
-                MessageBox.Show("¡Actualmente esta categoría está activa, no se puede eliminar!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                DialogResult result = MessageBox.Show("¿Estás seguro que quieres eliminar?, \n¡la acción no se podrá deshacer!", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                if (result == DialogResult.OK)
+                using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
                 {
-                    using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
-                    {
-                        String id = lblCodigo.Text;
+                    String id = lblCodigo.Text;
 
-                        Cate = bd.Categorias.Find(int.Parse(id));
-                        bd.Categorias.Remove(Cate);
-                        bd.SaveChanges();
-                    }
-
-                    MessageBox.Show("¡La Categoria ha sido eliminada con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
-                    this.Close();
+                    Cate = bd.Categorias.Find(int.Parse(id));
+                    Cate.estado = "Inactivo";
+                    bd.Entry(Cate).State = System.Data.Entity.EntityState.Modified;
+                    bd.SaveChanges();
                 }
+
+                MessageBox.Show("¡La Categoria ha sido eliminada con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
+                this.Close();
             }
         }
 
@@ -122,7 +146,6 @@ namespace sistemaRestaurante.Vistas.Administrador.CategoriasLista
         {
             limpiarcajas();
             txtCategoria.Enabled = false;
-            txtEstado.Enabled = false;
         }
     }
 }

@@ -22,6 +22,8 @@ namespace sistemaRestaurante.Vistas.Administrador.CompraProductos
         ProductosCompra prodC = new ProductosCompra();
         Proveedores proveedor = new Proveedores();
         Categorias categoria = new Categorias();
+        List<Proveedores> listaproveedores = new List<Proveedores>();
+        List<Categorias> listacategorias = new List<Categorias>();
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -35,20 +37,35 @@ namespace sistemaRestaurante.Vistas.Administrador.CompraProductos
 
         public void CargarCombos()
         {
-            using(RestauranteBDEntities1 bd = new RestauranteBDEntities1())
+            using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
             {
                 var Categorias = bd.Categorias.ToList();
-                var Proveedor = bd.Proveedores.ToList();
 
-                if(Categorias.Count() > 0)
+                foreach (var iterar in Categorias)
                 {
-                    cmbCategoria.DataSource = Categorias;
+                    if (iterar.estado == "Activo")
+                    {
+                        listacategorias.Add(iterar);
+                    }
+                }
+                if (listacategorias.Count() > 0)
+                {
+                    cmbCategoria.DataSource = listacategorias;
                     cmbCategoria.DisplayMember = "nombreCategoria";
                     cmbCategoria.ValueMember = "idCategoria";
                 }
-                if (Proveedor.Count() > 0)
+
+                var Proveedor = bd.Proveedores.ToList();
+                foreach (var iterar in Proveedor)
                 {
-                    cmbProveedor.DataSource = Proveedor;
+                    if (iterar.estado == "Activo")
+                    {
+                        listaproveedores.Add(iterar);
+                    }
+                }
+                if (listaproveedores.Count() > 0)
+                {
+                    cmbProveedor.DataSource = listaproveedores;
                     cmbProveedor.DisplayMember = "nombre";
                     cmbProveedor.ValueMember = "idProveedor";
                 }
@@ -61,7 +78,6 @@ namespace sistemaRestaurante.Vistas.Administrador.CompraProductos
             txtPrecioProd.Text = "";
             cmbProveedor.Text = "";
             cmbCategoria.Text = "";
-            txtEstado.Text = "";
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
@@ -124,24 +140,17 @@ namespace sistemaRestaurante.Vistas.Administrador.CompraProductos
         {
             using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
             {
-                if (txtEstado.Text.Equals("Activo"))
+                DialogResult result = MessageBox.Show("¿Estás seguro que quieres eliminar?, \n¡la acción no se podrá deshacer!", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (result == DialogResult.OK)
                 {
-                    MessageBox.Show("¡Actualmente este producto está activo, no se puede eliminar!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    DialogResult result = MessageBox.Show("¿Estás seguro que quieres eliminar?, \n¡la acción no se podrá deshacer!", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                    if (result == DialogResult.OK)
-                    {
-                        String id = lblCodigo.Text;
+                    String id = lblCodigo.Text;
 
-                        prodC = bd.ProductosCompra.Find(int.Parse(id));
-                        bd.ProductosCompra.Remove(prodC);
-                        bd.SaveChanges();
+                    prodC = bd.ProductosCompra.Find(int.Parse(id));
+                    bd.ProductosCompra.Remove(prodC);
+                    bd.SaveChanges();
 
-                        MessageBox.Show("¡Producto eliminado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
-                        this.Close();
-                    }
+                    MessageBox.Show("¡Producto eliminado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    this.Close();
                 }
             }
         }
@@ -153,41 +162,65 @@ namespace sistemaRestaurante.Vistas.Administrador.CompraProductos
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            using(RestauranteBDEntities1 bd = new RestauranteBDEntities1())
+
+            decimal precioCon;
+
+            if (decimal.TryParse(txtPrecioProd.Text, out precioCon) == false)
             {
-                decimal precioCon;
-
-                if (decimal.TryParse(txtPrecioProd.Text, out precioCon) == false)
+                MessageBox.Show("¡Ingrese correctamente el precio!");
+            }
+            else
+            {
+                string nombre = txtNombreProdCompra.Text;
+                using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
                 {
-                    MessageBox.Show("¡Ingrese correctamente el precio!");
-                }
-                else
-                {
-                    prodC.nombre = txtNombreProdCompra.Text;
-                    prodC.precio = decimal.Parse(txtPrecioProd.Text);
-                    prodC.idProveedor = int.Parse(provee);
-                    prodC.idCategoria = int.Parse(categ);
-                    prodC.estado = "Inactivo";
+                    var listaPV = from producto in bd.ProductosVenta
+                                  where producto.nombre.Equals(nombre) && producto.estado == "Activo"
+                                  select producto;
 
-                    int idProv = int.Parse(provee);
-                    proveedor = bd.Proveedores.Where(Id => Id.idProveedor == idProv).First();
-                    proveedor.estado = "Activo";
-                    bd.Entry(proveedor).State = System.Data.Entity.EntityState.Modified;
-                    bd.SaveChanges();
+                    if (listaPV.Count() > 0)
+                    {
+                        MessageBox.Show("¡El Producto ya existe!", "Advertencia",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        var listaProveedor = from producto in bd.ProductosVenta
+                                             where producto.nombre.Equals(nombre) && producto.estado == "Inactivo"
+                                             select producto;
 
-                    int idCat = int.Parse(categ);
-                    categoria = bd.Categorias.Where(Id => Id.idCategoria == idCat).First();
-                    categoria.estado = "Activo";
-                    bd.Entry(categoria).State = System.Data.Entity.EntityState.Modified;
-                    bd.SaveChanges();
+                        if (listaProveedor.Count() > 0)
+                        {
+                            prodC = bd.ProductosCompra.Where(VerificarNombre => VerificarNombre.nombre == nombre).First();
+                            prodC.precio = decimal.Parse(txtPrecioProd.Text);
+                            prodC.idProveedor = int.Parse(provee);
+                            prodC.idCategoria = int.Parse(categ);
+                            prodC.estado = "Activo";
 
-                    bd.ProductosCompra.Add(prodC);
-                    bd.SaveChanges();
+                            bd.Entry(prodC).State = System.Data.Entity.EntityState.Modified;
+                            bd.SaveChanges();
+                            MessageBox.Show("¡Proveedor insertado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
+                            this.Close();
+                        }
+                        else
+                        {
+                            prodC.nombre = txtNombreProdCompra.Text;
+                            prodC.precio = decimal.Parse(txtPrecioProd.Text);
+                            prodC.idProveedor = int.Parse(provee);
+                            prodC.idCategoria = int.Parse(categ);
+                            prodC.estado = "Activo";
 
-                    MessageBox.Show("¡Producto insertado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
-                    this.Close();
+                            bd.ProductosCompra.Add(prodC);
+                            bd.SaveChanges();
+
+                            MessageBox.Show("¡Producto insertado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
+                            this.Close();
+                        }
+                    }
                 }
             }
+
         }
 
         private void txtPrecioProd_KeyPress(object sender, KeyPressEventArgs e)

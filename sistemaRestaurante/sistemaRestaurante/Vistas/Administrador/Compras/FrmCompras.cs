@@ -22,15 +22,22 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
         public String provee = "";
         Proveedores proveedor = new Proveedores();
         ProductosCompra prodCompra = new ProductosCompra();
+        List<Proveedores> listaproveedores = new List<Proveedores>();
         public void CargarCombo()
         {
             using(RestauranteBDEntities1 bd = new RestauranteBDEntities1())
             {
-                var proveedor = bd.Proveedores.ToList();
-
-                if (proveedor.Count() > 0)
+                var Proveedor = bd.Proveedores.ToList();
+                foreach (var iterar in Proveedor)
                 {
-                    cmbProveedores.DataSource = proveedor;
+                    if (iterar.estado == "Activo")
+                    {
+                        listaproveedores.Add(iterar);
+                    }
+                }
+                if (listaproveedores.Count() > 0)
+                {
+                    cmbProveedores.DataSource = listaproveedores;
                     cmbProveedores.DisplayMember = "nombre";
                     cmbProveedores.ValueMember = "idProveedor";
                 }
@@ -232,17 +239,59 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
             {
                 using(RestauranteBDEntities1 bd = new RestauranteBDEntities1())
                 {
-                    ProductosCompra prod = new ProductosCompra();
-                    int idProveedor = Int32.Parse(provee);
-                    int Buscar = int.Parse(txtBusqueda.Text);
-                    prod = bd.ProductosCompra.Where(idProducto => idProducto.idProductoC == Buscar && idProducto.idProveedor == idProveedor).First();
+                    
+                    int idBusqueda = Int32.Parse(txtBusqueda.Text);
+                    var buscarProd = from producto in bd.ProductosCompra
+                        where producto.idProductoC == idBusqueda && producto.estado == "Activo"
+                        select producto;
+                    if (buscarProd.Count() > 0)
+                    {
+                        prodCompra = bd.ProductosCompra.Where(VerificarId => VerificarId.idProductoC == idBusqueda).First();
+                        Categorias categorias = new Categorias();
+                        categorias = bd.Categorias.Where(VerificarId => VerificarId.idCategoria == prodCompra.idCategoria).First();
+                        Proveedores proveedores = new Proveedores();
+                        proveedores = bd.Proveedores.Where(VerificarId => VerificarId.idProveedor == prodCompra.idProveedor).First();
+                        if (categorias.estado == "Activo" && proveedores.estado == "Activo")
+                        {
+                            int idprovee = Int32.Parse(cmbProveedores.SelectedValue.ToString());
+                            var buscarProdProveedor = from producto in bd.ProductosCompra
+                                where producto.idProductoC == idBusqueda && producto.estado == "Activo"
+                                                      where producto.idProveedor == idprovee
+                                select producto;
 
-                    txtCodigoProd.Text = Convert.ToString(prod.idProductoC);
-                    txtNombreProd.Text = Convert.ToString(prod.nombre);
-                    txtPrecio.Text = Convert.ToString(prod.precio);
-                    nupCantidad.Focus();
-                    txtBusqueda.Text = "";
-                    intentos = 2;
+                            if (buscarProdProveedor.Count()>0)
+                            {
+                                ProductosCompra prod = new ProductosCompra();
+                                int idProveedor = Int32.Parse(provee);
+                                int Buscar = int.Parse(txtBusqueda.Text);
+                                prod = bd.ProductosCompra.Where(idProducto => idProducto.idProductoC == Buscar && idProducto.idProveedor == idProveedor).First();
+
+                                txtCodigoProd.Text = Convert.ToString(prod.idProductoC);
+                                txtNombreProd.Text = Convert.ToString(prod.nombre);
+                                txtPrecio.Text = Convert.ToString(prod.precio);
+                                nupCantidad.Focus();
+                                txtBusqueda.Text = "";
+                                intentos = 2;
+                            }
+                            else
+                            {
+                                MessageBox.Show("¡El producto no se encuentra en los Registros" + "\n o no pertenece al proveedor seleccionado!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                txtBusqueda.Text = "";
+                            }
+                            
+                        }
+                        else
+                        {
+                            MessageBox.Show("¡La categoria o el Proveedor del Producto ingresado ha sido eliminada!", "Actualize Producto", MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("¡El producto no se encuentra en los Registros!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtBusqueda.Text = "";
+                    }
+
                 }
             }
         }

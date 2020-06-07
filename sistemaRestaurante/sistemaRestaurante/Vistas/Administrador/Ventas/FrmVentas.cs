@@ -263,9 +263,9 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
                     nupCantidad.Value == 0 || txtTotal.Text.Equals("") || txtTotal.Text.Equals("0") ||
                     txtNMesa.Text.Equals(""))
                 {
-                    MessageBox.Show("¡Todos los campos son obligatorios!", "Rellenar campos",
+                    MessageBox.Show("¡La Categoria ya existe!", "Advertencia",
                         MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
+                        MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -366,23 +366,35 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
 
                     int Buscar = int.Parse(txtBusqueda.Text);
                     var buscarProd = from producto in bd.ProductosVenta
-                                     where producto.idProductoV == Buscar
+                                     where producto.idProductoV == Buscar && producto.estado == "Activo"
                                      select producto;
 
                     if (buscarProd.Count() > 0)
                     {
                         prod = bd.ProductosVenta.Where(idProducto => idProducto.idProductoV == Buscar).First();
-                        var listaR = from recetas in bd.Recetas
+                        var listaProd = from recetas in bd.Recetas
                                      where recetas.idProductoV == prod.idProductoV
                                      select recetas;
-                        if (listaR.Count() > 0)
+                        if (listaProd.Count() > 0)
                         {
-                            txtCodigoProd.Text = Convert.ToString(prod.idProductoV);
-                            txtNombreProd.Text = Convert.ToString(prod.nombre);
-                            txtPrecio.Text = Convert.ToString(prod.precio);
-                            nupCantidad.Focus();
-                            txtBusqueda.Text = "";
-                            intentos = 2;
+
+                            Categorias categorias = new Categorias();
+                            categorias = bd.Categorias.Where(VerificarId => VerificarId.idCategoria == prod.idCategoria ).First();
+                            if (categorias.estado == "Activo")
+                            {
+                                txtCodigoProd.Text = Convert.ToString(prod.idProductoV);
+                                txtNombreProd.Text = Convert.ToString(prod.nombre);
+                                txtPrecio.Text = Convert.ToString(prod.precio);
+                                nupCantidad.Focus();
+                                txtBusqueda.Text = "";
+                                intentos = 2;
+                            }
+                            else
+                            {
+                                MessageBox.Show("¡La categoria del Producto ingresado ha sido eliminada!", "Actualize Producto", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                            }
+                            
                         }
                         else
                         {

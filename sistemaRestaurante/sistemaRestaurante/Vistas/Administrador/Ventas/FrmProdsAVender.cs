@@ -18,28 +18,6 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
             InitializeComponent();
         }
 
-        public void CargarTabla()
-        {
-            using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
-            {
-                var JoinProd = from prod in bd.ProductosVenta
-                               from categoria in bd.Categorias
-                               where prod.idCategoria == categoria.idCategoria
-
-                               select new
-                               {
-                                   ID = prod.idProductoV,
-                                   NOMBRE = prod.nombre,
-                                   PRECIO = prod.precio,
-                                   CATEGORIA = categoria.nombreCategoria
-                               };
-
-                foreach (var iterar in JoinProd)
-                {
-                    dtvDetallesVenta.Rows.Add(iterar.ID, iterar.NOMBRE, iterar.PRECIO, iterar.CATEGORIA);
-                }
-            }
-        }
 
         public void Filtro()
         {
@@ -47,8 +25,9 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
             {
                 var JoinProd = from prod in bd.ProductosVenta
                                from categoria in bd.Categorias
-                               where prod.idCategoria == categoria.idCategoria
+                               where prod.idCategoria == categoria.idCategoria && categoria.estado == "Activo"
                                where prod.nombre.Contains(txtBusqueda.Text)
+                               where prod.estado == "Activo"
 
                                select new
                                {

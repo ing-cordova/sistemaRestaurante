@@ -84,14 +84,12 @@ namespace sistemaRestaurante.Vistas.Administrador.CompraProductos
             String Precio = dtvProductos.CurrentRow.Cells[2].Value.ToString();
             String Proveedor = dtvProductos.CurrentRow.Cells[3].Value.ToString();
             String Categoria = dtvProductos.CurrentRow.Cells[4].Value.ToString();
-            String Estado = dtvProductos.CurrentRow.Cells[5].Value.ToString();
 
             prod.lblCodigo.Text = id;
             prod.txtNombreProdCompra.Text = Nombre;
             prod.txtPrecioProd.Text = Precio;
             prod.cmbCategoria.Text = Categoria;
             prod.cmbProveedor.Text = Proveedor;
-            prod.txtEstado.Text = Estado;
         }
 
         private void btnEliminarSelected_Click(object sender, EventArgs e)
@@ -114,14 +112,12 @@ namespace sistemaRestaurante.Vistas.Administrador.CompraProductos
             String Precio = dtvProductos.CurrentRow.Cells[2].Value.ToString();
             String Proveedor = dtvProductos.CurrentRow.Cells[3].Value.ToString();
             String Categoria = dtvProductos.CurrentRow.Cells[4].Value.ToString();
-            String Estado = dtvProductos.CurrentRow.Cells[5].Value.ToString();
 
             prod.lblCodigo.Text = id;
             prod.txtNombreProdCompra.Text = Nombre;
             prod.txtPrecioProd.Text = Precio;
             prod.cmbCategoria.Text = Categoria;
             prod.cmbProveedor.Text = Proveedor;
-            prod.txtEstado.Text = Estado;
         }
     }
 }

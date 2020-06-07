@@ -21,33 +21,6 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
         }
 
         private String idprovee = "";
-        public void CargarTabla()
-        {
-            int idProveedor = Int32.Parse(idprovee);
-            using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
-            {
-                var JoinProd = from prod in bd.ProductosCompra
-                               from provee in bd.Proveedores
-                               from categoria in bd.Categorias
-                               where prod.idProveedor == idProveedor
-                               where prod.idProveedor == provee.idProveedor
-                               where prod.idCategoria == categoria.idCategoria
-
-                               select new
-                               {
-                                   ID = prod.idProductoC,
-                                   NOMBRE = prod.nombre,
-                                   PRECIO = prod.precio,
-                                   PROVEEDOR = provee.nombre,
-                                   CATEGORIA = categoria.nombreCategoria
-                               };
-
-                foreach (var iterar in JoinProd)
-                {
-                    dtvDetallesCompra.Rows.Add(iterar.ID, iterar.NOMBRE, iterar.PRECIO, iterar.PROVEEDOR, iterar.CATEGORIA);
-                }
-            }
-        }
 
         public void Filtro()
         {
@@ -58,8 +31,8 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
                                from provee in bd.Proveedores
                                from categoria in bd.Categorias
                                where prod.idProveedor == idProveedor
-                               where prod.idProveedor == provee.idProveedor
-                               where prod.idCategoria == categoria.idCategoria
+                               where prod.idProveedor == provee.idProveedor && provee.estado== "Activo"
+                               where prod.idCategoria == categoria.idCategoria && categoria.estado == "Activo"
                                where prod.nombre.Contains(txtBusqueda.Text)
 
                                select new

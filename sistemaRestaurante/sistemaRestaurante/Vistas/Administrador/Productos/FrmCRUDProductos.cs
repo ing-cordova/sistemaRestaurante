@@ -22,6 +22,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
         FrmListadoProductos listado = new FrmListadoProductos();
         ProductosVenta prod = new ProductosVenta();
         Categorias categoria = new Categorias();
+        List<Categorias> listacategorias = new List<Categorias>();
         private void btnSalir_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("¿Desea salir?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -42,9 +43,17 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
             using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
             {
                 var Categorias = bd.Categorias.ToList();
-                if (Categorias.Count > 0)
+
+                foreach (var iterar in Categorias)
                 {
-                    cmbCategoria.DataSource = Categorias;
+                    if (iterar.estado == "Activo")
+                    {
+                        listacategorias.Add(iterar);
+                    }
+                }
+                if (Categorias.Count() > 0)
+                {
+                    cmbCategoria.DataSource = listacategorias;
                     cmbCategoria.DisplayMember = "nombreCategoria";
                     cmbCategoria.ValueMember = "idCategoria";
                 }
@@ -89,27 +98,61 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
                 }
                 else
                 {
+                    string nombre = txtNombreProd.Text;
                     using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
                     {
-                        prod.nombre = txtNombreProd.Text;
-                        prod.precio = decimal.Parse(txtPrecioProd.Text);
-                        prod.idCategoria = int.Parse(categ);
-                        prod.estado = "Inactivo";
+                        var listaPV = from producto in bd.ProductosVenta
+                                      where producto.nombre.Equals(nombre) && producto.estado == "Activo"
+                                      select producto;
 
-                        int idCat = int.Parse(categ);
-                        categoria = bd.Categorias.Where(Id => Id.idCategoria == idCat).First();
-                        categoria.estado = "Activo";
-                        bd.Entry(categoria).State = System.Data.Entity.EntityState.Modified;
-                        bd.SaveChanges();
+                        if (listaPV.Count() > 0)
+                        {
+                            MessageBox.Show("¡El Producto ya existe!", "Advertencia",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                        }
+                        else
+                        {
+                            var listaProveedor = from producto in bd.ProductosVenta
+                                                 where producto.nombre.Equals(nombre) && producto.estado == "Inactivo"
+                                                 select producto;
 
-                        bd.ProductosVenta.Add(prod);
-                        bd.SaveChanges();
+                            if (listaProveedor.Count() > 0)
+                            {
+                                prod = bd.ProductosVenta.Where(VerificarNombre => VerificarNombre.nombre == nombre).First();
+                                prod.precio = decimal.Parse(txtPrecioProd.Text);
+                                prod.idCategoria = int.Parse(categ);
+                                prod.estado = "Activo";
+
+                                bd.Entry(prod).State = System.Data.Entity.EntityState.Modified;
+                                bd.SaveChanges();
+                                MessageBox.Show("¡Proveedor insertado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
+                                this.Close();
+                                listado.dtvProductos.Rows.Clear();
+                            }
+                            else
+                            {
+                                prod.nombre = txtNombreProd.Text;
+                                prod.precio = decimal.Parse(txtPrecioProd.Text);
+                                prod.idCategoria = int.Parse(categ);
+                                prod.estado = "Inactivo";
+
+                                int idCat = int.Parse(categ);
+                                categoria = bd.Categorias.Where(Id => Id.idCategoria == idCat).First();
+                                categoria.estado = "Activo";
+                                bd.Entry(categoria).State = System.Data.Entity.EntityState.Modified;
+                                bd.SaveChanges();
+
+                                bd.ProductosVenta.Add(prod);
+                                bd.SaveChanges();
+
+                                MessageBox.Show("¡Producto insertado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                                this.Close();
+                                listado.dtvProductos.Rows.Clear();
+                                listado.CargarDatos();
+                            }
+                        }
                     }
-
-                    MessageBox.Show("¡Producto insertado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
-                    this.Close();
-                    listado.dtvProductos.Rows.Clear();
-                    listado.CargarDatos();
                 }
             }
         }
@@ -153,7 +196,8 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
                     String id = lblCodigo.Text;
 
                     prod = bd.ProductosVenta.Find(int.Parse(id));
-                    bd.ProductosVenta.Remove(prod);
+                    prod.estado = "Activo";
+                    bd.Entry(prod).State = System.Data.Entity.EntityState.Modified;
                     bd.SaveChanges();
                 }
 

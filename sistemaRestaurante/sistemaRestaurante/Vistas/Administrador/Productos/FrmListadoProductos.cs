@@ -80,13 +80,11 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
             String Nombre = dtvProductos.CurrentRow.Cells[1].Value.ToString();
             String Precio = dtvProductos.CurrentRow.Cells[2].Value.ToString();
             String Categoria = dtvProductos.CurrentRow.Cells[3].Value.ToString();
-            String Estado = dtvProductos.CurrentRow.Cells[4].Value.ToString();
 
             crud.lblCodigo.Text = id;
             crud.txtNombreProd.Text = Nombre;
             crud.txtPrecioProd.Text = Precio;
             crud.cmbCategoria.Text = Categoria;
-            crud.txtEstado.Text = Estado;
         }
 
         private void btnEliminarSelected_Click(object sender, EventArgs e)
@@ -107,13 +105,11 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
             String Nombre = dtvProductos.CurrentRow.Cells[1].Value.ToString();
             String Precio = dtvProductos.CurrentRow.Cells[2].Value.ToString();
             String Categoria = dtvProductos.CurrentRow.Cells[3].Value.ToString();
-            String Estado = dtvProductos.CurrentRow.Cells[4].Value.ToString();
 
             crud.lblCodigo.Text = id;
             crud.txtNombreProd.Text = Nombre;
             crud.txtPrecioProd.Text = Precio;
             crud.cmbCategoria.Text = Categoria;
-            crud.txtEstado.Text = Estado;
         }
 
         public static FrmRecetas frmRecetas = new FrmRecetas();

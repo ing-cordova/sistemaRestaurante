@@ -21,11 +21,13 @@ namespace sistemaRestaurante.Vistas.Administrador.CategoriasLista
         {
             using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
             {
-                var tablacategorias = bd.Categorias;
+                var tablacategorias = from categorias in bd.Categorias
+                                     where categorias.estado == "Activo"
+                                      select categorias;
 
                 foreach (var iterar in tablacategorias)
                 {
-                    dtvCategorias.Rows.Add(iterar.idCategoria, iterar.nombreCategoria, iterar.estado);
+                    dtvCategorias.Rows.Add(iterar.idCategoria, iterar.nombreCategoria);
                 }
             }
         }
@@ -65,11 +67,9 @@ namespace sistemaRestaurante.Vistas.Administrador.CategoriasLista
             /************************************************************************/
             String id = dtvCategorias.CurrentRow.Cells[0].Value.ToString();
             String Nombre = dtvCategorias.CurrentRow.Cells[1].Value.ToString();
-            String Estado = dtvCategorias.CurrentRow.Cells[2].Value.ToString();
 
             crudC.lblCodigo.Text = id;
             crudC.txtCategoria.Text = Nombre;
-            crudC.txtEstado.Text = Estado;
         }
 
         private void btnEliminarSelected_Click(object sender, EventArgs e)
@@ -87,11 +87,9 @@ namespace sistemaRestaurante.Vistas.Administrador.CategoriasLista
             /**********************************************************************/
             String id = dtvCategorias.CurrentRow.Cells[0].Value.ToString();
             String Nombre = dtvCategorias.CurrentRow.Cells[1].Value.ToString();
-            String Estado = dtvCategorias.CurrentRow.Cells[2].Value.ToString();
 
             crudC.lblCodigo.Text = id;
             crudC.txtCategoria.Text = Nombre;
-            crudC.txtEstado.Text = Estado;
         }
     }
 }

@@ -38,7 +38,6 @@
             this.btnAgregarNuevo = new System.Windows.Forms.Button();
             this.idproducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtvCategorias)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,8 +74,7 @@
             this.dtvCategorias.ColumnHeadersHeight = 25;
             this.dtvCategorias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idproducto,
-            this.nombreCategoria,
-            this.estado});
+            this.nombreCategoria});
             this.dtvCategorias.EnableHeadersVisualStyles = false;
             this.dtvCategorias.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
             this.dtvCategorias.Location = new System.Drawing.Point(128, 151);
@@ -172,12 +170,6 @@
             this.nombreCategoria.Name = "nombreCategoria";
             this.nombreCategoria.ReadOnly = true;
             // 
-            // estado
-            // 
-            this.estado.HeaderText = "ESTADO";
-            this.estado.Name = "estado";
-            this.estado.ReadOnly = true;
-            // 
             // FrmListadoCategorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -210,6 +202,5 @@
         private System.Windows.Forms.Button btnAgregarNuevo;
         private System.Windows.Forms.DataGridViewTextBoxColumn idproducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreCategoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
     }
 }

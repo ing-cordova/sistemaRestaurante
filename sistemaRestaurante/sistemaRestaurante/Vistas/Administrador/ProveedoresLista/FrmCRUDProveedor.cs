@@ -25,7 +25,6 @@ namespace sistemaRestaurante.Vistas.Administrador.ProveedoresLista
             txtUbicacion.Text = "";
             txtTelefono.Text = "";
             txtEmail.Text = "";
-            txtEstado.Text = "";
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
@@ -60,21 +59,57 @@ namespace sistemaRestaurante.Vistas.Administrador.ProveedoresLista
             }
             else
             {
+                string nombre = txtNombreProV.Text;
                 using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
                 {
-                    prov.nombre = txtNombreProV.Text;
-                    prov.ubicacion = txtUbicacion.Text;
-                    prov.telefono = txtTelefono.Text;
-                    prov.email = txtEmail.Text;
-                    prov.estado = "Inactivo";
+                    var listaP = from proveedor in bd.Proveedores
+                                 where proveedor.nombre.Equals(nombre) && proveedor.estado == "Activo"
+                                 select proveedor;
 
-                    bd.Proveedores.Add(prov);
-                    bd.SaveChanges();
+                    if (listaP.Count() > 0)
+                    {
+                        MessageBox.Show("¡El Proveedor ya existe!", "Advertencia",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        var listaProveedor = from proveedor in bd.Proveedores
+                                             where proveedor.nombre.Equals(nombre) && proveedor.estado == "Inactivo"
+                                             select proveedor;
+
+                        if (listaProveedor.Count() > 0)
+                        {
+                            prov = bd.Proveedores.Where(VerificarNombre => VerificarNombre.nombre == nombre).First();
+                            prov.ubicacion = txtUbicacion.Text;
+                            prov.telefono = txtTelefono.Text;
+                            prov.email = txtEmail.Text;
+                            prov.estado = "Activo";
+
+                            bd.Entry(prov).State = System.Data.Entity.EntityState.Modified;
+                            bd.SaveChanges();
+                            MessageBox.Show("¡Proveedor insertado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
+                            this.Close();
+                            listadoP.dtvProveedores.Rows.Clear();
+                        }
+                        else
+                        {
+                            prov.nombre = txtNombreProV.Text;
+                            prov.ubicacion = txtUbicacion.Text;
+                            prov.telefono = txtTelefono.Text;
+                            prov.email = txtEmail.Text;
+                            prov.estado = "Activo";
+
+                            bd.Proveedores.Add(prov);
+                            bd.SaveChanges();
+
+
+                            MessageBox.Show("¡Proveedor insertado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
+                            this.Close();
+                            listadoP.dtvProveedores.Rows.Clear();
+                        }
+                    }
                 }
-
-                MessageBox.Show("¡Proveedor insertado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
-                this.Close();
-                listadoP.dtvProveedores.Rows.Clear();               
             }
         }
 
@@ -106,34 +141,30 @@ namespace sistemaRestaurante.Vistas.Administrador.ProveedoresLista
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (txtEstado.Text.Equals("Activo"))
+
+            DialogResult result = MessageBox.Show("¿Estás seguro que quieres eliminar?, \n¡la acción no se podrá deshacer!", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (result == DialogResult.OK)
             {
-                MessageBox.Show("¡Actualmente este proveedor está activo, no se puede eliminar!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                DialogResult result = MessageBox.Show("¿Estás seguro que quieres eliminar?, \n¡la acción no se podrá deshacer!", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                if (result == DialogResult.OK)
+                using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
                 {
-                    using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
-                    {
-                        String id = lblCodigo.Text;
+                    String id = lblCodigo.Text;
 
-                        prov = bd.Proveedores.Find(int.Parse(id));
-                        bd.Proveedores.Remove(prov);
-                        bd.SaveChanges();
-                    }
-
-                    MessageBox.Show("¡Proveedor ha sido eliminado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
-                    this.Close();
+                    prov = bd.Proveedores.Find(int.Parse(id));
+                    prov.estado = "Inactivo";
+                    bd.Entry(prov).State = System.Data.Entity.EntityState.Modified;
+                    bd.SaveChanges(); ;
                 }
-                    
+
+                MessageBox.Show("¡Proveedor ha sido eliminado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
+                this.Close();
             }
+
+
         }
 
         private void FrmCRUDProveedor_Load(object sender, EventArgs e)
         {
-            LimpiarCajas();           
+            LimpiarCajas();
             txtNombreProV.Enabled = false;
             txtUbicacion.Enabled = false;
             txtTelefono.Enabled = false;

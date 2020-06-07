@@ -21,11 +21,13 @@ namespace sistemaRestaurante.Vistas.Administrador.ProveedoresLista
         {
             using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
             {
-                var tablaProvee = bd.Proveedores;
+                var tablaProvee = from proveedor in bd.Proveedores
+                                  where proveedor.estado == "Activo"
+                                  select proveedor;
 
                 foreach (var iterar in tablaProvee)
                 {
-                    dtvProveedores.Rows.Add(iterar.idProveedor, iterar.nombre, iterar.ubicacion, iterar.telefono, iterar.email, iterar.estado);
+                    dtvProveedores.Rows.Add(iterar.idProveedor, iterar.nombre, iterar.ubicacion, iterar.telefono, iterar.email);
                 }
             }
         }
@@ -70,14 +72,12 @@ namespace sistemaRestaurante.Vistas.Administrador.ProveedoresLista
             String ubicacion = dtvProveedores.CurrentRow.Cells[2].Value.ToString();
             String telefono = dtvProveedores.CurrentRow.Cells[3].Value.ToString();
             String email = dtvProveedores.CurrentRow.Cells[4].Value.ToString();
-            String estado = dtvProveedores.CurrentRow.Cells[5].Value.ToString();
 
             crudp.lblCodigo.Text = id;
             crudp.txtNombreProV.Text = Nombre;
             crudp.txtUbicacion.Text = ubicacion;
             crudp.txtTelefono.Text = telefono;
             crudp.txtEmail.Text = email;
-            crudp.txtEstado.Text = estado;
         }
 
         private void btnEliminarSelected_Click(object sender, EventArgs e)
@@ -100,14 +100,12 @@ namespace sistemaRestaurante.Vistas.Administrador.ProveedoresLista
             String ubicacion = dtvProveedores.CurrentRow.Cells[2].Value.ToString();
             String telefono = dtvProveedores.CurrentRow.Cells[3].Value.ToString();
             String email = dtvProveedores.CurrentRow.Cells[4].Value.ToString();
-            String estado = dtvProveedores.CurrentRow.Cells[5].Value.ToString();
 
             crudp.lblCodigo.Text = id;
             crudp.txtNombreProV.Text = Nombre;
             crudp.txtUbicacion.Text = ubicacion;
             crudp.txtTelefono.Text = telefono;
             crudp.txtEmail.Text = email;
-            crudp.txtEstado.Text = estado;
         }
     }
 }
