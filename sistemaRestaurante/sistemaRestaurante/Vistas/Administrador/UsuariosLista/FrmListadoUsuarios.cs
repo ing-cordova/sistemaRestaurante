@@ -18,34 +18,6 @@ namespace sistemaRestaurante.Vistas.Administrador.UsuariosLista
             InitializeComponent();
         }
 
-        public void CargarDatos()
-        {
-            using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
-            {
-                var Usuario = from usuario in bd.Usuarios
-                              where usuario.estado == "Activo"
-
-                                select new
-                                {
-                                    USUARIO = usuario.nombredeUsuario,
-                                    NOMBRES = usuario.nombre,
-                                    APELLIDOS = usuario.apellidos,
-                                    EDAD = usuario.edad,
-                                    TELEFONO = usuario.telefono,
-                                    EMAIL = usuario.email,
-                                    CONTRASENIA = usuario.contraseña,
-                                    ROL = usuario.rol,
-                                    ESTADO = usuario.estado
-                                };
-
-                foreach (var iterar in Usuario)
-                {
-                    dtvUsuarios.Rows.Add(iterar.USUARIO, iterar.NOMBRES, iterar.APELLIDOS, iterar.EDAD, iterar.TELEFONO, iterar.EMAIL, iterar.CONTRASENIA, iterar.ROL, iterar.ESTADO);
-                }
-
-            }
-        }
-
         void Filtro()
         {
             using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
@@ -174,7 +146,7 @@ namespace sistemaRestaurante.Vistas.Administrador.UsuariosLista
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             dtvUsuarios.Rows.Clear();
-            CargarDatos();
+            Filtro();
         }
 
         private void btnEliminarSelected_Click(object sender, EventArgs e)

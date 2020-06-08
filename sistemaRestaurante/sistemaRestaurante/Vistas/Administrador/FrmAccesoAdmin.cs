@@ -163,6 +163,7 @@ namespace sistemaRestaurante.Vistas
             compras.Dock = DockStyle.Fill;
             this.panelContenedor.Controls.Add(compras);
             this.panelContenedor.Tag = compras;
+            compras.LimpiarCompra();
             compras.Show();
         }
 
@@ -222,6 +223,7 @@ namespace sistemaRestaurante.Vistas
             venta.Dock = DockStyle.Fill;
             this.panelContenedor.Controls.Add(venta);
             this.panelContenedor.Tag = venta;
+            venta.LimpiarVenta();
             venta.Show();
         }
 

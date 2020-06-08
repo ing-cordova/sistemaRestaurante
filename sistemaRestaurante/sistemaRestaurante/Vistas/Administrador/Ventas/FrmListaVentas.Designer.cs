@@ -32,10 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblEtiqueta = new System.Windows.Forms.Label();
             this.dtvVentas = new System.Windows.Forms.DataGridView();
-            this.idVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechadeVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numMesa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.rbotEnviada = new System.Windows.Forms.RadioButton();
             this.rbotTodos = new System.Windows.Forms.RadioButton();
@@ -45,6 +41,11 @@
             this.rbotEntregadas = new System.Windows.Forms.RadioButton();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.lblBuscar = new System.Windows.Forms.Label();
+            this.idVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechadeVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numMesa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtvVentas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,6 +84,7 @@
             this.idVenta,
             this.fechadeVenta,
             this.numMesa,
+            this.TOTAL,
             this.estado});
             this.dtvVentas.EnableHeadersVisualStyles = false;
             this.dtvVentas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
@@ -100,34 +102,6 @@
             this.dtvVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtvVentas.Size = new System.Drawing.Size(978, 487);
             this.dtvVentas.TabIndex = 5;
-            // 
-            // idVenta
-            // 
-            this.idVenta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.idVenta.HeaderText = "Id";
-            this.idVenta.Name = "idVenta";
-            this.idVenta.ReadOnly = true;
-            this.idVenta.Width = 50;
-            // 
-            // fechadeVenta
-            // 
-            this.fechadeVenta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.fechadeVenta.HeaderText = "FECHA DE VENTA";
-            this.fechadeVenta.Name = "fechadeVenta";
-            this.fechadeVenta.ReadOnly = true;
-            this.fechadeVenta.Width = 170;
-            // 
-            // numMesa
-            // 
-            this.numMesa.HeaderText = "NUMERO DE MESA";
-            this.numMesa.Name = "numMesa";
-            this.numMesa.ReadOnly = true;
-            // 
-            // estado
-            // 
-            this.estado.HeaderText = "ESTADO";
-            this.estado.Name = "estado";
-            this.estado.ReadOnly = true;
             // 
             // label2
             // 
@@ -245,6 +219,40 @@
             this.lblBuscar.TabIndex = 30;
             this.lblBuscar.Text = "Buscar por Nº Mesa:";
             // 
+            // idVenta
+            // 
+            this.idVenta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.idVenta.HeaderText = "Id";
+            this.idVenta.Name = "idVenta";
+            this.idVenta.ReadOnly = true;
+            this.idVenta.Width = 50;
+            // 
+            // fechadeVenta
+            // 
+            this.fechadeVenta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.fechadeVenta.HeaderText = "FECHA DE VENTA";
+            this.fechadeVenta.Name = "fechadeVenta";
+            this.fechadeVenta.ReadOnly = true;
+            this.fechadeVenta.Width = 170;
+            // 
+            // numMesa
+            // 
+            this.numMesa.HeaderText = "NUMERO DE MESA";
+            this.numMesa.Name = "numMesa";
+            this.numMesa.ReadOnly = true;
+            // 
+            // TOTAL
+            // 
+            this.TOTAL.HeaderText = "TOTAL A PAGAR";
+            this.TOTAL.Name = "TOTAL";
+            this.TOTAL.ReadOnly = true;
+            // 
+            // estado
+            // 
+            this.estado.HeaderText = "ESTADO";
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            // 
             // FrmListaVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -280,12 +288,13 @@
         private System.Windows.Forms.RadioButton rbotEnviada;
         private System.Windows.Forms.RadioButton rbotTodos;
         private System.Windows.Forms.RadioButton rbotRecibidas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idVenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechadeVenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numMesa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
         private System.Windows.Forms.RadioButton rbotEntregadas;
         private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.Label lblBuscar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idVenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechadeVenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numMesa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TOTAL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
     }
 }

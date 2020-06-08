@@ -37,6 +37,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
                                 ID = ventas.idVenta,
                                 FECHA = ventas.fechadeVenta,
                                 NMESA = ventas.NumMesa,
+                                TOTAL = ventas.totalPagar,
                                 ESTADO = ventas.estado,
 
                             };
@@ -44,7 +45,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
 
                         foreach (var iterar in Ventas)
                         {
-                            dtvVentas.Rows.Add(iterar.ID, iterar.FECHA, iterar.NMESA, iterar.ESTADO);
+                            dtvVentas.Rows.Add(iterar.ID, iterar.FECHA, iterar.NMESA, iterar.TOTAL, iterar.ESTADO);
                         }
                     }
                     else

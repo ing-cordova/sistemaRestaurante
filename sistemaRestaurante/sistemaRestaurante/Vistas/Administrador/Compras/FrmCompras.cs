@@ -43,7 +43,17 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
                 }
             }
         }
+        public void LimpiarCompra()
+        {
+            dtvDetallesCompra.Rows.Clear();
+            txtCodigoProd.Text = "";
+            txtBusqueda.Text = "";
+            txtNombreProd.Text = "";
+            txtPrecio.Text = "";
+            txtTotal.Text = "";
+            nupCantidad.Value = 0;
 
+        }
         public void RetornoId()
         {
             using(RestauranteBDEntities1 bd = new RestauranteBDEntities1())
@@ -190,6 +200,11 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
                     }
 
                     RetornoId();
+                    txtCodigoProd.Text = "";
+                    txtNombreProd.Text = "";
+                    txtPrecio.Text = "";
+                    nupCantidad.Value = 0;
+                    txtTotal.Text = "";
                 }
             }
         }

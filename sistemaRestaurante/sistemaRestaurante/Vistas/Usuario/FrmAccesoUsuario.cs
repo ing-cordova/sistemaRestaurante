@@ -147,6 +147,7 @@ namespace sistemaRestaurante.Vistas
             venta.Dock = DockStyle.Fill;
             this.panelContenedor.Controls.Add(venta);
             this.panelContenedor.Tag = venta;
+            venta.LimpiarVenta();
             venta.Show();
         }
 

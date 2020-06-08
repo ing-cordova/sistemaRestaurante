@@ -121,3 +121,21 @@ Alter table ProductosCompra add estado varchar(20)
 Alter table Proveedores add estado varchar(20)
 Alter table Categorias add estado varchar(20)
 Alter table Usuarios add estado varchar(20)
+
+-----------Datos para hacer pruebas------------
+insert into Proveedores (nombre, ubicacion, telefono, email, estado) values ('iShares Morningstar Mid-Cap ETF', null, '6118920538', 'mmagne0@about.com','Activo');
+insert into Proveedores (nombre, ubicacion, telefono, email, estado) values ('Ubiquiti Networks, Inc.', null, '4716458269', 'tmackerel1@marriott.com','Activo');
+insert into Proveedores (nombre, ubicacion, telefono, email, estado) values ('Tile Shop Hldgs, Inc.', null, '9066404663', 'fmccreagh2@washington.edu','Activo');
+insert into Proveedores (nombre, ubicacion, telefono, email, estado) values ('NexPoint Residential Trust, Inc.', null, '8574542915', 'bgleadle3@ucoz.ru','Activo');
+insert into Proveedores (nombre, ubicacion, telefono, email, estado) values ('QuinStreet, Inc.', null, '8168895875', 'drennock4@scribd.com','Activo');
+insert into Proveedores (nombre, ubicacion, telefono, email, estado) values ('Verizon Communications Inc.', null, '2176793729', 'bfrancioli5@surveymonkey.com','Activo');
+insert into Proveedores (nombre, ubicacion, telefono, email, estado) values ('Autoliv, Inc.', null, '9214602214', 'bdebold6@usda.gov','Activo');
+insert into Proveedores (nombre, ubicacion, telefono, email, estado) values ('Ambac Financial Group, Inc.', null, '2558495834', 'agauge7@wisc.edu','Activo');
+insert into Proveedores (nombre, ubicacion, telefono, email, estado) values ('Willis Towers Watson Public Limited Company', null, '6675864596', 'csymms8@nsw.gov.au','Activo');
+insert into Proveedores (nombre, ubicacion, telefono, email, estado) values ('Legg Mason Low Volatility High Dividend ETF', null, '4026699152', 'blandeaux9@japanpost.jp','Activo');
+
+insert into Categorias (nombreCategoria, estado) values ('Desayunos', 'Activo');
+insert into Categorias (nombreCategoria, estado) values ('Almuerzos', 'Activo');
+insert into Categorias (nombreCategoria, estado) values ('Cenas', 'Activo');
+insert into Categorias (nombreCategoria, estado) values ('Postres', 'Activo');
+insert into Categorias (nombreCategoria, estado) values ('Bebidas', 'Activo');
