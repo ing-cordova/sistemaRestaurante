@@ -665,7 +665,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAccesoAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmAccesoAdmin";
             this.Load += new System.EventHandler(this.FrmAccesoAdmin_Load);
             this.barraTitulos.ResumeLayout(false);
             this.barraTitulos.PerformLayout();

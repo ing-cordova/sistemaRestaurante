@@ -32,12 +32,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblEtiqueta = new System.Windows.Forms.Label();
             this.dtvCategorias = new System.Windows.Forms.DataGridView();
+            this.idproducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnEliminarSelected = new System.Windows.Forms.Button();
             this.btnEditarSelected = new System.Windows.Forms.Button();
             this.btnAgregarNuevo = new System.Windows.Forms.Button();
-            this.idproducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtvCategorias)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,6 +91,20 @@
             this.dtvCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtvCategorias.Size = new System.Drawing.Size(653, 359);
             this.dtvCategorias.TabIndex = 5;
+            // 
+            // idproducto
+            // 
+            this.idproducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.idproducto.HeaderText = "ID";
+            this.idproducto.Name = "idproducto";
+            this.idproducto.ReadOnly = true;
+            this.idproducto.Width = 51;
+            // 
+            // nombreCategoria
+            // 
+            this.nombreCategoria.HeaderText = "NOMBRE CATEGORIA";
+            this.nombreCategoria.Name = "nombreCategoria";
+            this.nombreCategoria.ReadOnly = true;
             // 
             // btnActualizar
             // 
@@ -156,20 +170,6 @@
             this.btnAgregarNuevo.UseVisualStyleBackColor = true;
             this.btnAgregarNuevo.Click += new System.EventHandler(this.btnAgregarNuevo_Click);
             // 
-            // idproducto
-            // 
-            this.idproducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.idproducto.HeaderText = "ID";
-            this.idproducto.Name = "idproducto";
-            this.idproducto.ReadOnly = true;
-            this.idproducto.Width = 51;
-            // 
-            // nombreCategoria
-            // 
-            this.nombreCategoria.HeaderText = "NOMBRE CATEGORIA";
-            this.nombreCategoria.Name = "nombreCategoria";
-            this.nombreCategoria.ReadOnly = true;
-            // 
             // FrmListadoCategorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,7 +184,6 @@
             this.Controls.Add(this.lblEtiqueta);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmListadoCategorias";
-            this.Text = "FrmListadoCategorias";
             this.Load += new System.EventHandler(this.FrmListadoCategorias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtvCategorias)).EndInit();
             this.ResumeLayout(false);
@@ -197,10 +196,10 @@
         private System.Windows.Forms.Label lblEtiqueta;
         public System.Windows.Forms.DataGridView dtvCategorias;
         public System.Windows.Forms.Button btnActualizar;
-        private System.Windows.Forms.Button btnEliminarSelected;
-        private System.Windows.Forms.Button btnEditarSelected;
         private System.Windows.Forms.Button btnAgregarNuevo;
         private System.Windows.Forms.DataGridViewTextBoxColumn idproducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreCategoria;
+        public System.Windows.Forms.Button btnEliminarSelected;
+        public System.Windows.Forms.Button btnEditarSelected;
     }
 }

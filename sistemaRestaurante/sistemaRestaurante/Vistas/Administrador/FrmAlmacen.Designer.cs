@@ -139,7 +139,6 @@
             this.Controls.Add(this.lblEtiqueta);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAlmacen";
-            this.Text = "FrmAlmacen";
             this.Load += new System.EventHandler(this.FrmAlmacen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtvAlmacen)).EndInit();
             this.ResumeLayout(false);

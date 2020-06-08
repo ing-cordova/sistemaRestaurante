@@ -323,7 +323,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmCRUDUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmCRUDUsuarios";
             this.Load += new System.EventHandler(this.FrmCRUDUsuarios_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

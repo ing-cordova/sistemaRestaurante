@@ -32,15 +32,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblEtiqueta = new System.Windows.Forms.Label();
             this.dtvProductos = new System.Windows.Forms.DataGridView();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.btnEliminarSelected = new System.Windows.Forms.Button();
-            this.btnEditarSelected = new System.Windows.Forms.Button();
-            this.btnAgregarNuevo = new System.Windows.Forms.Button();
             this.idproductoCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCaregoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnEliminarSelected = new System.Windows.Forms.Button();
+            this.btnEditarSelected = new System.Windows.Forms.Button();
+            this.btnAgregarNuevo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtvProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,6 +97,38 @@
             this.dtvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtvProductos.Size = new System.Drawing.Size(994, 552);
             this.dtvProductos.TabIndex = 4;
+            // 
+            // idproductoCompra
+            // 
+            this.idproductoCompra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.idproductoCompra.HeaderText = "ID";
+            this.idproductoCompra.Name = "idproductoCompra";
+            this.idproductoCompra.ReadOnly = true;
+            this.idproductoCompra.Width = 51;
+            // 
+            // nombreProd
+            // 
+            this.nombreProd.HeaderText = "NOMBRE PROD.";
+            this.nombreProd.Name = "nombreProd";
+            this.nombreProd.ReadOnly = true;
+            // 
+            // precio
+            // 
+            this.precio.HeaderText = "PRECIO";
+            this.precio.Name = "precio";
+            this.precio.ReadOnly = true;
+            // 
+            // idProveedor
+            // 
+            this.idProveedor.HeaderText = "PROVEEDOR";
+            this.idProveedor.Name = "idProveedor";
+            this.idProveedor.ReadOnly = true;
+            // 
+            // idCaregoria
+            // 
+            this.idCaregoria.HeaderText = "CATEGORIA";
+            this.idCaregoria.Name = "idCaregoria";
+            this.idCaregoria.ReadOnly = true;
             // 
             // btnActualizar
             // 
@@ -162,38 +194,6 @@
             this.btnAgregarNuevo.UseVisualStyleBackColor = true;
             this.btnAgregarNuevo.Click += new System.EventHandler(this.btnAgregarNuevo_Click);
             // 
-            // idproductoCompra
-            // 
-            this.idproductoCompra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.idproductoCompra.HeaderText = "ID";
-            this.idproductoCompra.Name = "idproductoCompra";
-            this.idproductoCompra.ReadOnly = true;
-            this.idproductoCompra.Width = 51;
-            // 
-            // nombreProd
-            // 
-            this.nombreProd.HeaderText = "NOMBRE PROD.";
-            this.nombreProd.Name = "nombreProd";
-            this.nombreProd.ReadOnly = true;
-            // 
-            // precio
-            // 
-            this.precio.HeaderText = "PRECIO";
-            this.precio.Name = "precio";
-            this.precio.ReadOnly = true;
-            // 
-            // idProveedor
-            // 
-            this.idProveedor.HeaderText = "PROVEEDOR";
-            this.idProveedor.Name = "idProveedor";
-            this.idProveedor.ReadOnly = true;
-            // 
-            // idCaregoria
-            // 
-            this.idCaregoria.HeaderText = "CATEGORIA";
-            this.idCaregoria.Name = "idCaregoria";
-            this.idCaregoria.ReadOnly = true;
-            // 
             // FrmListadoProductosCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,7 +208,6 @@
             this.Controls.Add(this.lblEtiqueta);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmListadoProductosCompra";
-            this.Text = "FrmListadoProductosCompra";
             this.Load += new System.EventHandler(this.FrmListadoProductosCompra_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtvProductos)).EndInit();
             this.ResumeLayout(false);

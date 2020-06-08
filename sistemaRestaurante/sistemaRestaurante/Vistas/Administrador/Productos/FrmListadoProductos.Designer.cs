@@ -221,7 +221,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmListadoProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmListadoProductos";
             this.Load += new System.EventHandler(this.FrmListadoProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtvProductos)).EndInit();
             this.ResumeLayout(false);

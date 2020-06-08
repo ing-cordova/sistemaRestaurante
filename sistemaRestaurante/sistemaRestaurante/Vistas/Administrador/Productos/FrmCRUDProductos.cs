@@ -128,7 +128,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
 
                                     bd.Entry(prod).State = System.Data.Entity.EntityState.Modified;
                                     bd.SaveChanges();
-                                    MessageBox.Show("¡Proveedor insertado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
+                                    MessageBox.Show("¡Producto insertado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
                                     this.Close();
                                     listado.dtvProductos.Rows.Clear();
                                     listado.btnActualizar.PerformClick();
@@ -138,7 +138,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
                                     prod.nombre = txtNombreProd.Text;
                                     prod.precio = decimal.Parse(txtPrecioProd.Text);
                                     prod.idCategoria = int.Parse(categ);
-                                    prod.estado = "Inactivo";
+                                    prod.estado = "Activo";
 
                                     int idCat = int.Parse(categ);
                                     categoria = bd.Categorias.Where(Id => Id.idCategoria == idCat).First();

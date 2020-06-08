@@ -67,6 +67,8 @@ namespace sistemaRestaurante.Vistas.Administrador.CategoriasLista
                             MessageBox.Show("¡Categoria insertada con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
                             this.Close();
                             listadoC.dtvCategorias.Rows.Clear();
+                            listadoC.btnEditarSelected.Enabled = true;
+                            listadoC.btnEliminarSelected.Enabled = true;
                         }
                         else
                         {

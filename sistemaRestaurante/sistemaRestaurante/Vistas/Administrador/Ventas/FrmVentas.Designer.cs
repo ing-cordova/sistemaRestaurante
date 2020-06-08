@@ -438,7 +438,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmVentas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmCompras";
             this.Load += new System.EventHandler(this.FrmCompras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nupCantidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtvDetallesVenta)).EndInit();
