@@ -470,7 +470,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmNuevoUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmNuevoUsuario";
             this.Load += new System.EventHandler(this.FrmNuevoUsuario_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -33,15 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblEtiqueta = new System.Windows.Forms.Label();
             this.dtvUsuarios = new System.Windows.Forms.DataGridView();
-            this.txtBusqueda = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.btnEliminarSelected = new System.Windows.Forms.Button();
-            this.btnEditarSelected = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.rbotUsuarios = new System.Windows.Forms.RadioButton();
-            this.rbotTodos = new System.Windows.Forms.RadioButton();
-            this.rbotAdministradores = new System.Windows.Forms.RadioButton();
             this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +42,15 @@
             this.contrasenia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnEliminarSelected = new System.Windows.Forms.Button();
+            this.btnEditarSelected = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.rbotUsuarios = new System.Windows.Forms.RadioButton();
+            this.rbotTodos = new System.Windows.Forms.RadioButton();
+            this.rbotAdministradores = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dtvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,6 +111,75 @@
             this.dtvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtvUsuarios.Size = new System.Drawing.Size(994, 460);
             this.dtvUsuarios.TabIndex = 5;
+            // 
+            // usuario
+            // 
+            this.usuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.usuario.HeaderText = "USUARIO";
+            this.usuario.Name = "usuario";
+            this.usuario.ReadOnly = true;
+            this.usuario.Width = 106;
+            // 
+            // nombre
+            // 
+            this.nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.nombre.HeaderText = "NOMBRES";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 111;
+            // 
+            // apellidos
+            // 
+            this.apellidos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.apellidos.HeaderText = "APELLIDOS";
+            this.apellidos.Name = "apellidos";
+            this.apellidos.ReadOnly = true;
+            this.apellidos.Width = 118;
+            // 
+            // edad
+            // 
+            this.edad.HeaderText = "EDAD";
+            this.edad.Name = "edad";
+            this.edad.ReadOnly = true;
+            this.edad.Visible = false;
+            // 
+            // telefono
+            // 
+            this.telefono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.telefono.HeaderText = "TELÉFONO";
+            this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
+            this.telefono.Width = 115;
+            // 
+            // email
+            // 
+            this.email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.email.DefaultCellStyle = dataGridViewCellStyle2;
+            this.email.HeaderText = "E-MAIL";
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
+            this.email.Width = 88;
+            // 
+            // contrasenia
+            // 
+            this.contrasenia.HeaderText = "CONTRASEÑA";
+            this.contrasenia.Name = "contrasenia";
+            this.contrasenia.ReadOnly = true;
+            this.contrasenia.Visible = false;
+            // 
+            // rol
+            // 
+            this.rol.HeaderText = "ROL";
+            this.rol.Name = "rol";
+            this.rol.ReadOnly = true;
+            // 
+            // estado
+            // 
+            this.estado.HeaderText = "ESTADO";
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            this.estado.Visible = false;
             // 
             // txtBusqueda
             // 
@@ -231,75 +300,6 @@
             this.rbotAdministradores.UseVisualStyleBackColor = true;
             this.rbotAdministradores.CheckedChanged += new System.EventHandler(this.rbotAdministradores_CheckedChanged);
             // 
-            // usuario
-            // 
-            this.usuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.usuario.HeaderText = "USUARIO";
-            this.usuario.Name = "usuario";
-            this.usuario.ReadOnly = true;
-            this.usuario.Width = 106;
-            // 
-            // nombre
-            // 
-            this.nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.nombre.HeaderText = "NOMBRES";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 111;
-            // 
-            // apellidos
-            // 
-            this.apellidos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.apellidos.HeaderText = "APELLIDOS";
-            this.apellidos.Name = "apellidos";
-            this.apellidos.ReadOnly = true;
-            this.apellidos.Width = 118;
-            // 
-            // edad
-            // 
-            this.edad.HeaderText = "EDAD";
-            this.edad.Name = "edad";
-            this.edad.ReadOnly = true;
-            this.edad.Visible = false;
-            // 
-            // telefono
-            // 
-            this.telefono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.telefono.HeaderText = "TELÉFONO";
-            this.telefono.Name = "telefono";
-            this.telefono.ReadOnly = true;
-            this.telefono.Width = 115;
-            // 
-            // email
-            // 
-            this.email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.email.DefaultCellStyle = dataGridViewCellStyle2;
-            this.email.HeaderText = "E-MAIL";
-            this.email.Name = "email";
-            this.email.ReadOnly = true;
-            this.email.Width = 88;
-            // 
-            // contrasenia
-            // 
-            this.contrasenia.HeaderText = "CONTRASEÑA";
-            this.contrasenia.Name = "contrasenia";
-            this.contrasenia.ReadOnly = true;
-            this.contrasenia.Visible = false;
-            // 
-            // rol
-            // 
-            this.rol.HeaderText = "ROL";
-            this.rol.Name = "rol";
-            this.rol.ReadOnly = true;
-            // 
-            // estado
-            // 
-            this.estado.HeaderText = "ESTADO";
-            this.estado.Name = "estado";
-            this.estado.ReadOnly = true;
-            this.estado.Visible = false;
-            // 
             // FrmListadoUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -319,7 +319,6 @@
             this.Controls.Add(this.lblEtiqueta);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmListadoUsuarios";
-            this.Text = "FrmListadoUsuarios";
             this.Load += new System.EventHandler(this.FrmListadoUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtvUsuarios)).EndInit();
             this.ResumeLayout(false);

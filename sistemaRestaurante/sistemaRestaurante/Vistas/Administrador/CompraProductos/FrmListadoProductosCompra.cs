@@ -47,16 +47,6 @@ namespace sistemaRestaurante.Vistas.Administrador.CompraProductos
         private void FrmListadoProductosCompra_Load(object sender, EventArgs e)
         {
             CargarDatos();
-            if (dtvProductos.Rows.Count == 0)
-            {
-                btnEditarSelected.Enabled = false;
-                btnEliminarSelected.Enabled = false;
-            }
-            else
-            {
-                btnEditarSelected.Enabled = true;
-                btnEliminarSelected.Enabled = true;
-            }
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -76,58 +66,72 @@ namespace sistemaRestaurante.Vistas.Administrador.CompraProductos
 
         private void btnEditarSelected_Click(object sender, EventArgs e)
         {
-            FrmCRUDProductosCompra prod = new FrmCRUDProductosCompra();
-            prod.Show();
-            prod.lblCodigo.Visible = true;
-            prod.btnEditar.Visible = true;
-            prod.btnEliminar.Visible = false;
-            prod.btnAgregar.Visible = false;
-            prod.btnHabilitar.Visible = false;
+            if (dtvProductos.Rows.Count == 0)
+            {
+                MessageBox.Show("¡Aún no hay existencia de productos a comprar!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                FrmCRUDProductosCompra prod = new FrmCRUDProductosCompra();
+                prod.Show();
+                prod.lblCodigo.Visible = true;
+                prod.btnEditar.Visible = true;
+                prod.btnEliminar.Visible = false;
+                prod.btnAgregar.Visible = false;
+                prod.btnHabilitar.Visible = false;
 
-            prod.txtNombreProdCompra.Enabled = true;
-            prod.txtPrecioProd.Enabled = true;
-            prod.cmbCategoria.Enabled = true;
-            prod.cmbProveedor.Enabled = true;
+                prod.txtNombreProdCompra.Enabled = true;
+                prod.txtPrecioProd.Enabled = true;
+                prod.cmbCategoria.Enabled = true;
+                prod.cmbProveedor.Enabled = true;
 
-            String id = dtvProductos.CurrentRow.Cells[0].Value.ToString();
-            String Nombre = dtvProductos.CurrentRow.Cells[1].Value.ToString();
-            String Precio = dtvProductos.CurrentRow.Cells[2].Value.ToString();
-            String Proveedor = dtvProductos.CurrentRow.Cells[3].Value.ToString();
-            String Categoria = dtvProductos.CurrentRow.Cells[4].Value.ToString();
+                String id = dtvProductos.CurrentRow.Cells[0].Value.ToString();
+                String Nombre = dtvProductos.CurrentRow.Cells[1].Value.ToString();
+                String Precio = dtvProductos.CurrentRow.Cells[2].Value.ToString();
+                String Proveedor = dtvProductos.CurrentRow.Cells[3].Value.ToString();
+                String Categoria = dtvProductos.CurrentRow.Cells[4].Value.ToString();
 
-            prod.lblCodigo.Text = id;
-            prod.txtNombreProdCompra.Text = Nombre;
-            prod.txtPrecioProd.Text = Precio;
-            prod.cmbCategoria.Text = Categoria;
-            prod.cmbProveedor.Text = Proveedor;
+                prod.lblCodigo.Text = id;
+                prod.txtNombreProdCompra.Text = Nombre;
+                prod.txtPrecioProd.Text = Precio;
+                prod.cmbCategoria.Text = Categoria;
+                prod.cmbProveedor.Text = Proveedor;
+            }
         }
 
         private void btnEliminarSelected_Click(object sender, EventArgs e)
         {
-            FrmCRUDProductosCompra prod = new FrmCRUDProductosCompra();
-            prod.Show();
-            prod.lblCodigo.Visible = true;
-            prod.btnEditar.Visible = false;
-            prod.btnEliminar.Visible = true;
-            prod.btnAgregar.Visible = false;
-            prod.btnHabilitar.Visible = false;
+            if (dtvProductos.Rows.Count == 0)
+            {
+                MessageBox.Show("¡Aún no hay existencia de productos a comprar!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                FrmCRUDProductosCompra prod = new FrmCRUDProductosCompra();
+                prod.Show();
+                prod.lblCodigo.Visible = true;
+                prod.btnEditar.Visible = false;
+                prod.btnEliminar.Visible = true;
+                prod.btnAgregar.Visible = false;
+                prod.btnHabilitar.Visible = false;
 
-            prod.txtNombreProdCompra.Enabled = false;
-            prod.txtPrecioProd.Enabled = false;
-            prod.cmbCategoria.Enabled = false;
-            prod.cmbProveedor.Enabled = false;
+                prod.txtNombreProdCompra.Enabled = false;
+                prod.txtPrecioProd.Enabled = false;
+                prod.cmbCategoria.Enabled = false;
+                prod.cmbProveedor.Enabled = false;
 
-            String id = dtvProductos.CurrentRow.Cells[0].Value.ToString();
-            String Nombre = dtvProductos.CurrentRow.Cells[1].Value.ToString();
-            String Precio = dtvProductos.CurrentRow.Cells[2].Value.ToString();
-            String Proveedor = dtvProductos.CurrentRow.Cells[3].Value.ToString();
-            String Categoria = dtvProductos.CurrentRow.Cells[4].Value.ToString();
+                String id = dtvProductos.CurrentRow.Cells[0].Value.ToString();
+                String Nombre = dtvProductos.CurrentRow.Cells[1].Value.ToString();
+                String Precio = dtvProductos.CurrentRow.Cells[2].Value.ToString();
+                String Proveedor = dtvProductos.CurrentRow.Cells[3].Value.ToString();
+                String Categoria = dtvProductos.CurrentRow.Cells[4].Value.ToString();
 
-            prod.lblCodigo.Text = id;
-            prod.txtNombreProdCompra.Text = Nombre;
-            prod.txtPrecioProd.Text = Precio;
-            prod.cmbCategoria.Text = Categoria;
-            prod.cmbProveedor.Text = Proveedor;
+                prod.lblCodigo.Text = id;
+                prod.txtNombreProdCompra.Text = Nombre;
+                prod.txtPrecioProd.Text = Precio;
+                prod.cmbCategoria.Text = Categoria;
+                prod.cmbProveedor.Text = Proveedor;
+            }
         }
     }
 }

@@ -192,7 +192,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmCRUDCategorias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmCRUDCategorias";
             this.Load += new System.EventHandler(this.FrmCRUDCategorias_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

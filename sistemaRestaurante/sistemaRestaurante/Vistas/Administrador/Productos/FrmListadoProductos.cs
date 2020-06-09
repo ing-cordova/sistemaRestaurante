@@ -46,17 +46,6 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
         private void FrmListadoProductos_Load(object sender, EventArgs e)
         {
             CargarDatos();
-            if (dtvProductos.Rows.Count == 0)
-            {
-                btnEditarSelected.Enabled = false;
-                btnEliminarSelected.Enabled = false;
-            }
-            else
-            {
-                btnEditarSelected.Enabled = true;
-                btnEliminarSelected.Enabled = true;
-                btnActualizar.PerformClick();
-            }
         }
 
         private void btnAgregarNuevo_Click(object sender, EventArgs e)
@@ -76,52 +65,66 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
 
         private void btnEditarSelected_Click(object sender, EventArgs e)
         {
-            FrmCRUDProductos crud = new FrmCRUDProductos();
-            crud.Show();
-            crud.lblCodigo.Visible = true;
-            crud.btnEliminar.Visible = false;
-            crud.btnEditar.Visible = true;
-            crud.btnAgregar.Visible = false;
-            crud.btnHabilitar.Visible = false;
-            /***************************************/
-            crud.txtNombreProd.Enabled = true;
-            crud.txtPrecioProd.Enabled = true;
-            crud.cmbCategoria.Enabled = true;
-            /************************************************************************/
-            String id = dtvProductos.CurrentRow.Cells[0].Value.ToString();
-            String Nombre = dtvProductos.CurrentRow.Cells[1].Value.ToString();
-            String Precio = dtvProductos.CurrentRow.Cells[2].Value.ToString();
-            String Categoria = dtvProductos.CurrentRow.Cells[3].Value.ToString();
+            if(dtvProductos.Rows.Count == 0)
+            {
+                MessageBox.Show("¡Aún no hay productos en Inventario!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                FrmCRUDProductos crud = new FrmCRUDProductos();
+                crud.Show();
+                crud.lblCodigo.Visible = true;
+                crud.btnEliminar.Visible = false;
+                crud.btnEditar.Visible = true;
+                crud.btnAgregar.Visible = false;
+                crud.btnHabilitar.Visible = false;
+                /***************************************/
+                crud.txtNombreProd.Enabled = true;
+                crud.txtPrecioProd.Enabled = true;
+                crud.cmbCategoria.Enabled = true;
+                /************************************************************************/
+                String id = dtvProductos.CurrentRow.Cells[0].Value.ToString();
+                String Nombre = dtvProductos.CurrentRow.Cells[1].Value.ToString();
+                String Precio = dtvProductos.CurrentRow.Cells[2].Value.ToString();
+                String Categoria = dtvProductos.CurrentRow.Cells[3].Value.ToString();
 
-            crud.lblCodigo.Text = id;
-            crud.txtNombreProd.Text = Nombre;
-            crud.txtPrecioProd.Text = Precio;
-            crud.cmbCategoria.Text = Categoria;
+                crud.lblCodigo.Text = id;
+                crud.txtNombreProd.Text = Nombre;
+                crud.txtPrecioProd.Text = Precio;
+                crud.cmbCategoria.Text = Categoria;
+            }
         }
 
         private void btnEliminarSelected_Click(object sender, EventArgs e)
         {
-            FrmCRUDProductos crud = new FrmCRUDProductos();
-            crud.Show();
-            crud.lblCodigo.Visible = true;
-            crud.btnEliminar.Visible = true;
-            crud.btnEditar.Visible = false;
-            crud.btnAgregar.Visible = false;
-            crud.btnHabilitar.Visible = false;
-            /***************************************/
-            crud.txtNombreProd.Enabled = true;
-            crud.txtPrecioProd.Enabled = true;
-            crud.cmbCategoria.Enabled = true;
-            /**********************************************************************/
-            String id = dtvProductos.CurrentRow.Cells[0].Value.ToString();
-            String Nombre = dtvProductos.CurrentRow.Cells[1].Value.ToString();
-            String Precio = dtvProductos.CurrentRow.Cells[2].Value.ToString();
-            String Categoria = dtvProductos.CurrentRow.Cells[3].Value.ToString();
+            if(dtvProductos.Rows.Count == 0)
+            {
+                MessageBox.Show("¡Aún no hay productos en Inventario!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                FrmCRUDProductos crud = new FrmCRUDProductos();
+                crud.Show();
+                crud.lblCodigo.Visible = true;
+                crud.btnEliminar.Visible = true;
+                crud.btnEditar.Visible = false;
+                crud.btnAgregar.Visible = false;
+                crud.btnHabilitar.Visible = false;
+                /***************************************/
+                crud.txtNombreProd.Enabled = true;
+                crud.txtPrecioProd.Enabled = true;
+                crud.cmbCategoria.Enabled = true;
+                /**********************************************************************/
+                String id = dtvProductos.CurrentRow.Cells[0].Value.ToString();
+                String Nombre = dtvProductos.CurrentRow.Cells[1].Value.ToString();
+                String Precio = dtvProductos.CurrentRow.Cells[2].Value.ToString();
+                String Categoria = dtvProductos.CurrentRow.Cells[3].Value.ToString();
 
-            crud.lblCodigo.Text = id;
-            crud.txtNombreProd.Text = Nombre;
-            crud.txtPrecioProd.Text = Precio;
-            crud.cmbCategoria.Text = Categoria;
+                crud.lblCodigo.Text = id;
+                crud.txtNombreProd.Text = Nombre;
+                crud.txtPrecioProd.Text = Precio;
+                crud.cmbCategoria.Text = Categoria;
+            } 
         }
 
         public static FrmRecetas frmRecetas = new FrmRecetas();

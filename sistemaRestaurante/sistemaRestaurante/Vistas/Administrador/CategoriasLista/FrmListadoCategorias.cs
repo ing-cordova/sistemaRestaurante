@@ -44,17 +44,6 @@ namespace sistemaRestaurante.Vistas.Administrador.CategoriasLista
         private void FrmListadoCategorias_Load(object sender, EventArgs e)
         {
             cargardatos();
-            if (dtvCategorias.Rows.Count == 0)
-            {
-                btnEditarSelected.Enabled = false;
-                btnEliminarSelected.Enabled = false;
-            }
-            else
-            {
-                btnEditarSelected.Enabled = true;
-                btnEliminarSelected.Enabled = true;
-                btnActualizar.PerformClick();
-            }
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -65,42 +54,56 @@ namespace sistemaRestaurante.Vistas.Administrador.CategoriasLista
 
         private void btnEditarSelected_Click(object sender, EventArgs e)
         {
-            FrmCRUDCategorias crudC = new FrmCRUDCategorias();
-            crudC.Show();
-            crudC.lblCodigo.Visible = true;
-            crudC.btnEliminar.Visible = false;
-            crudC.btnEditar.Visible = true;
-            crudC.btnAgregar.Visible = false;
-            crudC.btnHabilitar.Visible = false;
-            /***************************************/
-            crudC.txtCategoria.Enabled = true;
+            if(dtvCategorias.Rows.Count == 0)
+            {
+                MessageBox.Show("¡Aún no hay categorías!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                FrmCRUDCategorias crudC = new FrmCRUDCategorias();
+                crudC.Show();
+                crudC.lblCodigo.Visible = true;
+                crudC.btnEliminar.Visible = false;
+                crudC.btnEditar.Visible = true;
+                crudC.btnAgregar.Visible = false;
+                crudC.btnHabilitar.Visible = false;
+                /***************************************/
+                crudC.txtCategoria.Enabled = true;
 
-            /************************************************************************/
-            String id = dtvCategorias.CurrentRow.Cells[0].Value.ToString();
-            String Nombre = dtvCategorias.CurrentRow.Cells[1].Value.ToString();
+                /************************************************************************/
+                String id = dtvCategorias.CurrentRow.Cells[0].Value.ToString();
+                String Nombre = dtvCategorias.CurrentRow.Cells[1].Value.ToString();
 
-            crudC.lblCodigo.Text = id;
-            crudC.txtCategoria.Text = Nombre;
+                crudC.lblCodigo.Text = id;
+                crudC.txtCategoria.Text = Nombre;
+            }
         }
 
         private void btnEliminarSelected_Click(object sender, EventArgs e)
         {
-            FrmCRUDCategorias crudC = new FrmCRUDCategorias();
-            crudC.Show();
-            crudC.lblCodigo.Visible = true;
-            crudC.btnEliminar.Visible = true;
-            crudC.btnEditar.Visible = false;
-            crudC.btnAgregar.Visible = false;
-            crudC.btnHabilitar.Visible = false;
-            /***************************************/
-            crudC.txtCategoria.Enabled = true;
+            if (dtvCategorias.Rows.Count == 0)
+            {
+                MessageBox.Show("¡Aún no hay categorías!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                FrmCRUDCategorias crudC = new FrmCRUDCategorias();
+                crudC.Show();
+                crudC.lblCodigo.Visible = true;
+                crudC.btnEliminar.Visible = true;
+                crudC.btnEditar.Visible = false;
+                crudC.btnAgregar.Visible = false;
+                crudC.btnHabilitar.Visible = false;
+                /***************************************/
+                crudC.txtCategoria.Enabled = true;
 
-            /**********************************************************************/
-            String id = dtvCategorias.CurrentRow.Cells[0].Value.ToString();
-            String Nombre = dtvCategorias.CurrentRow.Cells[1].Value.ToString();
+                /**********************************************************************/
+                String id = dtvCategorias.CurrentRow.Cells[0].Value.ToString();
+                String Nombre = dtvCategorias.CurrentRow.Cells[1].Value.ToString();
 
-            crudC.lblCodigo.Text = id;
-            crudC.txtCategoria.Text = Nombre;
+                crudC.lblCodigo.Text = id;
+                crudC.txtCategoria.Text = Nombre;
+            } 
         }
     }
 }

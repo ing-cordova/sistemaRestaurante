@@ -258,14 +258,9 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
             using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
             {
 
-                if (txtCodigoProd.Text.Equals("") || txtNombreProd.Text.Equals("") ||
-                    txtPrecio.Text.Equals("") ||
-                    nupCantidad.Value == 0 || txtTotal.Text.Equals("") || txtTotal.Text.Equals("0") ||
-                    txtNMesa.Text.Equals(""))
+                if (txtCodigoProd.Text.Equals("") || txtNombreProd.Text.Equals("") || txtPrecio.Text.Equals("") || nupCantidad.Value == 0 || txtTotal.Text.Equals("") || txtTotal.Text.Equals("0") || txtNMesa.Text.Equals(""))
                 {
-                    MessageBox.Show("¡La Categoria ya existe!", "Advertencia",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
+                    MessageBox.Show("¡Rellene todos los campos para añadir al carrito!", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {

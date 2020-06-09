@@ -32,15 +32,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblEtiqueta = new System.Windows.Forms.Label();
             this.dtvProveedores = new System.Windows.Forms.DataGridView();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.btnEliminarSelected = new System.Windows.Forms.Button();
-            this.btnEditarSelected = new System.Windows.Forms.Button();
-            this.btnAgregarNuevo = new System.Windows.Forms.Button();
             this.idproducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreProve = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ubicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Emailprove = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnEliminarSelected = new System.Windows.Forms.Button();
+            this.btnEditarSelected = new System.Windows.Forms.Button();
+            this.btnAgregarNuevo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtvProveedores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,6 +97,42 @@
             this.dtvProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtvProveedores.Size = new System.Drawing.Size(982, 548);
             this.dtvProveedores.TabIndex = 4;
+            // 
+            // idproducto
+            // 
+            this.idproducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.idproducto.HeaderText = "ID";
+            this.idproducto.Name = "idproducto";
+            this.idproducto.ReadOnly = true;
+            this.idproducto.Width = 51;
+            // 
+            // nombreProve
+            // 
+            this.nombreProve.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.nombreProve.HeaderText = "NOMBRE PROVEEDOR";
+            this.nombreProve.Name = "nombreProve";
+            this.nombreProve.ReadOnly = true;
+            this.nombreProve.Width = 205;
+            // 
+            // ubicacion
+            // 
+            this.ubicacion.HeaderText = "UBICACION";
+            this.ubicacion.Name = "ubicacion";
+            this.ubicacion.ReadOnly = true;
+            // 
+            // telefono
+            // 
+            this.telefono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.telefono.HeaderText = "TELEFONO";
+            this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
+            this.telefono.Width = 115;
+            // 
+            // Emailprove
+            // 
+            this.Emailprove.HeaderText = "EMAIL";
+            this.Emailprove.Name = "Emailprove";
+            this.Emailprove.ReadOnly = true;
             // 
             // btnActualizar
             // 
@@ -162,42 +198,6 @@
             this.btnAgregarNuevo.UseVisualStyleBackColor = true;
             this.btnAgregarNuevo.Click += new System.EventHandler(this.btnAgregarNuevo_Click);
             // 
-            // idproducto
-            // 
-            this.idproducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.idproducto.HeaderText = "ID";
-            this.idproducto.Name = "idproducto";
-            this.idproducto.ReadOnly = true;
-            this.idproducto.Width = 51;
-            // 
-            // nombreProve
-            // 
-            this.nombreProve.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.nombreProve.HeaderText = "NOMBRE PROVEEDOR";
-            this.nombreProve.Name = "nombreProve";
-            this.nombreProve.ReadOnly = true;
-            this.nombreProve.Width = 205;
-            // 
-            // ubicacion
-            // 
-            this.ubicacion.HeaderText = "UBICACION";
-            this.ubicacion.Name = "ubicacion";
-            this.ubicacion.ReadOnly = true;
-            // 
-            // telefono
-            // 
-            this.telefono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.telefono.HeaderText = "TELEFONO";
-            this.telefono.Name = "telefono";
-            this.telefono.ReadOnly = true;
-            this.telefono.Width = 115;
-            // 
-            // Emailprove
-            // 
-            this.Emailprove.HeaderText = "EMAIL";
-            this.Emailprove.Name = "Emailprove";
-            this.Emailprove.ReadOnly = true;
-            // 
             // FrmListadoProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -212,7 +212,6 @@
             this.Controls.Add(this.lblEtiqueta);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmListadoProveedores";
-            this.Text = "FrmListadoProveedores";
             this.Load += new System.EventHandler(this.FrmListadoProveedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtvProveedores)).EndInit();
             this.ResumeLayout(false);

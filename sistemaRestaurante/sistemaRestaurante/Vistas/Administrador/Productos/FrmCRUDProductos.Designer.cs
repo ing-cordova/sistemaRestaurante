@@ -239,7 +239,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmCRUDProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmCRUDProductos";
             this.Load += new System.EventHandler(this.FrmCRUDProductos_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
