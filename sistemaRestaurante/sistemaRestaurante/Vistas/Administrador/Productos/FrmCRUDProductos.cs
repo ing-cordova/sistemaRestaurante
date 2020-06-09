@@ -138,7 +138,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
                                     prod.nombre = txtNombreProd.Text;
                                     prod.precio = decimal.Parse(txtPrecioProd.Text);
                                     prod.idCategoria = int.Parse(categ);
-                                    prod.estado = "Inactivo";
+                                    prod.estado = "Activo";
 
                                     int idCat = int.Parse(categ);
                                     categoria = bd.Categorias.Where(Id => Id.idCategoria == idCat).First();
