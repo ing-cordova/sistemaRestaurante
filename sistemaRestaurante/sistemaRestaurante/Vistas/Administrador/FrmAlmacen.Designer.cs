@@ -32,10 +32,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblEtiqueta = new System.Windows.Forms.Label();
             this.dtvAlmacen = new System.Windows.Forms.DataGridView();
-            this.idAlmacen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnRefrescar = new System.Windows.Forms.Button();
+            this.idProdC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadDisponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnRefrescar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtvAlmacen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,7 +71,7 @@
             this.dtvAlmacen.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtvAlmacen.ColumnHeadersHeight = 25;
             this.dtvAlmacen.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idAlmacen,
+            this.idProdC,
             this.idProducto,
             this.cantidadDisponible});
             this.dtvAlmacen.EnableHeadersVisualStyles = false;
@@ -91,26 +91,6 @@
             this.dtvAlmacen.Size = new System.Drawing.Size(983, 543);
             this.dtvAlmacen.TabIndex = 23;
             // 
-            // idAlmacen
-            // 
-            this.idAlmacen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.idAlmacen.HeaderText = "ID";
-            this.idAlmacen.Name = "idAlmacen";
-            this.idAlmacen.ReadOnly = true;
-            this.idAlmacen.Width = 51;
-            // 
-            // idProducto
-            // 
-            this.idProducto.HeaderText = "PRODUCTO";
-            this.idProducto.Name = "idProducto";
-            this.idProducto.ReadOnly = true;
-            // 
-            // cantidadDisponible
-            // 
-            this.cantidadDisponible.HeaderText = "CANT. DISPONIBLE";
-            this.cantidadDisponible.Name = "cantidadDisponible";
-            this.cantidadDisponible.ReadOnly = true;
-            // 
             // btnRefrescar
             // 
             this.btnRefrescar.FlatAppearance.BorderSize = 0;
@@ -127,6 +107,26 @@
             this.btnRefrescar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRefrescar.UseVisualStyleBackColor = true;
             this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
+            // 
+            // idProdC
+            // 
+            this.idProdC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.idProdC.HeaderText = "CODIGO";
+            this.idProdC.Name = "idProdC";
+            this.idProdC.ReadOnly = true;
+            this.idProdC.Width = 106;
+            // 
+            // idProducto
+            // 
+            this.idProducto.HeaderText = "PRODUCTO";
+            this.idProducto.Name = "idProducto";
+            this.idProducto.ReadOnly = true;
+            // 
+            // cantidadDisponible
+            // 
+            this.cantidadDisponible.HeaderText = "CANT. DISPONIBLE";
+            this.cantidadDisponible.Name = "cantidadDisponible";
+            this.cantidadDisponible.ReadOnly = true;
             // 
             // FrmAlmacen
             // 
@@ -151,7 +151,7 @@
         public System.Windows.Forms.Label lblEtiqueta;
         public System.Windows.Forms.DataGridView dtvAlmacen;
         private System.Windows.Forms.Button btnRefrescar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idAlmacen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idProdC;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDisponible;
     }

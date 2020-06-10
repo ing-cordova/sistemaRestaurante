@@ -25,13 +25,13 @@ namespace sistemaRestaurante.Vistas.Administrador
                 var JoinAlmacen = from almacen in bd.Almacen
                                   from prodC in bd.ProductosCompra
                                   where almacen.idProductoC == prodC.idProductoC
+                                  orderby prodC.idProductoC ascending 
                                   select new
                                   {
-                                      ID = almacen.idAlmacen,
+                                      ID = prodC.idProductoC,
                                       NOMBREPROD = prodC.nombre,
                                       CANTIDAD = almacen.cantidadDisponible
                                   };
-
                 foreach (var iterar in JoinAlmacen)
                 {
                     dtvAlmacen.Rows.Add(iterar.ID, iterar.NOMBREPROD, Math.Round(Convert.ToDouble(iterar.CANTIDAD)));
