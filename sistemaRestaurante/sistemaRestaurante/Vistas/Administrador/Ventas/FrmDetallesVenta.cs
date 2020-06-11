@@ -149,8 +149,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
 
                 }
 
-                MessageBox.Show("¡Orden modificada con éxito!", "Completado", MessageBoxButtons.OK,
-                    MessageBoxIcon.None);
+                MessageBox.Show("¡Orden modificada con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
                 btnRegresar.PerformClick();
             }
         }

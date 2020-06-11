@@ -158,7 +158,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
                             bd.SaveChanges();
                         }
 
-                        MessageBox.Show("¡Venta Realizada con éxito! \n\nCON UN TOTAL DE: $" + lblTotalAPagar.Text, "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("¡Venta Enviada con éxito!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         dtvDetallesVenta.Rows.Clear();
                         txtNMesa.Enabled = true;
                     }
