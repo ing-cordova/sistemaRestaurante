@@ -62,7 +62,7 @@ namespace sistemaRestaurante.Vistas
                 {
                     var lista = from usuario in bd.Usuarios
                                 where usuario.nombredeUsuario == txtUsuario.Text
-                                && usuario.contraseña == txtPassword.Text
+                                && usuario.contraseña == txtPassword.Text && usuario.estado == "Activo"
                                 select usuario;
 
                     if (lista.Count() > 0)

@@ -1,14 +1,14 @@
------------Datos para hacer pruebas------------
-insert into Proveedores (nombre, ubicacion, telefono, email, estado) values ('iShares Morningstar Mid-Cap ETF', null, '6118920538', 'mmagne0@about.com','Activo');
-insert into Proveedores (nombre, ubicacion, telefono, email, estado) values ('Ubiquiti Networks, Inc.', null, '4716458269', 'tmackerel1@marriott.com','Activo');
-insert into Proveedores (nombre, ubicacion, telefono, email, estado) values ('Tile Shop Hldgs, Inc.', null, '9066404663', 'fmccreagh2@washington.edu','Activo');
-insert into Proveedores (nombre, ubicacion, telefono, email, estado) values ('NexPoint Residential Trust, Inc.', null, '8574542915', 'bgleadle3@ucoz.ru','Activo');
-insert into Proveedores (nombre, ubicacion, telefono, email, estado) values ('QuinStreet, Inc.', null, '8168895875', 'drennock4@scribd.com','Activo');
-insert into Proveedores (nombre, ubicacion, telefono, email, estado) values ('Verizon Communications Inc.', null, '2176793729', 'bfrancioli5@surveymonkey.com','Activo');
-insert into Proveedores (nombre, ubicacion, telefono, email, estado) values ('Autoliv, Inc.', null, '9214602214', 'bdebold6@usda.gov','Activo');
-insert into Proveedores (nombre, ubicacion, telefono, email, estado) values ('Ambac Financial Group, Inc.', null, '2558495834', 'agauge7@wisc.edu','Activo');
-insert into Proveedores (nombre, ubicacion, telefono, email, estado) values ('Willis Towers Watson Public Limited Company', null, '6675864596', 'csymms8@nsw.gov.au','Activo');
-insert into Proveedores (nombre, ubicacion, telefono, email, estado) values ('Legg Mason Low Volatility High Dividend ETF', null, '4026699152', 'blandeaux9@japanpost.jp','Activo');
+﻿-----------Datos para hacer pruebas------------
+insert into Proveedores (nombre, ubicacion, telefono, email) values ('Vericel Corporation', 'Naga', '4125781177', 'vcurcher0@census.gov');
+insert into Proveedores (nombre, ubicacion, telefono, email) values ('Live Nation Entertainment, Inc.', 'Fryčovice', '8163498768', 'sbresland1@cpanel.net');
+insert into Proveedores (nombre, ubicacion, telefono, email) values ('Farmers Capital Bank Corporation', 'Nagiba', '2683019186', 'mbenian2@so-net.ne.jp');
+insert into Proveedores (nombre, ubicacion, telefono, email) values ('Halyard Health, Inc.', 'Kauswagan', '1013828497', 'prosetti3@usnews.com');
+insert into Proveedores (nombre, ubicacion, telefono, email) values ('Customers Bancorp, Inc', 'Jiangyou', '7788169807', 'vwhitcomb4@imgur.com');
+insert into Proveedores (nombre, ubicacion, telefono, email) values ('Dover Motorsports, Inc.', 'Shimen', '9439275263', 'gjanicki5@mapy.cz');
+insert into Proveedores (nombre, ubicacion, telefono, email) values ('Sibanye Gold Limited', 'Llipa', '6856741847', 'tgallyon6@homestead.com');
+insert into Proveedores (nombre, ubicacion, telefono, email) values ('Silver Run Acquisition Corporation II', 'Armenta', '8554457985', 'askipp7@delicious.com');
+insert into Proveedores (nombre, ubicacion, telefono, email) values ('Gladstone Capital Corporation', 'Xuancheng', '3637919605', 'regginton8@cbslocal.com');
+insert into Proveedores (nombre, ubicacion, telefono, email) values ('Lexicon Pharmaceuticals, Inc.', 'Barrunchal', '8978636124', 'dchantillon9@comsenz.com');
 
 insert into Categorias (nombreCategoria, estado) values ('Desayunos', 'Activo');
 insert into Categorias (nombreCategoria, estado) values ('Almuerzos', 'Activo');
@@ -1220,4 +1220,4 @@ insert into ProductosVenta (nombre, precio, idCategoria) values ('Sausage - Brea
 
 Update ProductosCompra set estado = 'Activo'
 Update ProductosVenta set estado = 'Activo'
-
+Update Proveedores set estado = 'Activo'
