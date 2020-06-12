@@ -16,14 +16,14 @@ namespace sistemaRestaurante.Reports {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptDetallesVenta : ReportClass {
+    public class rptFacturaVentas : ReportClass {
         
-        public rptDetallesVenta() {
+        public rptFacturaVentas() {
         }
         
         public override string ResourceName {
             get {
-                return "rptDetallesVenta.rpt";
+                return "rptFacturaVentas.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace sistemaRestaurante.Reports {
         
         public override string FullResourceName {
             get {
-                return "sistemaRestaurante.Reports.rptDetallesVenta.rpt";
+                return "sistemaRestaurante.Reports.rptFacturaVentas.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace sistemaRestaurante.Reports {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptDetallesVenta : Component, ICachedReport {
+    public class CachedrptFacturaVentas : Component, ICachedReport {
         
-        public CachedrptDetallesVenta() {
+        public CachedrptFacturaVentas() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace sistemaRestaurante.Reports {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptDetallesVenta rpt = new rptDetallesVenta();
+            rptFacturaVentas rpt = new rptFacturaVentas();
             rpt.Site = this.Site;
             return rpt;
         }

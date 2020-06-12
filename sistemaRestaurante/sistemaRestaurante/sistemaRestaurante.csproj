@@ -34,9 +34,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -49,6 +51,8 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -116,10 +120,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reports\rptDetallesVenta.cs">
+    <Compile Include="Reports\rptFacturaVentas.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>rptDetallesVenta.rpt</DependentUpon>
+      <DependentUpon>rptFacturaVentas.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Vistas\Administrador\CategoriasLista\FrmCRUDCategorias.cs">
@@ -236,6 +240,12 @@
     <Compile Include="Vistas\Administrador\Ventas\FrmProdsAVender.Designer.cs">
       <DependentUpon>FrmProdsAVender.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Administrador\Ventas\FrmRptFacturaVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Administrador\Ventas\FrmRptFacturaVenta.Designer.cs">
+      <DependentUpon>FrmRptFacturaVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Administrador\Ventas\FrmVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -285,9 +295,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Reports\rptDetallesVenta.rpt">
+    <EmbeddedResource Include="Reports\rptFacturaVentas.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptDetallesVenta.cs</LastGenOutput>
+      <LastGenOutput>rptFacturaVentas.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Administrador\CategoriasLista\FrmCRUDCategorias.resx">
       <DependentUpon>FrmCRUDCategorias.cs</DependentUpon>
@@ -345,6 +355,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Administrador\Ventas\FrmProdsAVender.resx">
       <DependentUpon>FrmProdsAVender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Administrador\Ventas\FrmRptFacturaVenta.resx">
+      <DependentUpon>FrmRptFacturaVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Administrador\Ventas\FrmVentas.resx">
       <DependentUpon>FrmVentas.cs</DependentUpon>

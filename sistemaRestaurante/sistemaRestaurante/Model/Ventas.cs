@@ -21,11 +21,11 @@ namespace sistemaRestaurante.Model
         }
     
         public int idVenta { get; set; }
-        public Nullable<System.DateTime> fechadeVenta { get; set; }
-        public Nullable<decimal> totalPagar { get; set; }
+        public System.DateTime fechadeVenta { get; set; }
+        public decimal totalPagar { get; set; }
         public string estado { get; set; }
         public string nombredeUsuario { get; set; }
-        public Nullable<int> NumMesa { get; set; }
+        public int NumMesa { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetallesVenta> DetallesVenta { get; set; }

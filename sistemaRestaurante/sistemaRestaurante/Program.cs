@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using sistemaRestaurante.Vistas;
+using sistemaRestaurante.Vistas.Administrador.Ventas;
 
 namespace sistemaRestaurante
 {
@@ -17,7 +18,7 @@ namespace sistemaRestaurante
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Inicio());
+            Application.Run(new FrmRptFacturaVenta());
         }
     }
 }
