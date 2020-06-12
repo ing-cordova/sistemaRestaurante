@@ -15,11 +15,11 @@ namespace sistemaRestaurante.Model
     public partial class DetallesVenta
     {
         public int idDetallesV { get; set; }
-        public Nullable<int> idProductoV { get; set; }
-        public Nullable<double> precioCompra { get; set; }
-        public Nullable<int> cantidad { get; set; }
-        public Nullable<decimal> totalProducto { get; set; }
-        public Nullable<int> idVenta { get; set; }
+        public int idProductoV { get; set; }
+        public double precioCompra { get; set; }
+        public int cantidad { get; set; }
+        public decimal totalProducto { get; set; }
+        public int idVenta { get; set; }
     
         public virtual ProductosVenta ProductosVenta { get; set; }
         public virtual Ventas Ventas { get; set; }
