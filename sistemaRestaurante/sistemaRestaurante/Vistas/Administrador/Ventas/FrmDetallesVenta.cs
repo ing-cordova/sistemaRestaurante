@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using sistemaRestaurante.Model;
+using CrystalDecisions.CrystalReports.Engine;
+using  CrystalDecisions.Shared;
+using sistemaRestaurante.Reports;
 
 namespace sistemaRestaurante.Vistas.Administrador.Ventas
 {
@@ -134,11 +137,10 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
             DialogResult result = MessageBox.Show("¿Estás seguro que quieres marcar la orden como Entregada? \n¡La acción no se podrá deshacer!", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (result == DialogResult.OK)
             {
+                String idVenta = txtIdVenta.Text;
+                int idV = int.Parse(idVenta);
                 using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
                 {
-
-                    String idVenta = txtIdVenta.Text;
-                    int idV = int.Parse(idVenta);
 
                     ventas = bd.Ventas.Where(VerificarID => VerificarID.idVenta == idV).First();
                     ventas.estado = "Pagada";
@@ -149,8 +151,19 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
 
                 }
 
-                MessageBox.Show("¡Orden modificada con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
-                btnRegresar.PerformClick();
+                FrmRptFacturaVenta frmRptFactura = new FrmRptFacturaVenta();
+                ReportDocument Rd = new ReportDocument();
+                ParameterField pf = new ParameterField();
+                ParameterFields pfs = new ParameterFields();
+                ParameterDiscreteValue pdv = new ParameterDiscreteValue();
+                pf.Name = "@IdVenta";
+                pdv.Value = idV;
+                pf.CurrentValues.Add(pdv);
+                pfs.Add(pf);
+                frmRptFactura.crDetalleVenta.ParameterFieldInfo = pfs;
+                Rd.Load(@"C:\Users\Usuario\Documents\GitHub\sistemaRestaurante\sistemaRestaurante\sistemaRestaurante\Reports\rptFacturaVentas.rpt");
+                frmRptFactura.crDetalleVenta.ReportSource = Rd;
+                frmRptFactura.Show();
             }
         }
 

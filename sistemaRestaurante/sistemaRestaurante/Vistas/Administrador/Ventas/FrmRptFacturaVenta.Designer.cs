@@ -39,14 +39,15 @@
             this.crDetalleVenta.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crDetalleVenta.Location = new System.Drawing.Point(0, 0);
             this.crDetalleVenta.Name = "crDetalleVenta";
-            this.crDetalleVenta.Size = new System.Drawing.Size(800, 450);
+            this.crDetalleVenta.Size = new System.Drawing.Size(910, 500);
             this.crDetalleVenta.TabIndex = 0;
+            this.crDetalleVenta.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // FrmRptFacturaVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(910, 500);
             this.Controls.Add(this.crDetalleVenta);
             this.Name = "FrmRptFacturaVenta";
             this.Text = "FACTURA EMITIDA";
@@ -57,6 +58,6 @@
 
         #endregion
 
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crDetalleVenta;
+        public CrystalDecisions.Windows.Forms.CrystalReportViewer crDetalleVenta;
     }
 }
