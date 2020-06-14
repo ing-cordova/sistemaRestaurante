@@ -151,19 +151,24 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
 
                 }
 
-                FrmRptFacturaVenta frmRptFactura = new FrmRptFacturaVenta();
-                ReportDocument Rd = new ReportDocument();
-                ParameterField pf = new ParameterField();
-                ParameterFields pfs = new ParameterFields();
-                ParameterDiscreteValue pdv = new ParameterDiscreteValue();
-                pf.Name = "@IdVenta";
-                pdv.Value = idV;
-                pf.CurrentValues.Add(pdv);
-                pfs.Add(pf);
-                frmRptFactura.crDetalleVenta.ParameterFieldInfo = pfs;
-                Rd.Load(@"C:\Users\Usuario\Documents\GitHub\sistemaRestaurante\sistemaRestaurante\sistemaRestaurante\Reports\rptFacturaVentas.rpt");
-                frmRptFactura.crDetalleVenta.ReportSource = Rd;
-                frmRptFactura.Show();
+                DialogResult dialog = MessageBox.Show("¿DESEA EMITIR UNA FACTURA?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if(dialog == DialogResult.Yes)
+                {
+                    FrmRptFacturaVenta frmRptFactura = new FrmRptFacturaVenta();
+                    ReportDocument Rd = new ReportDocument();
+                    ParameterField pf = new ParameterField();
+                    ParameterFields pfs = new ParameterFields();
+                    ParameterDiscreteValue pdv = new ParameterDiscreteValue();
+                    pf.Name = "@IdVenta";
+                    pdv.Value = idV;
+                    pf.CurrentValues.Add(pdv);
+                    pfs.Add(pf);
+                    frmRptFactura.crDetalleVenta.ParameterFieldInfo = pfs;
+                    Rd.Load(@"C:\Users\andre\Documents\GuitHub\sistemaRestaurante\sistemaRestaurante\sistemaRestaurante\Reports\rptFacturaVentas.rpt");
+                    frmRptFactura.crDetalleVenta.ReportSource = Rd;
+                    frmRptFactura.Show();
+                }
+                
             }
         }
 
