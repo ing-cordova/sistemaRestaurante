@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using sistemaRestaurante.Model;
-using  sistemaRestaurante.Vistas;
+using sistemaRestaurante.Vistas;
 using sistemaRestaurante.Vistas.Administrador.UsuariosLista;
 
 namespace sistemaRestaurante.Vistas.Administrador.Ventas
@@ -30,17 +30,16 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
                     if (txtBusqueda.Text.Equals(""))
                     {
                         var Ventas = from ventas in bd.Ventas
-                            where ventas.estado != "Pagada"
+                                     where ventas.estado != "Pagada"
 
-                            select new
-                            {
-                                ID = ventas.idVenta,
-                                FECHA = ventas.fechadeVenta,
-                                NMESA = ventas.NumMesa,
-                                TOTAL = ventas.totalPagar,
-                                ESTADO = ventas.estado,
-
-                            };
+                                     select new
+                                     {
+                                         ID = ventas.idVenta,
+                                         FECHA = ventas.fechadeVenta,
+                                         NMESA = ventas.NumMesa,
+                                         TOTAL = ventas.totalPagar,
+                                         ESTADO = ventas.estado
+                                     };
 
 
                         foreach (var iterar in Ventas)
@@ -52,19 +51,20 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
                     {
                         int Busqueda = Int32.Parse(txtBusqueda.Text);
                         var listaVentas = from ventas in bd.Ventas
-                            where ventas.estado != "Pagada" && ventas.NumMesa == Busqueda
-                            select new
-                            {
-                                ID = ventas.idVenta,
-                                FECHA = ventas.fechadeVenta,
-                                NMESA = ventas.NumMesa,
-                                ESTADO = ventas.estado,
-                            };
+                                          where ventas.estado != "Pagada" && ventas.NumMesa == Busqueda
+                                          select new
+                                          {
+                                              ID = ventas.idVenta,
+                                              FECHA = ventas.fechadeVenta,
+                                              NMESA = ventas.NumMesa,
+                                              TOTAL = ventas.totalPagar,
+                                              ESTADO = ventas.estado
+                                          };
                         if (listaVentas.Count() > 0)
                         {
                             foreach (var iterar in listaVentas)
                             {
-                                dtvVentas.Rows.Add(iterar.ID, iterar.FECHA, iterar.NMESA, iterar.ESTADO);
+                                dtvVentas.Rows.Add(iterar.ID, iterar.FECHA, iterar.NMESA, iterar.TOTAL, iterar.ESTADO);
                             }
                         }
 
@@ -75,40 +75,42 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
                     if (txtBusqueda.Text.Equals(""))
                     {
                         var Ventas = from ventas in bd.Ventas
-                            where ventas.estado.Equals("Enviada")
-                            select new
-                            {
-                                ID = ventas.idVenta,
-                                FECHA = ventas.fechadeVenta,
-                                NMESA = ventas.NumMesa,
-                                ESTADO = ventas.estado,
-                            };
+                                     where ventas.estado.Equals("Enviada")
+                                     select new
+                                     {
+                                         ID = ventas.idVenta,
+                                         FECHA = ventas.fechadeVenta,
+                                         NMESA = ventas.NumMesa,
+                                         TOTAL = ventas.totalPagar,
+                                         ESTADO = ventas.estado
+                                     };
 
                         foreach (var iterar in Ventas)
                         {
-                            dtvVentas.Rows.Add(iterar.ID, iterar.FECHA, iterar.NMESA, iterar.ESTADO);
+                            dtvVentas.Rows.Add(iterar.ID, iterar.FECHA, iterar.NMESA, iterar.TOTAL, iterar.ESTADO);
                         }
                     }
                     else
                     {
                         int Busqueda = Int32.Parse(txtBusqueda.Text);
                         var listaVentas = from ventas in bd.Ventas
-                            where ventas.estado.Equals("Enviada") && ventas.NumMesa == Busqueda
-                            select new
-                            {
-                                ID = ventas.idVenta,
-                                FECHA = ventas.fechadeVenta,
-                                NMESA = ventas.NumMesa,
-                                ESTADO = ventas.estado,
-                            };
-                        if(listaVentas.Count()>0)
+                                          where ventas.estado.Equals("Enviada") && ventas.NumMesa == Busqueda
+                                          select new
+                                          {
+                                              ID = ventas.idVenta,
+                                              FECHA = ventas.fechadeVenta,
+                                              NMESA = ventas.NumMesa,
+                                              TOTAL = ventas.totalPagar,
+                                              ESTADO = ventas.estado
+                                          };
+                        if (listaVentas.Count() > 0)
                         {
                             foreach (var iterar in listaVentas)
                             {
-                                dtvVentas.Rows.Add(iterar.ID, iterar.FECHA, iterar.NMESA, iterar.ESTADO);
+                                dtvVentas.Rows.Add(iterar.ID, iterar.FECHA, iterar.NMESA, iterar.TOTAL, iterar.ESTADO);
                             }
                         }
-                        
+
                     }
                 }
                 else if (rbotRecibidas.Checked == true)
@@ -116,37 +118,39 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
                     if (txtBusqueda.Text.Equals(""))
                     {
                         var Ventas = from ventas in bd.Ventas
-                            where ventas.estado.Equals("Recibida")
-                            select new
-                            {
-                                ID = ventas.idVenta,
-                                FECHA = ventas.fechadeVenta,
-                                NMESA = ventas.NumMesa,
-                                ESTADO = ventas.estado,
-                            };
+                                     where ventas.estado.Equals("Recibida")
+                                     select new
+                                     {
+                                         ID = ventas.idVenta,
+                                         FECHA = ventas.fechadeVenta,
+                                         NMESA = ventas.NumMesa,
+                                         TOTAL = ventas.totalPagar,
+                                         ESTADO = ventas.estado
+                                     };
 
                         foreach (var iterar in Ventas)
                         {
-                            dtvVentas.Rows.Add(iterar.ID, iterar.FECHA, iterar.NMESA, iterar.ESTADO);
+                            dtvVentas.Rows.Add(iterar.ID, iterar.FECHA, iterar.NMESA, iterar.TOTAL, iterar.ESTADO);
                         }
                     }
                     else
                     {
                         int Busqueda = Int32.Parse(txtBusqueda.Text);
                         var listaVentas = from ventas in bd.Ventas
-                            where ventas.estado.Equals("Recibida") && ventas.NumMesa == Busqueda
-                            select new
-                            {
-                                ID = ventas.idVenta,
-                                FECHA = ventas.fechadeVenta,
-                                NMESA = ventas.NumMesa,
-                                ESTADO = ventas.estado,
-                            };
+                                          where ventas.estado.Equals("Recibida") && ventas.NumMesa == Busqueda
+                                          select new
+                                          {
+                                              ID = ventas.idVenta,
+                                              FECHA = ventas.fechadeVenta,
+                                              NMESA = ventas.NumMesa,
+                                              TOTAL = ventas.totalPagar,
+                                              ESTADO = ventas.estado
+                                          };
                         if (listaVentas.Count() > 0)
                         {
                             foreach (var iterar in listaVentas)
                             {
-                                dtvVentas.Rows.Add(iterar.ID, iterar.FECHA, iterar.NMESA, iterar.ESTADO);
+                                dtvVentas.Rows.Add(iterar.ID, iterar.FECHA, iterar.NMESA, iterar.TOTAL, iterar.ESTADO);
                             }
                         }
 
@@ -157,37 +161,39 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
                     if (txtBusqueda.Text.Equals(""))
                     {
                         var Ventas = from ventas in bd.Ventas
-                            where ventas.estado.Equals("Entregada")
-                            select new
-                            {
-                                ID = ventas.idVenta,
-                                FECHA = ventas.fechadeVenta,
-                                NMESA = ventas.NumMesa,
-                                ESTADO = ventas.estado,
-                            };
+                                     where ventas.estado.Equals("Entregada")
+                                     select new
+                                     {
+                                         ID = ventas.idVenta,
+                                         FECHA = ventas.fechadeVenta,
+                                         NMESA = ventas.NumMesa,
+                                         TOTAL = ventas.totalPagar,
+                                         ESTADO = ventas.estado
+                                     };
 
                         foreach (var iterar in Ventas)
                         {
-                            dtvVentas.Rows.Add(iterar.ID, iterar.FECHA, iterar.NMESA, iterar.ESTADO);
+                            dtvVentas.Rows.Add(iterar.ID, iterar.FECHA, iterar.NMESA, iterar.TOTAL, iterar.ESTADO);
                         }
                     }
                     else
                     {
                         int Busqueda = Int32.Parse(txtBusqueda.Text);
                         var listaVentas = from ventas in bd.Ventas
-                            where ventas.estado.Equals("Entregada") && ventas.NumMesa == Busqueda
-                            select new
-                            {
-                                ID = ventas.idVenta,
-                                FECHA = ventas.fechadeVenta,
-                                NMESA = ventas.NumMesa,
-                                ESTADO = ventas.estado,
-                            };
+                                          where ventas.estado.Equals("Entregada") && ventas.NumMesa == Busqueda
+                                          select new
+                                          {
+                                              ID = ventas.idVenta,
+                                              FECHA = ventas.fechadeVenta,
+                                              NMESA = ventas.NumMesa,
+                                              TOTAL = ventas.totalPagar,
+                                              ESTADO = ventas.estado
+                                          };
                         if (listaVentas.Count() > 0)
                         {
                             foreach (var iterar in listaVentas)
                             {
-                                dtvVentas.Rows.Add(iterar.ID, iterar.FECHA, iterar.NMESA, iterar.ESTADO);
+                                dtvVentas.Rows.Add(iterar.ID, iterar.FECHA, iterar.NMESA, iterar.TOTAL, iterar.ESTADO);
                             }
                         }
 
@@ -209,11 +215,11 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
             Filtro();
         }
 
-       
+
         public static FrmDetallesVenta FrmDetalles = new FrmDetallesVenta();
         private void btnVerSelected_Click(object sender, EventArgs e)
         {
-            if(dtvVentas.Rows.Count == 0)
+            if (dtvVentas.Rows.Count == 0)
             {
                 MessageBox.Show("¡Aún no hay orden en proceso!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -231,7 +237,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
                     FrmLoguin.accessAd.AbrirFormulario(FrmDetalles);
                     this.Close();
                 }
-            } 
+            }
         }
 
         private void rbotTodos_CheckedChanged(object sender, EventArgs e)
@@ -261,7 +267,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
                 dtvVentas.Rows.Clear();
                 Filtro();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
 
             }

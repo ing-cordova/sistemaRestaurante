@@ -25,7 +25,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
         List<Proveedores> listaproveedores = new List<Proveedores>();
         public void CargarCombo()
         {
-            using(RestauranteBDEntities1 bd = new RestauranteBDEntities1())
+            using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
             {
                 var Proveedor = bd.Proveedores.ToList();
                 foreach (var iterar in Proveedor)
@@ -56,12 +56,12 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
         }
         public void RetornoId()
         {
-            using(RestauranteBDEntities1 bd = new RestauranteBDEntities1())
+            using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
             {
                 var tbCompras = bd.Compraas;
 
                 lblCodigo.Text = "1";
-                foreach(var iterarCompras in tbCompras)
+                foreach (var iterarCompras in tbCompras)
                 {
                     int idCompra = iterarCompras.idCompra;
                     int suma = idCompra + 1;
@@ -121,7 +121,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
             else
             {
                 DialogResult result = MessageBox.Show("¿Desea agregar algo más antes de comprar?", "Validación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if(result == DialogResult.No)
+                if (result == DialogResult.No)
                 {
                     using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
                     {
@@ -174,9 +174,9 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
                             bd.SaveChanges();
                             Almacen almaceen = new Almacen();
                             var lista = from almacen in bd.Almacen
-                                where almacen.idProductoC == idProdConv
-                                select almacen;
-                            if (lista.Count()>0)
+                                        where almacen.idProductoC == idProdConv
+                                        select almacen;
+                            if (lista.Count() > 0)
                             {
                                 int idA = int.Parse(dtvDetallesCompra.Rows[i].Cells[0].Value.ToString());
                                 int CantidadProd = int.Parse(dtvDetallesCompra.Rows[i].Cells[3].Value.ToString());
@@ -211,28 +211,83 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if(txtCodigoProd.Text.Equals("") || txtNombreProd.Text.Equals("") || txtPrecio.Text.Equals("") || nupCantidad.Value==0 || txtTotal.Text.Equals("") || txtTotal.Text.Equals("0"))
+            if (txtCodigoProd.Text.Equals("") || txtNombreProd.Text.Equals("") || txtPrecio.Text.Equals("") || nupCantidad.Value == 0 || txtTotal.Text.Equals("") || txtTotal.Text.Equals("0"))
             {
                 MessageBox.Show("¡Todos los campos son obligatorios!", "Rellenar campos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                try
+                using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
                 {
-                    Calculo();
-                }
-                catch (Exception ex)
-                {
+                    int idProdtxt = Int32.Parse(txtCodigoProd.Text);
+                    double totalProd = Convert.ToDouble(txtTotal.Text);
+                    if (dtvDetallesCompra.Rows.Count > 0)
+                    {
+                        for (int i = 0; i < dtvDetallesCompra.Rows.Count; i++)
+                        {
+                            int idProddtv = Int32.Parse(dtvDetallesCompra.Rows[i].Cells[0].Value.ToString());
+                            if (idProddtv == idProdtxt)
+                            {
+                                try
+                                {
+                                    Calculo();
+                                }
+                                catch (Exception ex)
+                                {
+
+                                }
+
+                                int NuevaCantidad = Int32.Parse(nupCantidad.Text) +
+                                                    Int32.Parse(dtvDetallesCompra.Rows[i].Cells[3].Value
+                                                        .ToString());
+                                double NuevoTotal =
+                                    totalProd + Convert.ToDouble(dtvDetallesCompra.Rows[i].Cells[4].Value);
+                                dtvDetallesCompra.Rows[i].Cells[3].Value = NuevaCantidad;
+                                dtvDetallesCompra.Rows[i].Cells[4].Value = NuevoTotal;
+                                CalcularTotalGeneral();
+                                dtvDetallesCompra.ClearSelection();
+                                dtvDetallesCompra.FirstDisplayedScrollingRowIndex = i;
+                                dtvDetallesCompra.Rows[i].Selected = true;
+                                break;
+
+                            }
+                            else if (i == dtvDetallesCompra.Rows.Count - 1 && idProddtv != idProdtxt)
+                            {
+                                dtvDetallesCompra.Rows.Add(txtCodigoProd.Text, txtNombreProd.Text, txtPrecio.Text,
+                                    nupCantidad.Value, txtTotal.Text);
+                                cmbProveedores.Enabled = false;
+                                CalcularTotalGeneral();
+                                dtvDetallesCompra.ClearSelection();
+                                int lastRow = dtvDetallesCompra.Rows.Count - 1;
+                                dtvDetallesCompra.FirstDisplayedScrollingRowIndex = lastRow;
+                                dtvDetallesCompra.Rows[lastRow].Selected = true;
+                                break;
+                            }
+
+                        }
+                    }
+                    else if (dtvDetallesCompra.Rows.Count == 0)
+                    {
+                        dtvDetallesCompra.Rows.Add(txtCodigoProd.Text, txtNombreProd.Text, txtPrecio.Text,
+                            nupCantidad.Value, txtTotal.Text);
+                        cmbProveedores.Enabled = false;
+                        CalcularTotalGeneral();
+                        dtvDetallesCompra.ClearSelection();
+                        int lastRow = dtvDetallesCompra.Rows.Count - 1;
+                        dtvDetallesCompra.FirstDisplayedScrollingRowIndex = lastRow;
+                        dtvDetallesCompra.Rows[lastRow].Selected = true;
+                    }
+
+                    try
+                    {
+                        Calculo();
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
 
                 }
-
-                dtvDetallesCompra.Rows.Add(txtCodigoProd.Text, txtNombreProd.Text, txtPrecio.Text, nupCantidad.Value, txtTotal.Text);
-                cmbProveedores.Enabled = false;
-                CalcularTotalGeneral();
-                dtvDetallesCompra.ClearSelection();
-                int lastRow = dtvDetallesCompra.Rows.Count - 1;
-                dtvDetallesCompra.FirstDisplayedScrollingRowIndex = lastRow;
-                dtvDetallesCompra.Rows[lastRow].Selected = true;
             }
         }
 
@@ -245,20 +300,20 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
         {
             if (txtBusqueda.Text == "")
             {
-                if(e.KeyCode == Keys.Enter)
+                if (e.KeyCode == Keys.Enter)
                 {
                     btnBuscar.PerformClick();
                 }
             }
-            else if(e.KeyCode == Keys.Enter)
+            else if (e.KeyCode == Keys.Enter)
             {
-                using(RestauranteBDEntities1 bd = new RestauranteBDEntities1())
+                using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
                 {
-                    
+
                     int idBusqueda = Int32.Parse(txtBusqueda.Text);
                     var buscarProd = from producto in bd.ProductosCompra
-                        where producto.idProductoC == idBusqueda && producto.estado == "Activo"
-                        select producto;
+                                     where producto.idProductoC == idBusqueda && producto.estado == "Activo"
+                                     select producto;
                     if (buscarProd.Count() > 0)
                     {
                         prodCompra = bd.ProductosCompra.Where(VerificarId => VerificarId.idProductoC == idBusqueda).First();
@@ -270,11 +325,11 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
                         {
                             int idprovee = Int32.Parse(cmbProveedores.SelectedValue.ToString());
                             var buscarProdProveedor = from producto in bd.ProductosCompra
-                                where producto.idProductoC == idBusqueda && producto.estado == "Activo"
+                                                      where producto.idProductoC == idBusqueda && producto.estado == "Activo"
                                                       where producto.idProveedor == idprovee
-                                select producto;
+                                                      select producto;
 
-                            if (buscarProdProveedor.Count()>0)
+                            if (buscarProdProveedor.Count() > 0)
                             {
                                 ProductosCompra prod = new ProductosCompra();
                                 int idProveedor = Int32.Parse(provee);
@@ -293,7 +348,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
                                 MessageBox.Show("¡El producto no se encuentra en los Registros" + "\n o no pertenece al proveedor seleccionado!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 txtBusqueda.Text = "";
                             }
-                            
+
                         }
                         else
                         {
@@ -320,7 +375,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
         int intentos = 1;
         private void nupCantidad_KeyUp(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 if (intentos == 2)
                 {
@@ -341,7 +396,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
 
         private void dtvDetallesCompra_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
-            if(dtvDetallesCompra.Rows.Count == 0)
+            if (dtvDetallesCompra.Rows.Count == 0)
             {
                 lblTotalAPagar.Text = "0.00";
             }
