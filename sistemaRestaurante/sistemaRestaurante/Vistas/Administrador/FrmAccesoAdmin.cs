@@ -201,10 +201,11 @@ namespace sistemaRestaurante.Vistas
         {
             AbrirFormulario(new FrmAlmacen());
         }
-
+        public static FrmListaVentas frmLista = new FrmListaVentas();
         private void btnVentaProceso_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(new FrmListaVentas());
+            frmLista.TipodeAcceso = 1;
+            AbrirFormulario(frmLista);
         }
 
         private void pbLogo_Click(object sender, EventArgs e)

@@ -20,7 +20,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
             InitializeComponent();
         }
 
-
+        public int TipodeAcceso;
         void Filtro()
         {
             using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
@@ -225,16 +225,16 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
             }
             else
             {
-                if (Inicio.Login.TipodeAcceso == 1)
-                {
-                    FrmDetalles.txtIdVenta.Text = dtvVentas.CurrentRow.Cells[0].Value.ToString();
-                    FrmLoguin.accessU.AbrirFormulario(FrmDetalles);
-                    this.Close();
-                }
-                else if (Inicio.Login.TipodeAcceso == 0)
+                if (TipodeAcceso == 1)
                 {
                     FrmDetalles.txtIdVenta.Text = dtvVentas.CurrentRow.Cells[0].Value.ToString();
                     FrmLoguin.accessAd.AbrirFormulario(FrmDetalles);
+                    this.Close();
+                }
+                else if(TipodeAcceso ==0)
+                {
+                    FrmDetalles.txtIdVenta.Text = dtvVentas.CurrentRow.Cells[0].Value.ToString();
+                    FrmLoguin.accessU.AbrirFormulario(FrmDetalles);
                     this.Close();
                 }
             }
