@@ -74,8 +74,19 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FrmLoguin.accessAd.AbrirFormulario(new FrmListaVentas());
+            //this.Hide();
+            //FrmLoguin.accessAd.AbrirFormulario(new FrmListaVentas());
+
+            if (FrmAccesoAdmin.frmLista.TipodeAcceso == 1)
+            {
+                this.Hide();
+                FrmLoguin.accessAd.AbrirFormulario(FrmAccesoAdmin.frmLista);
+            }
+            else if (FrmAccesoAdmin.frmLista.TipodeAcceso == 0)
+            {
+                this.Hide();
+                FrmLoguin.accessU.AbrirFormulario(FrmAccesoUsuario.frmLista);
+            }
         }
 
         private void txtIdVenta_TextChanged(object sender, EventArgs e)

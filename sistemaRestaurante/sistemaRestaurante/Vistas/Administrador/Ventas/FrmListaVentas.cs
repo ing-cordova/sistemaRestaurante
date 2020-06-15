@@ -229,13 +229,13 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
                 {
                     FrmDetalles.txtIdVenta.Text = dtvVentas.CurrentRow.Cells[0].Value.ToString();
                     FrmLoguin.accessAd.AbrirFormulario(FrmDetalles);
-                    this.Close();
+                    this.Hide();
                 }
                 else if(TipodeAcceso ==0)
                 {
                     FrmDetalles.txtIdVenta.Text = dtvVentas.CurrentRow.Cells[0].Value.ToString();
                     FrmLoguin.accessU.AbrirFormulario(FrmDetalles);
-                    this.Close();
+                    this.Hide();
                 }
             }
         }
