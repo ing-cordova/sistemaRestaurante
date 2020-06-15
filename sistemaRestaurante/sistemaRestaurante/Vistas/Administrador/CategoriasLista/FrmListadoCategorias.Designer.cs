@@ -89,7 +89,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             this.dtvCategorias.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dtvCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtvCategorias.Size = new System.Drawing.Size(653, 359);
+            this.dtvCategorias.Size = new System.Drawing.Size(653, 534);
             this.dtvCategorias.TabIndex = 5;
             // 
             // idproducto
