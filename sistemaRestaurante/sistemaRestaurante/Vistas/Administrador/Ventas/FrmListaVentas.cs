@@ -228,12 +228,14 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
                 if (TipodeAcceso == 1)
                 {
                     FrmDetalles.txtIdVenta.Text = dtvVentas.CurrentRow.Cells[0].Value.ToString();
+                    FrmDetalles.TipodeAcceso = 1;
                     FrmLoguin.accessAd.AbrirFormulario(FrmDetalles);
                     this.Hide();
                 }
                 else if(TipodeAcceso ==0)
                 {
                     FrmDetalles.txtIdVenta.Text = dtvVentas.CurrentRow.Cells[0].Value.ToString();
+                    FrmDetalles.TipodeAcceso = 0;
                     FrmLoguin.accessU.AbrirFormulario(FrmDetalles);
                     this.Hide();
                 }

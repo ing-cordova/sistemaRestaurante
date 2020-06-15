@@ -20,6 +20,8 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
         {
             InitializeComponent();
         }
+
+        public int TipodeAcceso;
         private void FrmCompras_Load(object sender, EventArgs e)
         {
             CargarDatos();
@@ -77,14 +79,16 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
             //this.Hide();
             //FrmLoguin.accessAd.AbrirFormulario(new FrmListaVentas());
 
-            if (FrmAccesoAdmin.frmLista.TipodeAcceso == 1)
+            if (TipodeAcceso == 1)
             {
                 this.Hide();
+                FrmAccesoAdmin.frmLista.TipodeAcceso = 0;
                 FrmLoguin.accessAd.AbrirFormulario(FrmAccesoAdmin.frmLista);
             }
-            else if (FrmAccesoAdmin.frmLista.TipodeAcceso == 0)
+            else if (TipodeAcceso == 0)
             {
                 this.Hide();
+                FrmAccesoUsuario.frmLista.TipodeAcceso = 0;
                 FrmLoguin.accessU.AbrirFormulario(FrmAccesoUsuario.frmLista);
             }
         }
