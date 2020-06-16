@@ -25,7 +25,7 @@ namespace sistemaRestaurante.Vistas.Administrador
                 var JoinAlmacen = from almacen in bd.Almacen
                                   from prodC in bd.ProductosCompra
                                   where almacen.idProductoC == prodC.idProductoC
-                                  orderby prodC.idProductoC ascending 
+                                  orderby almacen.cantidadDisponible ascending 
                                   select new
                                   {
                                       ID = prodC.idProductoC,
