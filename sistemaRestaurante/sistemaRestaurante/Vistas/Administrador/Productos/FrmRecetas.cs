@@ -165,7 +165,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
 
                 CargarDatos();
                 Limpiar();
-                btnActualizar.Enabled = false;
+                btnActualizar.Enabled = true;
                 btnEditarSelected.Enabled = false;
                 btnEliminarSelected.Enabled = false;
             }
@@ -197,11 +197,12 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
 
                 MessageBox.Show("¡Ingrediente editado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
             }
+            CargarDatos();
         }
 
         private void dtvReceta_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnBuscar.Enabled = false;
+            btnBuscar.Enabled = true;
             txtBusqueda.Enabled = false;
             btnAgregar.Enabled = false;
             btnNuevo.Enabled = true;
@@ -234,6 +235,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
 
                 MessageBox.Show("¡Ingrediente eliminado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
             }
+            CargarDatos();
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
