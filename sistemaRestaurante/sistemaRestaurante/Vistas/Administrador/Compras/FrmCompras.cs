@@ -172,6 +172,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
 
                             bd.DetallesCompra.Add(detalleC);
                             bd.SaveChanges();
+
                             Almacen almaceen = new Almacen();
                             var lista = from almacen in bd.Almacen
                                         where almacen.idProductoC == idProdConv

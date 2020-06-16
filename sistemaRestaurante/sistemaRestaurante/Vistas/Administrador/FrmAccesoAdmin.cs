@@ -164,6 +164,7 @@ namespace sistemaRestaurante.Vistas
             this.panelContenedor.Controls.Add(compras);
             this.panelContenedor.Tag = compras;
             compras.LimpiarCompra();
+            compras.CargarCombo();
             compras.Show();
         }
 

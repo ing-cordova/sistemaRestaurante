@@ -179,7 +179,10 @@ namespace sistemaRestaurante.Vistas.Administrador.Ventas
                     pf.CurrentValues.Add(pdv);
                     pfs.Add(pf);
                     frmRptFactura.crDetalleVenta.ParameterFieldInfo = pfs;
-                    Rd.Load(@"C:\Users\Usuario\Documents\GitHub\sistemaRestaurante\sistemaRestaurante\sistemaRestaurante\Reports\rptFacturaVentas.rpt");
+                    /*Rodrigo*/
+                    //Rd.Load(@"C:\Users\Usuario\Documents\GitHub\sistemaRestaurante\sistemaRestaurante\sistemaRestaurante\Reports\rptFacturaVentas.rpt");
+                    /*Andres*/
+                    Rd.Load(@"C:\Users\andre\Documents\GuitHub\sistemaRestaurante\sistemaRestaurante\sistemaRestaurante\Reports\rptFacturaVentas.rpt");
                     frmRptFactura.crDetalleVenta.ReportSource = Rd;
                     btnRegresar.PerformClick();
                     frmRptFactura.Show();
