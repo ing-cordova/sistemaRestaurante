@@ -101,8 +101,8 @@
             this.dtvDetallesCompra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtvDetallesCompra.Size = new System.Drawing.Size(613, 288);
             this.dtvDetallesCompra.TabIndex = 23;
-            this.dtvDetallesCompra.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvDetallesCompra_CellDoubleClick);           
-            this.dtvDetallesCompra.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dtvDetallesCompra_KeyUp);
+            this.dtvDetallesCompra.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvDetallesCompra_CellDoubleClick);
+            this.dtvDetallesCompra.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtvDetallesCompra_KeyDown);
             // 
             // idProducto
             // 

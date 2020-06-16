@@ -78,7 +78,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
         }
 
 
-        private void dtvDetallesCompra_KeyUp(object sender, KeyEventArgs e)
+        private void dtvDetallesCompra_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
