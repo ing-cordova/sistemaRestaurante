@@ -77,10 +77,6 @@ namespace sistemaRestaurante.Vistas.Administrador.Compras
             this.Close();
         }
 
-        private void dtvDetallesCompra_KeyDown(object sender, KeyEventArgs e)
-        {
-            
-        }
 
         private void dtvDetallesCompra_KeyUp(object sender, KeyEventArgs e)
         {

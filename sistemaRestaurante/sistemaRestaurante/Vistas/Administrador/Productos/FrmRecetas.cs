@@ -165,7 +165,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
 
                 CargarDatos();
                 Limpiar();
-                btnActualizar.Enabled = true;
+                
                 btnEditarSelected.Enabled = false;
                 btnEliminarSelected.Enabled = false;
             }
@@ -181,21 +181,28 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
             DialogResult result = MessageBox.Show("¿Estás seguro que quieres editar?, \n¡la acción no se podrá deshacer!", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (result == DialogResult.OK)
             {
-                using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
+                if (nupCantidad.Value > 0)
                 {
-                    
-                    int idR = int.Parse(dtvReceta.CurrentRow.Cells[0].Value.ToString());
+                    using (RestauranteBDEntities1 bd = new RestauranteBDEntities1())
+                    {
 
-                    recetas = bd.Recetas.Where(VerificarID => VerificarID.idReceta == idR).First();
-                    recetas.idProductoC = Int32.Parse(txtIdProdC.Text);
-                    recetas.idProductoV = Int32.Parse(txtIdProd.Text);
-                    recetas.cantidadProdIngrediente = Int32.Parse(nupCantidad.Text);
+                        int idR = int.Parse(dtvReceta.CurrentRow.Cells[0].Value.ToString());
 
-                    bd.Entry(recetas).State = System.Data.Entity.EntityState.Modified;
-                    bd.SaveChanges();
+                        recetas = bd.Recetas.Where(VerificarID => VerificarID.idReceta == idR).First();
+                        recetas.idProductoC = Int32.Parse(txtIdProdC.Text);
+                        recetas.idProductoV = Int32.Parse(txtIdProd.Text);
+                        recetas.cantidadProdIngrediente = Int32.Parse(nupCantidad.Text);
+
+                        bd.Entry(recetas).State = System.Data.Entity.EntityState.Modified;
+                        bd.SaveChanges();
+                    }
+
+                    MessageBox.Show("¡Ingrediente editado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
                 }
-
-                MessageBox.Show("¡Ingrediente editado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
+                else
+                {
+                    MessageBox.Show("¡No se puede ingresar una cantidad menor a 1!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             CargarDatos();
         }
