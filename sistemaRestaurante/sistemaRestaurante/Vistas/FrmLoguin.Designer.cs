@@ -132,7 +132,7 @@
             this.lklNuevoUsuario.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(47)))), ((int)(((byte)(105)))));
             this.lklNuevoUsuario.AutoSize = true;
             this.lklNuevoUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lklNuevoUsuario.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.lklNuevoUsuario.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lklNuevoUsuario.LinkColor = System.Drawing.Color.White;
             this.lklNuevoUsuario.Location = new System.Drawing.Point(14, 14);
             this.lklNuevoUsuario.Name = "lklNuevoUsuario";

@@ -128,7 +128,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
 
                                     bd.Entry(prod).State = System.Data.Entity.EntityState.Modified;
                                     bd.SaveChanges();
-                                    MessageBox.Show("¡Producto insertado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
+                                    MessageBox.Show("¡Producto insertado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     this.Close();
                                     listado.dtvProductos.Rows.Clear();
                                     listado.btnActualizar.PerformClick();
@@ -149,7 +149,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
                                     bd.ProductosVenta.Add(prod);
                                     bd.SaveChanges();
 
-                                    MessageBox.Show("¡Producto insertado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                                    MessageBox.Show("¡Producto insertado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     this.Close();
                                     listado.dtvProductos.Rows.Clear();
                                     listado.CargarDatos();
@@ -162,7 +162,7 @@ namespace sistemaRestaurante.Vistas.Administrador.Productos
             }
             catch(Exception ex)
             {
-                MessageBox.Show("¡Verifique las listas desplegables!", "Verificación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("¡Verifique la lista desplegable!", "Verificación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
