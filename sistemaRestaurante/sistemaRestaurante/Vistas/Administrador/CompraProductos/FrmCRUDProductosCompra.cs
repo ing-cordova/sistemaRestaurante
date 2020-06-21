@@ -117,21 +117,29 @@ namespace sistemaRestaurante.Vistas.Administrador.CompraProductos
                 }
                 else
                 {
-                    DialogResult result = MessageBox.Show("¿Estás seguro que quieres editar?, \n¡la acción no se podrá deshacer!", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                    if (result == DialogResult.OK)
+                    try
                     {
-                        prodC = bd.ProductosCompra.Where(VerificarID => VerificarID.idProductoC == idC).First();
-                        prodC.nombre = txtNombreProdCompra.Text;
-                        prodC.precio = decimal.Parse(txtPrecioProd.Text);
-                        prodC.idProveedor = int.Parse(provee);
-                        prodC.idCategoria = int.Parse(categ);
+                        DialogResult result = MessageBox.Show("¿Estás seguro que quieres editar?, \n¡la acción no se podrá deshacer!", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                        if (result == DialogResult.OK)
+                        {
+                            prodC = bd.ProductosCompra.Where(VerificarID => VerificarID.idProductoC == idC).First();
+                            prodC.nombre = txtNombreProdCompra.Text;
+                            prodC.precio = decimal.Parse(txtPrecioProd.Text);
+                            prodC.idProveedor = int.Parse(provee);
+                            prodC.idCategoria = int.Parse(categ);
 
-                        bd.Entry(prodC).State = System.Data.Entity.EntityState.Modified;
-                        bd.SaveChanges();
+                            bd.Entry(prodC).State = System.Data.Entity.EntityState.Modified;
+                            bd.SaveChanges();
 
-                        MessageBox.Show("¡Producto editado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
-                        this.Close();
+                            MessageBox.Show("¡Producto editado con éxito!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.None);
+                            this.Close();
+                        }
                     }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show("¡Verifique las listas desplegables!", "Verificación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+
                 }
             }
         }
